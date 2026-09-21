@@ -1,0 +1,1219 @@
+﻿[
+    {
+        "title":  "Govern",
+        "overview":  [
+                         "School executive leadership involvement is minimal, with ad hoc management oversight and undefined roles resulting in sporadic and undocumented cybersecurity practices.",
+                         "Leadership and management oversight begin to take shape with some governance structures and risk management strategies emerging, though not systematically applied.",
+                         "Governance and strategic plans are formalized, with clear cybersecurity risk mitigation expectations, contracts, policies, roles, and responsibilities established and communicated.",
+                         "Leadership is proactive, with governance frameworks and oversight guiding well-defined and managed cybersecurity policies and practices across the school system.",
+                         "Governance and oversight are deeply embedded and continuously improved, demonstrating high levels of efficiency, effectiveness, and adaptability in the school system\u0027s cybersecurity strategies, operations, and processes."
+                     ],
+        "categories":  [
+                           {
+                               "name":  "ORGANIZATIONAL CONTEXT",
+                               "levels":  [
+                                              {
+                                                  "level":  1,
+                                                  "title":  "LEVEL 1: INITIAL",
+                                                  "description":  "Risk mitigation defenses are not clearly defined. Third-party data-sharing agreements are not formal. Sensitive data processes need improvement. Risk management decisions are not included in cybersecurity initiative planning."
+                                              },
+                                              {
+                                                  "level":  2,
+                                                  "title":  "LEVEL 2: REPEATABLE",
+                                                  "description":  "Operational processes and responsibilities are consistent but mostly ad hoc or reactive. Some contractual data-sharing agreements with third parties are formalized. Sensitive data processes are not routinely measured or enforced."
+                                              },
+                                              {
+                                                  "level":  3,
+                                                  "title":  "LEVEL 3: DEFINED",
+                                                  "description":  "Meets REPEATABLE Maturity Level AND risk mitigation operations are documented. Third-party data-sharing agreements are formalized and meet legal, contractual, and regulatory requirements. Sensitive data processes are measured and enforced and include privacy and security requirements. Controls are in place to prevent loss, damage, or theft. Strategic plans address cybersecurity roles and responsibilities. Risk management decisions are understood through the mission, expectations, and contracts."
+                                              },
+                                              {
+                                                  "level":  4,
+                                                  "title":  "LEVEL 4: MANAGED",
+                                                  "description":  "Meets DEFINED Maturity Level AND performance controls are in place at department levels to measure and evaluate system-wide risk. Resiliency measures to anticipate, prepare for, and recover from cyber events are in place and are a priority. Regular cybersecurity assessments are conducted to verify optimal performance levels. Strategic planning and budget allocations are fueled by needs assessment data."
+                                              },
+                                              {
+                                                  "level":  5,
+                                                  "title":  "LEVEL 5: OPTIMIZED",
+                                                  "description":  "Meets MANAGED Maturity Level AND strategic plans inform cybersecurity roles, responsibilities, and risk management decisions. Controls in place are effective, systematic, and responsive. Fact-based, cybersecurity assessments are optimized based on an organization-wide analysis."
+                                              }
+                                          ],
+                               "interviewPrompts":  [
+                                                        {
+                                                            "level":  1,
+                                                            "prompts":  "Risk Mitigation and Cybersecurity Planning: • Can you describe how your school approaches risk mitigation and cybersecurity planning without clearly defined defenses? • How does your school\u0027s approach to risk mitigation and cybersecurity planning impact your overall cybersecurity posture? Third-Party Data Sharing: • How are data-sharing agreements with third parties managed in the absence of formal agreements? • What challenges have arisen from the current approach to sharing data with third parties? Sensitive Data Processes: • What processes are in place for managing sensitive data, and how are these processes in need of improvement? • Can you provide examples of the difficulties you\u0027ve faced managing sensitive data?"
+                                                        },
+                                                        {
+                                                            "level":  2,
+                                                            "prompts":  "Consistency in Operational Processes: • Can you discuss how operational processes and responsibilities for cybersecurity are managed, despite being mostly ad hoc or reactive? Formalization of Data Sharing Agreements: • What steps are you taking to formalize contractual data-sharing agreements with third parties? • How have formal data-sharing agreements impacted your cybersecurity strategy? Management of Sensitive Data: • How are sensitive data processes managed, and what measures are in place to ensure these are routinely tracked and enforced?"
+                                                        },
+                                                        {
+                                                            "level":  3,
+                                                            "prompts":  "Documentation of Risk Mitigation Operations: • Can you explain how you document risk mitigation operations and how third-party data-sharing agreements meet legal and regulatory requirements? Enforcement of Sensitive Data Processes: • How are sensitive data processes measured, enforced, and integrated with privacy and security requirements? • What controls are in place to prevent loss, damage, or theft? Understanding of Strategic Plans: • How do strategic plans address cybersecurity roles and responsibilities? • Can you describe how risk management decisions align with the organization\u0027s mission and stakeholder expectations?"
+                                                        },
+                                                        {
+                                                            "level":  4,
+                                                            "prompts":  "Department Level Performance Controls: • How are performance controls implemented at the department level to evaluate system-wide risk? • Can you provide examples of how these measures have improved your cybersecurity posture? Resiliency Measures and Cybersecurity Assessments: • What resiliency measures are in place to anticipate and recover from cyber events? • How regularly are cybersecurity assessments conducted to verify performance levels? Strategic Planning and Budget Allocation: • How do needs assessment data influence strategic planning and budget allocations? • Can you discuss the current strategic planning process and its impact on cybersecurity initiatives?"
+                                                        },
+                                                        {
+                                                            "level":  5,
+                                                            "prompts":  "Informed Strategic Planning: • How do strategic plans inform your organization\u0027s cybersecurity roles, responsibilities, and risk management decisions? • Can you provide an example of how this approach has been beneficial? Effectiveness of Controls: • How do you ensure that controls in place are effective, systematic, and responsive? • Can you share insights from recent cybersecurity assessments? Organizational-Wide Analysis for Cybersecurity: • How is an organizational-wide analysis used to optimize fact-based cybersecurity assessments? • Can you discuss how organizational-wide analysis has led to improvements in your cybersecurity strategy?"
+                                                        }
+                                                    ]
+                           },
+                           {
+                               "name":  "RISK MANAGEMENT STRATEGY",
+                               "levels":  [
+                                              {
+                                                  "level":  1,
+                                                  "title":  "LEVEL 1: INITIAL",
+                                                  "description":  "The organization’s risk priorities, constraints, risk tolerances, and assumptions are not clearly defined. A comprehensive risk management strategy is lacking or nonexistent. Processes are not documented or aligned to support the architecture and strategic roadmap."
+                                              },
+                                              {
+                                                  "level":  2,
+                                                  "title":  "LEVEL 2: REPEATABLE",
+                                                  "description":  "The organization’s risk priorities, constraints, risk tolerances, and assumptions are being developed. Processes to develop a comprehensive risk management strategy are being established and used to support operational risk decisions. Risk management is transitioning from reactive to proactive."
+                                              },
+                                              {
+                                                  "level":  3,
+                                                  "title":  "LEVEL 3: DEFINED",
+                                                  "description":  "Meets REPEATABLE Maturity Level AND risk management processes are documented and agreed to by organizational stakeholders. Risk management processes include cybersecurity risk objectives, activities, and outcomes. Supply chain risk management processes are defined. Tracked action plans include disseminating cybersecurity risks to stakeholders. The risk management strategy includes a documented communication plan."
+                                              },
+                                              {
+                                                  "level":  4,
+                                                  "title":  "LEVEL 4: MANAGED",
+                                                  "description":  "Meets DEFINED Maturity Level AND the shared risk management strategy and desired response patterns are culturally embedded and well understood. All stakeholders are committed to detecting and responding to changing tactics and techniques of cybersecurity threats and vulnerabilities."
+                                              },
+                                              {
+                                                  "level":  5,
+                                                  "title":  "LEVEL 5: OPTIMIZED",
+                                                  "description":  "Meets MANAGED Maturity Level AND the risk management strategy is fully deployed without significant weaknesses or gaps across the school system. Processes and lessons learned are regularly shared with the education market sector community."
+                                              }
+                                          ],
+                               "interviewPrompts":  [
+                                                        {
+                                                            "level":  1,
+                                                            "prompts":  "Definition of Risk Management Priorities: • How does your school identify and prioritize its cybersecurity risks without clearly defined priorities, constraints, risk tolerances, and assumptions? Development of Risk Management Strategy: • What steps are being taken to develop a comprehensive risk management strategy in the absence of documented processes aligned with your architecture and strategic roadmap? Support for Operational Risk Decisions: • How do you support operational risk decisions without a clear risk management strategy or documented processes?"
+                                                        },
+                                                        {
+                                                            "level":  2,
+                                                            "prompts":  "Development of Risk Management Components: • Can you describe the process of developing the organization\u0027s risk priorities, constraints, risk tolerances, and assumptions? • How are these components being integrated into your cybersecurity strategy? Transition to Proactive Risk Management: • What measures are you taking to transition risk management from reactive to proactive? • Can you provide examples of how these processes are being established? Support for Operational Risk Decisions: • How are newly established risk management processes used to support operational risk decisions within the school?"
+                                                        },
+                                                        {
+                                                            "level":  3,
+                                                            "prompts":  "Documentation and Agreement on Risk Management Processes: • How are risk management processes documented and agreed upon by organizational stakeholders? • Can you discuss the inclusion of cybersecurity risk objectives and activities? Supply Chain Risk Management: • How are supply chain risk management processes defined within your risk management strategy? • What actions do you track to disseminate cybersecurity risks to stakeholders? Risk Management Communication Plan: • Can you elaborate on the communication plan for the risk management strategy? • How does the communication plan for the risk management strategy facilitate sharing information on cybersecurity risks across the organization?"
+                                                        },
+                                                        {
+                                                            "level":  4,
+                                                            "prompts":  "Cultural Embedment of Risk Management Strategy: • How is the shared risk management strategy culturally embedded within the school? • Can you share how this understanding influences response patterns to cybersecurity threats? Stakeholder Commitment: • How do stakeholders demonstrate their commitment to detecting and responding to changing cybersecurity threats and vulnerabilities? • Can you provide an example of this commitment in action? Strategic Response to Cybersecurity Threats: • How does the organization ensure all stakeholders are aligned and committed to the strategic direction for responding to cybersecurity threats and vulnerabilities?"
+                                                        },
+                                                        {
+                                                            "level":  5,
+                                                            "prompts":  "Deployment of Risk Management Strategy: • How is the risk management strategy fully deployed and integrated across the school system? • Can you discuss the absence of significant weaknesses or gaps? Sharing Processes and Lessons Learned: • How do you regularly share processes and lessons learned with the broader education market sector community? • How does this sharing impact your cybersecurity posture? Continuous Improvement in Risk Management: • How does the organization ensure continuous improvement and optimization of the risk management strategy? • Can you provide examples of how feedback from the community influences your risk management strategy?"
+                                                        }
+                                                    ]
+                           },
+                           {
+                               "name":  "ROLES, RESPONSIBILITIES, AND AUTHORITIES",
+                               "levels":  [
+                                              {
+                                                  "level":  1,
+                                                  "title":  "LEVEL 1: INITIAL",
+                                                  "description":  "Roles and Responsibilities for the development and implementation of data privacy and cybersecurity policies and practices need to be defined. Resources and budgets need to be allocated to meet cybersecurity and data privacy needs of the school system."
+                                              },
+                                              {
+                                                  "level":  2,
+                                                  "title":  "LEVEL 2: REPEATABLE",
+                                                  "description":  "Cybersecurity processes are developing with roles and responsibilities for internal and external stakeholders being defined. A school system executive leader is identified as the person responsible for the development and implementation of cybersecurity policies and practices. Resources and budgets are being allocated, with basic needs identified to meet the cybersecurity and data privacy needs of the school system."
+                                              },
+                                              {
+                                                  "level":  3,
+                                                  "title":  "LEVEL 3: DEFINED",
+                                                  "description":  "Meets REPEATABLE Maturity Level AND processes that demonstrate cybersecurity roles and responsibilities for the internal and external stakeholders are defined, understood and documented. Designated staff maintain data privacy and cybersecurity policies. Resources are aligned and allocated system-wide to meet cybersecurity current and future needs. Human resource processes include onboard cyber training and regular training."
+                                              },
+                                              {
+                                                  "level":  4,
+                                                  "title":  "LEVEL 4: MANAGED",
+                                                  "description":  "Meets DEFINED Maturity Level AND system-wide cybersecurity governance includes cybersecurity awareness programs to influence behavior among the workforce to be security conscious and properly skilled to reduce risks to the school system. The TLE practice areas are reviewed annually and improvement initiatives are based on evaluation results."
+                                              },
+                                              {
+                                                  "level":  5,
+                                                  "title":  "LEVEL 5: OPTIMIZED",
+                                                  "description":  "Meets MANAGED Maturity Level AND roles and responsibilities for detection are well-defined to ensure accountability. Governance processes are audited annually to assess federal, state, and local regulatory compliance. The school system is working toward or has obtained the TLE seal mark of distinction."
+                                              }
+                                          ],
+                               "interviewPrompts":  [
+                                                        {
+                                                            "level":  1,
+                                                            "prompts":  "Definition of Roles and Responsibilities: • How is your school currently defining the roles and responsibilities for developing and implementing data privacy and cybersecurity policies and practices? Allocation of Resources and Budgets: • What steps are being taken to allocate the necessary resources and budgets to meet the school\u0027s cybersecurity and data privacy needs? Establishment of Cybersecurity Framework: • How do you plan to establish a framework for cybersecurity roles, responsibilities, and authorities to enhance accountability and performance assessment?"
+                                                        },
+                                                        {
+                                                            "level":  2,
+                                                            "prompts":  "Development of Cybersecurity Processes: • Can you describe how cybersecurity processes are evolving within your school, particularly in defining stakeholder roles and responsibilities? Executive Leadership in Cybersecurity: • Who is the executive leader responsible for developing and implementing cybersecurity policies and practices? • How has executive leadership\u0027s involvement in developing and implementing cybersecurity policies and practices impacted your cybersecurity posture? Resource and Budget Allocation for Cybersecurity: • How are resources and budgets being identified and allocated to meet the school\u0027s essential cybersecurity and data privacy needs?"
+                                                        },
+                                                        {
+                                                            "level":  3,
+                                                            "prompts":  "Documentation of Cybersecurity Roles and Responsibilities: • How are your organization\u0027s cybersecurity roles and responsibilities for internal and external stakeholders defined, understood, and documented? Alignment of Resources with Cybersecurity Needs: • Can you discuss how resources are aligned and allocated system-wide to meet current and future cybersecurity needs? Incorporation of Cybersecurity in HR Practices: • How are human resource processes adapted to include cybersecurity training during onboarding and regular updates for staff?"
+                                                        },
+                                                        {
+                                                            "level":  4,
+                                                            "prompts":  "Cybersecurity Governance and Awareness Programs: • How does system-wide cybersecurity governance incorporate awareness programs to influence security-conscious behavior among the workforce? Review and Improvement of Cybersecurity Practices: • Can you provide examples of how you review TLE practice areas annually and determine improvement initiatives based on evaluation results? Enhancement of Cybersecurity Skills and Awareness: • How are staff encouraged and supported to improve their cybersecurity skills and awareness through ongoing training and development programs?"
+                                                        },
+                                                        {
+                                                            "level":  5,
+                                                            "prompts":  "Accountability in Detection Roles: • How are roles and responsibilities for detection defined to ensure accountability within the school system? Annual Audits of Governance Processes: • Can you discuss the annual audit process for assessing compliance with federal, state, and local regulations? • How does the annual audit process process impact your cybersecurity strategy? Achievement of TLE Seal Mark of Distinction: • Is the school system working toward—or has it already obtained—the TLE seal mark of distinction? • What steps are you taking to achieve the TLE seal mark of distinction?"
+                                                        }
+                                                    ]
+                           },
+                           {
+                               "name":  "POLICY",
+                               "levels":  [
+                                              {
+                                                  "level":  1,
+                                                  "title":  "LEVEL 1: INITIAL",
+                                                  "description":  "The school’s policies for managing cybersecurity risks are lacking. Policies are not documented, communicated, or enforced."
+                                              },
+                                              {
+                                                  "level":  2,
+                                                  "title":  "LEVEL 2: REPEATABLE",
+                                                  "description":  "The school’s policies for managing cybersecurity risks are being developed. Governance practice includes the approval of strategic direction and policy creation to support operational risk decisions. Risk management is transitioning from reactive to proactive."
+                                              },
+                                              {
+                                                  "level":  3,
+                                                  "title":  "LEVEL 3: DEFINED",
+                                                  "description":  "Meets REPEATABLE Maturity Level AND cybersecurity policies are documented and agreed to by organizational stakeholders. Risk assessment policies include identifying new threats, vulnerabilities, and conditions that may impact the system\u0027s security."
+                                              },
+                                              {
+                                                  "level":  4,
+                                                  "title":  "LEVEL 4: MANAGED",
+                                                  "description":  "Meets DEFINED Maturity Level AND policies for managing cyber risks are reviewed, updated, communicated, and enforced to reflect changes in requirements, threats, technology, and the school\u0027s mission. All stakeholders are committed to detecting and responding to changing tactics and techniques of cybersecurity threats and vulnerabilities."
+                                              },
+                                              {
+                                                  "level":  5,
+                                                  "title":  "LEVEL 5: OPTIMIZED",
+                                                  "description":  "Meets MANAGED Maturity Level AND policies for risk management strategy are fully deployed without significant weaknesses or gaps across the school. Policy updates and lessons learned are regularly shared with the education market sector community."
+                                              }
+                                          ],
+                               "interviewPrompts":  [
+                                                        {
+                                                            "level":  1,
+                                                            "prompts":  "Establishment of Cybersecurity Policies: • Can you describe how your school currently manages cybersecurity risks without documented policies? Policy Communication and Enforcement: • Without established cybersecurity policies, how does the school communicate and enforce guidelines or rules regarding cybersecurity? Process for Developing Policies: • What steps are you taking to develop and implement cybersecurity policies within the school?"
+                                                        },
+                                                        {
+                                                            "level":  2,
+                                                            "prompts":  "Development of Cybersecurity Policies: • How are the school\u0027s policies for managing cybersecurity risks currently being developed? • Can you share the process involved in policy creation? Governance Practice in Policy Approval: • What governance practices are in place to approve strategic direction and policy creation to support operational risk decisions? Transition to Proactive Risk Management: • Can you describe how risk management is transitioning from reactive to proactive within the context of policy development?"
+                                                        },
+                                                        {
+                                                            "level":  3,
+                                                            "prompts":  "Documentation and Stakeholder Agreement on Policies: • How are cybersecurity policies documented and agreed upon by organizational stakeholders? Inclusion of Risk Assessment in Policies: • How do your risk assessment policies account for identifying new threats, vulnerabilities, and conditions that may impact system security? Policy Communication to Stakeholders: • How are documented cybersecurity policies communicated to relevant stakeholders within the school?"
+                                                        },
+                                                        {
+                                                            "level":  4,
+                                                            "prompts":  "Review and Update of Cybersecurity Policies: • How are policies for managing cybersecurity risks reviewed and updated to reflect changes in requirements, threats, technology, and the school\u0027s mission? Stakeholder Commitment to Cybersecurity: • Can you discuss the level of stakeholder commitment to detecting and responding to changes in cybersecurity threats and vulnerabilities? Enforcement of Updated Policies: • How are updated policies communicated and enforced across the school to ensure compliance and adaptation to new cybersecurity challenges?"
+                                                        },
+                                                        {
+                                                            "level":  5,
+                                                            "prompts":  "Deployment of Risk Management Strategy in Policies: • How is the risk management strategy integrated into cybersecurity policies to ensure no significant weaknesses or gaps exist across the school? Sharing of Policy Updates and Lessons Learned: • Can you explain how you regularly share policy updates and lessons learned with the broader education market sector community? Continuous Improvement of Cybersecurity Policies: • How does the school ensure continuous improvement and optimization of cybersecurity policies? • Can you provide examples of recent cybersecurity policy enhancements?"
+                                                        }
+                                                    ]
+                           },
+                           {
+                               "name":  "OVERSIGHT",
+                               "levels":  [
+                                              {
+                                                  "level":  1,
+                                                  "title":  "LEVEL 1: INITIAL",
+                                                  "description":  "Lack of oversight in the review of cybersecurity guidelines, processes, or policy by executive leadership is evident. Cybersecurity risk management outcomes are not reviewed or adjusted to ensure coverage of school system requirements and risks."
+                                              },
+                                              {
+                                                  "level":  2,
+                                                  "title":  "LEVEL 2: REPEATABLE",
+                                                  "description":  "Cybersecurity guidelines, processes, and policies are approved by executive leadership. Cybersecurity documentation undergoes review, evaluation, and improvement at a minimum annually. Cybersecurity risk management outcomes are reviewed and adjusted to ensure coverage of school system requirements and risks."
+                                              },
+                                              {
+                                                  "level":  3,
+                                                  "title":  "LEVEL 3: DEFINED",
+                                                  "description":  "Meets REPEATABLE Maturity Level AND organizational cybersecurity risk management performance is measured and reviewed to adjust strategic direction. Cybersecurity documentation undergoes review, evaluation, and improvement quarterly."
+                                              },
+                                              {
+                                                  "level":  4,
+                                                  "title":  "LEVEL 4: MANAGED",
+                                                  "description":  "Meets DEFINED Maturity Level AND governance practices adhere to all federal, state, and local regulations."
+                                              },
+                                              {
+                                                  "level":  5,
+                                                  "title":  "LEVEL 5: OPTIMIZED",
+                                                  "description":  "Meets MANAGED Maturity Level AND governance includes cybersecurity reviews conducted by an outside independent party on an annual basis."
+                                              }
+                                          ],
+                               "interviewPrompts":  [
+                                                        {
+                                                            "level":  1,
+                                                            "prompts":  "Executive Oversight on Cybersecurity: • Can you describe how executive leadership is involved in the oversight of cybersecurity guidelines, processes, or policies within your school? Review and Adjustment of Cybersecurity Outcomes: • How does your school plan to implement oversight for reviewing and adjusting cybersecurity risk management outcomes to better meet system requirements and risks? Strategy Coverage: • Without current oversight, how does the school ensure the cybersecurity risk management strategy covers all necessary organizational requirements and risks?"
+                                                        },
+                                                        {
+                                                            "level":  2,
+                                                            "prompts":  "Leadership Approval of Cybersecurity Measures: • How does executive leadership approve and oversee cybersecurity guidelines, processes, and policies? • Can you provide an example of this process in action? Annual Review of Cybersecurity Documentation: • Can you discuss the process and frequency of reviewing, evaluating, and improving cybersecurity documentation? • How does the current cybersecurity documentation review process impact the risk management outcomes? Adjustment to Ensure Coverage: • How are cybersecurity risk management outcomes reviewed and adjusted to ensure they cover all school system requirements and risks?"
+                                                        },
+                                                        {
+                                                            "level":  3,
+                                                            "prompts":  "Measurement and Review of Performance: • How is organizational cybersecurity risk management performance measured and reviewed? • Can you share how these reviews have influenced strategic direction adjustments? Quarterly Review of Documentation: • What prompted the decision to review, evaluate, and improve cybersecurity documentation on a quarterly basis? • How has this frequency impacted your cybersecurity posture? Strategic Direction Adjustments: • Can you provide an example of how performance reviews have led to adjustments in your cybersecurity strategic direction?"
+                                                        },
+                                                        {
+                                                            "level":  4,
+                                                            "prompts":  "Adherence to Regulations: • How do your governance practices ensure adherence to all federal, state, and local cybersecurity regulations? • Can you discuss any recent adjustments made to comply with federal, state, and local cybersecurity regulations? Impact of Governance on Cybersecurity: • How does the current governance model impact the overall cybersecurity risk management strategy and its effectiveness? Regulatory Compliance: • What processes are in place to continuously monitor and ensure your cybersecurity practices comply with evolving regulations?"
+                                                        },
+                                                        {
+                                                            "level":  5,
+                                                            "prompts":  "Independent Cybersecurity Reviews: • How does having an outside independent party conduct annual cybersecurity reviews enhance your oversight and governance practices? Effectiveness of External Reviews: • Can you discuss the outcomes or improvements resulting from these independent cybersecurity reviews? How have they shaped your risk management strategy? Integration of Independent Reviews: • How are the findings from these independent reviews integrated into your cybersecurity risk management activities and performance evaluation?"
+                                                        }
+                                                    ]
+                           },
+                           {
+                               "name":  "CYBERSECURITY SUPPLY CHAIN RISK MANAGEMENT",
+                               "levels":  [
+                                              {
+                                                  "level":  1,
+                                                  "title":  "LEVEL 1: INITIAL",
+                                                  "description":  "Processes to manage supplier risks are not documented and are ad hoc, inconsistent, or reactive. A comprehensive inventory of suppliers and third-party partners and the identification of the information systems, components, and services provided is lacking or nonexistent."
+                                              },
+                                              {
+                                                  "level":  2,
+                                                  "title":  "LEVEL 2: REPEATABLE",
+                                                  "description":  "An inventory of suppliers and third-party partners with processes to identify, assess, and manage supply chain risks is being developed. A systematic approach to evaluating third-party key processes is evident. Improvement initiatives with suppliers to ensure compliance are being developed."
+                                              },
+                                              {
+                                                  "level":  3,
+                                                  "title":  "LEVEL 3: DEFINED",
+                                                  "description":  "Meets REPEATABLE Maturity Level AND risk management processes include suppliers and third-party partners of information systems, components, and services. All processes are identified, documented, prioritized, and routinely assessed using audits, test results, or other forms of evaluations to confirm suppliers and partners are meeting their contractual obligations."
+                                              },
+                                              {
+                                                  "level":  4,
+                                                  "title":  "LEVEL 4: MANAGED",
+                                                  "description":  "Meets DEFINED Maturity Level AND suppliers and third-party partners conduct routine tests to evaluate compliance and the adequacy and effectiveness of all implementations. Results from tests ensure all policies, processes, and controls are managed as expected by ensuring the appropriate cybersecurity levels of control. Effective corrective actions are taken to address any weaknesses. Independent audits and valid certifications of proven performance are required."
+                                              },
+                                              {
+                                                  "level":  5,
+                                                  "title":  "LEVEL 5: OPTIMIZED",
+                                                  "description":  "Meets MANAGED Maturity Level AND supply chain risk processes are advancing, optimizing, and progressive. Cyber defenses are maximized as evidenced by a comprehensive supply chain security program. Suppliers and partners are chosen based on risk and mission impact. Response and recovery planning and testing are conducted with suppliers and third-party providers at least annually. Results are evaluated and used for continuous improvement."
+                                              }
+                                          ],
+                               "interviewPrompts":  [
+                                                        {
+                                                            "level":  1,
+                                                            "prompts":  "Supplier Risk Management Processes: • How does your school currently manage risks associated with suppliers and third-party partners without documented processes? Inventory of Suppliers and Third Parties: • How are you developing a comprehensive inventory of suppliers, third-party partners, and the information systems, components, and services they provide? Ad Hoc Supplier Risk Management: • Can you describe the challenges faced due to the ad hoc and reactive approach to managing supplier and third-party risks?"
+                                                        },
+                                                        {
+                                                            "level":  2,
+                                                            "prompts":  "Development of Supplier Inventory: • How are you developing an inventory of suppliers and third-party partners? • Can you share the process and criteria for identifying and assessing supply chain risks? Systematic Evaluation of Third Parties: • What systematic approach are you using to evaluate third-party key processes? • How are you developing improvement initiatives with suppliers to ensure compliance? Initiatives for Supplier Compliance: • Can you discuss the initiatives being developed to improve compliance among your suppliers and third-party partners? • What measures are you putting in place to improve compliance among your suppliers and third-party partners?"
+                                                        },
+                                                        {
+                                                            "level":  3,
+                                                            "prompts":  "Inclusion of Suppliers in Risk Management: • How are suppliers and third-party partners integrated into your risk management processes for information systems, components, and services? Routine Assessment of Suppliers: • Can you describe how suppliers and partners are routinely assessed through audits, test results, or other evaluations to confirm they meet contractual obligations? Documentation and Prioritization of Processes: • How are the processes related to suppliers and third-party partners identified, documented, prioritized, and assessed within your cybersecurity framework?"
+                                                        },
+                                                        {
+                                                            "level":  4,
+                                                            "prompts":  "Routine Tests by Suppliers for Compliance: • How do suppliers and third-party partners conduct routine tests to evaluate compliance and the effectiveness of implementations? • Can you provide examples of these tests? Management of Policies, Processes, and Controls: • Can you discuss how you manage the results from supplier tests to ensure all policies, processes, and controls maintain appropriate cybersecurity levels? Corrective Actions and Independent Audits: • How are effective corrective actions taken to address weaknesses identified in supplier and third-party evaluations? • Are independent audits and valid certifications required?"
+                                                        },
+                                                        {
+                                                            "level":  5,
+                                                            "prompts":  "Advancement of Supply Chain Risk Processes: • How are supply chain risk processes advancing, optimizing, and progressing within your cybersecurity framework? Annual Planning and Testing with Suppliers: • Can you discuss how response and recovery planning and testing are conducted annually with suppliers and third-party providers? • What improvements have been made as a result of response and recovery planning and testing with suppliers and third-party providers? Continuous Improvement Based on Evaluations: • How are annual planning and testing results with suppliers and third parties evaluated and used for continuous improvement in your cybersecurity supply chain risk management?"
+                                                        }
+                                                    ]
+                           }
+                       ]
+    },
+    {
+        "title":  "Identify",
+        "overview":  [
+                         "Processes to identify cybersecurity risks are lacking or nonexistent.",
+                         "Processes for cybersecurity risk identification exist but are in the beginning stages.",
+                         "Risks to Information Technology (IT) assets are identified and managed in a standard, well-defined process.",
+                         "Risks to the school system environment are identified and proactively monitored on a regular basis.",
+                         "Cybersecurity risks are continuously monitored and used to make system-wide decisions."
+                     ],
+        "categories":  [
+                           {
+                               "name":  "ASSET MANAGEMENT",
+                               "levels":  [
+                                              {
+                                                  "level":  1,
+                                                  "title":  "LEVEL 1: INITIAL",
+                                                  "description":  "Asset inventory processes are ad hoc, inconsistent, and/or reactive and may be out of date. Controls for asset protection are lacking or need improvement."
+                                              },
+                                              {
+                                                  "level":  2,
+                                                  "title":  "LEVEL 2: REPEATABLE",
+                                                  "description":  "Asset inventories are current and processes are consistent. Protection controls for asset protection are transitioning from being reactionary. Improvement initiatives are underway."
+                                              },
+                                              {
+                                                  "level":  3,
+                                                  "title":  "LEVEL 3: DEFINED",
+                                                  "description":  "Meets REPEATABLE Maturity Level AND asset inventories are current and document an asset\u0027s full life cycle. Data classifications are defined per state standards, regulations, and legal requirements. Protection controls are maintained and off-site asset security measures are in place, including software installs and asset transfers."
+                                              },
+                                              {
+                                                  "level":  4,
+                                                  "title":  "LEVEL 4: MANAGED",
+                                                  "description":  "Meets DEFINED Maturity Level AND asset inventory processes are highly managed with defined metrics. Effectiveness and accuracy are statistically analyzed. Asset compliance is evaluated regularly, and noncompliance is identified through root-cause analysis. Protection controls are tested, and results influence improvements."
+                                              },
+                                              {
+                                                  "level":  5,
+                                                  "title":  "LEVEL 5: OPTIMIZED",
+                                                  "description":  "Meets MANAGED Maturity Level AND efficient, effective, and innovative asset inventories are in place system-wide with best practice process improvements. Inventory management is well integrated with the current and future needs aligned with system-wide objectives and risk strategy."
+                                              }
+                                          ],
+                               "interviewPrompts":  [
+                                                        {
+                                                            "level":  1,
+                                                            "prompts":  "Ad Hoc Inventory Processes: • Can you walk me through how you currently manage your asset inventory? • How frequently is this information updated, and who is responsible? Protection Controls: • Can you describe the current controls for protecting your assets, including data, hardware, and software? • Have any instances occurred where you needed to test or improve these controls? Consistency and Reactiveness: • How do you respond when new assets are acquired or when existing assets are retired? • Is there a standard process in place when new assets are acquired or when existing assets are retired, or is it more of a case-by-case basis?"
+                                                        },
+                                                        {
+                                                            "level":  2,
+                                                            "prompts":  "Current and Consistent Inventory Processes: • How have you standardized the process of maintaining current asset inventories? • Can you provide examples of how the process of maintaining current asset inventories has evolved from being reactive? Improvement Initiatives: • What specific initiatives are currently underway to improve asset protection controls? • How are asset protection control improvement initiatives being prioritized and tracked for success? Asset Protection Transition: • Can you describe the transition from reactive to more proactive asset protection controls? • What challenges have you faced in transitioning from a reactive to a proactive asset protection stance, and how have you addressed them?"
+                                                        },
+                                                        {
+                                                            "level":  3,
+                                                            "prompts":  "Lifecycle Documentation: • How do you ensure that the asset inventories reflect the entire lifecycle of each asset? • Can you provide examples of how you use this information to manage assets? Data Classifications: • How are data classifications defined and maintained in compliance with state standards and regulations? • What processes do you have in place to ensure ongoing compliance with defined data classifications? Off-Site Asset Security: • What measures are in place for securing assets off-site, especially regarding software installations and asset transfers? • How do off-site asset security measures integrate with your overall security strategy?"
+                                                        },
+                                                        {
+                                                            "level":  4,
+                                                            "prompts":  "Managed Processes and Metrics: • Can you describe how asset inventory processes are managed and monitored using defined metrics? • How do you measure effectiveness and accuracy? Asset Compliance Evaluation: • How often do you conduct evaluations for asset compliance, and what does this process entail? • Can you discuss how noncompliance issues are identified and resolved? Protection Controls Testing: • How are protection controls tested, and how do the results of these tests inform improvements in your asset management strategy?"
+                                                        },
+                                                        {
+                                                            "level":  5,
+                                                            "prompts":  "System-Wide Integration: • How have you integrated inventory management with the broader system-wide objectives and risk strategy? • Can you give examples of how the system-wide inventory management integration has led to improvements? Best Practice Process Improvements: • What best practices have you implemented for managing assets more efficiently and effectively? • How do asset management best practices contribute to innovation within your organization? Alignment with Current and Future Needs: • How does your asset management approach align with both current and future organizational needs? • Can you describe how the alignment of your asset management approach influences decision-making and strategic planning?"
+                                                        }
+                                                    ]
+                           },
+                           {
+                               "name":  "RISK ASSESSMENT",
+                               "levels":  [
+                                              {
+                                                  "level":  1,
+                                                  "title":  "LEVEL 1: INITIAL",
+                                                  "description":  "Risk management capacity is lacking. Processes are not documented and are ad hoc, inconsistent, or reactive. Vulnerabilities are exposed and impacts are unknown. Collaborative approaches to risk identification and management are lacking or not evident."
+                                              },
+                                              {
+                                                  "level":  2,
+                                                  "title":  "LEVEL 2: REPEATABLE",
+                                                  "description":  "Leadership demonstrates awareness of the importance of cybersecurity risk to organizational operations, assets, and individuals. The transition from a reactive to a proactive approach to risk management is evident. Processes to identify vulnerabilities and mitigate risks are being developed. Collaborative problem-solving and information gathering from information-sharing forums are being prioritized."
+                                              },
+                                              {
+                                                  "level":  3,
+                                                  "title":  "LEVEL 3: DEFINED",
+                                                  "description":  "Meets REPEATABLE Maturity Level AND processes to identify vulnerabilities, mitigate and minimize threats, and determine potential instructional and business operations impacts are documented and built into daily operations. Threat intelligence from information-sharing forums and sources is collected. Information processing facilities are secure. Processes for backup and recovery systems are documented, tested, and evaluated at least annually."
+                                              },
+                                              {
+                                                  "level":  4,
+                                                  "title":  "LEVEL 4: MANAGED",
+                                                  "description":  "Meets DEFINED Maturity Level AND established risk management strategy is in place with integrated improvements beyond compliance regulation requirements Priority is given to building knowledge about the risk management process and raising awareness about the needed capabilities to effectively conduct risk assessments and manage risk."
+                                              },
+                                              {
+                                                  "level":  5,
+                                                  "title":  "LEVEL 5: OPTIMIZED",
+                                                  "description":  "Meets MANAGED Maturity Level AND risk assessment includes a focus on disciplined optimization and continual process improvement. Qualified cybersecurity practitioners are employed to measure and assess every aspect of the school system for possible cybersecurity issues and improvement opportunities. A fact-based evaluation cycle of improvement is optimized."
+                                              }
+                                          ],
+                               "interviewPrompts":  [
+                                                        {
+                                                            "level":  1,
+                                                            "prompts":  "Documentation and Consistency: • Can you describe how risk management processes are currently documented and executed within the school? • How consistent are the risk management processes across different departments or areas? Awareness and Reactiveness: • How does the school identify and respond to cybersecurity risks and vulnerabilities? • Can you provide examples of recent instances where risks were managed reactively? Collaboration in Risk Management: • What collaborative efforts are in place for identifying and managing cybersecurity risks? • How do you currently engage with external information-sharing forums or sources?"
+                                                        },
+                                                        {
+                                                            "level":  2,
+                                                            "prompts":  "Leadership and Cybersecurity Awareness: • How has the school\u0027s leadership demonstrated awareness and prioritization of cybersecurity risks? • What steps are you taking to move from a reactive to a proactive risk management approach? Process Development for Risk Mitigation: • Can you discuss the processes being developed to identify vulnerabilities and mitigate risks? • How are the processes to identify vulnerabilities and mitigate risks shaping the school\u0027s approach to cybersecurity? Collaboration and Information Sharing: • How is the school prioritizing collaborative problem-solving and engagement with information-sharing forums? • Can you provide examples of how collaboration and information sharing have influenced your cybersecurity practices?"
+                                                        },
+                                                        {
+                                                            "level":  3,
+                                                            "prompts":  "Integration of Processes into Operations: • How are processes for identifying and mitigating vulnerabilities integrated into the school\u0027s daily operations? • Can you give examples of how current processes for identifying and mitigating vulnerabilities affect decision-making? Use of Threat Intelligence: • How does the school collect and use threat intelligence from information-sharing forums and sources? • What impact has threat intelligence from information-sharing forums and sources had on your cybersecurity strategy? Security and Recovery Procedures: • Can you discuss the security measures in place for information-processing facilities and the processes for backup and recovery systems? • How often are security and recovery processes tested and evaluated?"
+                                                        },
+                                                        {
+                                                            "level":  4,
+                                                            "prompts":  "Risk Management Strategy: • Can you describe the established risk management strategy and how it integrates improvements beyond compliance regulations? • How is the current risk management strategy communicated across the school? Knowledge Building and Awareness: • What initiatives are in place to build knowledge about the risk management process and raise awareness of necessary capabilities for effective risk assessments and management? Risk Assessment and Management Capabilities: • How does the school ensure it has the capabilities to conduct effective risk assessments and manage risks? • Can you provide examples of how risk assessment and management capabilities have been used recently?"
+                                                        },
+                                                        {
+                                                            "level":  5,
+                                                            "prompts":  "Process Improvement and Optimization: • How does the school focus on disciplined optimization and continual process improvement in risk assessment? • Can you provide examples of recent process improvements and optimizations? Employment of Cybersecurity Practitioners: • Can you talk about how the school employs qualified cybersecurity practitioners to assess and improve cybersecurity across the system? • What impact have qualified cybersecurity practitioners had on overall cybersecurity? Evaluation Cycle of Improvement: • How is the fact-based evaluation cycle of improvement optimized within the school\u0027s cybersecurity strategy? • Can you describe how the fact-based evaluation cycle of improvement influences decision-making and strategic planning?"
+                                                        }
+                                                    ]
+                           },
+                           {
+                               "name":  "IMPROVEMENT",
+                               "levels":  [
+                                              {
+                                                  "level":  1,
+                                                  "title":  "LEVEL 1: INITIAL",
+                                                  "description":  "An improvement posture is not evident or is lacking. Improvement is primarily reactive. The overall capacity for detection, response, and recovery is lacking or limited. Recovery planning alignment and coordination need improvement."
+                                              },
+                                              {
+                                                  "level":  2,
+                                                  "title":  "LEVEL 2: REPEATABLE",
+                                                  "description":  "Improvement is beginning to transition from reactive to proactive. The overall capacity for recovery is limited but growing. Leaders demonstrate commitment to improvement. Budgets are being allocated to align the school system’s enterprise architecture and strategic roadmap to improve a comprehensive cyber recovery plan."
+                                              },
+                                              {
+                                                  "level":  3,
+                                                  "title":  "LEVEL 3: DEFINED",
+                                                  "description":  "Meets REPEATABLE Maturity Level AND actions taken to restore business continuity and protect assets after an incident are routinely analyzed. Improvement actions are identified as lessons learned for continuous improvement. Recovery plans incorporate retrospective (lessons learned) sessions and initiatives. Response and recovery strategies are updated."
+                                              },
+                                              {
+                                                  "level":  4,
+                                                  "title":  "LEVEL 4: MANAGED",
+                                                  "description":  "Meets DEFINED Maturity Level AND all stakeholders acknowledge the value of managing a pristine response and recovery plan. The school system evaluates incident response performance, identifies challenges, and improves incident response capabilities in strategic plans. Lessons learned and continuous improvement efforts result in an improved cybersecurity posture and readiness to face future security incidents."
+                                              },
+                                              {
+                                                  "level":  5,
+                                                  "title":  "LEVEL 5: OPTIMIZED",
+                                                  "description":  "Meets MANAGED Maturity Level AND the school system continuously evaluates and improves response and recovery processes. Metrics are captured and used to evaluate processes and drive improvement. Advanced technology solutions are used to assist in all phases of incident recovery. Overall cybersecurity maturity and school system resilience improve through optimized incident response, business continuity, and disaster recovery planning initiatives."
+                                              }
+                                          ],
+                               "interviewPrompts":  [
+                                                        {
+                                                            "level":  1,
+                                                            "prompts":  "Reactive Improvement Efforts: • Can you describe any recent situations where you had to react to cybersecurity issues? • How did you address recent situations resulting in a reactive approach to cybersecurity issues, and what was the outcome? Capacity for Detection, Response, and Recovery: • What resources or systems do you currently have for detecting, responding to, and recovering from cybersecurity incidents? • How effective have detection, response, and recovery resources or systems been in past incidents? Recovery Planning and Coordination: • How do you plan and coordinate recovery efforts after a cybersecurity incident? • Can you provide an example of where the cybersecurity incident recovery process was challenged?"
+                                                        },
+                                                        {
+                                                            "level":  2,
+                                                            "prompts":  "Transition to Proactive Improvement: • What steps are you taking to move from a reactive to a more proactive approach in managing cybersecurity risks and improvements? Leadership and Budget Allocation: • How has leadership demonstrated their commitment to cybersecurity improvement? • Can you discuss how budgets are being allocated toward cybersecurity improvement efforts? Aligning Architecture and Strategic Roadmap: • How are you aligning your school system\u0027s enterprise architecture and strategic roadmap to enhance your cybersecurity recovery plan?"
+                                                        },
+                                                        {
+                                                            "level":  3,
+                                                            "prompts":  "Analysis of Recovery Actions: • Can you describe how incidents and the actions taken for business continuity are analyzed for improvement? • How are business continuity insights incorporated into planning? Lessons Learned and Continuous Improvement: • How do you capture and apply lessons learned from cybersecurity incidents to improve your processes and response strategies? Updating Strategies with Lessons Learned: • In what ways have your response and recovery strategies been updated based on retrospective lessons-learned sessions?"
+                                                        },
+                                                        {
+                                                            "level":  4,
+                                                            "prompts":  "Value of Pristine Response and Recovery Plan: • How do stakeholders recognize the value of managing and continuously improving the response and recovery plan? Evaluating Incident Response Performance: • How do you evaluate the performance of your incident response? • Can you share how identified incident response challenges have led to improvements in your strategic plans? Improvements from Lessons Learned: • How have lessons learned and continuous improvement efforts resulted in a stronger cybersecurity posture and readiness for future incidents?"
+                                                        },
+                                                        {
+                                                            "level":  5,
+                                                            "prompts":  "Continuous Evaluation and Improvement of Processes: • Can you explain how you continuously evaluate and improve your response and recovery processes? • What metrics do you use to drive response and recovery process improvements? Use of Advanced Technology Solutions: • How do you incorporate advanced technology solutions in your incident recovery phases? • Can you provide examples of how advanced technology has enhanced your incident recovery capabilities? Improving Cybersecurity Maturity and Resilience: • In what ways has your approach to incident response, business continuity, and disaster recovery planning initiatives led to an improvement in overall cybersecurity maturity and system resilience?"
+                                                        }
+                                                    ]
+                           }
+                       ]
+    },
+    {
+        "title":  "Protect",
+        "overview":  [
+                         "Asset protection is reactive and ad hoc.",
+                         "Data protection techniques are implemented across the school system.",
+                         "Data is formally defined and protected per its risk classification.",
+                         "The school system environment is proactively monitored using protective technologies.",
+                         "Protection standards are operationalized through automation and advanced technologies."
+                     ],
+        "categories":  [
+                           {
+                               "name":  "IDENTITY MANAGEMENT, AUTHENTICATION, AND ACCESS CONTROL",
+                               "levels":  [
+                                              {
+                                                  "level":  1,
+                                                  "title":  "LEVEL 1: INITIAL",
+                                                  "description":  "Access control processes and protocols for physical and remote access are not established and documented. Multi-factor authentication has not been implemented. Data protection measures are inconsistent. Network integrity processes are not defined. Account review processes for user, supplier, and system accounts are not defined. Conditions for group and role membership are not defined."
+                                              },
+                                              {
+                                                  "level":  2,
+                                                  "title":  "LEVEL 2: REPEATABLE",
+                                                  "description":  "Access control processes and protocols for physical and remote access are documented but not routinely managed. At least one multi-factor authentication method is in place. Data protection measures are documented. Network integrity processes are defined. Account review processes for user, supplier, and system accounts are defined but not routinely enforced. Conditions for group and role membership are defined."
+                                              },
+                                              {
+                                                  "level":  3,
+                                                  "title":  "LEVEL 3: DEFINED",
+                                                  "description":  "Meets REPEATABLE Maturity Level AND compliant data protection measures are maintained. Network integrity processes, protections, and controls are routinely enforced. Account review processes are routinely conducted. Account managers are assigned. Conditions for group and role membership are routinely met."
+                                              },
+                                              {
+                                                  "level":  4,
+                                                  "title":  "LEVEL 4: MANAGED",
+                                                  "description":  "Meets DEFINED Maturity Level AND access control processes, protocols, and protection measures are systematic and well deployed. Multi-factor authentication methods are routinely evaluated for efficacy. Network integrity and account review processes are routinely evaluated for state and federal compliance. Evaluation processes include access control risk mitigation."
+                                              },
+                                              {
+                                                  "level":  5,
+                                                  "title":  "LEVEL 5: OPTIMIZED",
+                                                  "description":  "Meets MANAGED Maturity Level AND data-driven decisions to mitigate and avert risk in alignment with best practices are routinely made. The overall approach to cybersecurity awareness, training, and implementation is fully deployed without significant weaknesses or gaps."
+                                              }
+                                          ],
+                               "interviewPrompts":  [
+                                                        {
+                                                            "level":  1,
+                                                            "prompts":  "Establishment of Access Control Protocols: • Can you describe how your school manages physical and remote access control without established and documented processes? Implementation of Multi-Factor Authentication: • What measures are in place for user authentication, especially considering multi-factor authentication has not been implemented? Data Protection and Network Integrity: • How does your school approach data protection and network integrity without defined processes? • Can you provide examples of how you handle inconsistent data protection measures?"
+                                                        },
+                                                        {
+                                                            "level":  2,
+                                                            "prompts":  "Documentation and Management of Access Controls: • Can you discuss the access control processes and protocols documented for physical and remote access? • How are access control processes managed? Use of Multi-Factor Authentication: • You\u0027ve documented at least one multi-factor authentication method. How was this method chosen, and how is it implemented across the school? Definition and Enforcement of Account Review Processes: • How are account review processes defined for user, supplier, and system accounts? • Can you explain the challenges in routinely enforcing account review processes?"
+                                                        },
+                                                        {
+                                                            "level":  3,
+                                                            "prompts":  "Maintenance of Compliant Data Protection Measures: • How do you ensure your data protection measures remain compliant? • Can you provide an example of how data protection measures are maintained? Routine Enforcement of Network Integrity Processes: • How do you routinely enforce network integrity processes, protections, and controls? • How do network integrity processes contribute to overall cybersecurity? Management of Account Reviews and Role Memberships: • How are account review processes conducted routinely? • Can you discuss how account managers are assigned and how group and role membership conditions are met?"
+                                                        },
+                                                        {
+                                                            "level":  4,
+                                                            "prompts":  "Systematic Access Control Measures: • How are access control processes, protocols, and protection measures systematically deployed and managed within your school? Evaluation of Multi-Factor Authentication Efficacy: • How do you routinely evaluate the efficacy of multi-factor authentication methods? • Can you share insights from recent multi-factor authentication efficacy evaluations? Compliance Evaluation in Network Integrity and Account Reviews: • How are network integrity and account review processes evaluated for compliance with state and federal regulations? • What do network integrity and account review evaluation processes entail?"
+                                                        },
+                                                        {
+                                                            "level":  5,
+                                                            "prompts":  "Risk Mitigation Decisions: • How are data-driven decisions made to mitigate and avert risks in alignment with best practices? • Can you provide an example of a data-driven decision-making process? Cybersecurity Awareness and Training Deployment: • How is the overall approach to cybersecurity awareness, training, and implementation fully deployed within your school? • Can you describe how you ensure there are no significant weaknesses or gaps in cybersecurity awareness, training, and implementation? Continuous Improvement in Cybersecurity Measures: • How do you ensure continuous improvement in your cybersecurity measures to stay aligned with best practices and mitigate risks effectively?"
+                                                        }
+                                                    ]
+                           },
+                           {
+                               "name":  "AWARENESS AND TRAINING",
+                               "levels":  [
+                                              {
+                                                  "level":  1,
+                                                  "title":  "LEVEL 1: INITIAL",
+                                                  "description":  "Processes to ensure all staff and students with user ID accounts are undocumented and are ad hoc, inconsistent, or reactive. Cybersecurity awareness training is not mandatory or scheduled for new or existing users. Specific role-based security training to designated personnel is inconsistent or nonexistent. Personnel to document and monitor information system security training activities are not defined or designated. A records retention policy is not defined."
+                                              },
+                                              {
+                                                  "level":  2,
+                                                  "title":  "LEVEL 2: REPEATABLE",
+                                                  "description":  "Processes are being developed to ensure all staff and students with user ID accounts are adequately trained. Cybersecurity awareness training improvement initiatives are being developed. Specific role-based security training for personnel with assigned security roles and responsibilities is defined. Personnel to document and monitor information system security training activities are identified. A records retention policy is defined."
+                                              },
+                                              {
+                                                  "level":  3,
+                                                  "title":  "LEVEL 3: DEFINED",
+                                                  "description":  "Meets REPEATABLE Maturity Level AND role-based security training is provided before authorizing access to the information system or performing assigned duties. Personnel to document and monitor information system security training activities are active in their designated roles. Training records are retained based on the records retention policy."
+                                              },
+                                              {
+                                                  "level":  4,
+                                                  "title":  "LEVEL 4: MANAGED",
+                                                  "description":  "Meets DEFINED Maturity Level AND regular cybersecurity alerts, training campaigns, and simulated attacks are issued. Staff and student training progress is routinely tracked and updated as needed based on available data. Leadership is involved in continuous process and training monitoring. Designated staff continually monitors, measures, and enforces training adherence."
+                                              },
+                                              {
+                                                  "level":  5,
+                                                  "title":  "LEVEL 5: OPTIMIZED",
+                                                  "description":  "Meets MANAGED Maturity Level AND cybersecurity awareness and training methods are focused on continually improving performance through incremental and innovative optimization. Metrics to measure training performance objectives are established. A data-based evaluation cycle of improvement is optimized. Leadership is instrumental in designing, implementing, revising, and monitoring training initiatives and progress."
+                                              }
+                                          ],
+                               "interviewPrompts":  [
+                                                        {
+                                                            "level":  1,
+                                                            "prompts":  "Cybersecurity Training Processes: • How do you currently address cybersecurity awareness and training for staff and students? • What challenges have you faced due to the lack of documented and consistent processes? Mandatory Training for Users: • How is cybersecurity awareness training handled for new and existing users in the absence of a mandatory or scheduled program? Role-Based Security Training: • What measures are in place for providing specific role-based security training to designated personnel, and how do you manage without consistent implementation?"
+                                                        },
+                                                        {
+                                                            "level":  2,
+                                                            "prompts":  "Development of Training Processes: • What steps are you taking to develop processes ensuring all staff and students receive adequate cybersecurity training? Improvements in Cybersecurity Training: • Can you discuss the initiatives being developed to improve cybersecurity awareness training? • How are specific role-based training needs being addressed? Documentation and Records Retention: • Who is responsible for documenting and monitoring information system security training activities? • How is the records retention policy defined and implemented?"
+                                                        },
+                                                        {
+                                                            "level":  3,
+                                                            "prompts":  "Role-Based Security Training Provision: • How is role-based security training provided before personnel are authorized to access the information system or to perform their duties? Activity Documentation and Monitoring: • Can you describe how personnel actively document and monitor information system security training activities? • How are training records managed according to the retention policy? Pre-authorization Training Requirements: • How do you ensure individuals receive necessary role-based security training before they are given authorized access or assigned duties?"
+                                                        },
+                                                        {
+                                                            "level":  4,
+                                                            "prompts":  "Training Campaigns and Simulated Attacks: • Can you share how you integrate regular cybersecurity alerts, training campaigns, and simulated attacks into your awareness programs? • How is progress tracked and updated? Leadership Involvement in Training Monitoring: • How is leadership involved in continuously monitoring and improving the cybersecurity training process? Enforcement of Training Adherence: • How do designated staff monitor, measure, and enforce adherence to the cybersecurity training program? • Can you provide an example of how staff monitor, measure, and enforce adherence to the cybersecurity training program?"
+                                                        },
+                                                        {
+                                                            "level":  5,
+                                                            "prompts":  "Continuous Improvement in Training Methods: • How are cybersecurity awareness and training methods optimized for continually improving performance? • Can you discuss the incremental and innovative optimizations you\u0027re making? Metrics for Training Performance: • What metrics do you have to measure the effectiveness of training performance objectives? • How are training effectiveness metrics used to drive improvements? Leadership\u0027s Role in Training Initiatives: • Can you explain how leadership is instrumental in designing, implementing, revising, and monitoring training initiatives and progress? • How does leadership involvement impact the effectiveness of your cybersecurity training program?"
+                                                        }
+                                                    ]
+                           },
+                           {
+                               "name":  "DATA SECURITY",
+                               "levels":  [
+                                              {
+                                                  "level":  1,
+                                                  "title":  "LEVEL 1: INITIAL",
+                                                  "description":  "Processes to manage and protect stored and transmitted data are not documented or are ad hoc, inconsistent, or reactive. Processes and policies to protect the confidentiality, integrity, and availability of information and records are nonexistent or lacking. Leadership demonstrates an incomplete understanding of data protection and risk management."
+                                              },
+                                              {
+                                                  "level":  2,
+                                                  "title":  "LEVEL 2: REPEATABLE",
+                                                  "description":  "Stored and transmitted data is managed and monitored consistently. Processes are defined, repeatable, and scalable. Leadership demonstrates sufficient understanding of data protection and risk management. Formal process definitions and protocol for managing and monitoring data and information are being developed and documented."
+                                              },
+                                              {
+                                                  "level":  3,
+                                                  "title":  "LEVEL 3: DEFINED",
+                                                  "description":  "Meets REPEATABLE Maturity Level AND data includes mitigating controls, protections, and innovative technologies. Data management and protection processes are routinely enforced. Data records are formally managed and are consistent with implemented risk management strategies. Exceptions for non-encryption are routinely evaluated. Dedicated technology staff monitors and investigates alerts."
+                                              },
+                                              {
+                                                  "level":  4,
+                                                  "title":  "LEVEL 4: MANAGED",
+                                                  "description":  "Meets DEFINED Maturity Level AND risk evaluation processes and measures extend beyond compliance requirements and regulations. Risks are routinely identified, analyzed, monitored, and controlled. Results from evaluation and monitoring processes and activities are used to drive improvements. Technology staff demonstrates a high degree of skill and knowledge in managing and monitoring stored and transmitted data."
+                                              },
+                                              {
+                                                  "level":  5,
+                                                  "title":  "LEVEL 5: OPTIMIZED",
+                                                  "description":  "Meets MANAGED Maturity Level AND state-of-the-art data security solutions are used to provide enhanced visibility into system vulnerabilities. Innovative integrity-checking mechanisms are used to secure all information systems. Cybersecurity controls are adapted to meet the challenges of a dynamic information technology (IT) security environment. Technology staff demonstrates consistent ownership of proactive risk assessment and mitigation measures."
+                                              }
+                                          ],
+                               "interviewPrompts":  [
+                                                        {
+                                                            "level":  1,
+                                                            "prompts":  "Data Management Processes: • Can you describe your current processes for managing and protecting stored and transmitted data? • What challenges have you encountered due to the lack of documented or consistent data protection practices? Understanding of Data Protection and Risk Management: • How does leadership currently understand and approach data protection and risk management? • Can you provide examples of how leadership\u0027s understanding of data protection and risk management impacts data security measures? Policies for Data Confidentiality, Integrity, and Availability: • Without established processes and policies, how do you ensure the confidentiality, integrity, and availability of information and records?"
+                                                        },
+                                                        {
+                                                            "level":  2,
+                                                            "prompts":  "Consistent Management and Monitoring: • How are stored and transmitted data managed and monitored consistently in your organization? • What processes have you defined and implemented for managing and monitoring stored and transmitted data? Development of Formal Process Definitions: • What steps are you taking to develop and document formal process definitions and protocols for managing and monitoring data? Leadership\u0027s Understanding of Data Protection: • How has leadership demonstrated a sufficient understanding of data protection and risk management? • Can you give an example of how leadership\u0027s understanding of data protection and risk management has influenced data security practices?"
+                                                        },
+                                                        {
+                                                            "level":  3,
+                                                            "prompts":  "Enforcement of Data Management Processes: • How do you ensure the routine enforcement of data management and protection processes? • Can you discuss any mitigating controls or innovative technologies you\u0027ve implemented to enforce data management and protection processes? Management of Data Records: • How are data records formally managed, and how do they align with your risk management strategies? Monitoring and Investigation by Dedicated Staff: • Can you describe how dedicated technology staff monitor and investigate alerts related to data security? • How are exceptions for non-encryption evaluated?"
+                                                        },
+                                                        {
+                                                            "level":  4,
+                                                            "prompts":  "Beyond Compliance Risk Evaluation: • How do your risk evaluation processes and measures extend beyond compliance requirements? • Can you provide examples of identifying, analyzing, and controlling risks? Improvements Driven by Evaluation Results: • How are results from your evaluation and monitoring processes used to drive improvements in data security? Technology Staff Skills and Knowledge: • Can you speak to the skill level and knowledge your technology staff demonstrates in managing and monitoring stored and transmitted data? • How does your technology staff\u0027s expertise contribute to your data security strategies?"
+                                                        },
+                                                        {
+                                                            "level":  5,
+                                                            "prompts":  "Use of State-of-the-Art Data Security Solutions: • How do state-of-the-art data security solutions enhance visibility into system vulnerabilities within your organization? • Can you provide examples of your organization\u0027s state-of-the-art data security solutions in action? Adaptation of Cybersecurity Controls: • How are cybersecurity controls adapted to meet the challenges of a dynamic IT security environment? • Can you discuss the innovative integrity-checking mechanisms you use? Proactive Risk Assessment and Mitigation: • How does your technology staff demonstrate consistent ownership of proactive risk assessment and mitigation measures? • Can you share how your technology staff\u0027s proactive risk assessment and mitigation efforts have improved your organization\u0027s data security posture?"
+                                                        }
+                                                    ]
+                           },
+                           {
+                               "name":  "PLATFORM SECURITY",
+                               "levels":  [
+                                              {
+                                                  "level":  1,
+                                                  "title":  "LEVEL 1: INITIAL",
+                                                  "description":  "Processes to maintain and repair information systems and applications in accordance with vendor specifications and requirements are lacking. Maintenance systems and tools are not controlled. Maintenance activities are primarily reactive and are sporadic and/or inconsistent. Security controls to verify functionality after maintenance lack definition. Records of maintenance activities are ad hoc, inconsistent, or incomplete. Processes to prevent unauthorized access need definition and/or improvement."
+                                              },
+                                              {
+                                                  "level":  2,
+                                                  "title":  "LEVEL 2: REPEATABLE",
+                                                  "description":  "Systems and tools used to maintain and repair information systems and applications are routinely and consistently implemented per vendor specifications and requirements. Security controls are identified, documented, and implemented. Maintenance activity records are consistently kept. Processes are repeatable as the school system employs qualified “go-to” staff members for organizational knowledge. Formal definition and documentation of proactive and preventative maintenance activities are underway."
+                                              },
+                                              {
+                                                  "level":  3,
+                                                  "title":  "LEVEL 3: DEFINED",
+                                                  "description":  "Meets REPEATABLE Maturity Level AND documented processes to maintain and repair information systems and applications are implemented in accordance with vendor specifications and requirements. Maintenance systems, tools, and activities are approved, controlled, tested, and monitored. Post-maintenance security controls are routinely tested. Detailed records of maintenance activities are logged and retained. Remote maintenance of system assets is routinely approved, logged, and performed."
+                                              },
+                                              {
+                                                  "level":  4,
+                                                  "title":  "LEVEL 4: MANAGED",
+                                                  "description":  "Meets DEFINED Maturity Level AND maintenance of organizational information systems and applications is managed with acute care by designated, highly qualified staff. Regular maintenance is performed and verified to ensure all systems and components are effectively protected. Designated staff routinely monitors, measures, and enforces adherence to maintenance requirements and refresh cycles. The leadership chain of command is flexible to ensure resources are made available if there is a risk of noncompliance or poor performance."
+                                              },
+                                              {
+                                                  "level":  5,
+                                                  "title":  "LEVEL 5: OPTIMIZED",
+                                                  "description":  "Meets MANAGED Maturity Level AND information systems and applications are implemented in a proactive life cycle of maintenance and repair. Continuous improvement focused on efficiency and effectiveness is optimized and flexible. Change management is strategically planned and consistently prioritized. Designated technology staff is thoroughly trained in cybersecurity and prioritizes routine, proactive system maintenance to meet and exceed security objectives."
+                                              }
+                                          ],
+                               "interviewPrompts":  [
+                                                        {
+                                                            "level":  1,
+                                                            "prompts":  "System Maintenance and Repair Processes: • Can you describe how your school currently approaches maintaining and repairing information systems and applications without established processes? • How do you address information and application issues when they arise? Control of Maintenance Systems and Tools: • What challenges have you faced due to the lack of control over maintenance systems and tools? • How are maintenance activities typically handled? Security Controls and Maintenance Records: • How do you ensure the functionality of systems after maintenance activities, given that security controls lack definition? • Can you discuss how maintenance records are kept?"
+                                                        },
+                                                        {
+                                                            "level":  2,
+                                                            "prompts":  "Consistency in Maintenance Systems: • How are systems and tools for maintaining and repairing information systems and applications implemented consistently across the school? • Can you provide examples of how system and application maintenance and repair are handled? Maintenance Activity Documentation: • What process do you have to keep consistent maintenance activity records? • How have security controls been identified and documented? Definition of Proactive Maintenance Activities: • Can you describe the steps to formally define and document proactive and preventative maintenance activities?"
+                                                        },
+                                                        {
+                                                            "level":  3,
+                                                            "prompts":  "Documented Maintenance Processes: • How are documented processes for maintaining and repairing information systems and applications executed according to vendor specifications? • Can you describe the approval and monitoring process for maintaining and repairing information systems and applications according to vendor specifications? Post-maintenance Security Testing: • Can you explain how you routinely test post-maintenance security controls? • What procedures are in place for remote maintenance? Maintenance Records Management: • How are detailed records of maintenance activities logged and retained? • What impact has documentation related to maintenance activities had on your platform security?"
+                                                        },
+                                                        {
+                                                            "level":  4,
+                                                            "prompts":  "Maintenance Management: • How are maintaining organizational information systems and applications managed to ensure protection? • Can you describe how regular maintenance is verified? Monitoring and Adherence to Maintenance Requirements: • How do designated staff monitor, measure, and enforce adherence to maintenance requirements? • What processes are in place for refresh cycles? Leadership and Resource Allocation: • How does the leadership ensure flexibility in the chain of command to provide resources for maintaining platform security, especially if there\u0027s a risk of noncompliance?"
+                                                        },
+                                                        {
+                                                            "level":  5,
+                                                            "prompts":  "Proactive Life Cycle Maintenance: • Can you discuss how you maintain information systems and applications within a proactive life cycle? • What continuous improvement measures are in place for proactive information system and application maintenance? Change Management and Strategic Planning: • How is change management strategically planned and prioritized to enhance platform security? • Can you provide an example of how change management planning has improved efficiency? Training and Proactive System Maintenance: • How are designated technology staff trained in cybersecurity to prioritize routine, proactive system maintenance? • Can you share how your organization\u0027s technology staff training approach meets and exceeds security objectives?"
+                                                        }
+                                                    ]
+                           },
+                           {
+                               "name":  "TECHNOLOGY INFRASTRUCTURE RESILIENCE",
+                               "levels":  [
+                                              {
+                                                  "level":  1,
+                                                  "title":  "LEVEL 1: INITIAL",
+                                                  "description":  "Processes to protect student and staff devices are lacking, or are ad hoc, inconsistent, or reactive. Advanced protective technologies to shield devices from identified and potential threats are lacking or nonexistent. Security updates are not conducted in a timely, scheduled manner. Time for information technology (IT) staff to capture and review audit logs needs is sparsely allocated or nonexistent. Additional protection measures for removable media and network infrastructure components are needed."
+                                              },
+                                              {
+                                                  "level":  2,
+                                                  "title":  "LEVEL 2: REPEATABLE",
+                                                  "description":  "Processes to protect student and staff devices are being defined. Advanced protective technologies to shield devices from identified and potential threats are being researched and identified. Resources and budgets are being allocated. Qualified information technology (IT) staff are designated to maintain protection measures and security updates focused on ensuring the security and resilience of systems and assets. Protection measures for removable media and network infrastructure components are being determined."
+                                              },
+                                              {
+                                                  "level":  3,
+                                                  "title":  "LEVEL 3: DEFINED",
+                                                  "description":  "Meets REPEATABLE Maturity Level AND processes to protect student and staff devices are documented and implemented. Advanced protective technologies to protect devices are in place. Timely installation of security updates is applied. Audit log records are determined, documented, implemented, and reviewed in accordance with defined practices and policies. Removable media is protected, and use is restricted according to documented and implemented practices and policies. Communications and control networks are protected."
+                                              },
+                                              {
+                                                  "level":  4,
+                                                  "title":  "LEVEL 4: MANAGED",
+                                                  "description":  "Meets DEFINED Maturity Level AND the approach for implementing protective technologies is well deployed, with no significant gaps. Best practices drive performance levels, resulting in successful cybersecurity sustainability. Enhanced practices to protect changing tactics, techniques, and vulnerabilities of advanced persistent threats are reviewed and evaluated. Corrective actions are routinely taken to address identified weaknesses. Communications and control networks are routinely monitored. Automated checks are in place to avert cyber-attacks."
+                                              },
+                                              {
+                                                  "level":  5,
+                                                  "title":  "LEVEL 5: OPTIMIZED",
+                                                  "description":  "Meets MANAGED Maturity Level AND the effects of deployed protective technologies are measured using key indicators. Evaluation results are used to guide improvement activities. Protective technologies are standardized across the organization. Processes are enhanced by using sophisticated protective technologies to detect and respond to advanced threats and vulnerabilities. Protective technologies aided by automated checks are resilient with an end goal in mind to ensure system availability and cyber protection is sustained at 100%."
+                                              }
+                                          ],
+                               "interviewPrompts":  [
+                                                        {
+                                                            "level":  1,
+                                                            "prompts":  "Device Protection Processes: • Can you describe how your school protects student and staff devices without established processes? • What challenges have you encountered due to a lack of processes for protecting student and staff devices? Security Updates Management: • How is the scheduling and implementation of security updates handled, given their current status of needing to be conducted promptly? Removable Media and Network Protection: • What steps are you taking to address the need for additional protection measures for removable media and network infrastructure components?"
+                                                        },
+                                                        {
+                                                            "level":  2,
+                                                            "prompts":  "Definition of Protection Processes: • How are you defining processes to protect student and staff devices? • Can you share how advanced protective technologies are being researched and identified? Resource Allocation for Security: • What resources and budgets are allocated to maintain protection measures and conduct security updates? • How are IT staff designated for tasks related to protecting devices and conducting security updates? Determining Protection Measures: • Can you discuss the steps being taken to determine protection measures for removable media and network infrastructure components?"
+                                                        },
+                                                        {
+                                                            "level":  3,
+                                                            "prompts":  "Implementation of Device Protection: • How have you documented and implemented processes to protect devices? • What advanced protective technologies have been put in place? Management of Security Updates and Audit Logs: • Can you describe how timely installation of security updates is applied and how you manage the audit log records? Protection of Removable Media and Networks: • How is removable media protected, and how is its use restricted? • What measures are in place to protect communications and control networks?"
+                                                        },
+                                                        {
+                                                            "level":  4,
+                                                            "prompts":  "Protective Technology Deployment: • How is protective technology implemented across your school\u0027s infrastructure to ensure there are no significant gaps? • Can you share how best practices drive your cybersecurity sustainability? Handling of Advanced Persistent Threats: • How are enhanced practices reviewed and evaluated to protect against changing tactics, techniques, and vulnerabilities of advanced persistent threats? Network Monitoring and Automated Checks: • Can you explain the routine monitoring of communications and control networks and the use of automated checks to avert cyber-attacks?"
+                                                        },
+                                                        {
+                                                            "level":  5,
+                                                            "prompts":  "Measurement of Protective Technologies: • How are the effects of deployed protective technologies measured using key indicators, and how do these measurements guide improvement activities? Standardization and Sophisticated Technologies: • Can you discuss how protective technologies are standardized across the organization and enhanced with sophisticated technologies to detect and respond to advanced threats? Ensuring System Availability and Cyber Protection: • How do protective technologies, aided by automated checks, ensure system availability and cyber protection is sustained at 100%? • Can you provide examples of your organization\u0027s protective technologies in action?"
+                                                        }
+                                                    ]
+                           }
+                       ]
+    },
+    {
+        "title":  "Detect",
+        "overview":  [
+                         "Anomalies and events are not detected or not detected in a timely manner.",
+                         "Anomaly detection is established through detection tools and monitoring processes.",
+                         "A baseline of normal activity is established and applied against tools and processes to better identify malicious activity.",
+                         "Continuous monitoring of the cybersecurity program is established to detect threats in real time.",
+                         "Detection and monitoring solutions continuously learn behaviors and adjust to detection capabilities."
+                     ],
+        "categories":  [
+                           {
+                               "name":  "CONTINUOUS MONITORING",
+                               "levels":  [
+                                              {
+                                                  "level":  1,
+                                                  "title":  "LEVEL 1: INITIAL",
+                                                  "description":  "Processes to actively manage all assets are nonexistent or incomplete. Processes to detect, remove, and/or remediate unauthorized and unmanaged assets are ad hoc, incomplete, or reactive. Reviews of accounts, firewall rules, and penetration tests of external-facing systems are not consistently conducted. External vulnerability scans are not performed at least quarterly."
+                                              },
+                                              {
+                                                  "level":  2,
+                                                  "title":  "LEVEL 2: REPEATABLE",
+                                                  "description":  "Processes to actively manage assets are documented but are primarily reactive. A systematic approach to evaluation and improvement of key processes for detecting, removing, and/or remediating unauthorized and unmanaged assets is being formulated. Schedules for regular external vulnerability scans are being developed."
+                                              },
+                                              {
+                                                  "level":  3,
+                                                  "title":  "LEVEL 3: DEFINED",
+                                                  "description":  "Meets REPEATABLE Maturity Level AND processes to actively manage assets and to detect, remove, and/or remediate unauthorized and unmanaged assets are routinely implemented. Quarterly vulnerability scans are regularly conducted. Annual penetration tests are regularly conducted. Systematic account reviews are routinely performed."
+                                              },
+                                              {
+                                                  "level":  4,
+                                                  "title":  "LEVEL 4: MANAGED",
+                                                  "description":  "Meets DEFINED Maturity Level AND continuous monitoring processes to rapidly detect cybersecurity risks in real time are embedded in daily operations. Monitored performance of critical security processes using forensics, root cause analysis, threat intelligence, and incident response is prioritized. Effective correction actions are taken to address identified weakness or vulnerabilities."
+                                              },
+                                              {
+                                                  "level":  5,
+                                                  "title":  "LEVEL 5: OPTIMIZED",
+                                                  "description":  "Meets MANAGED Maturity Level AND continuous security monitoring uses data to verify the effectiveness of proactive measures and optimizes real-time threat detection to aid timely mitigation, improve cybersecurity maturity, and reduce risk. Gap analyses via multiple technologies are conducted to identify vulnerabilities, develop failsafe measures, and drive process improvement."
+                                              }
+                                          ],
+                               "interviewPrompts":  [
+                                                        {
+                                                            "level":  1,
+                                                            "prompts":  "Asset Management Practices: • How does your school manage and monitor its digital and physical assets? • What challenges have you faced in detecting, removing, or remediating unauthorized and unmanaged assets? Consistency in Security Reviews: • How often do you conduct reviews of accounts, firewall rules, and penetration tests of external-facing systems? • Can you provide examples of how your organization\u0027s security review practices might be inconsistent or reactive? External Vulnerability Scans: • Are external vulnerability scans part of your current cybersecurity practices? • If so, how frequently are they conducted, and what has been the outcome?"
+                                                        },
+                                                        {
+                                                            "level":  2,
+                                                            "prompts":  "Documentation of Asset Management Processes: • Can you discuss the documented processes you have for managing assets? • How are you moving from reactive measures to more systematic approaches? Improvement of Key Processes: • What steps are you taking to evaluate and improve key processes for detecting and managing unauthorized and unmanaged assets? Development of Vulnerability Scan Schedules: • How are schedules for regular external vulnerability scans being developed and implemented? • What prompted the development of your organization\u0027s vulnerability scan schedules?"
+                                                        },
+                                                        {
+                                                            "level":  3,
+                                                            "prompts":  "Routine Asset Management Implementation: • How are processes for managing assets and remediating unauthorized ones routinely implemented within your school? • Can you provide examples of asset management and remediation processes in action? Regular Security Assessments: • Can you explain how you conduct quarterly vulnerability scans and annual penetration tests? • How have scheduled security assessments impacted your cybersecurity posture? Systematic Account Reviews: • How are systematic account reviews performed, and how do they contribute to your overall security strategy?"
+                                                        },
+                                                        {
+                                                            "level":  4,
+                                                            "prompts":  "Integration of Continuous Monitoring: • How is continuous monitoring integrated into your daily operations? • Can you describe the technologies and methods you use for real-time threat detection? Monitoring and Analysis for Security: • How do you prioritize the monitored performance of critical security processes? • Can you share how forensics, root cause analysis, and threat intelligence contribute to your incident response? Corrective Actions for Weaknesses: • When weaknesses or vulnerabilities are identified, what process do you follow to take effective corrective actions? • Can you provide an example of a recent improvement based on this process?"
+                                                        },
+                                                        {
+                                                            "level":  5,
+                                                            "prompts":  "Effectiveness of Proactive Security Measures: • How do you use data from continuous security monitoring to verify the effectiveness of your proactive measures? • Can you discuss how security monitoring optimization has improved your threat detection capabilities? Gap Analysis for Vulnerability Identification: • How are gap analyses conducted to identify vulnerabilities? • Can you share how gap analyses have led—and continue to lead—to the development of failsafe measures and process improvements? Real-time Threat Detection and Mitigation: • How has optimized real-time threat detection aided in timely mitigation and reduced risk? • Can you provide examples of how your cybersecurity maturity has improved through real-time threat detection processes?"
+                                                        }
+                                                    ]
+                           },
+                           {
+                               "name":  "ADVERSE EVENT ANALYSIS",
+                               "levels":  [
+                                              {
+                                                  "level":  1,
+                                                  "title":  "LEVEL 1: INITIAL",
+                                                  "description":  "Processes to collect, review, and correlate event data from a cybersecurity attack are not documented or are ad hoc, inconsistent, or reactive. A baseline of network operations and expected data flows for staff, students, and systems is nonexistent or lacking. Technology staff assigned to analyzing the impact of events are needed. The capacity to detect anomalies is lacking."
+                                              },
+                                              {
+                                                  "level":  2,
+                                                  "title":  "LEVEL 2: REPEATABLE",
+                                                  "description":  "Anomalous activity is detected consistently but the approach is mostly reactive. Processes to collect, review, and correlate event data from a cybersecurity attack are being developed and improvement initiatives are being addressed. Technology staff are assigned to analyze the impact of events and the school system is transitioning from being reactionary. Staff are developing their skills in learning about pattern recognition and attack targets and methods."
+                                              },
+                                              {
+                                                  "level":  3,
+                                                  "title":  "LEVEL 3: DEFINED",
+                                                  "description":  "Meets REPEATABLE Maturity Level AND documented processes to collect, review, and correlate event data from multiple sources and technology systems are in place. A baseline of network operations and expected data flows is established and managed. Processes for collecting evidence and conducting forensic analysis are documented and in place. Designated technology staff routinely analyze the impact of events. Detected anomalies are analyzed via a formalized process. Pattern recognition technologies are used."
+                                              },
+                                              {
+                                                  "level":  4,
+                                                  "title":  "LEVEL 4: MANAGED",
+                                                  "description":  "Meets DEFINED Maturity Level AND rigorous analytics generated from anomalies and trends at the subprocess level of the school system’s applications, systems, and databases are used. Formal analysis is conducted of patterns of information technology activities outside of normal behavior. Underlying causes of vulnerabilities are identified through root-cause analysis. Issues related to vulnerability identification are tracked and reported to relevant managers."
+                                              },
+                                              {
+                                                  "level":  5,
+                                                  "title":  "LEVEL 5: OPTIMIZED",
+                                                  "description":  "Meets MANAGED Maturity Level AND advanced processes generating immediate results are used to identify and detect anomalies and events and trigger rapid response. Cybersecurity technologies are based on threat intelligence combined with data analytics to segregate normal behavior from abnormal activity. Proactive technologies alert unauthorized access or suspicious behavior in real time."
+                                              }
+                                          ],
+                               "interviewPrompts":  [
+                                                        {
+                                                            "level":  1,
+                                                            "prompts":  "Event Data Analysis Processes: • Can you describe how your school currently handles collecting, reviewing, and correlating event data following a cybersecurity attack? • What challenges have you encountered due to the lack of documented processes? Baseline Network Operations: • How do you manage and understand network operations and expected data flows without a baseline? • What impact has the lack of baseline network operations had on your ability to detect anomalies? Technology Staff Assignment: • What has been your approach to assigning technology staff to analyze the impact of events? • How do you cope with the lack of capacity to detect anomalies effectively?"
+                                                        },
+                                                        {
+                                                            "level":  2,
+                                                            "prompts":  "Detection of Anomalous Activity: • How consistently is anomalous activity detected within your network? • Can you share how you are transitioning from a reactive to a more proactive approach to detecting anomalous network activity? Development of Event Data Processes: • What steps are you taking to develop processes for collecting, reviewing, and correlating event data from cybersecurity attacks? • How are improvement initiatives being prioritized for collecting, reviewing, and correlating event data from cybersecurity attacks? Skill Development in Staff: • How are staff developing their skills in pattern recognition and understanding attack targets and methods? • What training or resources are being provided to help staff develop their skills in pattern recognition and understanding attack targets and methods?"
+                                                        },
+                                                        {
+                                                            "level":  3,
+                                                            "prompts":  "Documentation of Processes: • Can you discuss the documented processes for collecting, reviewing, and correlating event data from multiple sources? • How do processes for collecting, reviewing, and correlating event data from multiple sources improve your response to cybersecurity incidents? Baseline Establishment: • How have you established and managed a baseline of network operations and expected data flows? • What benefits has establishing and maintaining a baseline of network operations and expected data flows brought to your cybersecurity efforts? Evidence Collection and Analysis: • Can you explain your evidence collection and forensic procedures? • How do designated technology staff routinely analyze the impact of detected anomalies?"
+                                                        },
+                                                        {
+                                                            "level":  4,
+                                                            "prompts":  "Use of Rigorous Analytics: • How are rigorous analytics from anomalies and trends used in your school’s applications, systems, and databases? • Can you provide an example of how analyzing anomalies and trends used in your school\u0027s applications, systems, and databases has identified underlying causes for vulnerabilities? Formal Analysis of IT Activity Patterns: • How is a formal analysis conducted on patterns of IT activities outside of expected behavior? • What has been learned from analyses of anomalous IT activity patterns? Vulnerability Identification Tracking: • Can you discuss how issues related to vulnerability identification are tracked and reported? • How do vulnerability identification processes inform your cybersecurity strategy?"
+                                                        },
+                                                        {
+                                                            "level":  5,
+                                                            "prompts":  "Advanced Processes for Anomaly Detection: • How do advanced processes help you identify and detect anomalies and events to trigger rapid responses? • Can you share a recent example of when implementing processes for identifying and detecting anomalies was particularly effective? Integration of Cybersecurity Technologies: • How are cybersecurity technologies based on threat intelligence and data analytics used to distinguish normal from abnormal activity? • How has the integration of cybersecurity technologies affected your ability to proactively detect unauthorized access or suspicious behavior? Real-Time Alert Technologies: • Can you describe the proactive technologies in place that alert to unauthorized access or suspicious behavior in real time? • How have alert technologies enhanced your cybersecurity posture?"
+                                                        }
+                                                    ]
+                           }
+                       ]
+    },
+    {
+        "title":  "Respond",
+        "overview":  [
+                         "Processes for responding to cybersecurity incidents are reactive or non-existent.",
+                         "Analysis capabilities are applied consistently to cybersecurity incidents by Incident Response (IR) roles.",
+                         "An Incident Response (IR) plan defines steps for pre-, during, and post-incident preparation, analysis, containment, and eradication.",
+                         "Response times and impacts of cybersecurity incidents are monitored and minimized.",
+                         "Detection and monitoring solutions continuously learn behaviors and adjust to detection capabilities."
+                     ],
+        "categories":  [
+                           {
+                               "name":  "INCIDENT MANAGEMENT",
+                               "levels":  [
+                                              {
+                                                  "level":  1,
+                                                  "title":  "LEVEL 1: INITIAL",
+                                                  "description":  "Approved processes to maintain a comprehensive cybersecurity incident response plan are lacking or nonexistent. Designated staff responsible for developing and implementing of the incident response plan have not been identified and/or trained."
+                                              },
+                                              {
+                                                  "level":  2,
+                                                  "title":  "LEVEL 2: REPEATABLE",
+                                                  "description":  "An incident response plan is documented. Improvement is a priority as evidenced in strategic plans. The beginnings of a systematic approach to the evaluation and improvement of key processes are evident. Appropriate staff are designated and trained to ensure a timely response to detected cybersecurity events."
+                                              },
+                                              {
+                                                  "level":  3,
+                                                  "title":  "LEVEL 3: DEFINED",
+                                                  "description":  "Meets REPEATABLE Maturity Level AND a comprehensive, formal cybersecurity incident response plan is documented and annually reviewed. Designated staff are responsible for participating in the development and implementation of the practices outlined in the plan. In-house and third-party scenario-based plan testing is routinely conducted. Results are systematically evaluated."
+                                              },
+                                              {
+                                                  "level":  4,
+                                                  "title":  "LEVEL 4: MANAGED",
+                                                  "description":  "Meets DEFINED Maturity Level AND a customized, scenario-based cyber event playbook is used to measure and evaluate risk. Business continuity, resilience, and agility are prioritized and incorporated in scenarios. Planning time is allocated to evaluate impact, response, and recovery. Practice is incorporated to strengthen recovery plans. Findings through practice are instrumental in generating action plans."
+                                              },
+                                              {
+                                                  "level":  5,
+                                                  "title":  "LEVEL 5: OPTIMIZED",
+                                                  "description":  "Meets MANAGED Maturity Level AND the documented, reflective, flexible response planning process pervades organizational culture and undergoes continuous improvement on an annual basis, or more frequently where possible. Results from feedback drive change and aid retrospective (lessons learned) sessions and initiatives."
+                                              }
+                                          ],
+                               "interviewPrompts":  [
+                                                        {
+                                                            "level":  1,
+                                                            "prompts":  "Incident Response Plan Status: • Can you describe the current status of your cybersecurity incident response plan? • How does the school handle incidents without a formal plan? Staff Responsibilities and Training: • Who is responsible for responding to cybersecurity incidents in your school, and what training have they received to manage these situations effectively? Process and Procedure Development: • What steps are you taking to develop and implement an approved process for managing cybersecurity incidents? • How are priorities set without designated staff or a formal plan to manage cybersecurity incidents?"
+                                                        },
+                                                        {
+                                                            "level":  2,
+                                                            "prompts":  "Documentation and Improvement Priorities: • Could you walk me through your documented incident response plan? • How are improvements to the documented incident response plan prioritized in your strategic planning? Staff Designation and Training: • Who has been designated to handle cybersecurity incidents, and what training do they undergo to prepare for this responsibility? Systematic Approach to Evaluation: • What beginnings of a systematic approach do you have in place for evaluating and improving key processes within your incident management strategy?"
+                                                        },
+                                                        {
+                                                            "level":  3,
+                                                            "prompts":  "Plan Documentation and Review: • How comprehensive is your cybersecurity incident response plan, and can you discuss the annual review process? • How are staff involved in the annual review process for the incident response plan? Scenario-based Plan Testing: • Could you provide examples of in-house and third-party scenario-based tests conducted? • How are in-house and third-party scenario-based test results used to improve your response plan? Staff Participation in Development: • How do designated staff participate in developing and implementing your incident response practices? • Can you describe the impact of the involvement of designated staff in developing and implementing your incident response practices?"
+                                                        },
+                                                        {
+                                                            "level":  4,
+                                                            "prompts":  "Use of Cyber Event Playbook: • How does your customized, scenario-based cyber event playbook contribute to measuring and evaluating risk? • Can you share insights from recent scenario-based cyber event exercises? Incorporation of Business Continuity: • How have business continuity, resilience, and agility been prioritized and incorporated into your scenario planning? Findings and Action Plans: • Can you discuss how you use practice scenario findings to strengthen recovery plans and generate actionable improvements?"
+                                                        },
+                                                        {
+                                                            "level":  5,
+                                                            "prompts":  "Reflective and Flexible Planning: • How is the reflective and flexible response planning process integrated into your organizational culture? • Can you provide examples of how the reflective and flexible response planning process has evolved? Continuous Improvement and Feedback: • How do you incorporate continuous improvement into your incident management process, and how are results from feedback used to drive change? Lessons Learned Initiatives: • Can you describe the lessons learned initiatives that have resulted from your incident management practices? • How have lessons learned initiatives impacted your overall cybersecurity posture?"
+                                                        }
+                                                    ]
+                           },
+                           {
+                               "name":  "INCIDENT ANALYSIS",
+                               "levels":  [
+                                              {
+                                                  "level":  1,
+                                                  "title":  "LEVEL 1: INITIAL",
+                                                  "description":  "Processes to analyze incidents are insufficient. Adequate response and support for recovery activities are ad hoc, inconsistent, or reactive."
+                                              },
+                                              {
+                                                  "level":  2,
+                                                  "title":  "LEVEL 2: REPEATABLE",
+                                                  "description":  "A cross-functional process is employed to examine incidents. Systematic response and support for recovery activities are being developed. Proactive evaluation and improvement of key processes are being prioritized."
+                                              },
+                                              {
+                                                  "level":  3,
+                                                  "title":  "LEVEL 3: DEFINED",
+                                                  "description":  "Meets REPEATABLE Maturity Level AND incidents are analyzed and categorized consistently with response plans. Measures used in the analysis include compliance with federal and state regulations. Analysis findings and results are systematically evaluated. Additional third-party analysis is conducted."
+                                              },
+                                              {
+                                                  "level":  4,
+                                                  "title":  "LEVEL 4: MANAGED",
+                                                  "description":  "Meets DEFINED Maturity Level AND response analysis is culturally embedded and drives design, implementation, and evaluation. Detailed analysis is managed at the subprocess level to understand causation and correlation. Analysis drives processes identification and inventories for effectively mitigating risks and determining response levels."
+                                              },
+                                              {
+                                                  "level":  5,
+                                                  "title":  "LEVEL 5: OPTIMIZED",
+                                                  "description":  "Meets MANAGED Maturity Level AND broad incident analysis is employed to identify shortfalls and performance gaps and drive process improvement. A team of knowledgeable information technology (IT) staff measures and assesses the full cybersecurity landscape, analyzing possible issues and identifying improvement opportunities."
+                                              }
+                                          ],
+                               "interviewPrompts":  [
+                                                        {
+                                                            "level":  1,
+                                                            "prompts":  "Incident Analysis Processes: • Can you describe how your school currently approaches incident analysis? • How do you ensure effective response and support recovery activities without consistent incident analysis processes? Ad Hoc Responses: • In recent incidents, how have you managed to conduct investigations and support recovery efforts on an ad hoc basis? • Can you provide an example of how you investigated and responded to a recent cybersecurity incident? Consistency and Reactivity: • How do you identify the need to improve your incident analysis and recovery activities? • What challenges have you faced in improving your incident analysis and recovery activities due to the lack of consistent processes?"
+                                                        },
+                                                        {
+                                                            "level":  2,
+                                                            "prompts":  "Cross-Functional Examination: • How does your cross-functional process work for examining incidents? • What cross-functionality process improvements are you currently prioritizing? Systematic Response Development: • Can you share how your school is developing systematic responses and support for recovery activities? • What role does proactive evaluation play in the process of developing systematic responses and support for recovery activities? Transition to Prioritized Improvement: • How are you transitioning to a more proactive evaluation and improvement of key processes in incident analysis and recovery? • Can you give an example of a recent shift from a reactive to a more proactive approach to incident analysis and recovery?"
+                                                        },
+                                                        {
+                                                            "level":  3,
+                                                            "prompts":  "Consistent Analysis and Categorization: • How do you ensure incidents are analyzed and categorized consistently? • Can you discuss how compliance with regulations impacts your response plans? Systematic Evaluation of Findings: • How are analysis findings and results systematically evaluated in your school? • Can you provide an example of how systematic evaluation of findings has influenced your response to an incident? Third-party Analysis Contribution: • What role does third-party analysis play in your incident investigation process? • How does external analysis contribute to your overall incident management strategy?"
+                                                        },
+                                                        {
+                                                            "level":  4,
+                                                            "prompts":  "Cultural Embedment of Response Analysis: • How is response analysis culturally embedded within your school? • Can you describe how embedded response analysis influences your incident management processes\u0027 design, implementation, and evaluation? Subprocess Level Management: • How do you manage detailed analysis at the subprocess level to understand causation and correlation? • Can you share how detailed subprocess analysis has helped mitigate risks? Analysis-driven Process Identification: • How does your analysis drive the identification of processes and inventories for effectively mitigating risks and determining response levels? • Can you provide an example of an improvement made based on analysis-driven process identification?"
+                                                        },
+                                                        {
+                                                            "level":  5,
+                                                            "prompts":  "Broad Incident Analysis for Improvement: • How does broad incident analysis help you identify shortfalls and performance gaps? • Can you discuss how broad incident analysis leads to process improvement? IT Staff\u0027s Role in Cybersecurity Landscape Analysis: • Can you describe how your IT staff measures and assesses the full cybersecurity landscape? • How does your IT staff identify possible issues and improvement opportunities? Continuous Improvement Process: • How is the continuous improvement process integrated into your incident analysis and recovery strategies? • Can you provide an example of a recent continuous improvement initiative?"
+                                                        }
+                                                    ]
+                           },
+                           {
+                               "name":  "INCIDENT RESPONSE REPORTING AND COMMUNICATION",
+                               "levels":  [
+                                              {
+                                                  "level":  1,
+                                                  "title":  "LEVEL 1: INITIAL",
+                                                  "description":  "Processes to define orderly response activities are lacking or nonexistent. Criteria for incident reporting are not clearly defined or are primarily reactive. Communication processes for incident reporting are unclear or nonexistent."
+                                              },
+                                              {
+                                                  "level":  2,
+                                                  "title":  "LEVEL 2: REPEATABLE",
+                                                  "description":  "Processes to define orderly response activities are being developed. Proactive coordination with internal and external stakeholders is improving. Consistent criteria for incident reporting is being determined. A systematic approach to evaluation and improvement of key processes is being designed."
+                                              },
+                                              {
+                                                  "level":  3,
+                                                  "title":  "LEVEL 3: DEFINED",
+                                                  "description":  "Meets REPEATABLE Maturity Level AND processes to ensure orderly response activities are defined and shared. Coordination with stakeholders is in line with response plans. Information is shared with leadership and internal and external stakeholders to achieve transparent situational awareness."
+                                              },
+                                              {
+                                                  "level":  4,
+                                                  "title":  "LEVEL 4: MANAGED",
+                                                  "description":  "Meets DEFINED Maturity Level AND processes are documented in a managed cybersecurity incident communication plan. Incident responsibilities are assigned to designated staff members. Defined criteria are used to measure the success of communications. Evaluation of the communication process is periodically conducted. Evaluation results drive tracked improvement initiatives."
+                                              },
+                                              {
+                                                  "level":  5,
+                                                  "title":  "LEVEL 5: OPTIMIZED",
+                                                  "description":  "Meets MANAGED Maturity Level AND communications are optimized through collaboration with external cybersecurity and privacy groups, associations, and solution providers. Cybersecurity alerts and recommendations are obtained from and shared with external sources. Response activities are optimized using best practices, innovative processes, and technological aids."
+                                              }
+                                          ],
+                               "interviewPrompts":  [
+                                                        {
+                                                            "level":  1,
+                                                            "prompts":  "Orderly Response Activities: • Can you describe how your school currently coordinates response activities following an incident? • How do you decide when and how to report incidents internally or externally? Incident Reporting Criteria: • What criteria do you currently use for reporting cybersecurity incidents? • How has your current approach to reporting cybersecurity incidents approach affected your ability to respond effectively? Communication Processes: • How are communication processes for incident reporting structured within your school? • Can you provide an example of a challenge you\u0027ve faced due to unclear communication processes?"
+                                                        },
+                                                        {
+                                                            "level":  2,
+                                                            "prompts":  "Development of Response Activities: • How are you developing processes for defining orderly response activities? • What steps have you taken to improve coordination with internal and external stakeholders? Criteria Determination for Incident Reporting: • How does your school determine consistent criteria for incident reporting? • Can you share how developing and implementing consistent incident reporting criteria has changed from a primarily reactive approach? Systematic Evaluation and Improvement: • What approach are you taking to systematically evaluate and improve key incident response reporting and communication processes?"
+                                                        },
+                                                        {
+                                                            "level":  3,
+                                                            "prompts":  "Orderly Response Processes: • How have you defined and shared processes to ensure orderly response activities? • Can you give an example of how implementing processes to ensure orderly response activities has streamlined coordination with stakeholders? Information Sharing: • How do you ensure transparent situational awareness by sharing information with leadership and internal and external stakeholders? Stakeholder Coordination: • Can you discuss how your coordination with stakeholders aligns with your response plans? • How has coordination with stakeholders improved your incident response outcomes?"
+                                                        },
+                                                        {
+                                                            "level":  4,
+                                                            "prompts":  "Cybersecurity Incident Communication Plan: • Can you explain how your cybersecurity incident communication plan is documented and managed? • How are incident responsibilities assigned? Success Measurement of Communications: • What criteria do you use to measure communication success following an incident? • How often do you evaluate processes for post-incident communication? Improvement Initiatives: • How do evaluation results inform your incident response reporting and communication improvement initiatives? • Can you share an example of an incident response communication improvement made recently?"
+                                                        },
+                                                        {
+                                                            "level":  5,
+                                                            "prompts":  "Collaboration with External Groups: • How does collaboration with external cybersecurity experts, privacy groups, and solution providers optimize your communications? • Can you provide an example of how external insights have improved your response activities? Sharing with External Sources: • How do you manage cybersecurity alerts and recommendations with external sources? • How has information sharing with external sources influenced your incident response strategies? Optimization of Response Activities: • Can you describe how you\u0027ve optimized response activities using best practices, innovative processes, and technological aids? • How have response activity improvements and optimizations affected your overall cybersecurity posture?"
+                                                        }
+                                                    ]
+                           },
+                           {
+                               "name":  "INCIDENT MITIGATION",
+                               "levels":  [
+                                              {
+                                                  "level":  1,
+                                                  "title":  "LEVEL 1: INITIAL",
+                                                  "description":  "A systematic approach to prevent the expansion of an event is lacking or nonexistent. Processes or technologies to mitigate the effects of and eradicate an incident are not defined, and practices are ad hoc, inconsistent, and reactive."
+                                              },
+                                              {
+                                                  "level":  2,
+                                                  "title":  "LEVEL 2: REPEATABLE",
+                                                  "description":  "Processes for preventing the expansion of an event, mitigate its effects, and eradicate the incident are defined. The overall approach for cyber defense is consistent. Collaborative problem solving is used to prevent the expansion of an event."
+                                              },
+                                              {
+                                                  "level":  3,
+                                                  "title":  "LEVEL 3: DEFINED",
+                                                  "description":  "Meets REPEATABLE Maturity Level AND activities are routinely performed to prevent event expansion. Processes and technologies to mitigate the effects of and eradicate an incident are available and practiced. Incidents are contained. Identified vulnerabilities are mitigated and/or documented as accepted risks."
+                                              },
+                                              {
+                                                  "level":  4,
+                                                  "title":  "LEVEL 4: MANAGED",
+                                                  "description":  "Meets DEFINED Maturity Level AND sophisticated response mitigation during a cybersecurity incident is routinely managed using best practices, tools, and techniques. Effective mitigation is used to isolate and block threats in near real time. Processes are universally deployed and maintained to manage mitigation and generate data."
+                                              },
+                                              {
+                                                  "level":  5,
+                                                  "title":  "LEVEL 5: OPTIMIZED",
+                                                  "description":  "Meets MANAGED Maturity Level AND risk mitigation activities and technical mechanisms are proactively and interactively improved. Roadmap development is prioritized. Leadership understands the importance of building resilience. Resources are made available when gaps in capabilities are identified. Vulnerabilities are cataloged and best practices are collaboratively established."
+                                              }
+                                          ],
+                               "interviewPrompts":  [
+                                                        {
+                                                            "level":  1,
+                                                            "prompts":  "Systematic Approach to Incident Expansion Prevention: • Can you describe how your school attempts to prevent the expansion of cybersecurity incidents? • What challenges have you faced without a systematic approach to preventing incident expansion? Mitigation and Eradication Practices: • How do you currently approach the mitigation and eradication of incidents? • Are there any specific processes or technologies you use to mitigate and eradicate incidents, or is the approach more ad hoc? Consistency and Reactivity in Practices: • In what ways are your current practices for dealing with incidents inconsistent or reactive? • Can you provide an example of how inconsistent or reactive approaches to cybersecurity incidents have affected incident management?"
+                                                        },
+                                                        {
+                                                            "level":  2,
+                                                            "prompts":  "Definition of Processes: • What processes have you defined for preventing the expansion of an event and mitigating its effects? • How did you arrive at your current processes for preventing incident expansion and mitigating the effects? Consistency in Cyber Defense: • Can you discuss how your approach to cyber defense has become more consistent? • What specific collaborative problem-solving techniques have you used to ensure cyber defense is more consistent? Event Expansion Prevention: • How do you collaborate internally or externally to prevent the expansion of cybersecurity events? • Can you provide an example of a recent cybersecurity incident and how it was managed to ensure it was contained?"
+                                                        },
+                                                        {
+                                                            "level":  3,
+                                                            "prompts":  "Routine Prevention Activities: • What activities do you routinely perform to prevent the expansion of incidents? • How are routine incident containment activities integrated into your incident response plan? Containment and Mitigation Practices: • How are incidents contained and their effects mitigated with the help of available processes and technologies? • Can you walk me through a recent example of when processes and technologies were put in place to contain an incident? Vulnerability Mitigation Documentation: • How are identified vulnerabilities managed? • Are vulnerabilities mitigated immediately or documented as accepted risks, and under what criteria?"
+                                                        },
+                                                        {
+                                                            "level":  4,
+                                                            "prompts":  "Sophisticated Response Mitigation: • How do you manage sophisticated response mitigation during cybersecurity incidents? • What best practices, tools, and techniques do you use for response mitigation? Isolation and Blocking of Threats: • Can you describe how you use effective near-real-time mitigation strategies to isolate and block threats? Universal Deployment of Processes: • How are processes universally deployed and maintained to manage mitigation and generate data? • How does data from response mitigation processes inform future incident response strategies?"
+                                                        },
+                                                        {
+                                                            "level":  5,
+                                                            "prompts":  "Proactive Improvement of Mitigation Activities: • How are your school\u0027s risk mitigation activities and technical mechanisms proactively and interactively improved? Leadership and Resource Allocation: • How does leadership demonstrate understanding and commitment to building resilience? • Can you give an example of resources being allocated to address capability gaps? Cataloging Vulnerabilities and Establishing Best Practices: • How are vulnerabilities cataloged and best practices collaboratively established? • How do current processes for cataloging vulnerabilities and collaboratively developing best practices contribute to your school\u0027s overall cybersecurity posture?"
+                                                        }
+                                                    ]
+                           }
+                       ]
+    },
+    {
+        "title":  "Recover",
+        "overview":  [
+                         "Processes for recovering from cybersecurity incidents are reactive or non-existent.",
+                         "Resiliency and recovery capabilities are applied consistently to cybersecurity incidents impacting school system operations.",
+                         "Continuity and disaster recovery plans define steps to continue critical functions, recover, and resume normal operations.",
+                         "Recovery times and impacts of incidents are monitored and minimized.",
+                         "The capabilities of all Information Technology (IT) personnel, processes, and technologies are regularly tested and updated."
+                     ],
+        "categories":  [
+                           {
+                               "name":  "INCIDENT RECOVERY PLAN EXECUTION",
+                               "levels":  [
+                                              {
+                                                  "level":  1,
+                                                  "title":  "LEVEL 1: INITIAL",
+                                                  "description":  "Incident plans are nonexistent or lacking. Recovery action steps for educational continuity are not determined. If a plan is present, it does not align with strategic roadmaps or cybersecurity objectives."
+                                              },
+                                              {
+                                                  "level":  2,
+                                                  "title":  "LEVEL 2: REPEATABLE",
+                                                  "description":  "Incident plans are documented. Recovery action steps describe restoration procedures with clearly defined roles and responsibilities. Plan execution is detailed in depth for during and after cyber incidents."
+                                              },
+                                              {
+                                                  "level":  3,
+                                                  "title":  "LEVEL 3: DEFINED",
+                                                  "description":  "Meets REPEATABLE Maturity Level AND asset protection, direct and indirect processes affecting normal operations. Evidence of plans being executed during or after cyber events is documented."
+                                              },
+                                              {
+                                                  "level":  4,
+                                                  "title":  "LEVEL 4: MANAGED",
+                                                  "description":  "Meets DEFINED Maturity Level AND incident plans are well managed. Pre-incident asset protection and recovery processes are routinely successful. Business continuity is tested. Leadership and information technology (IT) teams regularly review recovery processes. Gap analyses are completed with identified weaknesses translating to actionable improvement plans."
+                                              },
+                                              {
+                                                  "level":  5,
+                                                  "title":  "LEVEL 5: OPTIMIZED",
+                                                  "description":  "Meets MANAGED Maturity Level AND fully integrated incident plans are embedded into daily decision making. Recovery planning is optimized using innovative techniques. Post-recovery (staged recovery planning or real-time cyber event recovery) includes addressing lessons learned and making improvements to the recovery plan. Leadership is committed to evolving strategic plans based on education market sector trends."
+                                              }
+                                          ],
+                               "interviewPrompts":  [
+                                                        {
+                                                            "level":  1,
+                                                            "prompts":  "Existence and Quality of Incident Plans: • Can you describe the current state of your incident response plan, particularly regarding recovery actions for educational continuity? • How does your current incident response plan align with your strategic roadmap and cybersecurity objectives? Determination of Recovery Action Steps: • How do you determine the steps for recovery action in a cybersecurity incident? • Are recovery action steps documented or communicated within the school? Alignment with Objectives: • How have you managed recovery without a formal plan in cybersecurity incidents? • How do your current incident recovery approaches align with your school\u0027s broader objectives?"
+                                                        },
+                                                        {
+                                                            "level":  2,
+                                                            "prompts":  "Documentation and Detailing of Incident Plans: • Can you walk me through your documented incident plan, especially the recovery action steps? • How are roles and responsibilities defined within the current documented incident recovery plan? Execution of the Plan: • How is your plan executed during and after cyber incidents? • Can you provide an example of a past incident and how the documented plan facilitated recovery? Clarity of Restoration Procedures: • Can you explain the restoration procedures outlined in your recovery action steps? • How do the restoration procedures outlined in your documented recovery action steps ensure the continuity of educational services?"
+                                                        },
+                                                        {
+                                                            "level":  3,
+                                                            "prompts":  "Asset Protection and Normal Operations: • How do your recovery plans address asset protection and its impact on everyday operations? • Can you share evidence or examples of executed recovery plans in actual incidents? Documentation of Recovery Efforts: • How are your recovery efforts, including asset protection and direct and indirect processes affecting normal operations, documented and evaluated following an incident? Execution Evidence: • Can you provide instances of executed recovery plans during or after cyber events? • How were recovery actions documented and assessed for effectiveness?"
+                                                        },
+                                                        {
+                                                            "level":  4,
+                                                            "prompts":  "Management and Success of Incident Plans: • How do you manage and assess the success of your incident plans, especially regarding pre-incident asset protection and recovery processes? Business Continuity Testing: • Can you describe how you test business continuity within your school? • How do leadership and IT teams review and improve recovery processes based on business continuity tests? Gap Analysis and Improvement Plans: • How do you conduct gap analyses of your recovery processes, and how are identified weaknesses translated into actionable improvement plans?"
+                                                        },
+                                                        {
+                                                            "level":  5,
+                                                            "prompts":  "Integration and Innovation in Recovery Planning: • How are your incident plans integrated into daily decision-making? • Can you provide examples of how you\u0027ve optimized recovery planning using innovative techniques? Post-Recovery Improvements: • How do you address lessons learned post-recovery, and what improvements have you made to the recovery plan based on these insights? Leadership and Strategic Evolution: • How is leadership committed to evolving strategic plans based on trends in the education market? • Can you give examples of how you\u0027ve adapted recovery planning in response to education market trends?"
+                                                        }
+                                                    ]
+                           },
+                           {
+                               "name":  "INCIDENT RECOVERY COMMUNICATION",
+                               "levels":  [
+                                              {
+                                                  "level":  1,
+                                                  "title":  "LEVEL 1: INITIAL",
+                                                  "description":  "A systematic approach for communicating restoration activities is lacking or nonexistent. Conditions and responsibilities under which the recovery plan is to be invoked are not defined or documented."
+                                              },
+                                              {
+                                                  "level":  2,
+                                                  "title":  "LEVEL 2: REPEATABLE",
+                                                  "description":  "Processes are being developed to manage media interactions, handle and ‘triage’ communication requests, and ensure staff are apprised of public relations and privacy policies. Action steps to reduce damage inflicted by an event are defined. Communications include steps for handling data breaches and recovery activities."
+                                              },
+                                              {
+                                                  "level":  3,
+                                                  "title":  "LEVEL 3: DEFINED",
+                                                  "description":  "Meets REPEATABLE Maturity Level AND conditions and responsibilities under which the recovery plan is to be invoked are documented. Communication about restoration activities and responsibilities is documented. Public relations, including reputation restoration after an event, are managed. Recovery activities are communicated to internal and external stakeholders, law enforcement agencies, and leadership teams."
+                                              },
+                                              {
+                                                  "level":  4,
+                                                  "title":  "LEVEL 4: MANAGED",
+                                                  "description":  "Meets DEFINED Maturity Level AND a coordinated communication response to achieve a balance between the cybersecurity investigation and recovery is managed with concern. Communication channels are identified in advance. Communication templates derived from a playbook or tabletop exercises are described. Improvement initiatives are set forth based on the evaluation results from communication exercises."
+                                              },
+                                              {
+                                                  "level":  5,
+                                                  "title":  "LEVEL 5: OPTIMIZED",
+                                                  "description":  "Meets MANAGED Maturity Level AND recovery communications undergo a continuous, cyclical improvement process and include a documented feedback and communication strategy. Feedback analysis identifies shortfalls or gaps in performance and drives measurable process improvement. Transparent communication is an integrated practice. A playbook with predefined communication topics helps to restore order and optimize the communication strategy."
+                                              }
+                                          ],
+                               "interviewPrompts":  [
+                                                        {
+                                                            "level":  1,
+                                                            "prompts":  "Communication Strategy for Restoration Activities: • How do you currently communicate about restoration activities following an incident? • Is there a formal process or policy in place for communicating about post-incident restoration activities? Recovery Plan Invocation Conditions: • Can you describe the conditions under which you would invoke your recovery plan? • Are the conditions warranting execution of the recovery plan and the responsibilities associated with them documented? Systematic Approach Absence: • Without a systematic approach to communication, how have you managed communication regarding recovery activities in past incidents?"
+                                                        },
+                                                        {
+                                                            "level":  2,
+                                                            "prompts":  "Development of Communication Processes: • What processes are you developing to manage media interactions and triage communication requests during recovery activities? Public Relations and Privacy Policy Awareness: • How do you ensure your staff knows and adheres to public relations and privacy policies during incident recovery? Action Steps for Event Damage Reduction: • Can you detail the action steps defined for reducing damage from an incident? • How do post-incident action steps include handling data breaches and recovery activities?"
+                                                        },
+                                                        {
+                                                            "level":  3,
+                                                            "prompts":  "Documentation of Recovery Plan Conditions: • How are the conditions and responsibilities for invoking the recovery plan documented and communicated to relevant stakeholders? Management of Public Relations Post-Event: • How do you manage public relations and ensure your school\u0027s reputation is protected and/or restored after an incident? • How is the current process for managing public relations and protecting or restoring the school\u0027s reputation integrated with your recovery communications? Communication with Stakeholders and Law Enforcement: • Can you explain how you communicate recovery activities to internal and external stakeholders, including law enforcement and leadership teams?"
+                                                        },
+                                                        {
+                                                            "level":  4,
+                                                            "prompts":  "Coordinated Communication Response Management: • How do you manage a coordinated communication response to balance cybersecurity investigation and recovery concerns? Pre-Identification of Communication Channels: • What communication channels have you identified in advance for incident recovery communication? • How do pre-identified communication channels facilitate effective communication? Use of Communication Templates and Playbooks: • Can you describe the communication templates and playbooks derived from tabletop exercises? • How have communication templates and playbooks been used in actual incidents?"
+                                                        },
+                                                        {
+                                                            "level":  5,
+                                                            "prompts":  "Cyclical Improvement Process for Recovery Communications: • How does your recovery communication undergo a continuous improvement process? • Can you share examples of how post-incident recovery feedback is collected and analyzed? Integration of Transparent Communication: • How is transparent communication integrated into your incident recovery process? • What role does a playbook with predefined communication topics play in your incident recovery process? Measurable Process Improvement through Feedback Analysis: • Can you provide an example of how feedback analysis has identified shortfalls or gaps and led to measurable improvements in your recovery communication strategy?"
+                                                        }
+                                                    ]
+                           }
+                       ]
+    }
+]
+

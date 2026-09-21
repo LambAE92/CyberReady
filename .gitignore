@@ -1,0 +1,58 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Environment files, never commit secrets
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# SQLite database (runtime data, not source)
+hallmonitor.db
+hall-monitor/hallmonitor.db
+*.db
+*.db-shm
+*.db-wal
+
+# Build outputs
+dist/
+build/
+.vite/
+.next/
+out/
+
+# Uploads (user-uploaded files at runtime)
+hall-monitor/server/uploads/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Claude Code internal config
+.claude/
+
+# Test coverage
+coverage/
+
+# Controlled diligence archives: never add to the public sale package
+/reference/
+/third-party/
+/hall-monitor/docs/
