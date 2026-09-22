@@ -2,7 +2,7 @@
 
 ## Repository
 
-- [ ] Buyer has access to the private GitHub repository.
+- [ ] Buyer has reviewed the public GitHub evaluation repository and the recommended controlled-diligence boundary.
 - [ ] Buyer has reviewed `README.md`, `SETUP.md`, and `DEPLOYMENT.md`.
 - [ ] Buyer has reviewed this `sale-package/` folder.
 - [ ] Seller has confirmed no private secrets are committed.
@@ -13,9 +13,9 @@
 - [ ] Buyer can run Hall Monitor locally.
 - [ ] Buyer can run the website locally.
 - [ ] Buyer can log in as platform admin.
-- [ ] Buyer can log in as Walkerville district IT.
-- [ ] Buyer can view CCRE and CAIRE self-assessments.
-- [ ] Buyer can view executive summary and insurance readiness scoring.
+- [ ] Buyer can log in with a buyer-created district-IT synthetic demo account.
+- [ ] Buyer can view CCRE-aligned cybersecurity-governance and CAIRE AI-governance self-assessments.
+- [ ] Buyer can view the executive summary and indicative insurance-readiness input.
 - [ ] Buyer can build Hall Monitor client.
 - [ ] Buyer can build the website.
 
@@ -28,7 +28,7 @@
 - [ ] Brand, logo, and content usage rights are included.
 - [ ] Third-party reference materials are reviewed for usage rights.
 - [ ] No ongoing founder involvement is required unless separately negotiated.
-- [ ] Buyer packet access is manually controlled and shared only with qualified parties.
+- [ ] Controlled security, IP, source, and history materials are shared only under the agreed diligence process.
 
 ## Domain And Hosting
 
@@ -43,7 +43,7 @@
 ## Demo Environment
 
 - [ ] Hosted demo URL documented.
-- [ ] Demo access credentials documented.
+- [ ] Demo credentials are created and exchanged through a secure channel; no values appear in the repository or buyer packet.
 - [ ] Demo credentials rotated before public buyer access.
 - [ ] Demo environment contains no real district data.
 - [ ] Demo environment clearly labeled as "Demo Environment — Synthetic Data Only".

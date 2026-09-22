@@ -8,7 +8,7 @@ Add current screenshots before sharing the sale package with serious buyers.
 - [ ] Admin dashboard
 - [ ] District dashboard
 - [ ] Self-assessment
-- [ ] CCRE assessment
+- [ ] CCRE-aligned cybersecurity-governance assessment
 - [ ] Executive summary
 - [ ] Findings and recommendations
 - [ ] Governance compliance

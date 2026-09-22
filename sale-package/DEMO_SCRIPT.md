@@ -12,10 +12,10 @@ Open the CyberReady website and describe the market problem:
 
 Describe the four parts:
 
-- CCRE: Cybersecurity maturity evaluation aligned to NIST CSF 2.0.
+- CCRE-aligned cybersecurity-governance workflow: mapped to NIST CSF 2.0; not a CoSN certification or endorsement.
 - CAGR: CyberReady AI Governance Rubric aligned to NIST AI RMF 1.0.
-- CAIRE: Evidence-based evaluator methodology for AI governance.
-- Hall Monitor: Operations platform for assessment, findings, posture, reporting, and roadmap tracking.
+- CAIRE: CyberReady evidence-review methodology for AI governance, subject to seller authorship confirmation.
+- Hall Monitor: Operations platform for recorded assessment, findings, posture, reporting, and roadmap tracking; it does not ingest real-time district security telemetry.
 
 ## 2:00 to 3:00: Open Hall Monitor
 
@@ -46,7 +46,7 @@ Highlight the district dashboard:
 - Maturity score
 - Six NIST CSF 2.0 functions
 - Four NIST AI RMF 1.0 functions
-- 12-month roadmap
+- Sample prioritized roadmap
 - AI Governance posture card
 
 ## 5:00 to 6:30: Show Assessment
@@ -55,7 +55,7 @@ Open the assessment area.
 
 Highlight:
 
-- CCRE self-assessment
+- CCRE-aligned cybersecurity-governance self-assessment
 - CAIRE self-assessment
 - 1 to 5 maturity scale
 - Notes and evidence workflow
@@ -71,7 +71,7 @@ Open the executive summary.
 Highlight:
 
 - Overall posture
-- Insurance readiness score
+- Indicative insurance-readiness input (not an insurer score or coverage decision)
 - Cyber function maturity
 - AI governance maturity
 - Recommendations and next steps
@@ -97,8 +97,8 @@ Summarize:
 - Source code
 - Website
 - Hall Monitor app
-- CCRE and CAIRE/CAGR assessment workflows
-- Reference materials
+- CCRE-aligned and CAIRE/CAGR assessment workflows
+- Seller-authorship-qualified source and documentation; excluded reference materials only on a separately reviewed schedule
 - Demo seed data
 - Setup and deployment documentation
 - Domain transfer placeholder, subject to final agreement

@@ -31,7 +31,7 @@ Hall Monitor is the core asset. It provides platform-admin, district-IT, and sup
 
 ### CyberReady website — implemented static site
 
-The Next.js site is configured for static export. It contains platform, Hall Monitor, district, workforce, insight, about, terms, privacy, and acquisition-inquiry pages. Its dashboard views are visual previews, not live application data. The inquiry form currently displays a local success state and does **not** send an inquiry to a service.
+The Next.js site is configured for static export. It contains platform, Hall Monitor, district, workforce, insight, about, terms, privacy, and acquisition-inquiry pages. Its dashboard views are visual previews, not live application data. In the final remediation branch, the inquiry form opens a prefilled email draft only when a public acquisition-email environment value is configured; it does **not** send, store, or confirm an inquiry itself.
 
 ### Reference and sale materials — mixed asset class
 

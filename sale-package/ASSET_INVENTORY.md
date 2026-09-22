@@ -7,9 +7,9 @@
   - Express 5 API
   - SQLite seed database workflow
   - React 19 and Vite dashboard
-  - CCRE cybersecurity self-assessment workflows
+  - CCRE-aligned cybersecurity-governance self-assessment workflows
   - CAIRE/CAGR AI governance self-assessment workflows
-  - Executive summary, insurance readiness, findings, compliance, training, and admin overview screens
+  - Executive summary, indicative insurance-readiness input, findings, compliance, sample learning workflow, and admin-overview screens
 - CyberReady website
   - Next.js 16 App Router site
   - Public pages for platform, districts, Hall Monitor, insights, and contact
@@ -28,13 +28,11 @@
 
 ## Domain And Brand Assets
 
-The domain is expected to be included in a clean asset sale. Exact registrar, DNS, renewal, and transfer details should be filled in by the seller before closing.
+The domain may be included in an asset sale only if seller title, registrar control, DNS, renewal, and transfer details are confirmed and placed in the closing schedule.
 
-Brand assets currently include site copy, product naming, platform positioning, selected graphics, reference materials, and demo content in the repository.
+Brand assets currently include site copy, product naming, platform positioning, selected graphics, and demo content in the repository. Reference materials are not assumed to be brand assets or transferable.
 
-Full technical materials, repository access, and domain transfer are subject to a written acquisition agreement.
-
-Buyer packet access should be manually controlled and shared only with qualified parties.
+This public repository is not a complete buyer data room. The controlled/private diligence boundary in `PUBLIC_REPOSITORY_REMEDIATION.md` should be used before sharing detailed technical, security, IP, or historical materials.
 
 No ongoing founder involvement is required unless separately negotiated.
 
@@ -43,12 +41,12 @@ No ongoing founder involvement is required unless separately negotiated.
 - Local Hall Monitor demo with seeded districts and demo users
 - Portfolio admin dashboard
 - District dashboard
-- CCRE cybersecurity self-assessment
+- CCRE-aligned cybersecurity-governance self-assessment
 - CAIRE AI governance self-assessment using the CAGR rubric
 - AI RMF playbook reference guidance
 - Findings and recommendations workflow
 - Governance compliance view
-- Executive summary and insurance readiness scoring
+- Executive summary and indicative insurance-readiness input
 - Website local preview
 - Production-oriented setup for Netlify, Vercel, or Cloudflare Pages plus Railway or Render
 
@@ -65,8 +63,8 @@ No ongoing founder involvement is required unless separately negotiated.
 ## Buyer Receives
 
 - Source code and documentation
-- Current demo data and seed workflows
-- Reference materials currently included in the repository
+- Synthetic demo data and seed workflows
+- Seller-authored documentation and source reflected in this public package
 - Setup and deployment guidance
 - Sale package docs for diligence and handoff
 - Domain transfer process, subject to final agreement
@@ -78,3 +76,4 @@ No ongoing founder involvement is required unless separately negotiated.
 - Third-party reference material usage rights
 - Whether demo credentials should be rotated before buyer access
 - Whether the buyer needs a separately controlled pre-remediation archive for diligence
+- Authorship/provenance and transfer rights for CAIRE, CAGR, brand, media, and domain assets

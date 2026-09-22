@@ -15,7 +15,7 @@ CyberReady is a functional prototype and transfer-ready asset package. The items
 | Operations | No IaC, container, CI/CD, monitoring, alerting, or health endpoint | Operationalise on the buyer's standard infrastructure and observability stack |
 | Backup/recovery | No documented/proven restore procedure | Implement encrypted backups, restore drills, RPO/RTO, data-retention and incident runbooks |
 | Billing | No subscription, entitlement, invoicing or payments | Integrate the buyer's commercial/billing model if a SaaS route is selected |
-| Contact/inquiry workflow | Website form is presentational and does not transmit submissions | Connect to a buyer-approved CRM, email, form service, consent record and routing workflow |
+| Contact/inquiry workflow | Static website form opens a prefilled email draft only when `NEXT_PUBLIC_ACQUISITION_EMAIL` is configured | Connect to a buyer-approved CRM, form service, consent record and routing workflow if a tracked lead process is required |
 
 ## Security and data-governance opportunities
 
@@ -42,7 +42,7 @@ CyberReady is a functional prototype and transfer-ready asset package. The items
 ## Testing and release opportunities
 
 - One API smoke suite exists but requires a running application and seed data. CI, browser tests, accessibility checks, performance tests, deployment tests, and a formal test matrix are absent.
-- This audit performed server JavaScript syntax checks. It did not claim a completed clean install, vulnerability audit, smoke execution, or production deployment test because the environment lacked npm and an installed dependency tree.
+- This remediation completed a website dependency install and production build, a Hall Monitor server dependency install, and server syntax checks. Hall Monitor client build/smoke results and package-audit results are recorded in `SECURITY_REVIEW.md` and `FINAL_DILIGENCE_REVIEW.md`; neither is represented as a production deployment test.
 
 ## Practical next-stage sequence
 

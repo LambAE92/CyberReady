@@ -65,7 +65,7 @@ The website links to Hall Monitor through `NEXT_PUBLIC_HALL_MONITOR_URL`. The we
 - Next.js 16 / React 19 / TypeScript / Tailwind CSS 4.
 - Static export (`output: "export"`) with unoptimized images and trailing-slash URLs.
 - Marketing pages, insight articles, policy/terms pages, product positioning, and static dashboard previews.
-- The acquisition-inquiry form is presentational only: it prevents navigation and displays a success state without transmitting the form contents.
+- The acquisition-inquiry form opens a prefilled `mailto:` draft only when public `NEXT_PUBLIC_ACQUISITION_EMAIL` is configured. It has no server-side submission, CRM, database, consent-capture, or delivery confirmation.
 
 ## Prototype characteristics
 
@@ -76,7 +76,7 @@ The website links to Hall Monitor through `NEXT_PUBLIC_HALL_MONITOR_URL`. The we
 | File storage | Text/extracted findings stored in SQLite; uploads handled in memory | No object-store, malware scanning, retention policy, or durable file lifecycle |
 | Data | Synthetic seed data and static site previews | Not evidence of production customers, live telemetry, or real district operation |
 | Reporting | DOCX in application database | Useful prototype output; needs template/brand/rights review and scalable file storage strategy |
-| Website contact | UI acknowledgement only | No lead delivery, CRM, email, database, or consent-capture integration |
+| Website contact | Static `mailto:` draft configured by public environment variable | No server-side lead delivery, CRM, database, consent capture, or delivery confirmation |
 | Deployment | Manual-host instructions | No CI/CD, IaC, container, health endpoint, observability, or backup automation |
 
 ## Planned or not evidenced as implemented

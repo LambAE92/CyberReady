@@ -29,7 +29,7 @@ This roadmap is scoped for a buyer who wants to move CyberReady from transfer-re
 - Add evidence management improvements.
 - Add audit trail filtering and export.
 - Add configurable scoring profiles.
-- Add stronger CAIRE evidence validation workflows.
+- Add stronger CAIRE evidence-review and reviewer-approval workflows.
 
 ## Phase 4: Commercial Launch
 
@@ -38,7 +38,7 @@ This roadmap is scoped for a buyer who wants to move CyberReady from transfer-re
 - Add controlled acquisition demo mode.
 - Add operator success playbooks.
 - Add buyer onboarding checklist inside Hall Monitor.
-- Build repeatable CCRE and CAIRE workflows that can support consulting, SaaS, or managed-service delivery models.
+- Build repeatable CCRE-aligned and CAIRE workflows that can support consulting, SaaS, or managed-service delivery models.
 
 ## Phase 5: Platform Expansion
 

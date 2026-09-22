@@ -1,14 +1,14 @@
 # CyberReady Security Review
 
 **Assessment type:** source/configuration/history review for acquisition diligence.  
-**Not performed:** penetration test, live deployment review, dependency installation/audit, malware scan, external account review, or production infrastructure test.  
+**Not performed:** penetration test, external live-host review, malware scan, external-account review, legal licence clearance, or production infrastructure test.
 **Secret policy:** no secret values are reproduced.
 
 ## Summary
 
-No committed `.env`, private key, cloud credential, or high-confidence API-token pattern was found in the current source or 13 reachable Git revisions. The repository is appropriately configured to ignore runtime databases, uploads, and `.env` files.
+No committed `.env`, private key, cloud credential, or high-confidence API-token pattern was found in the current source or reachable clean-history revision. The repository is appropriately configured to ignore runtime databases, uploads, and `.env` files.
 
-The material risks are prototype control gaps, fixed demo seeds, external AI data processing, and one authorization-scoping defect found during review. The cross-district masterclass completion update has been corrected in the current sale package; it still needs automated regression coverage.
+The material risks are prototype control gaps, historic demo exposure, external AI data processing, and missing production security operations. The current remediation also corrected production CORS fail-closed behavior, upload rate limiting, an opt-in-only demo reset route, and the prior cross-district masterclass-completion scoping defect. These fixes need broader regression coverage in buyer-selected production infrastructure.
 
 ## Findings
 
@@ -25,6 +25,10 @@ The material risks are prototype control gaps, fixed demo seeds, external AI dat
 | SEC-09 | Medium | Audit event coverage is useful but incomplete and local | SQLite `audit_log`; some state-changing routes do not create an audit event | Define auditable events, immutable/centralized retention, export, review, and privacy handling |
 | SEC-10 | Low | Development permits a fallback session secret; production exits without a secret | `SESSION_SECRET` handling in server code | Ensure each environment injects a unique managed secret; do not expose a demo instance with development settings |
 | SEC-11 | Low | No CI, SBOM, current SCA result, monitoring, backup/restore verification, or public health endpoint | Repository/configuration inspection | Add before customer deployment; a package vulnerability audit could not be run here because npm was unavailable and pnpm requires its own lockfile |
+| SEC-12 | Medium | A production deployment could previously start without an explicit CORS allow-list if configuration were omitted | `hall-monitor/server/index.js` prior behavior | **Fixed in this branch:** production now exits unless `CORS_ORIGIN` is configured; CORS remains credentialed and constrained to that configured origin |
+| SEC-13 | Medium | Findings upload/AI extraction route had file-size limits but no route-specific throttling | `POST /api/findings/upload` | **Fixed in this branch:** route now has a 15-minute limiter (10 production / 50 local requests). This does not replace storage, malware, quota, or abuse controls. |
+| SEC-14 | Medium | Authenticated platform administrators could invoke the demo-reset route whenever it was deployed | `POST /api/demo/reset` | **Fixed in this branch:** route is unavailable unless `DEMO_RESET_ENABLED=true`; it also requires the configured administrator identity. Enable only for a disposable synthetic demo. |
+| SEC-15 | Medium | Current package manifests have npm lockfiles, but this environment only supplied pnpm and pnpm refuses `audit` without a pnpm lockfile | `website/package-lock.json`, `hall-monitor/package-lock.json`, `hall-monitor/client/package-lock.json`; attempted `pnpm audit --json` | **Unresolved process gap:** clean installs/builds were completed, but no package-advisory result was produced. Buyer should run `npm ci` and `npm audit` (or adopt a single lockfile/package-manager policy) in its controlled environment. |
 
 ## Controls observed
 
@@ -33,6 +37,8 @@ The material risks are prototype control gaps, fixed demo seeds, external AI dat
 - Production startup fails when `SESSION_SECRET` is absent.
 - CORS uses one configured origin with credentials rather than a wildcard.
 - Login route has rate limiting (10 attempts/15 minutes in production).
+- Findings upload route has a separate production-aware rate limit.
+- The destructive demo-reset route is disabled by default and must be explicitly enabled for a disposable synthetic demo.
 - Most API resources use server-side role checks and district scoping, not just client route guards.
 - Runtime `.env`, database, log, build, upload, and node-module paths are ignored.
 - SQLite foreign keys and WAL are enabled.
@@ -43,7 +49,7 @@ The material risks are prototype control gaps, fixed demo seeds, external AI dat
 | --- | --- |
 | Current tracked environment/private-key/database paths | Only `hall-monitor/.env.example` is tracked; no runtime DB, `.env`, or private-key file was found |
 | Current tree common credential patterns | No high-confidence private-key, AWS-key, GitHub-token, or Anthropic-key pattern found; ordinary key-name placeholders and NIST reference data generated false-positive names |
-| Reachable Git revisions | 13 revisions reviewed for common token/private-key patterns; no high-confidence secret was found |
+| Reachable Git revisions | Clean public history was reviewed for common token/private-key patterns; no high-confidence secret was found |
 | Demo credentials | Present historically and in seed/test code; handled as demo-account risk, not treated as a public API secret |
 
 If any demo account was ever internet-accessible, rotate its password and session secret outside the repository, invalidate active sessions, and review hosting access logs. Do not assume that removing documentation invalidates previously observed credentials.
@@ -52,11 +58,22 @@ If any demo account was ever internet-accessible, rotate its password and sessio
 
 The code can store names, usernames, email addresses, organization/role, IP addresses, district context, findings, evidence, uploaded document text, notes, assessment data, and report documents. Excluded private reference archives may also contain personal/prospecting information. Demo/synthetic status for every seed asset should be confirmed before buyer sharing.
 
-The privacy policy makes statements that go beyond the specific controls evidenced in this code audit (for example, analytics, processing, legal compliance, and security measures). It requires counsel and privacy-owner review before it is treated as an operational policy.
+The public privacy policy was narrowed in this branch to distinguish the static website from the Hall Monitor prototype and to avoid unsupported legal-compliance assertions. It still requires counsel and privacy-owner review before it is treated as an operational policy.
+
+## Verification performed in this remediation
+
+| Check | Result |
+| --- | --- |
+| Website dependency installation and production build | Passed with bundled Node 24 / pnpm environment after removing build-time Google Fonts dependency; 24 static/SSG routes generated successfully |
+| Hall Monitor server dependency installation | Completed; `better-sqlite3` required a local rebuild for this Node runtime |
+| Hall Monitor client production build | Passed after fixing a missing import from `ccreAssessment.json` to the tracked `cybersecurityAssessment.json`; Vite warned that one minified JS chunk exceeds 500 kB |
+| Hall Monitor smoke suite | Passed: 22 tests across authentication, district scoping, executive summary, assessments, self-assessment, notifications, audit log, and role access using a fresh synthetic database and disposable local credentials |
+| Package advisory check | Not completed: pnpm `audit` rejected each project because no `pnpm-lock.yaml` exists; npm was unavailable in this environment. This is not a clean advisory result. |
+| Secret-pattern / tracked-runtime-path check | No high-confidence secret pattern or tracked runtime `.env`/database/upload/private-key file found; only `hall-monitor/.env.example` is tracked |
 
 ## Required pre-production security work
 
-1. Complete the SEC-02 regression test and full role/tenant authorization test matrix.
+1. Add regression coverage for the completed cross-district, CORS, upload-limit, demo-reset, and full role/tenant authorization matrix.
 2. Replace fixed demo seed account defaults with a controlled provisioning/bootstrap approach; rotate all exposed demo credentials.
 3. Implement managed identity, MFA, SSO/SCIM where required, password lifecycle, and a managed session store.
 4. Move data to managed Postgres and files/reports to encrypted object storage with backup/restore testing.
