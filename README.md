@@ -24,7 +24,7 @@ CyberReady packages a market-facing brand, a working Hall Monitor platform, stru
 - CyberReady website: Next.js marketing site with platform, district, Hall Monitor, insights, and contact pages.
 - CCRE-aligned cybersecurity-governance assessment structure mapped to NIST CSF 2.0.
 - CAIRE AI-governance self-assessment using the CAGR rubric mapped to NIST AI RMF 1.0.
-- Executive-summary, indicative insurance-readiness, findings, compliance, training, and roadmap views.
+- Executive-summary, indicative insurance-readiness, findings, compliance, and roadmap views.
 - Buyer handoff and technical documentation. Standalone third-party/reference archives are deliberately excluded from this public sale package pending rights review.
 - Candidate domain/brand assets, subject to seller title confirmation and written acquisition agreement.
 
@@ -158,7 +158,6 @@ hall-monitor/
 |---|---|---|
 | `/` | Dashboard | All |
 | `/risks` | Findings & Recommendations | Admin, IT |
-| `/training` | Sample governance-learning workflow | Admin, IT |
 | `/compliance` | Governance Compliance | All |
 | `/self-assessment` | Self-Assessment Audit | Admin, IT |
 | `/assessment` | Cybersecurity governance assessment | All |
@@ -169,7 +168,7 @@ hall-monitor/
 ### User Roles
 
 - **`platform_admin`**: Cross-district overview. Manages all districts, manages CCRE-aligned cybersecurity-governance assessments, and reviews findings and assessment requests. No Executive Summary appears in admin overview mode (it renders the Admin Dashboard instead).
-- **`district_it`**: District-level IT staff. Completes self-assessments, manages findings, records sample learning requests, and views their district's compliance and evaluation data.
+- **`district_it`**: District-level IT staff. Completes self-assessments, manages findings, and views their district's compliance and evaluation data.
 - **`superintendent`**: Read-only governance view. Sees the executive summary, compliance status, and assessment results for their district.
 
 ### Admin Dashboard
@@ -242,7 +241,7 @@ Set the required synthetic-demo role values before first run; use `DEMO_SETUP.md
 
 SQLite via `better-sqlite3`. The database file (`hallmonitor.db`) is auto-created on first run. Schema migrations run automatically on startup, no manual migration steps needed.
 
-Key tables: `users`, `districts`, `risks`, `self_assessments`, `assessments`, `audit_requests`, `masterclass_requests`, `finding_documents`, `audit_log`
+Key tables: `users`, `districts`, `risks`, `self_assessments`, `assessments`, `audit_requests`, `finding_documents`, `audit_log`. Legacy masterclass tables remain in the prototype database for historical compatibility but are not exposed in the Hall Monitor interface.
 
 ---
 

@@ -85,7 +85,7 @@ const roleCards = [
       "CAIRE evidence workflow",
       "Risk and findings management",
       "Compliance tracking and documentation",
-      "Masterclass training management",
+      "Training and phishing workflow visibility",
       "Evaluation history and report generation",
     ],
     button: "Sign In",

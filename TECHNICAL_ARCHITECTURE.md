@@ -27,7 +27,7 @@ The website links to Hall Monitor through `NEXT_PUBLIC_HALL_MONITOR_URL`. The we
 - React 19 and Vite 8 SPA, using `HashRouter`.
 - Tailwind CSS 4, Recharts, and Lucide React.
 - Auth and theme contexts; authenticated fetch client uses same-origin `/api` calls and session cookies.
-- Role-aware pages for dashboards, risks, training, compliance, self-assessment, assessment, AI governance, executive summary, and audit log.
+- Role-aware pages for dashboards, risks, compliance, self-assessment, assessment, AI governance, executive summary, and audit log. The former Masterclass page is retained in source but is not routed, linked, or rendered.
 - Platform-administrator overview and selectable district context; district and superintendent views.
 
 ### Hall Monitor backend
@@ -35,8 +35,8 @@ The website links to Hall Monitor through `NEXT_PUBLIC_HALL_MONITOR_URL`. The we
 - Node.js CommonJS service using Express 5.
 - JSON middleware, CORS constrained to `CORS_ORIGIN` (default local Vite origin), and `express-session` cookies.
 - Bcrypt password-hash comparison and login-specific rate limiting.
-- API routes for authentication, districts, metrics, risk status/notes, training, phishing metrics, compliance, cyber assessment, AI-system inventory/rating, reports, audit requests, audit log, masterclass workflow, findings uploads, and demo reset.
-- Server-side role checks and district predicates on most scoped routes. The masterclass completion update is explicitly district-scoped after the acquisition-readiness fix.
+- API routes for authentication, districts, metrics, risk status/notes, training, phishing metrics, compliance, cyber assessment, AI-system inventory/rating, reports, audit requests, audit log, findings uploads, and demo reset. Legacy Masterclass API/data code remains for historical compatibility but is not exposed through the current interface.
+- Server-side role checks and district predicates on most scoped routes. The retained legacy masterclass completion update remains explicitly district-scoped after the acquisition-readiness fix.
 - Production mode serves the built Vite client from the Express process.
 
 ### Database and data model

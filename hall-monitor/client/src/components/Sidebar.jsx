@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 import { useAuth } from '../context/useAuth';
 import { useTheme } from '../context/useTheme';
 import {
-  LayoutDashboard, ShieldAlert, GraduationCap, ClipboardCheck, ClipboardList,
+  LayoutDashboard, ShieldAlert, ExternalLink, ClipboardCheck, ClipboardList,
   FileText, LogOut, Sun, Moon, ScrollText, Clipboard, Brain
 } from 'lucide-react';
 import DistrictSwitcher from './DistrictSwitcher';
@@ -11,7 +11,6 @@ import NotificationBell from './NotificationBell';
 const allNavItems = [
   { path: '/',                label: 'Dashboard',                  icon: LayoutDashboard, roles: ['platform_admin', 'district_it', 'superintendent'] },
   { path: '/risks',           label: 'Findings & Recommendations', icon: ShieldAlert,     roles: ['platform_admin', 'district_it'] },
-  { path: '/training',        label: 'Masterclass Training',       icon: GraduationCap,   roles: ['platform_admin', 'district_it'] },
   { path: '/self-assessment', label: 'Self-Assessment Audit',      icon: ClipboardList,   roles: ['platform_admin', 'district_it'] },
   { path: '/assessment',      label: 'Assessment',                 icon: Clipboard,       roles: ['platform_admin', 'district_it', 'superintendent'] },
   { path: '/ai-governance',   label: 'AI Governance',              icon: Brain,           roles: ['platform_admin', 'district_it', 'superintendent'] },
@@ -74,6 +73,15 @@ export default function Sidebar() {
 
       {/* Footer */}
       <div className="p-3 border-t border-slate-200 dark:border-slate-700 space-y-2">
+        <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSeZ2aPcUYbsr4h9c7EbbivgdwwF2quM6nTp81tsCvvUwvYgWQ/viewform"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-full flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800"
+        >
+          <ExternalLink size={18} />
+          CoSN Masterclass Interest Form
+        </a>
         <button onClick={toggle} className="w-full flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800">
           {dark ? <Sun size={18} /> : <Moon size={18} />}
           {dark ? 'Light Mode' : 'Dark Mode'}

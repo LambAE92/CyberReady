@@ -10,7 +10,7 @@ It includes a CoSN Cybersecurity Readiness for Education (CCRE)-aligned cybersec
 
 - **Dashboard**: Governance-health score with weighted category breakdown, prototype metrics, and editable category scores. Metric values are application data, not direct security telemetry.
 - **Risks & Vulnerabilities**: Track and manage cybersecurity findings with severity/status filtering, status changes, recommended actions, and notes.
-- **Training & Phishing**: Record/view staff training completion and phishing-simulation trends by department; buyers must validate or configure any live data source separately.
+- **Training & Phishing Metrics**: Record/view staff training completion and phishing-simulation trends by department; buyers must validate or configure any live data source separately. The former in-app Masterclass workflow is intentionally omitted; the sidebar links to CoSN's external interest form.
 - **Compliance & Reporting**: Governance-readiness tracking against NIST CSF-aligned and policy-readiness frameworks with printable executive reports. Outputs are not independent validation, legal advice, or a certification.
 - **Self-Assessment**: Evaluate cybersecurity maturity across all 6 NIST functions and 22 categories using the implemented CCRE-aligned assessment workflow. Includes an interview guide with checklist tracking, interview questions by maturity level, and embedded assessment guidance.
 - **Executive Summary**: Board-ready overview with posture score, top priority risks, progress since last review, recommended next steps, and exportable HTML reports.
@@ -75,7 +75,7 @@ hall-monitor/
 │       ├── components/      # Sidebar, ScoreGauge, StatusCard
 │       ├── context/         # AuthContext, ThemeContext
 │       ├── data/            # Rubric data (NIST functions, interview questions, training guide)
-│       ├── pages/           # Dashboard, Risks, Training, Compliance, Assessment, Executive
+│       ├── pages/           # Dashboard, Risks, Compliance, Assessment, Executive, and retained legacy prototype pages
 │       └── utils/           # API client
 ├── server/
 │   ├── index.js             # Express API routes

@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { api } from '../utils/api';
 import { useAuth } from '../context/useAuth';
 import {
-  LayoutGrid, ShieldAlert, GraduationCap, TrendingUp, Building2,
+  LayoutGrid, ShieldAlert, TrendingUp, Building2,
   AlertTriangle, CheckCircle2, Clock, ChevronRight, Users, School,
   ClipboardCheck, RefreshCw, XCircle, AlertCircle, Minus,
   FileText, Calendar, ClipboardList, ChevronDown, Brain,
@@ -261,7 +261,9 @@ function FindingsTab({ data, goToDistrict }) {
   );
 }
 
-function MasterclassTab({ data }) {
+// Historical prototype implementation retained in source for review, but intentionally
+// not rendered or linked in Hall Monitor. CoSN's external interest form is linked in the sidebar.
+export function LegacyMasterclassTab({ data }) {
   const mc = data.masterclass || [];
   const requests = data.masterclassRequests || [];
 
@@ -701,7 +703,6 @@ function CountBadge({ count, color }) {
 const ADMIN_TABS = [
   { key: 'overview',        label: 'Dashboard',                  icon: LayoutGrid },
   { key: 'findings',        label: 'Findings & Recommendations', icon: ShieldAlert },
-  { key: 'masterclass',     label: 'Masterclass Training',       icon: GraduationCap },
   { key: 'compliance',      label: 'Governance Compliance',      icon: ClipboardCheck },
   { key: 'selfAssessment',  label: 'Self-Assessment Audit',      icon: ClipboardList },
   { key: 'evalHistory',     label: 'Evaluation History',         icon: FileText },
@@ -784,7 +785,6 @@ export default function AdminDashboard({ defaultTab = 'overview' }) {
       {/* Tab content */}
       {activeTab === 'overview'       && <OverviewTab data={data} goToDistrict={goToDistrict} />}
       {activeTab === 'findings'       && <FindingsTab data={data} goToDistrict={goToDistrict} />}
-      {activeTab === 'masterclass'    && <MasterclassTab data={data} />}
       {activeTab === 'compliance'     && <ComplianceTab data={data} />}
       {activeTab === 'selfAssessment' && <SelfAssessmentTab data={data} onRequestAudit={handleRequestAudit} />}
       {activeTab === 'evalHistory'    && <EvaluationHistoryTab data={data} />}
