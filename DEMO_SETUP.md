@@ -25,6 +25,9 @@ DEMO_DISTRICT_IT_PASS=<unique-demo-district-it-password>
 DEMO_SUPERINTENDENT_USER=<unique-demo-superintendent-username>
 DEMO_SUPERINTENDENT_PASS=<unique-demo-superintendent-password>
 
+# Keep disabled for any non-disposable environment. Set true only for a verified synthetic demo database.
+DEMO_RESET_ENABLED=false
+
 # Optional. Leave blank to keep AI extraction disabled for the demo.
 ANTHROPIC_API_KEY=
 ```
@@ -64,7 +67,7 @@ npm install
 npm run dev
 ```
 
-Set `NEXT_PUBLIC_HALL_MONITOR_URL` in `website/.env.local` to the local Hall Monitor URL if needed. Do not put secrets in `NEXT_PUBLIC_*` values; they are exposed to the browser at build time.
+Set `NEXT_PUBLIC_HALL_MONITOR_URL` in `website/.env.local` to the local Hall Monitor URL if needed. Set `NEXT_PUBLIC_ACQUISITION_EMAIL` to a monitored inbox before testing the acquisition inquiry form. Do not put secrets in `NEXT_PUBLIC_*` values; they are exposed to the browser at build time.
 
 ## 4. Verify synthetic data
 
@@ -80,6 +83,7 @@ For a shared buyer demo, use a separate instance and a new set of credentials fo
 - Keep the Anthropic integration disabled unless the buyer has approved the data flow and supplied a buyer-controlled key.
 - Do not reuse seller, developer, production, or previously circulated demo credentials.
 - Reset only the known isolated demo database after each demo group; verify the target before any deletion.
+- The reset endpoint is disabled by default. Set `DEMO_RESET_ENABLED=true` only on this verified, synthetic instance; do not enable it for real data or a shared production environment.
 
 ## 6. Rotate and retire
 

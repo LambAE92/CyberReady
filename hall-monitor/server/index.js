@@ -38,6 +38,7 @@ const upload = multer({
 const app = express();
 const PORT = process.env.PORT || 3001;
 const isProduction = process.env.NODE_ENV === 'production' || process.argv.includes('--production');
+const corsOrigin = process.env.CORS_ORIGIN || (isProduction ? undefined : 'http://localhost:5173');
 
 // Render terminates HTTPS at the proxy, so Express must trust the proxy for secure cookies to work.
 app.set('trust proxy', 1);
@@ -49,8 +50,13 @@ seedDatabase(db);
 // ── Middleware ──────────────────────────────────────────────────
 app.use(express.json());
 
+if (!corsOrigin) {
+  console.error('FATAL: CORS_ORIGIN env var is required in production');
+  process.exit(1);
+}
+
 app.use(cors({
-  origin: process.env.CORS_ORIGIN || 'http://localhost:5173',
+  origin: corsOrigin,
   credentials: true,
 }));
 
@@ -240,7 +246,7 @@ app.get('/api/admin/overview', requireAuth, requireRole('platform_admin'), (req,
   const risks = { Critical: 0, High: 0, Medium: 0, Low: 0 };
   riskRows.forEach(r => { if (risks[r.severity] !== undefined) risks[r.severity] = r.count; });
 
-  // Audit request counts (CCRE engagements)
+  // Assessment-request counts for the CCRE-aligned workflow
   const auditRows = db.prepare('SELECT status, COUNT(*) as count FROM audit_requests GROUP BY status').all();
   const auditRequests = { pending: 0, scheduled: 0, in_progress: 0, completed: 0 };
   auditRows.forEach(a => { if (auditRequests[a.status] !== undefined) auditRequests[a.status] = a.count; });
@@ -360,7 +366,7 @@ app.get('/api/admin/overview', requireAuth, requireRole('platform_admin'), (req,
     ).all(d.id);
     const activeAudit = auditReqs.find(a => ['pending', 'approved', 'in_progress'].includes(a.status));
     const completedAudits = auditReqs.filter(a => a.status === 'completed');
-    // Assessments (evaluator-side)
+    // Assessment-management view (platform administrator)
     const assessments = db.prepare(
       'SELECT id, name, status, overall_maturity, created_at, updated_at FROM assessments WHERE district_id = ? ORDER BY updated_at DESC'
     ).all(d.id);
@@ -392,7 +398,7 @@ app.get('/api/admin/overview', requireAuth, requireRole('platform_admin'), (req,
     const districtSummary = perDistrict.find(item => item.id === d.id);
     const selfSummary = selfAssessmentPerDistrict.find(item => item.districtId === d.id);
     const requests = selfSummary?.auditRequests || [];
-    const ccreValidated = requests.some(req =>
+    const ccreCompleted = requests.some(req =>
       ['CCRE Audit', 'CCRE Self-Assessment', 'Both'].includes(req.assessment_type || 'CCRE Self-Assessment') && req.status === 'completed'
     );
     const cagrValidated = requests.some(req =>
@@ -402,8 +408,8 @@ app.get('/api/admin/overview', requireAuth, requireRole('platform_admin'), (req,
       {
         districtId: d.id,
         districtName: d.name,
-        assessmentType: 'CCRE Self-Assessment',
-        status: formatActivityStatus(ccreValidated ? 'completed' : null, selfSummary?.categoriesRated || 0, 22),
+        assessmentType: 'Cybersecurity Governance Self-Assessment (CCRE-aligned)',
+        status: formatActivityStatus(ccreCompleted ? 'completed' : null, selfSummary?.categoriesRated || 0, 22),
         lastUpdated: selfSummary?.latestUpdatedAt || null,
       },
       {
@@ -628,6 +634,14 @@ app.put('/api/masterclass/completions/:id', requireAuth, requireRole('platform_a
   res.json({ ok: true });
 });
 
+const findingsUploadLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: isProduction ? 10 : 50,
+  message: { error: 'Too many document uploads. Please try again later.' },
+  standardHeaders: true,
+  legacyHeaders: false,
+});
+
 // ════════════════════════════════════════════════════════════════
 //  COMPLIANCE
 // ════════════════════════════════════════════════════════════════
@@ -637,7 +651,7 @@ app.get('/api/compliance', requireAuth, (req, res) => {
   res.json(db.prepare('SELECT * FROM compliance WHERE district_id = ? ORDER BY sort_order').all(did));
 });
 
-// ── Governance Status: CCRE-based met/partially/not met per function ──
+// ── Governance status: CCRE-aligned met/partially/not-met view per function ──
 app.get('/api/governance-status', requireAuth, (req, res) => {
   const did = getDistrictId(req);
   if (!did) return res.json({ functions: [] });
@@ -723,7 +737,7 @@ app.get('/api/executive-summary', requireAuth, (req, res) => {
   const did = getDistrictId(req);
   const district = db.prepare('SELECT * FROM districts WHERE id = ?').get(did);
 
-  // ── CCRE Maturity (from self-assessment) ────────────────────────
+  // ── Cybersecurity-governance maturity (from self-assessment) ─────
   const sa = db.prepare(
     'SELECT ratings, updated_at FROM self_assessments WHERE district_id = ? ORDER BY updated_at DESC LIMIT 1'
   ).get(did);
@@ -841,7 +855,7 @@ app.get('/api/executive-summary', requireAuth, (req, res) => {
     });
   if (trainingRate < 80) nextSteps.push(`Increase staff training completion from ${trainingRate}% to at least 80%.`);
   if (complianceRate < 70) nextSteps.push(`Close compliance gaps, currently ${complianceRate}% of framework requirements met.`);
-  if (allRated === 0) nextSteps.push('Complete the CCRE Self-Assessment to establish baseline maturity across all six NIST functions.');
+  if (allRated === 0) nextSteps.push('Complete the CCRE-aligned cybersecurity-governance self-assessment to establish baseline maturity across all six NIST functions.');
   if (aiSystemCount > 0 && aiCategoriesRated === 0) nextSteps.push('Complete the CAIRE Self-Assessment to establish AI RMF maturity across GOVERN, MAP, MEASURE, and MANAGE.');
   if (nextSteps.length === 0) nextSteps.push('Maintain current strong posture. Schedule quarterly review to track improvements.');
 
@@ -861,7 +875,7 @@ app.get('/api/executive-summary', requireAuth, (req, res) => {
 
   res.json({
     district,
-    // CCRE maturity (replaces health-based 0-100 score)
+    // Cybersecurity-governance maturity (replaces health-based 0-100 score)
     overallMaturity,
     functionMaturity,
     aiOverallMaturity,
@@ -1077,7 +1091,7 @@ app.put('/api/audit-requests/:id', requireAuth, requireRole('platform_admin'), (
 });
 
 // ════════════════════════════════════════════════════════════════
-//  REPORT GENERATION (CCRE 2.0 Word document)
+//  REPORT GENERATION (CCRE-aligned cybersecurity-governance Word document)
 // ════════════════════════════════════════════════════════════════
 
 app.post('/api/assessments/:id/generate-report', requireAuth, requireRole('platform_admin'), async (req, res) => {
@@ -1105,7 +1119,7 @@ app.post('/api/assessments/:id/generate-report', requireAuth, requireRole('platf
       selfAssessmentRatings,
     });
 
-    const filename = `CCRE_Report_${district.slug}_${new Date().toISOString().split('T')[0]}.docx`;
+    const filename = `Cybersecurity_Governance_Report_${district.slug}_${new Date().toISOString().split('T')[0]}.docx`;
 
     // Store in DB for district access
     db.prepare('INSERT INTO assessment_reports (assessment_id, district_id, generated_by, filename, report_data) VALUES (?,?,?,?,?)')
@@ -1486,6 +1500,7 @@ app.get('/api/findings/documents', requireAuth, requireRole('platform_admin', 'd
 // POST /api/findings/upload — upload doc, extract text, run AI evaluation
 app.post('/api/findings/upload',
   requireAuth, requireRole('platform_admin', 'district_it'),
+  findingsUploadLimiter,
   upload.single('document'),
   async (req, res) => {
     const did = getDistrictId(req);
@@ -1512,7 +1527,9 @@ app.post('/api/findings/upload',
     try {
       aiFindings = await extractFindingsWithAI(contentText, district?.name) || [];
     } catch (err) {
-      aiError = anthropic ? err.message : 'ANTHROPIC_API_KEY not configured. Add it to your .env file to enable AI evaluation.';
+      aiError = anthropic
+        ? 'AI-assisted extraction did not complete. Review server logs for details.'
+        : 'AI-assisted extraction is not configured for this deployment.';
     }
 
     // Save the document record
@@ -1568,11 +1585,17 @@ app.post('/api/demo/reset',
   requireAuth,
   requireRole('platform_admin'),
   (req, res) => {
+    if (process.env.DEMO_RESET_ENABLED !== 'true') {
+      return res.status(404).json({ error: 'Not found' });
+    }
     try {
+      if (!req.session.username) {
+        return res.status(401).json({ success: false, error: 'Session username is unavailable.' });
+      }
       const { resetWalkervilleDemo } = require('./database');
       resetWalkervilleDemo(db);
       const refreshedUser = db.prepare('SELECT * FROM users WHERE username = ?')
-        .get(req.session.username || 'admin');
+        .get(req.session.username);
       if (refreshedUser) {
         req.session.userId = refreshedUser.id;
         req.session.role = refreshedUser.role;

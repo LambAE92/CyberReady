@@ -155,7 +155,7 @@ describe('Assessments', () => {
   });
 });
 
-describe('Self-Assessment (CC4E)', () => {
+describe('Cybersecurity governance self-assessment', () => {
   it('saves self-assessment to server', async () => {
     const { status } = await req('/self-assessment', {
       method: 'POST',

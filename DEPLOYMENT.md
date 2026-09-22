@@ -39,6 +39,8 @@ npm start
 | `CORS_ORIGIN` | Yes | Public website or portal origin allowed by CORS. |
 | `PORT` | Platform dependent | Railway and Render usually inject this. |
 | `ANTHROPIC_API_KEY` | Optional | Enables AI-assisted finding extraction. |
+| `DEMO_*` credentials | Required for a new synthetic demo database | Set all six unique values from `hall-monitor/.env.example` before the first seed; never publish them. |
+| `DEMO_RESET_ENABLED` | No | Keep `false` unless the instance is a disposable synthetic demo. When `true`, a platform administrator can reset the seeded demo data. |
 
 ### SQLite Production Note
 
@@ -67,13 +69,15 @@ Netlify is recommended for the public acquisition landing page connected to the 
 1. Import the repository into the selected hosting platform.
 2. Set the project root directory to `website`.
 3. Set `NEXT_PUBLIC_HALL_MONITOR_URL` to the hosted demo or buyer-controlled Hall Monitor portal.
-4. Deploy.
+4. Set `NEXT_PUBLIC_ACQUISITION_EMAIL` to a monitored acquisition-inquiry mailbox.
+5. Deploy.
 
 ### Required Environment Variables
 
 | Variable | Required | Notes |
 |---|---:|---|
 | `NEXT_PUBLIC_HALL_MONITOR_URL` | Yes | Used by website buttons that open the hosted demo or buyer-controlled Hall Monitor portal. |
+| `NEXT_PUBLIC_ACQUISITION_EMAIL` | Yes for the inquiry form | The static inquiry form opens a prefilled email draft; this value is public browser configuration, not a secret. |
 
 ## Domain
 

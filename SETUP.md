@@ -72,12 +72,22 @@ NODE_ENV=development
 PORT=3001
 CORS_ORIGIN=http://localhost:5173
 ANTHROPIC_API_KEY=
+
+# Required before a new synthetic demo database can be seeded. Use unique values; do not commit them.
+DEMO_ADMIN_USER=<unique-demo-admin-username>
+DEMO_ADMIN_PASS=<unique-demo-admin-password>
+DEMO_DISTRICT_IT_USER=<unique-demo-district-it-username>
+DEMO_DISTRICT_IT_PASS=<unique-demo-district-it-password>
+DEMO_SUPERINTENDENT_USER=<unique-demo-superintendent-username>
+DEMO_SUPERINTENDENT_PASS=<unique-demo-superintendent-password>
+DEMO_RESET_ENABLED=false
 ```
 
 Create `website/.env.local` from `website/.env.example`.
 
 ```env
 NEXT_PUBLIC_HALL_MONITOR_URL=http://localhost:5173
+NEXT_PUBLIC_ACQUISITION_EMAIL=<monitored-acquisition-inquiry-email>
 ```
 
 ## Demo setup

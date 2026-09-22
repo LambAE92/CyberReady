@@ -521,10 +521,10 @@ function insertWalkervilleDemoData(db) {
 
   // ── Compliance ──────────────────────────────────────────────
   const compTemplate = [
-    ['Cybersecurity Rubric 2.0','Governance','Cybersecurity policy approved by board'],
-    ['Cybersecurity Rubric 2.0','Governance','Named cybersecurity program lead'],
-    ['Cybersecurity Rubric 2.0','Governance','Annual risk assessment conducted'],
-    ['Cybersecurity Rubric 2.0','Governance','AI governance policy adopted'],
+    ['Cybersecurity Governance (CCRE-aligned)','Governance','Cybersecurity policy approved by board'],
+    ['Cybersecurity Governance (CCRE-aligned)','Governance','Named cybersecurity program lead'],
+    ['Cybersecurity Governance (CCRE-aligned)','Governance','Annual risk assessment conducted'],
+    ['Cybersecurity Governance (CCRE-aligned)','Governance','AI governance policy adopted'],
     ['NIST CSF','Identify','Asset inventory maintained'],
     ['NIST CSF','Identify','Risk assessment process documented'],
     ['NIST CSF','Protect','Access control policies enforced'],
@@ -562,8 +562,8 @@ function insertWalkervilleDemoData(db) {
 
   // ── Prototype training modules ──────────────────────────────────
   const itUser = db.prepare(
-    "SELECT id FROM users WHERE username = 'walkerville_it'"
-  ).get();
+    'SELECT id FROM users WHERE username = ?'
+  ).get(demoDistrictItUser);
 
   const saRatings = {
     "Govern::ORGANIZATIONAL CONTEXT": 2,
