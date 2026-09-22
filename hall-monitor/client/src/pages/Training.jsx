@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import {
   GraduationCap, Clock, Users, MapPin, Video,
-  CheckCircle2, BookOpen, Award, Sparkles, ExternalLink,
-  Mail, Phone, Calendar
+  CheckCircle2, BookOpen, Award, Sparkles,
 } from 'lucide-react';
 import { api } from '../utils/api';
 import { useAuth } from '../context/useAuth';
@@ -12,27 +11,27 @@ const SESSIONS = [
   { fn: 'Govern',               mins: 140, color: 'bg-indigo-500',  textColor: 'text-indigo-700 dark:text-indigo-300',  bgColor: 'bg-indigo-50 dark:bg-indigo-900/20',  desc: 'Organizational context, risk management strategy, roles, policy, oversight, and supply chain risk management.' },
   { fn: 'Identify',             mins: 60,  color: 'bg-blue-500',    textColor: 'text-blue-700 dark:text-blue-300',      bgColor: 'bg-blue-50 dark:bg-blue-900/20',      desc: 'Asset management, risk assessment, and continuous improvement of your cybersecurity program.' },
   { fn: 'Protect',              mins: 60,  color: 'bg-emerald-500', textColor: 'text-emerald-700 dark:text-emerald-300',bgColor: 'bg-emerald-50 dark:bg-emerald-900/20',desc: 'Identity & access management, awareness & training, data & platform security, and infrastructure resilience.' },
-  { fn: 'Detect',               mins: 40,  color: 'bg-amber-500',   textColor: 'text-amber-700 dark:text-amber-300',    bgColor: 'bg-amber-50 dark:bg-amber-900/20',    desc: 'Continuous monitoring and adverse event analysis practices.' },
+  { fn: 'Detect',               mins: 40,  color: 'bg-amber-500',   textColor: 'text-amber-700 dark:text-amber-300',    bgColor: 'bg-amber-50 dark:bg-amber-900/20',    desc: 'Documented monitoring and adverse-event analysis practices.' },
   { fn: 'Respond',              mins: 90,  color: 'bg-orange-500',  textColor: 'text-orange-700 dark:text-orange-300',  bgColor: 'bg-orange-50 dark:bg-orange-900/20',  desc: 'Incident management, analysis, reporting & communication, and mitigation.' },
   { fn: 'Recover',              mins: 60,  color: 'bg-cyan-500',    textColor: 'text-cyan-700 dark:text-cyan-300',      bgColor: 'bg-cyan-50 dark:bg-cyan-900/20',      desc: 'Incident recovery plan execution and recovery communication.' },
   { fn: 'Wrap-up & Reflection', mins: 30,  color: 'bg-slate-500',   textColor: 'text-slate-700 dark:text-slate-300',    bgColor: 'bg-slate-50 dark:bg-slate-800/60',    desc: 'Final Q&A, group reflection, and planning next steps for your district.' },
 ];
 
 const OUTCOMES = [
-  "Assess your district's current cybersecurity practices against the CCRE Rubric 2.0",
+  "Use a sample cybersecurity-governance learning workflow aligned to NIST CSF 2.0 concepts",
   'Identify strengths, gaps, and priority areas across the six NIST CSF 2.0 functions',
   'Develop actionable improvement steps tied to each maturity level',
-  'Complete a self-evaluation and build a 12-month strategic roadmap',
+  'Complete a self-evaluation and outline an improvement roadmap',
   'Collaborate with peers facing the same K-12 cybersecurity challenges',
 ];
 
 const FACTS = [
-  { icon: Award,    label: 'Cost',        value: 'Free' },
-  { icon: Clock,    label: 'Duration',    value: '8 hours' },
-  { icon: Video,    label: 'Online',      value: 'Live virtual' },
-  { icon: MapPin,   label: 'In-Person',   value: 'Onsite option' },
+  { icon: Award,    label: 'Type',        value: 'Prototype workflow' },
+  { icon: Clock,    label: 'Timing',      value: 'Illustrative modules' },
+  { icon: Video,    label: 'Delivery',    value: 'Buyer configured' },
+  { icon: MapPin,   label: 'Scope',       value: 'K–12 governance' },
   { icon: Users,    label: 'Best For',    value: 'District teams' },
-  { icon: BookOpen, label: 'Facilitator', value: 'Certified CCRE' },
+  { icon: BookOpen, label: 'Framework',   value: 'NIST CSF 2.0 concepts' },
 ];
 
 const ROLES = [
@@ -48,10 +47,10 @@ const ROLES = [
 const FORMATS = ['In-Person', 'Virtual / Online', 'No Preference'];
 
 const WHAT_TO_EXPECT = [
-  'Confirmation of your request within 1–2 business days',
-  'A brief intro call to discuss your district\'s context and schedule',
-  'A full 8-hour Masterclass session — in-person or virtual',
-  'A completed self-evaluation and actionable 12-month improvement roadmap',
+  'A sample request recorded in the prototype workflow',
+  'A structured module outline for governance discussion',
+  'A place to document district context and learning preferences',
+  'A starting point for a buyer to configure its own delivery model',
 ];
 
 const inputCls = 'w-full rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 px-4 py-2.5 text-sm text-slate-900 dark:text-white placeholder:text-slate-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 outline-none transition-colors';
@@ -89,9 +88,9 @@ export default function Training() {
     <div className="space-y-6">
       {/* Header */}
       <div>
-        <h2 className="text-2xl font-bold text-slate-900 dark:text-white">Masterclass Training</h2>
+        <h2 className="text-2xl font-bold text-slate-900 dark:text-white">Cybersecurity Governance Learning Workflow</h2>
         <p className="text-sm text-slate-500 dark:text-slate-400">
-          The official Cybersecurity Rubric 2.0 Masterclass — facilitated in-person or virtually by your CCRE
+          Sample K–12 learning and request-tracking workflow included with the Hall Monitor prototype
         </p>
       </div>
 
@@ -104,14 +103,14 @@ export default function Training() {
           <div className="flex-1">
             <div className="inline-flex items-center gap-1.5 px-2 py-0.5 bg-white/20 rounded text-xs font-medium mb-2">
               <Sparkles size={12} />
-              FREE 8-HOUR TRAINING
+              PROTOTYPE LEARNING WORKFLOW
             </div>
-            <h3 className="text-xl font-bold">Cybersecurity Rubric Masterclass</h3>
+            <h3 className="text-xl font-bold">Cybersecurity Governance Learning Modules</h3>
             <p className="text-sm text-blue-100 mt-2 max-w-2xl">
-              A full-day, facilitator-led workshop that walks your district team through every function and category
-              of the CCRE Cybersecurity Rubric 2.0. Available as a live online session or delivered in-person at your
-              district. Groups are strongly encouraged — the more perspectives in the room, the more accurate your
-              self-evaluation.
+              This prototype provides a sample, facilitator-configurable module
+              outline for discussing K–12 cybersecurity governance. It is not an
+              official CoSN course, a certification program, or a promise of a
+              live training service.
             </p>
           </div>
         </div>
@@ -130,26 +129,18 @@ export default function Training() {
         ))}
       </div>
 
-      {/* Prerequisite */}
+      {/* Preparation note */}
       <div className="bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-xl p-4 flex items-start gap-3">
         <BookOpen size={20} className="text-amber-600 dark:text-amber-400 flex-shrink-0 mt-0.5" />
         <div className="flex-1">
           <p className="text-sm font-medium text-amber-900 dark:text-amber-200">
-            Required Before Requesting: <span className="font-semibold">Learn How to Use the Cybersecurity Rubric 2.0</span>
+            Preparation: <span className="font-semibold">Gather district governance evidence before using the workflow</span>
           </p>
           <p className="text-xs text-amber-800 dark:text-amber-300 mt-1">
-            Register and complete this free course in the CR Academy before submitting your Masterclass request.
-            The registration link is at the bottom of the course page.
+            The sample modules are designed to accompany discussion of policy,
+            asset, training, incident-response, and vendor-governance evidence.
           </p>
         </div>
-        <a
-          href="https://www.cybersecurityrubric.org/use-the-rubric"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-xs font-medium text-amber-900 dark:text-amber-200 hover:underline inline-flex items-center gap-1 flex-shrink-0"
-        >
-          Go to course <ExternalLink size={12} />
-        </a>
       </div>
 
       {/* Session Breakdown */}
@@ -196,12 +187,12 @@ export default function Training() {
         </div>
       </div>
 
-      {/* ── Request Form ─────────────────────────────────────────── */}
+      {/* ── Sample request form ───────────────────────────────────── */}
       <div id="request-form" className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden">
         <div className="px-6 py-5 border-b border-slate-200 dark:border-slate-700">
-          <h3 className="text-base font-semibold text-slate-900 dark:text-white">Request a Masterclass</h3>
+          <h3 className="text-base font-semibold text-slate-900 dark:text-white">Record a Sample Learning Request</h3>
           <p className="text-sm text-slate-500 dark:text-slate-400 mt-0.5">
-            Submit your request and your CCRE will follow up within 1–2 business days to schedule your session.
+            This saves a request in the prototype for workflow demonstration. It does not schedule a session or notify a third-party facilitator.
           </p>
         </div>
 
@@ -214,9 +205,9 @@ export default function Training() {
                 <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-green-100 dark:bg-green-900/40">
                   <CheckCircle2 size={28} className="text-green-600 dark:text-green-400" />
                 </div>
-                <h4 className="text-xl font-bold text-slate-900 dark:text-white">Request Received</h4>
+                <h4 className="text-xl font-bold text-slate-900 dark:text-white">Sample Request Recorded</h4>
                 <p className="mt-2 text-sm text-slate-600 dark:text-slate-400 max-w-sm mx-auto">
-                  Your Masterclass request has been submitted. Your CCRE will be in touch within 1–2 business days to confirm details and schedule your session.
+                  The request is stored in this Hall Monitor prototype for demonstration. It does not create a training engagement, certification, or facilitator commitment.
                 </p>
                 <button
                   onClick={() => { setSubmitted(false); setForm({ full_name: '', email: '', organization: '', role: '', format_preference: '', availability: '', message: '' }); }}
@@ -305,7 +296,7 @@ export default function Training() {
                   disabled={submitting}
                   className="inline-flex items-center gap-2 px-6 py-2.5 bg-blue-600 text-white text-sm font-semibold rounded-lg hover:bg-blue-700 disabled:opacity-60 transition-colors"
                 >
-                  {submitting ? 'Submitting…' : 'Submit Masterclass Request'}
+                  {submitting ? 'Saving…' : 'Save Sample Request'}
                 </button>
               </form>
             )}
@@ -314,20 +305,12 @@ export default function Training() {
           {/* Sidebar (1/3) */}
           <div className="px-6 py-6 space-y-6 bg-slate-50 dark:bg-slate-900/40">
 
-            {/* Contact */}
+            {/* Prototype scope */}
             <div>
-              <h4 className="text-sm font-semibold text-slate-700 dark:text-slate-300 mb-3">Get in Touch</h4>
-              <div className="space-y-3">
-                <div className="flex items-start gap-3">
-                  <Mail size={16} className="text-blue-600 dark:text-blue-400 mt-0.5 flex-shrink-0" />
-                  <div>
-                    <p className="text-xs font-medium text-slate-600 dark:text-slate-400">Email</p>
-                    <a href="mailto:info@cyberreadyschools.com" className="text-sm text-blue-600 dark:text-blue-400 hover:underline">
-                      info@cyberreadyschools.com
-                    </a>
-                  </div>
-                </div>
-              </div>
+              <h4 className="text-sm font-semibold text-slate-700 dark:text-slate-300 mb-3">Prototype Scope</h4>
+              <p className="text-xs text-slate-600 dark:text-slate-400">
+                A buyer may adapt these screens into its own learning, consulting, or managed-service workflow after confirming content rights and service-delivery requirements.
+              </p>
             </div>
 
             {/* What to Expect */}
@@ -358,7 +341,7 @@ export default function Training() {
       </div>
 
       <p className="text-xs text-slate-400 dark:text-slate-500 text-center">
-        This prototype includes a sample K–12 cybersecurity training workflow. It does not provide or imply third-party certification, sponsorship, or evaluator services.
+        This prototype includes a sample K–12 cybersecurity learning workflow. It does not provide or imply third-party certification, sponsorship, endorsement, affiliation, or evaluator services.
       </p>
     </div>
   );

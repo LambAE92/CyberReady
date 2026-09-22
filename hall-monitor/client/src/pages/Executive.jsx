@@ -76,7 +76,7 @@ export default function Executive() {
   const insuranceScore = data.insuranceScore || 0;
   const insuranceTone = insuranceScore >= 70 ? 'text-green-600' : insuranceScore >= 50 ? 'text-amber-500' : 'text-red-600';
   const insuranceBar = insuranceScore >= 70 ? 'bg-green-500' : insuranceScore >= 50 ? 'bg-amber-500' : 'bg-red-500';
-  const insuranceLabel = insuranceScore >= 70 ? 'Strong Readiness' : insuranceScore >= 50 ? 'Moderate Readiness' : 'Needs Improvement';
+  const insuranceLabel = insuranceScore >= 70 ? 'Higher heuristic indicator' : insuranceScore >= 50 ? 'Mid-range heuristic indicator' : 'Needs governance review';
   const aiOverall = data.aiOverallMaturity || 0;
   const aiOverallLevel = aiOverall > 0 ? Math.min(5, Math.max(1, Math.round(aiOverall))) : 0;
   const aiLabel = aiOverallLevel > 0 ? MATURITY_LABELS[aiOverallLevel] : null;
@@ -104,7 +104,7 @@ export default function Executive() {
   if (hasRatings && data.categoriesRated > 0) {
     progressItems.push({
       color: overall >= 3 ? 'bg-green-500' : 'bg-amber-500',
-      text: `CCRE self-assessment: ${data.categoriesRated} of ${data.totalCategories} categories rated. Overall maturity at Level ${overallLevel} (${label?.short || ''}).`,
+      text: `CCRE-aligned cybersecurity-governance self-assessment: ${data.categoriesRated} of ${data.totalCategories} categories rated. Overall maturity at Level ${overallLevel} (${label?.short || ''}).`,
     });
   }
   if (hasAiRatings && data.aiCategoriesRated > 0) {
@@ -190,7 +190,7 @@ export default function Executive() {
             </div>
           </div>
 
-          <h2>CCRE Maturity by NIST Function</h2>
+          <h2>Cybersecurity Governance Maturity by NIST Function</h2>
           <table>
             <thead>
               <tr>
@@ -227,7 +227,7 @@ export default function Executive() {
           </ul>
 
           <div class="footer">
-            Prepared by HallMonitor · CyberReady K-12 Cybersecurity Platform · CCRE Cybersecurity Rubric 2.0
+            Prepared by HallMonitor · CyberReady K-12 Cybersecurity Platform · CCRE-aligned cybersecurity-governance workflow
           </div>
         </body>
       </html>
@@ -258,16 +258,16 @@ export default function Executive() {
         <div className="flex flex-col md:flex-row items-center gap-8">
           <ScoreRing score={overall} size={160} />
           <div className="flex-1">
-            <h3 className="text-lg font-semibold text-slate-900 dark:text-white">CCRE Cybersecurity Maturity</h3>
+            <h3 className="text-lg font-semibold text-slate-900 dark:text-white">Cybersecurity Governance Maturity (CCRE-aligned)</h3>
             {hasRatings ? (
               <>
                 <p className={`text-2xl font-bold mt-1 ${label?.tone}`}>
                   Level {overallLevel} - {label?.short}
                 </p>
                 <p className="text-sm text-slate-600 dark:text-slate-300 mt-3 leading-relaxed">
-                  {districtName}&apos;s overall CCRE maturity score is <strong>{overall.toFixed(1)}</strong> out of 5.0,
+                  {districtName}&apos;s overall cybersecurity-governance maturity score is <strong>{overall.toFixed(1)}</strong> out of 5.0,
                   based on {data.categoriesRated} of {data.totalCategories} rated categories.
-                  {overall < 2 && ' Immediate action is recommended to establish foundational cybersecurity controls.'}
+                  {overall < 2 && ' Consider prioritizing foundational cybersecurity-governance practices.'}
                   {overall >= 2 && overall < 3 && ' Foundational processes are emerging. Focus on formalizing documentation and standardizing practices.'}
                   {overall >= 3 && overall < 4 && ' Core processes are defined and documented. Prioritize measurement, enforcement, and consistency.'}
                   {overall >= 4 && ' Practices are actively managed with strong oversight. Continue optimizing and embedding a culture of security.'}
@@ -275,7 +275,7 @@ export default function Executive() {
               </>
             ) : (
               <p className="text-slate-500 dark:text-slate-400 mt-2 text-sm">
-                No self-assessment data yet. Complete the CCRE Cybersecurity Rubric evaluation to generate maturity scores.
+                No self-assessment data yet. Complete the CCRE-aligned cybersecurity-governance self-assessment to generate maturity scores.
               </p>
             )}
             <div className="flex gap-4 mt-4 text-sm flex-wrap">
@@ -353,7 +353,7 @@ export default function Executive() {
             </p>
           </div>
           <div className="flex-1">
-            <h3 className="text-lg font-semibold text-slate-900 dark:text-white">Insurance Readiness Score</h3>
+            <h3 className="text-lg font-semibold text-slate-900 dark:text-white">Indicative Insurance-Readiness Input</h3>
             <div className="w-full h-3 rounded-full bg-slate-200 dark:bg-slate-700 overflow-hidden mt-4">
               <div
                 className={`h-full rounded-full ${insuranceBar}`}
@@ -388,7 +388,7 @@ export default function Executive() {
               </table>
             </div>
             <p className="mt-4 text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
-              Reflects governance maturity across the NIST functions most weighted by cyber insurance underwriters. Improve your Govern, Protect, and Detect scores to advance this rating.
+              This prototype heuristic reflects selected NIST-function maturity weights. It is not an insurer score, underwriting model, coverage determination, or advice about eligibility.
             </p>
           </div>
         </div>

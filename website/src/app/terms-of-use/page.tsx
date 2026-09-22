@@ -15,7 +15,7 @@ export default function TermsOfUsePage() {
           Terms of Use
         </h1>
         <p className="mt-2 text-sm text-slate-500">
-          Last updated: April 1, 2026
+          Last updated: September 22, 2026
         </p>
 
         <div className="mt-10 space-y-8 text-slate-700 leading-relaxed">
@@ -38,13 +38,13 @@ export default function TermsOfUsePage() {
               2. Description of Platform Materials
             </h2>
             <p>
-              CyberReady is a cyber governance and digital resilience platform
-              package designed for K-12 school districts. The materials include
-              structured cyber governance evaluation workflows aligned to
-              CoSN Cybersecurity Readiness for Education (CCRE),
-              maturity assessments aligned to NIST frameworks, leadership
-              reporting, and improvement planning assets. Transfer terms are
-              subject to a written acquisition agreement.
+              CyberReady is a transfer-ready K-12 cybersecurity and
+              AI-governance platform package. The materials include structured
+              cybersecurity-governance workflows that are CoSN Cybersecurity
+              Readiness for Education (CCRE)-aligned, CyberReady&apos;s CAGR and
+              CAIRE materials, Hall Monitor prototype software, and buyer
+              documentation. Transfer terms, asset scope, and rights are subject
+              to a written acquisition agreement.
             </p>
           </div>
 
@@ -82,15 +82,15 @@ export default function TermsOfUsePage() {
               4. Intellectual Property
             </h2>
             <p>
-              All content on the CyberReady website, including text, graphics,
-              logos, images, software, and the compilation thereof, is the
-              property of CyberReady or its content suppliers and is protected by
-              United States and international copyright, trademark, and other
-              intellectual property laws. The CyberReady name, logo, and all
-              related product names, design marks, and slogans are
-              trademarks of CyberReady. The Cybersecurity Rubric framework and
-              CCRE-related framework materials may be subject to third-party
-              rights and are not represented as CyberReady-owned content.
+              The website and repository identify CyberReady and Hall Monitor
+              code, original copy, CAIRE/CAGR implementation, and associated
+              brand assets as prospective seller assets, subject to confirmation
+              of authorship, title, and transfer rights. Open-source software,
+              NIST materials, CoSN CCRE-related materials, and other
+              third-party content remain subject to their respective rights and
+              are not represented as CyberReady-owned content. Public access to
+              this site does not grant a licence to use any material beyond
+              ordinary evaluation of the package.
             </p>
           </div>
 
@@ -101,9 +101,11 @@ export default function TermsOfUsePage() {
             <p>
               Cyber governance evaluation reports, demo materials, and related
               artifacts are provided for review only unless otherwise stated in a
-              written agreement. They are not guarantees of security posture or
-              compliance status. Distribution of buyer materials to third parties
-              requires prior written consent from CyberReady.
+              written agreement. They are not independent certifications,
+              guarantees of security posture, insurance eligibility, or legal
+              compliance determinations. CyberReady does not claim ownership of
+              the CoSN CCRE program, certification authority, or endorsement by
+              CoSN, NIST, or another third party.
             </p>
           </div>
 
@@ -196,19 +198,11 @@ export default function TermsOfUsePage() {
               12. Contact Us
             </h2>
             <p>
-              If you have questions about these Terms of Use, please contact us
-              at:
-            </p>
-            <p className="mt-2">
-              CyberReady
-              <br />
-              Email:{" "}
-              <a
-                href="mailto:legal@cyberreadyschools.com"
-                className="text-blue-600 hover:text-blue-700"
-              >
-                legal@cyberreadyschools.com
-              </a>
+              These public-site terms are not a purchase agreement. Questions
+              about acquisition materials should be sent through the contact
+              method displayed on the acquisition inquiry page. Seller and buyer
+              should obtain legal review before relying on these terms or entering
+              a transaction.
             </p>
           </div>
         </div>

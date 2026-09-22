@@ -7,7 +7,7 @@ import Card from "@/components/ui/Card";
 export const metadata: Metadata = {
   title: "For School Districts",
   description:
-    "CyberReady includes structured cybersecurity and AI governance assessment workflows with board-ready reporting for school district leaders. Built on CoSN CCRE-aligned assessment, CAGR, CAIRE, and Hall Monitor.",
+    "CyberReady includes structured cybersecurity and AI-governance assessment workflows with leadership reporting for school district leaders. CCRE-aligned assessment, CAGR, CAIRE, and Hall Monitor.",
   openGraph: {
     title: "Cybersecurity and AI Governance for School Districts | CyberReady",
     description:
@@ -17,32 +17,32 @@ export const metadata: Metadata = {
 
 const challenges = [
   {
-    stat: "82%",
-    text: "of K-12 schools have experienced a cyber incident, making education the most targeted sector in the United States.",
+    stat: "Ransomware and vendor risk",
+    text: "District leaders need a documented way to discuss cyber exposure, vendor dependencies, response planning, and governance responsibilities.",
   },
   {
-    stat: "62M",
-    text: "student records were exposed in the PowerSchool breach alone, underscoring the scale of data vulnerability in education.",
+    stat: "Student-data stewardship",
+    text: "School systems manage sensitive student and staff information across many internal and third-party systems.",
   },
   {
-    stat: "Rising premiums",
-    text: "Cyber insurance carriers now require documented governance practices, and districts without them face coverage denials or steep rate increases.",
+    stat: "Insurance questionnaires",
+    text: "Insurance carriers may request evidence of controls and governance practices; coverage and underwriting decisions remain with each carrier.",
   },
   {
     stat: "Unchecked AI",
     text: "AI tools are entering classrooms and offices faster than districts can inventory, vet, or govern them.",
   },
   {
-    stat: "11%",
-    text: "Only a small share of districts have a formal AI tool vetting process, leaving privacy, bias, safety, and vendor risk decisions undocumented.",
+    stat: "AI governance gaps",
+    text: "Districts may need a repeatable way to document tool inventory, privacy considerations, human oversight, and decision records.",
   },
   {
     stat: "Unanswered questions",
     text: "Board members are asking about cyber readiness and AI oversight, but most districts lack a structured way to measure, report, or improve their posture.",
   },
   {
-    stat: "Growing compliance",
-    text: "New obligations like KCDPA (effective January 2026), evolving FERPA interpretations, and state-level cybersecurity standards demand formal documentation.",
+    stat: "Changing requirements",
+    text: "Privacy, procurement, and cybersecurity obligations vary by jurisdiction and organization; legal applicability requires district-specific review.",
   },
   {
     stat: "Stretched IT teams",
@@ -59,7 +59,7 @@ const aiGovernanceCards = [
   {
     title: "Vendor and DPA Review",
     description:
-      "Review vendor data practices, model training restrictions, sub-processors, and DPA language before AI tools reach students or staff data.",
+      "Record vendor, data-use, model-training, sub-processor, and agreement considerations for the district's own review process.",
   },
   {
     title: "Human Oversight",
@@ -81,7 +81,7 @@ const aiGovernanceCards = [
 const governanceEcosystem = [
   "CoSN CCRE-aligned cybersecurity assessment",
   "CAGR AI governance assessment",
-  "CAIRE evidence validation",
+  "CAIRE evidence-review workflow",
   "Hall Monitor board reporting",
 ];
 
@@ -119,7 +119,7 @@ const audiences = [
   {
     role: "District Administrators",
     description:
-      "Compliance documentation and audit readiness are becoming non-negotiable. CyberReady includes governance artifacts, evidence trails, and structured reporting that can support auditors, insurers, and state requirements.",
+      "CyberReady includes governance artifacts, evidence trails, and structured reporting that can support a district&apos;s internal preparation for auditors, insurers, and applicable requirements.",
     icon: (
       <svg className="h-8 w-8 text-blue-600" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
@@ -147,17 +147,17 @@ const deliverables = [
   {
     title: "Audit Alignment",
     description:
-      "Evidence-based documentation built during the assessment process provides the artifacts that auditors and insurance carriers require when reviewing district cyber governance.",
+      "Evidence-based documentation built during the assessment process can support a district&apos;s own preparation for auditor or insurance-carrier questions; it is not a coverage or compliance determination.",
   },
   {
     title: "Student Data Protection",
     description:
-      "Governance structures are evaluated specifically around the protection of student records, FERPA compliance, and vendor management practices that safeguard sensitive educational data.",
+      "The workflow includes governance questions concerning student-record protection, FERPA considerations, and vendor-management practices. It does not determine legal compliance.",
   },
   {
     title: "Improvement Planning",
     description:
-      "Every assessment concludes with a clear improvement roadmap that prioritizes actions by impact and feasibility, giving districts a measurable path forward rather than an overwhelming list.",
+      "The workflow supports documented improvement recommendations that can be prioritized by a district according to impact and feasibility.",
   },
 ];
 
@@ -172,7 +172,7 @@ const processSteps = [
     step: 2,
     title: "Stakeholder Interviews & Evidence Collection",
     description:
-      "The workflow supports interviews with district leadership, technology staff, and relevant stakeholders. Documentation and evidence are collected to validate governance practices.",
+      "The workflow supports interviews with district leadership, technology staff, and relevant stakeholders. Documentation and evidence can be recorded to support documented governance findings.",
   },
   {
     step: 3,
@@ -190,40 +190,40 @@ const processSteps = [
     step: 5,
     title: "Improvement Roadmap Development",
     description:
-      "A structured improvement roadmap is built with specific, measurable objectives prioritized by risk impact and implementation feasibility, giving the district a clear path forward.",
+      "The workflow supports an improvement roadmap with objectives a district can prioritize by risk impact and implementation feasibility.",
   },
   {
     step: 6,
     title: "Ongoing Progress Tracking & Re-evaluation",
     description:
-      "The platform supports improvement tracking over time with periodic re-evaluations that measure progress against the original baseline, demonstrating continuous governance maturity to boards and insurers.",
+      "The platform stores assessment history and supports periodic re-evaluation so districts can review progress against an earlier baseline.",
   },
 ];
 
 const evidenceStats = [
   {
-    figure: "$200M",
-    label: "FCC Cybersecurity Pilot",
+    figure: "K–12 context",
+    label: "District governance use case",
     detail:
-      "The FCC Schools and Libraries Cybersecurity Pilot Program has made $200 million available to help schools strengthen their cyber defenses. Governance documentation is foundational to eligibility.",
+      "The product is designed around school-district leadership, technology, vendor, policy, and reporting workflows.",
   },
   {
-    figure: "Jan 1, 2026",
-    label: "KCDPA Effective Date",
+    figure: "Legal review",
+    label: "Jurisdiction-specific obligations",
     detail:
-      "The Kentucky Consumer Data Privacy Act creates new compliance obligations for organizations handling personal data, including school districts managing student and family records.",
+      "A buyer or district should determine applicable privacy, education, procurement, and cybersecurity obligations with counsel.",
   },
   {
-    figure: "$3.31M",
-    label: "Average Breach Cost",
+    figure: "Evidence",
+    label: "Documented governance records",
     detail:
-      "The average cost of a data breach in the education sector is $3.31 million. Proactive governance is the most cost-effective defense against both financial and reputational damage.",
+      "Hall Monitor stores assessment notes, findings, selected maturity ratings, and reports; it does not replace security controls or incident response services.",
   },
   {
-    figure: "3.96M",
-    label: "Student Records Breached",
+    figure: "Buyer opportunity",
+    label: "Strategic expansion",
     detail:
-      "In 2025, 3.96 million student records were compromised across K-12 institutions, reinforcing the urgent need for structured governance and data protection frameworks.",
+      "A strategic operator may extend the platform through its own security services, integrations, identity capabilities, and K–12 distribution.",
   },
 ];
 
@@ -306,10 +306,12 @@ export default function ForSchoolDistrictsPage() {
               The CyberReady Governance Ecosystem
             </h3>
             <p className="mt-2 text-sm leading-relaxed text-slate-600">
-              CoSN CCRE-aligned assessment establishes cybersecurity maturity. CAGR establishes AI
-              governance maturity. CAIRE validates the AI evidence and findings.
-              Hall Monitor keeps posture, reporting, insurance readiness, and
-              improvement planning visible to district leadership.
+              CoSN CCRE-aligned assessment supports cybersecurity-maturity
+              review. CAGR structures AI-governance maturity review. CAIRE
+              provides an evidence-review workflow for notes and findings.
+              Hall Monitor keeps maturity, reporting, indicative
+              insurance-readiness inputs, and improvement planning visible to
+              district leadership.
             </p>
             <div className="mt-5 flex flex-wrap gap-2">
               {governanceEcosystem.map((item) => (
@@ -402,9 +404,9 @@ export default function ForSchoolDistrictsPage() {
       <section className="py-20 sm:py-28 bg-slate-50">
         <Container>
           <SectionHeading
-            label="The Landscape"
-            title="The Numbers Behind the Urgency"
-            description="The case for structured cyber governance in K-12 is backed by growing regulatory pressure, escalating breach costs, and increasing availability of federal support."
+            label="Acquisition Context"
+            title="What the Current Package Demonstrates"
+            description="CyberReady is presented as a working product foundation. Buyers should independently validate market data, regulatory applicability, and commercial demand for their intended delivery model."
           />
           <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {evidenceStats.map((item) => (

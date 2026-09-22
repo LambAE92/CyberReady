@@ -7,11 +7,11 @@ import Card from "@/components/ui/Card";
 export const metadata: Metadata = {
   title: "Hall Monitor",
   description:
-    "The AI-powered cybersecurity and AI governance operations platform built for K-12 school districts. Structured evaluation, continuous monitoring, and board-ready reporting.",
+    "K-12 cybersecurity and AI governance operations platform with structured assessment, evidence tracking, findings, and board-ready reporting.",
   openGraph: {
     title: "Hall Monitor | CyberReady",
     description:
-      "Cybersecurity and AI governance operations for K-12 school districts. CoSN CCRE-aligned and CAGR assessments, continuous monitoring, and executive reporting.",
+      "Cybersecurity and AI governance operations for K-12 school districts. CCRE-aligned and CAGR assessments, evidence tracking, and executive reporting.",
   },
 };
 
@@ -42,9 +42,9 @@ const features = [
     ),
   },
   {
-    title: "CAIRE Evaluator Workflow",
+    title: "CAIRE Evidence-Review Workflow",
     text:
-      "Evidence-based AI governance review process for interviews, notes, tool evidence, maturity validation, and board-ready AI findings.",
+      "Evidence-based AI governance review process for interviews, notes, tool evidence, maturity scoring support, and board-ready AI findings.",
     icon: (
       <svg className="h-8 w-8 text-blue-600" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75M5.25 4.5h9l4.5 4.5v10.5a1.5 1.5 0 0 1-1.5 1.5h-12a1.5 1.5 0 0 1-1.5-1.5V6a1.5 1.5 0 0 1 1.5-1.5Z" />
@@ -55,7 +55,7 @@ const features = [
   {
     title: "Evidence Tracking and Board Reporting",
     text:
-      "Capture notes, evidence locations, findings, insurance readiness, and leadership reports in one governance record.",
+      "Capture notes, evidence locations, findings, indicative insurance-readiness inputs, and leadership reports in one governance record.",
     icon: (
       <svg className="h-8 w-8 text-blue-600" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 6.75h15M4.5 12h15M4.5 17.25h9M7.5 4.5v15M16.5 4.5v7.5" />
@@ -63,9 +63,9 @@ const features = [
     ),
   },
   {
-    title: "Continuous Posture Monitoring",
+    title: "Continuous Governance Tracking",
     text:
-      "Real-time cybersecurity health tracking, AI governance posture, phishing simulation management, staff training dashboards, compliance tracking, and continuous improvement roadmaps.",
+      "Track cybersecurity maturity, AI-governance posture, findings, training workflow status, compliance records, and improvement progress over time. Hall Monitor does not ingest real-time security telemetry.",
     icon: (
       <svg className="h-8 w-8 text-blue-600" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 5.25h15a1.5 1.5 0 0 1 1.5 1.5v9a1.5 1.5 0 0 1-1.5 1.5h-15a1.5 1.5 0 0 1-1.5-1.5v-9a1.5 1.5 0 0 1 1.5-1.5Z" />
@@ -79,7 +79,7 @@ const roleCards = [
   {
     title: "District Technology Staff",
     text:
-      "Full platform access for IT directors and technology coordinators managing district cybersecurity and AI governance operations.",
+      "Role-based platform access for IT directors and technology coordinators documenting district cybersecurity and AI-governance work.",
     items: [
       "CoSN CCRE-aligned and CAGR rubric assessments",
       "CAIRE evidence workflow",
@@ -95,10 +95,10 @@ const roleCards = [
   {
     title: "District Leadership",
     text:
-      "Executive-focused views for superintendents and board members who need governance visibility without navigating technical dashboards.",
+      "Executive-focused views for superintendents and leadership users who need governance visibility without navigating technical dashboards.",
     items: [
       "Executive summary and posture score",
-      "Insurance readiness scoring",
+      "Indicative insurance-readiness score",
       "AI governance board reporting",
       "Board-ready reporting",
       "NIST function overview",
@@ -116,7 +116,7 @@ const roleCards = [
       "CoSN CCRE-aligned cybersecurity assessment",
       "CAGR AI governance assessment",
       "Hall Monitor platform access",
-      "12-month improvement roadmap",
+      "Improvement roadmap views",
       "Executive reporting",
     ],
     button: "Request Access",
@@ -141,7 +141,7 @@ export default function HallMonitorPage() {
         <Container className="relative">
           <div className="mx-auto max-w-3xl text-center">
             <p className="text-sm font-semibold uppercase tracking-widest text-blue-400 mb-4">
-              AI-Powered Governance Platform
+              K-12 Cybersecurity &amp; AI Governance Platform
             </p>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-tight">
               Hall Monitor
@@ -150,7 +150,7 @@ export default function HallMonitorPage() {
               The operations platform for cybersecurity and AI governance.
             </p>
             <p className="mt-4 text-base text-slate-400 leading-relaxed max-w-2xl mx-auto">
-              CyberReady evaluates and validates both cybersecurity and AI governance posture using structured rubrics aligned to NIST frameworks.
+              Hall Monitor supports structured, interview- and evidence-based cybersecurity and AI-governance assessments using workflows aligned to NIST frameworks.
             </p>
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button href={portalUrl} size="lg" variant="primary">
@@ -168,7 +168,7 @@ export default function HallMonitorPage() {
         <Container>
           <SectionHeading
             label="What Hall Monitor Does"
-            title="One platform for CoSN CCRE-aligned assessment, CAGR, CAIRE, and board reporting."
+            title="One platform for CCRE-aligned assessment, CAGR, CAIRE, and board reporting."
             align="center"
           />
           <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -246,7 +246,7 @@ export default function HallMonitorPage() {
                 </div>
               </div>
               <div className="mt-6 flex gap-2 flex-wrap justify-center">
-                <span className="text-xs px-3 py-1 rounded-full bg-blue-900/50 text-blue-300">CCRE: 1.7</span>
+                <span className="text-xs px-3 py-1 rounded-full bg-blue-900/50 text-blue-300">Cyber: 1.7</span>
                 <span className="text-xs px-3 py-1 rounded-full bg-indigo-900/50 text-indigo-300">AI Gov: 1.6</span>
                 <span className="text-xs px-3 py-1 rounded-full bg-amber-900/50 text-amber-300">Insurance: 38</span>
               </div>

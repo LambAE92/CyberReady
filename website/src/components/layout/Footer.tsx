@@ -5,7 +5,7 @@ import Container from "@/components/ui/Container";
 const footerLinks = {
   Platform: [
     { label: "Overview", href: "/platform" },
-    { label: "CoSN CCRE Alignment", href: "/platform#methodology" },
+    { label: "Assessment Methodology", href: "/platform#methodology" },
     { label: "NIST Alignment", href: "/platform#nist" },
     { label: "Hall Monitor", href: "/platform#hall-monitor" },
   ],
@@ -75,16 +75,7 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} CyberReady. All rights reserved.
           </p>
           <p className="text-sm text-slate-500">
-            Built on the{" "}
-            <a
-              href="https://cybersecurityrubric.org"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-slate-400 hover:text-white transition-colors"
-            >
-              Cybersecurity Rubric
-            </a>{" "}
-            framework
+            Cybersecurity aligned to NIST CSF 2.0 · AI governance aligned to NIST AI RMF 1.0
           </p>
         </div>
       </Container>

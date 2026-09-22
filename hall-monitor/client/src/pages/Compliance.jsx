@@ -95,7 +95,7 @@ function GovernanceStatusSection({ fnData }) {
     <div className="space-y-4">
       <div className="flex items-center justify-between">
         <div>
-          <h3 className="text-base font-semibold text-slate-900 dark:text-white">CCRE Governance Status</h3>
+          <h3 className="text-base font-semibold text-slate-900 dark:text-white">Cybersecurity Governance Status (CCRE-aligned)</h3>
           <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
             Derived from self-assessment maturity scores and active findings
           </p>
@@ -195,7 +195,7 @@ function GovernanceStatusSection({ fnData }) {
               )}
               {isOpen && fn.categories.length === 0 && (
                 <div className="border-t border-slate-100 dark:border-slate-700/50 px-5 py-3 text-xs text-slate-400">
-                  No categories rated yet. Complete the CCRE self-assessment to see detailed status.
+                  No categories rated yet. Complete the cybersecurity-governance self-assessment to see detailed status.
                 </div>
               )}
             </div>
@@ -331,7 +331,7 @@ export default function Compliance() {
         </div>
       </div>
 
-      {/* CCRE Governance Status */}
+      {/* Cybersecurity-governance status derived from the CCRE-aligned workflow */}
       <GovernanceStatusSection fnData={govStatus.functions} />
 
       {/* Training Completion Feed */}

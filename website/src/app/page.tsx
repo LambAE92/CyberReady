@@ -8,11 +8,11 @@ import DashboardPreview from "@/components/hallmonitor/DashboardPreview";
 import { NIST_FUNCTIONS } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "CyberReady | Cybersecurity and AI Governance for School Districts",
+  title: "CyberReady | K-12 Cybersecurity & AI Governance Acquisition",
   description:
-    "CyberReady is a transfer-ready K-12 cybersecurity and AI governance asset package with CoSN CCRE-aligned assessment workflows, CAGR assessments, CAIRE methodology, and Hall Monitor reporting.",
+    "Acquire a transfer-ready K-12 cybersecurity and AI governance platform package with Hall Monitor, assessment workflows, reporting, and buyer diligence materials.",
   openGraph: {
-    title: "CyberReady | Cybersecurity and AI Governance for School Districts",
+    title: "CyberReady | K-12 Cybersecurity & AI Governance Acquisition",
     description:
       "Transfer-ready cybersecurity and AI governance platform package with structured evaluation, leadership reporting, and improvement planning for K-12 school districts.",
     url: "https://cyberreadyschools.com",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "CyberReady | Cybersecurity and AI Governance for School Districts",
+    title: "CyberReady | K-12 Cybersecurity & AI Governance Acquisition",
     description:
       "Transfer-ready cybersecurity and AI governance platform package with structured evaluation, leadership reporting, and improvement planning for K-12 school districts.",
   },
@@ -50,7 +50,7 @@ const howItWorksSteps = [
     step: "04",
     title: "Improvement Planning",
     description:
-      "Each assessment generates a prioritized improvement roadmap. District leaders can track progress against specific findings, monitor maturity growth over time, and demonstrate measurable advancement in their cyber governance posture.",
+      "The workflow supports a prioritized improvement roadmap. District leaders can track progress against specific findings, review maturity over time, and document governance improvement for leadership.",
   },
 ];
 
@@ -63,7 +63,7 @@ const differentiators = [
   {
     title: "Rubric-Based",
     description:
-      "Structured maturity evaluation using the Cybersecurity Rubric framework, not checkbox compliance or pass/fail audits.",
+      "Structured cybersecurity-governance maturity evaluation using a CCRE-aligned workflow, rather than a checkbox compliance or pass/fail audit.",
   },
   {
     title: "Leadership-Ready",
@@ -78,12 +78,12 @@ const differentiators = [
   {
     title: "Evidence-Based",
     description:
-      "Findings are grounded in structured interviews and documentation review, not self-reported surveys or automated scans.",
+      "The workflow supports structured interviews, documentation review, and recorded evidence alongside maturity scoring and findings.",
   },
   {
     title: "Improvement-Focused",
     description:
-      "Assessment is the starting point, not the end. Every evaluation produces a roadmap for measurable governance improvement.",
+      "Assessment is the starting point, not the end. The workflow supports prioritized governance-improvement planning and progress review.",
   },
 ];
 
@@ -101,7 +101,34 @@ const coreOfferings = [
   {
     title: "Hall Monitor Governance Platform",
     description:
-      "The operations platform for posture tracking, evidence notes, insurance readiness, improvement roadmaps, and board-ready reporting across cybersecurity and AI governance.",
+      "The operations platform for maturity tracking, evidence notes, findings, improvement roadmaps, and board-ready reporting across cybersecurity and AI governance.",
+  },
+];
+
+const acquisitionAssets = [
+  {
+    title: "Working Hall Monitor application",
+    description: "Role-based K-12 cyber and AI governance workflows, dashboards, findings, and reporting views.",
+  },
+  {
+    title: "Assessment and scoring workflows",
+    description: "CCRE-aligned cybersecurity assessment plus CAGR AI-governance assessment implementation.",
+  },
+  {
+    title: "CAIRE and CAGR methodology",
+    description: "CyberReady-created AI-governance workflow and rubric implementation, subject to authorship confirmation in diligence.",
+  },
+  {
+    title: "Executive reporting layer",
+    description: "Maturity, findings, compliance, and leadership-oriented reporting functionality.",
+  },
+  {
+    title: "Transfer-ready technical package",
+    description: "Source code, architecture, setup, security, IP, limitations, and handoff documentation.",
+  },
+  {
+    title: "Brand and domain assets",
+    description: "CyberReady and Hall Monitor marketing assets and domain-transfer materials, subject to agreement and rights review.",
   },
 ];
 
@@ -141,25 +168,49 @@ export default function Home() {
         <Container className="relative">
           <div className="max-w-3xl">
             <p className="text-sm font-semibold uppercase tracking-widest text-blue-400 mb-4">
-              K-12 Cybersecurity and AI Governance System
+              Strategic Acquisition Opportunity
             </p>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-[1.1]">
-              Available for acquisition as a transfer-ready platform package.
+              Acquire a purpose-built K–12 Cybersecurity &amp; AI Governance Platform.
             </h1>
             <p className="mt-6 text-lg sm:text-xl text-slate-300 leading-relaxed max-w-2xl">
-              CyberReady combines CoSN CCRE-aligned cybersecurity assessment, CAGR AI
-              governance assessment, CAIRE evaluator methodology, and the Hall
-              Monitor governance platform into one buyer-ready system for
-              executive reporting and board visibility.
+              CyberReady combines a working Hall Monitor application, a CoSN
+              CCRE-aligned cybersecurity workflow, CyberReady&apos;s CAGR and CAIRE
+              AI-governance methodology, executive reporting, and buyer-ready
+              technical documentation into one transfer-ready asset package.
             </p>
             <div className="mt-10 flex flex-col sm:flex-row gap-4">
               <Button href="/contact" variant="primary" size="lg">
-                Request Access
+                Request Diligence Access
               </Button>
               <Button href="/platform" variant="outline" size="lg" className="border-slate-400 text-white hover:bg-white/10 hover:text-white">
                 Explore the Platform
               </Button>
             </div>
+          </div>
+        </Container>
+      </section>
+
+      {/* ───────────────────── Acquisition Package ───────────────────── */}
+      <section className="py-20 sm:py-24 bg-white">
+        <Container>
+          <SectionHeading
+            label="What the Buyer Acquires"
+            title="A working K–12 governance product foundation—not a concept deck."
+            description="The package is designed for a cybersecurity firm, MSSP/MSP, GRC provider, EdTech company, AI-governance operator, or education technology integrator that can supply commercial infrastructure and distribution."
+          />
+          <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {acquisitionAssets.map((asset) => (
+              <Card key={asset.title} hover>
+                <h3 className="text-base font-bold text-navy-900 mb-2">{asset.title}</h3>
+                <p className="text-sm text-slate-600 leading-relaxed">{asset.description}</p>
+              </Card>
+            ))}
+          </div>
+          <div className="mt-10 text-center">
+            <Button href="/contact" variant="primary" size="md">
+              Review the acquisition package
+            </Button>
           </div>
         </Container>
       </section>
@@ -170,7 +221,7 @@ export default function Home() {
           <SectionHeading
             label="The Problem"
             title="School Districts Are Flying Blind on Cyber Risk"
-            description="Most K-12 districts lack the governance structures needed to understand where they stand on cybersecurity and AI adoption. Without structured evaluation, leadership teams are making decisions without visibility into ransomware exposure, cyber insurance readiness, student data risk, or AI tool oversight."
+            description="Many K-12 districts lack a structured governance process for understanding cybersecurity and AI adoption. Without a documented evaluation process, leadership teams may have limited visibility into ransomware exposure, insurance questionnaires, student-data risk, or AI-tool oversight."
           />
           <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
@@ -262,8 +313,8 @@ export default function Home() {
             ))}
           </div>
           <p className="mt-10 text-center text-slate-600 max-w-3xl mx-auto leading-relaxed">
-            CAIRE is CyberReady&apos;s evaluator methodology for AI governance
-            maturity reviews, adapting the evidence-based cybersecurity assessment process for AI
+            CAIRE is CyberReady&apos;s evidence-review methodology for AI governance
+            maturity reviews. It adapts the cybersecurity assessment process for AI
             tools, human oversight, vendor review, privacy, safety, and board
             reporting.
           </p>
@@ -324,7 +375,7 @@ export default function Home() {
           <SectionHeading
             label="Hall Monitor"
             title="See Cybersecurity and AI Governance Posture at a Glance"
-            description="Hall Monitor is the operations layer of CyberReady. It translates CoSN CCRE-aligned cybersecurity assessment results and CAGR AI governance findings into clear, leadership-ready dashboards that display maturity, evidence, insurance readiness, and prioritized improvements."
+            description="Hall Monitor is the operations layer of CyberReady. It translates CoSN CCRE-aligned cybersecurity assessment results and CAGR AI-governance findings into leadership-ready dashboards that display maturity, evidence, findings, and prioritized improvements."
           />
           <div className="mt-14 max-w-5xl mx-auto">
             <DashboardPreview />

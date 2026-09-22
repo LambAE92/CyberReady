@@ -39,7 +39,7 @@ const MATURITY_SCALE = [
 
 const ROADMAP_ITEMS = [
   { fn: "Respond",  fnColor: "bg-orange-50 text-orange-700", priority: "bg-red-50 text-red-700",    label: "Critical", action: "Establish and document a formal incident response plan with assigned roles." },
-  { fn: "Detect",   fnColor: "bg-amber-50 text-amber-700",   priority: "bg-orange-50 text-orange-700", label: "High",  action: "Implement continuous monitoring and anomaly detection procedures." },
+  { fn: "Detect",   fnColor: "bg-amber-50 text-amber-700",   priority: "bg-orange-50 text-orange-700", label: "High",  action: "Document and improve monitoring and anomaly-detection procedures." },
 ];
 
 // Inline ScoreRing, exact replica of the Hall Monitor component.
@@ -93,7 +93,7 @@ export default function DashboardPreview() {
           </span>
         </div>
         <span className="text-[10px] text-slate-500 hidden sm:block">
-          CCRE {CATEGORIES_RATED} / {TOTAL_CATEGORIES}, AI {AI_CATEGORIES_RATED} / {AI_TOTAL_CATEGORIES}
+          Cyber {CATEGORIES_RATED} / {TOTAL_CATEGORIES}, AI {AI_CATEGORIES_RATED} / {AI_TOTAL_CATEGORIES}
         </span>
       </div>
 

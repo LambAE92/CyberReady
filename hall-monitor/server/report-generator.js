@@ -172,7 +172,7 @@ async function generateCCREReport({ district, assessment, ratings, auditorName, 
     }),
     new Paragraph({
       alignment: AlignmentType.CENTER, spacing: { after: 200 },
-      children: [new TextRun({ text: 'CyberReady Cybersecurity Assessment Report', size: 32, font: 'Arial', color: '333333' })],
+      children: [new TextRun({ text: 'CyberReady Cybersecurity Governance Assessment Report', size: 32, font: 'Arial', color: '333333' })],
     }),
     new Paragraph({
       alignment: AlignmentType.CENTER, spacing: { after: 600 },
@@ -181,6 +181,10 @@ async function generateCCREReport({ district, assessment, ratings, auditorName, 
     new Paragraph({
       alignment: AlignmentType.CENTER, spacing: { after: 200 },
       children: [new TextRun({ text: `Report Date: ${dateStr}`, size: 22, font: 'Arial', color: '666666' })],
+    }),
+    new Paragraph({
+      alignment: AlignmentType.CENTER, spacing: { after: 600 },
+      children: [new TextRun({ text: 'CCRE-aligned workflow mapped to NIST CSF 2.0. Not a CoSN certification, endorsement, or independent control validation.', size: 18, font: 'Arial', color: '666666' })],
     }),
     new Paragraph({ children: [new PageBreak()] }),
   );
@@ -194,7 +198,7 @@ async function generateCCREReport({ district, assessment, ratings, auditorName, 
     new Paragraph({
       spacing: { after: 200 },
       children: [new TextRun({
-        text: `A CyberReady cybersecurity assessment was completed for ${schoolName}. The assessment maps results to the cybersecurity framework functions and objectives outlined below.`,
+        text: `A CyberReady cybersecurity-governance assessment was documented for ${schoolName}. The workflow maps results to the NIST CSF 2.0 functions and objectives outlined below.`,
         size: 22, font: 'Arial',
       })],
     }),
@@ -205,7 +209,7 @@ async function generateCCREReport({ district, assessment, ratings, auditorName, 
     new Paragraph({
       spacing: { after: 100 },
       children: [new TextRun({
-        text: `Objectively review ${schoolName}\u2019s self-assessment results using the Cybersecurity Rubric.`,
+        text: `Review ${schoolName}\u2019s self-assessment results using CyberReady's CCRE-aligned cybersecurity-governance workflow.`,
         size: 22, font: 'Arial',
       })],
     }),
@@ -219,7 +223,7 @@ async function generateCCREReport({ district, assessment, ratings, auditorName, 
     new Paragraph({
       spacing: { after: 200 },
       children: [new TextRun({
-        text: `Prepare a Cybersecurity Rubric review report that provides feedback about current cybersecurity maturity levels to help ${schoolName} gauge their current state\u2019s effectiveness and identify improvement opportunities to support continuous improvement and the strategic planning process.`,
+        text: `Prepare a cybersecurity-governance assessment report that documents current maturity ratings and improvement opportunities to support planning and periodic review.`,
         size: 22, font: 'Arial',
       })],
     }),
@@ -278,11 +282,11 @@ async function generateCCREReport({ district, assessment, ratings, auditorName, 
 
   children.push(new Paragraph({ children: [new PageBreak()] }));
 
-  // ── CCRE MATURITY RATING ─────────────────────────────────────
+  // ── Cybersecurity-governance maturity rating ──────────────────
   children.push(
     new Paragraph({
       heading: HeadingLevel.HEADING_1, spacing: { after: 200 },
-      children: [new TextRun({ text: `CCRE MATURITY RATING: ${overallLabel}`, bold: true, size: 28, font: 'Arial', color: '1F4E79' })],
+      children: [new TextRun({ text: `CYBERSECURITY GOVERNANCE MATURITY RATING: ${overallLabel}`, bold: true, size: 28, font: 'Arial', color: '1F4E79' })],
     }),
     new Paragraph({
       spacing: { after: 200 },
@@ -313,7 +317,7 @@ async function generateCCREReport({ district, assessment, ratings, auditorName, 
     new Paragraph({
       spacing: { after: 200 },
       children: [new TextRun({
-        text: 'Findings are the specific and detailed results of the CR review. They are based on evidence about how the school measures up against the Cybersecurity Rubric.',
+        text: 'Findings are the documented results of the CyberReady assessment workflow. They reflect recorded evidence and reviewer judgment, not an external certification or independent control validation.',
         size: 22, font: 'Arial',
       })],
     }),
@@ -397,7 +401,7 @@ async function generateCCREReport({ district, assessment, ratings, auditorName, 
       new Paragraph({
         spacing: { after: 200 },
         children: [
-          new TextRun({ text: `CCRE Maturity Level: `, bold: true, size: 22, font: 'Arial' }),
+          new TextRun({ text: `Cybersecurity Governance Maturity Level: `, bold: true, size: 22, font: 'Arial' }),
           new TextRun({ text: overallMaturityLabel(ccreFuncAvg), size: 22, font: 'Arial' }),
         ],
       }),
@@ -415,7 +419,7 @@ async function generateCCREReport({ district, assessment, ratings, auditorName, 
         new Paragraph({
           spacing: { after: 60 },
           children: [
-            new TextRun({ text: 'CCRE Rating: ', bold: true, size: 22, font: 'Arial' }),
+          new TextRun({ text: 'Governance Rating: ', bold: true, size: 22, font: 'Arial' }),
             new TextRun({ text: r ? maturityLabel(r.level) : 'Not Rated', size: 22, font: 'Arial' }),
           ],
         }),
@@ -460,7 +464,7 @@ async function generateCCREReport({ district, assessment, ratings, auditorName, 
     new Paragraph({
       spacing: { after: 200 },
       children: [new TextRun({
-        text: `The Cybersecurity Rubric Evaluation of ${schoolName} has been completed. The overall CCRE maturity rating is ${overallLabel}. ` +
+        text: `The CCRE-aligned cybersecurity-governance assessment of ${schoolName} has been documented. The overall maturity rating is ${overallLabel}. ` +
           (strongFunctions.length > 0 ? `The district demonstrated strong practices in ${strongFunctions.join(', ')}. ` : '') +
           (weakFunctions.length > 0 ? `Priority improvement areas include ${weakFunctions.join(', ')}. ` : '') +
           `${schoolName} is encouraged to use these findings as a roadmap for continuous improvement and to revisit the self-assessment process regularly to track progress over time.`,
@@ -481,7 +485,7 @@ async function generateCCREReport({ district, assessment, ratings, auditorName, 
       ],
     }),
     new Paragraph({
-      children: [new TextRun({ text: 'Cybersecurity Assessment Practitioner', italics: true, size: 20, font: 'Arial', color: '666666' })],
+      children: [new TextRun({ text: 'Cybersecurity Assessment Facilitator', italics: true, size: 20, font: 'Arial', color: '666666' })],
     }),
     new Paragraph({
       children: [new TextRun({ text: 'CyberReady', size: 20, font: 'Arial', color: '666666' })],
@@ -513,7 +517,7 @@ async function generateCCREReport({ district, assessment, ratings, auditorName, 
         default: new Header({
           children: [new Paragraph({
             alignment: AlignmentType.RIGHT,
-            children: [new TextRun({ text: `${schoolName} \u2014 CCRE Report ${yearStr}`, size: 16, font: 'Arial', color: '999999' })],
+            children: [new TextRun({ text: `${schoolName} \u2014 Cybersecurity Governance Report ${yearStr}`, size: 16, font: 'Arial', color: '999999' })],
           })],
         }),
       },

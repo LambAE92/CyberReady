@@ -138,7 +138,7 @@ export default function Risks() {
         <div>
           <h2 className="text-2xl font-bold text-slate-900 dark:text-white">Findings &amp; Recommendations</h2>
           <p className="text-sm text-slate-500 dark:text-slate-400">
-            Upload evaluation documents for AI-powered finding extraction, or manage findings manually
+            Upload evaluation documents for AI-assisted finding extraction, or manage findings manually
           </p>
         </div>
         <button onClick={loadData}
@@ -154,9 +154,9 @@ export default function Risks() {
           <div className="px-6 py-4 border-b border-slate-200 dark:border-slate-700 flex items-center gap-3">
             <Sparkles size={16} className="text-purple-500" />
             <div>
-              <h3 className="text-sm font-semibold text-slate-900 dark:text-white">AI Document Evaluation</h3>
+              <h3 className="text-sm font-semibold text-slate-900 dark:text-white">AI-Assisted Finding Extraction</h3>
               <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
-                Upload an audit report, policy review, or assessment document. Claude will extract findings automatically.
+                Upload an assessment document, policy review, or report for optional AI-assisted finding extraction. Review all suggested findings before relying on them.
               </p>
             </div>
           </div>

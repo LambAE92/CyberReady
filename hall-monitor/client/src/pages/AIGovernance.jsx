@@ -487,7 +487,7 @@ export default function AIGovernance() {
                   <div>
                     <h3 className="text-xl font-bold text-slate-900 dark:text-white">CAIRE Self-Assessment Audit</h3>
                     <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">
-                      CAGR is the CyberReady AI Governance Rubric. CAIRE is the evaluator methodology used to validate AI governance maturity through evidence, interviews, and board-ready reporting.
+                      CAGR is the CyberReady AI Governance Rubric. CAIRE is CyberReady&apos;s evidence-review workflow for documenting AI-governance maturity through evidence, interviews, and board-ready reporting.
                     </p>
                   </div>
 
@@ -527,7 +527,7 @@ export default function AIGovernance() {
                       <div>
                         <h3 className="text-lg font-semibold text-slate-900 dark:text-white">CAGR + CAIRE</h3>
                         <p className="text-sm text-slate-600 dark:text-slate-300 mt-1">
-                          CAGR provides the rubric. CAIRE provides the evaluator process. Together they help districts document how AI tools are governed, monitored, and improved.
+                          CAGR provides the rubric. CAIRE provides the evidence-review process. Together they help districts document how AI tools are governed, monitored, and improved.
                         </p>
                       </div>
                     </div>
@@ -537,9 +537,9 @@ export default function AIGovernance() {
                     <div className="flex items-start gap-3">
                       <BookOpen size={18} className="text-blue-700 dark:text-blue-400 mt-0.5" />
                       <div>
-                        <h3 className="text-lg font-semibold text-slate-900 dark:text-white">CAIRE Evaluation Guide</h3>
+                        <h3 className="text-lg font-semibold text-slate-900 dark:text-white">CAIRE Evidence-Review Guide</h3>
                         <p className="text-sm text-slate-600 dark:text-slate-300 mt-1">
-                          The CAIRE workflow mirrors the CCRE evidence-based evaluation process, adapted for AI governance. Review the maturity descriptors, collect evidence, document notes, and select the highest level fully supported by evidence.
+                          The CAIRE workflow adapts CyberReady&apos;s evidence-review process for AI governance. Review the maturity descriptors, collect evidence, document notes, and select the highest level supported by the recorded evidence.
                         </p>
                       </div>
                     </div>

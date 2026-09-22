@@ -340,7 +340,7 @@ function CCREAssessmentPanel() {
         setNotes(data?.notes || {});
         setSaveStatus('All changes saved');
       })
-      .catch(() => setSaveStatus('Unable to load saved CCRE assessment'));
+      .catch(() => setSaveStatus('Unable to load saved cybersecurity-governance assessment'));
   }, []);
 
   const saveAssessment = useCallback((nextRatings, nextNotes) => {
@@ -382,8 +382,8 @@ function CCREAssessmentPanel() {
   return (
     <div className="space-y-6">
       <SummaryHeader
-        title="CCRE Self-Assessment"
-        description="Use the CyberReady CCRE Cybersecurity Rubric to evaluate cybersecurity maturity across GOVERN, IDENTIFY, PROTECT, DETECT, RESPOND, and RECOVER."
+        title="Cybersecurity Governance Self-Assessment"
+        description="Use CyberReady's CCRE-aligned workflow to document cybersecurity maturity across GOVERN, IDENTIFY, PROTECT, DETECT, RESPOND, and RECOVER."
         score={stats.overall}
         stats={stats}
         total={CCRE_TOTAL}
@@ -519,7 +519,7 @@ function CAGRAssessmentPanel() {
       <div className="rounded-xl border border-indigo-200 dark:border-indigo-800 bg-indigo-50 dark:bg-indigo-900/20 p-5">
         <h3 className="text-sm font-semibold text-indigo-900 dark:text-indigo-200">CAGR + CAIRE</h3>
         <p className="text-sm text-indigo-900 dark:text-indigo-200 mt-2">
-          CAGR provides the rubric. CAIRE provides the evaluator process. Together they help districts document how AI tools are governed, monitored, and improved.
+          CAGR provides the rubric. CAIRE provides the evidence-review process. Together they help districts document how AI tools are governed, monitored, and improved.
         </p>
       </div>
 
@@ -543,8 +543,8 @@ function CAGRAssessmentPanel() {
 export default function UnifiedAssessmentTabs() {
   const [activeTab, setActiveTab] = useState('ccre');
   const tabs = [
-    { id: 'ccre', label: 'CCRE Self-Assessment', icon: ShieldCheck },
-    { id: 'cagr', label: 'CAIRE Self-Assessment', icon: Brain },
+    { id: 'ccre', label: 'Cybersecurity Governance', icon: ShieldCheck },
+    { id: 'cagr', label: 'CAGR AI Governance', icon: Brain },
   ];
 
   return (
@@ -552,7 +552,7 @@ export default function UnifiedAssessmentTabs() {
       <div>
         <h2 className="text-2xl font-bold text-slate-900 dark:text-white">Assessment</h2>
         <p className="text-sm text-slate-500 dark:text-slate-400">
-          Complete CCRE cybersecurity and CAIRE AI governance self-assessments with matching evidence-based workflows.
+          Complete CCRE-aligned cybersecurity-governance and CAGR AI-governance self-assessments with matching evidence-review workflows.
         </p>
       </div>
 

@@ -5,11 +5,39 @@ import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
 
 export default function ContactPage() {
-  const [submitted, setSubmitted] = useState(false);
+  const [mailClientOpened, setMailClientOpened] = useState(false);
+  const [formError, setFormError] = useState("");
+  const acquisitionEmail = process.env.NEXT_PUBLIC_ACQUISITION_EMAIL;
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setSubmitted(true);
+    if (!acquisitionEmail) {
+      setFormError(
+        "The acquisition contact channel is not configured. Please use the contact method supplied by the seller.",
+      );
+      return;
+    }
+
+    const form = new FormData(e.currentTarget);
+    const name = String(form.get("name") || "");
+    const organization = String(form.get("organization") || "");
+    const role = String(form.get("role") || "");
+    const email = String(form.get("email") || "");
+    const message = String(form.get("message") || "");
+    const subject = `CyberReady acquisition inquiry from ${organization || name}`;
+    const body = [
+      `Name: ${name}`,
+      `Organization: ${organization}`,
+      `Role or title: ${role}`,
+      `Email: ${email}`,
+      "",
+      "Message:",
+      message,
+    ].join("\n");
+
+    window.location.href = `mailto:${acquisitionEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    setFormError("");
+    setMailClientOpened(true);
   }
 
   return (
@@ -34,7 +62,7 @@ export default function ContactPage() {
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             <div className="lg:col-span-2">
-              {submitted ? (
+              {mailClientOpened ? (
                 <div className="rounded-xl border border-green-200 bg-green-50 p-8 text-center">
                   <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-green-100">
                     <svg
@@ -52,11 +80,13 @@ export default function ContactPage() {
                     </svg>
                   </div>
                   <h2 className="text-2xl font-bold text-navy-900">
-                    Request Received
+                    Email Draft Opened
                   </h2>
                   <p className="mt-2 text-slate-600">
-                    Your request has been received. Qualified inquiries will be
-                    reviewed for demo and buyer-material access.
+                    Your email application should now contain a prefilled
+                    acquisition inquiry. Please send that message to complete
+                    the request; this static website does not store form
+                    submissions.
                   </p>
                 </div>
               ) : (
@@ -149,12 +179,17 @@ export default function ContactPage() {
 
                   <div>
                     <Button type="submit" size="lg">
-                      Request Access
+                      Draft Acquisition Email
                     </Button>
                     <p className="mt-3 text-sm text-slate-500">
-                      Access to demo and materials is provided to qualified
-                      inquiries.
+                      This opens your email application with a prefilled
+                      inquiry. The website does not store or transmit this form.
                     </p>
+                    {formError ? (
+                      <p role="alert" className="mt-3 text-sm text-red-600">
+                        {formError}
+                      </p>
+                    ) : null}
                   </div>
                 </form>
               )}

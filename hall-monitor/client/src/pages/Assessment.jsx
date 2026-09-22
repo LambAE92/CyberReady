@@ -31,6 +31,13 @@ function normalizeAuditType(type) {
   return type;
 }
 
+function displayAuditType(type) {
+  const normalizedType = normalizeAuditType(type);
+  if (normalizedType === 'CCRE Audit') return 'Cybersecurity Governance Assessment (CCRE-aligned)';
+  if (normalizedType === 'CAIRE Audit') return 'AI Governance Assessment (CAIRE workflow)';
+  return normalizedType;
+}
+
 export default function Assessment() {
   const { user } = useAuth();
   const isAdmin = user?.role === 'platform_admin';
@@ -169,7 +176,7 @@ export default function Assessment() {
       const url = URL.createObjectURL(blob);
       const a = document.createElement('a');
       a.href = url;
-      a.download = `CCRE_Report_${new Date().toISOString().split('T')[0]}.docx`;
+      a.download = `Cybersecurity_Governance_Report_${new Date().toISOString().split('T')[0]}.docx`;
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);
@@ -252,7 +259,7 @@ export default function Assessment() {
         <p className="text-sm text-slate-500 dark:text-slate-400">
           {isAdmin
             ? 'Evaluate cybersecurity maturity using CyberReady’s NIST CSF 2.0-aligned assessment workflow'
-            : 'View your district audit results and request new audits'}
+            : 'View your district assessment results and record new assessment requests'}
         </p>
       </div>
 
@@ -334,7 +341,7 @@ export default function Assessment() {
           {isAdmin && auditRequests.filter(r => r.status === 'pending').length > 0 && (
             <div className="bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-xl p-6">
               <h3 className="text-sm font-semibold text-amber-700 dark:text-amber-400 uppercase tracking-wider mb-3">
-                Pending Audit Requests
+                Pending Assessment Requests
               </h3>
               <div className="space-y-3">
                 {auditRequests.filter(r => r.status === 'pending').map(req => (
@@ -376,7 +383,7 @@ export default function Assessment() {
             {assessments.length === 0 ? (
               <div className="px-6 py-12 text-center text-slate-400">
                 <ClipboardList size={32} className="mx-auto mb-3 opacity-50" />
-                <p>{isAdmin ? 'No assessments yet. Create one to get started.' : 'No audits have been conducted for your district yet.'}</p>
+                <p>{isAdmin ? 'No assessments yet. Create one to get started.' : 'No assessments have been recorded for your district yet.'}</p>
               </div>
             ) : (
               <div className="divide-y divide-slate-100 dark:divide-slate-700/50">
@@ -403,7 +410,7 @@ export default function Assessment() {
                         <>
                           {a.status === 'completed' && (
                             <button onClick={() => handleGenerateReport(a.id)} disabled={generatingReport}
-                              title="Generate CCRE Report"
+                              title="Generate cybersecurity governance report"
                               className="p-1.5 text-blue-500 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded disabled:opacity-50">
                               <FileText size={16} />
                             </button>
@@ -426,7 +433,7 @@ export default function Assessment() {
                         </>
                       )}
                       {!isAdmin && a.status === 'completed' && (
-                        <button onClick={() => loadAssessment(a.id)} title="View audit details"
+                        <button onClick={() => loadAssessment(a.id)} title="View assessment details"
                           className="p-1.5 text-blue-500 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded">
                           <Eye size={16} />
                         </button>
@@ -448,7 +455,7 @@ export default function Assessment() {
           <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden">
             <div className="px-6 py-4 border-b border-slate-200 dark:border-slate-700">
               <h3 className="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">
-                CCRE Reports
+                Cybersecurity Governance Reports
               </h3>
             </div>
             {reports.length === 0 ? (
@@ -501,9 +508,9 @@ export default function Assessment() {
                   onChange={e => setRequestAuditType(e.target.value)}
                   className="w-full mt-1 px-3 py-2 text-sm border border-slate-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-900 text-slate-900 dark:text-white"
                 >
-                  <option value="CCRE Audit">CCRE Audit</option>
-                  <option value="CAIRE Audit">CAIRE Audit</option>
-                  <option value="Both">Both CCRE and CAIRE</option>
+                  <option value="CCRE Audit">Cybersecurity Governance Assessment (CCRE-aligned)</option>
+                  <option value="CAIRE Audit">CAIRE AI Governance Assessment</option>
+                  <option value="Both">Both cybersecurity governance and CAIRE assessments</option>
                 </select>
               </div>
             )}
@@ -511,10 +518,10 @@ export default function Assessment() {
               <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-4">
                 <div className="flex items-center gap-2 text-blue-700 dark:text-blue-400">
                   <Clock size={16} />
-                  <span className="text-sm font-medium">You already have an active audit request.</span>
+                  <span className="text-sm font-medium">You already have an active assessment request.</span>
                 </div>
                 <p className="text-xs text-blue-600 dark:text-blue-500 mt-1">
-                  Your request is being reviewed by the CyberReady team. You'll be notified when it's processed.
+                  Your request is stored for platform-administrator review inside this prototype. It does not send an external notification or schedule an engagement.
                 </p>
               </div>
             ) : requestSuccess ? (
@@ -527,8 +534,7 @@ export default function Assessment() {
             ) : (
               <div className="space-y-4">
                 <p className="text-sm text-slate-600 dark:text-slate-400">
-                  Submit a request for CCRE cybersecurity validation, CAIRE AI governance validation, or both.
-                  The CyberReady team will review your request and schedule the audit.
+                  Record a request for a CCRE-aligned cybersecurity governance assessment, a CAIRE AI-governance assessment, or both. A platform administrator can review it inside Hall Monitor; the prototype does not create an external engagement, certification, or notification.
                 </p>
                 <div>
                   <label className="text-xs font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider">
@@ -537,7 +543,7 @@ export default function Assessment() {
                   <textarea
                     value={requestNotes}
                     onChange={e => setRequestNotes(e.target.value)}
-                    placeholder="Any specific areas of concern or reason for the audit request..."
+                    placeholder="Any specific areas of concern or reason for the assessment request..."
                     className="w-full mt-1 px-3 py-2 text-sm border border-slate-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-900 text-slate-900 dark:text-white"
                     rows={3}
                   />
@@ -576,7 +582,7 @@ export default function Assessment() {
                       <div className="flex items-center justify-between">
                         <div>
                           <p className="text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
-                            {normalizeAuditType(req.assessment_type)}
+                            {displayAuditType(req.assessment_type)}
                           </p>
                           <p className="text-sm text-slate-900 dark:text-white">
                             Requested by {req.requester_name}
@@ -616,7 +622,7 @@ export default function Assessment() {
                 <div className="bg-slate-50 dark:bg-slate-900/30 border border-slate-200 dark:border-slate-700 rounded-lg px-4 py-3">
                   <div className="flex items-center gap-2 text-slate-600 dark:text-slate-400">
                     <BookOpen size={16} />
-                    <span className="text-sm">Rubric reference only. No audit has been selected.</span>
+                    <span className="text-sm">Assessment guidance reference only. No assessment has been selected.</span>
                   </div>
                 </div>
               )}
@@ -626,7 +632,7 @@ export default function Assessment() {
                 <div className="bg-slate-50 dark:bg-slate-900/30 border border-slate-200 dark:border-slate-700 rounded-lg px-4 py-3">
                   <div className="flex items-center gap-2 text-slate-600 dark:text-slate-400">
                     <Eye size={16} />
-                    <span className="text-sm">Viewing audit results (read-only)</span>
+                    <span className="text-sm">Viewing assessment results (read-only)</span>
                   </div>
                 </div>
               )}
@@ -991,8 +997,8 @@ export default function Assessment() {
               <h3 className="text-lg font-semibold text-slate-900 dark:text-white">{TRAINING_GUIDE.title}</h3>
             </div>
             <p className="text-sm text-slate-600 dark:text-slate-400">
-              Learn how to use the Cybersecurity Rubric 2.0 for evaluating K-12 cybersecurity maturity.
-              These modules cover cybersecurity awareness, the NIST framework, and evaluation methodology.
+              Learn how to use the CCRE-aligned cybersecurity-governance workflow for K-12 maturity review.
+              These sample modules cover cybersecurity awareness, NIST framework concepts, and assessment methodology.
             </p>
           </div>
 

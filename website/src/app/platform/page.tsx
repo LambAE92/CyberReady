@@ -9,11 +9,11 @@ import { NIST_FUNCTIONS, AI_RMF_FUNCTIONS, MATURITY_LEVELS } from "@/lib/constan
 export const metadata: Metadata = {
   title: "Platform",
   description:
-    "CyberReady is a transfer-ready platform package with CoSN CCRE-aligned cybersecurity assessment, CAGR AI governance assessment, CAIRE evidence validation, and Hall Monitor reporting for K-12 school districts.",
+    "CyberReady is a transfer-ready platform package with CCRE-aligned cybersecurity assessment, CAGR AI-governance assessment, CAIRE evidence-review workflow, and Hall Monitor reporting for K-12 school districts.",
   openGraph: {
     title: "Platform | CyberReady",
     description:
-      "Structured cybersecurity and AI governance for K-12 school districts. CoSN CCRE-aligned assessment, CAGR, CAIRE, NIST alignment, and Hall Monitor reporting.",
+      "Structured cybersecurity and AI governance for K-12 school districts. CCRE-aligned assessment, CAGR, CAIRE, NIST alignment, and Hall Monitor reporting.",
   },
 };
 
@@ -32,15 +32,15 @@ const ecosystemLayers = [
   },
   {
     title: "CAIRE",
-    eyebrow: "AI evidence validation",
+    eyebrow: "AI evidence review",
     description:
-      "CAIRE validates AI governance evidence, interviews stakeholders, documents findings, and prepares board-ready AI governance reports.",
+      "CAIRE is CyberReady's structured method for documenting AI-governance evidence, stakeholder interviews, findings, and leadership-ready reports.",
   },
   {
     title: "Hall Monitor",
     eyebrow: "Operations platform",
     description:
-      "Hall Monitor tracks posture, evidence, recommendations, insurance readiness, continuous improvement, and board reporting.",
+      "Hall Monitor tracks maturity, evidence, findings, indicative insurance-readiness inputs, improvement progress, and board reporting.",
   },
 ];
 
@@ -49,7 +49,7 @@ const evaluationSteps = [
     step: "01",
     title: "Pre-Assessment Research",
     description:
-      "The evaluator reviews existing documentation, policies, and publicly available information about the district's cybersecurity posture before any interviews take place.",
+      "A trained practitioner reviews available documentation and policies before stakeholder interviews take place.",
   },
   {
     step: "02",
@@ -61,13 +61,13 @@ const evaluationSteps = [
     step: "03",
     title: "Evidence Collection",
     description:
-      "Gathering supporting documentation such as policies, procedures, incident response plans, training records, and system configurations to validate interview findings.",
+      "Gather supporting documentation such as policies, procedures, incident-response plans, training records, and system configurations to support documented findings.",
   },
   {
     step: "04",
     title: "Draft Report",
     description:
-      "A comprehensive draft report is prepared with findings, maturity level assessments, and preliminary recommendations organized by NIST function.",
+      "The workflow supports a draft report with findings, maturity-level assessments, and preliminary recommendations organized by NIST function.",
   },
   {
     step: "05",
@@ -79,7 +79,7 @@ const evaluationSteps = [
     step: "06",
     title: "Final Report",
     description:
-      "The finalized report is delivered with confirmed maturity levels, prioritized recommendations, and a clear improvement roadmap for district leadership.",
+      "A final report can document maturity levels, prioritized recommendations, and an improvement roadmap for district leadership.",
   },
 ];
 
@@ -252,9 +252,9 @@ export default function PlatformPage() {
             </h1>
             <p className="mt-6 text-lg sm:text-xl text-slate-300 leading-relaxed max-w-2xl mx-auto">
               Structured cybersecurity and AI governance built for school
-              districts. From CoSN CCRE-aligned and CAGR assessment through CAIRE evidence
-              validation, Hall Monitor reporting, and improvement planning,
-              CyberReady gives K-12 leaders a complete governance system.
+              districts. From CCRE-aligned and CAGR assessment through CAIRE
+              evidence review, Hall Monitor reporting, and improvement planning,
+              CyberReady provides a working governance platform foundation.
             </p>
             <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
               <Button href="/contact" variant="primary" size="lg">
@@ -274,7 +274,7 @@ export default function PlatformPage() {
           <SectionHeading
             label="CyberReady Ecosystem"
             title="One System for Cybersecurity and AI Governance"
-            description="CyberReady connects evaluation, evidence validation, operational tracking, insurance readiness, and board reporting in one governance lifecycle."
+            description="CyberReady connects assessment, evidence review, operational tracking, indicative insurance-readiness inputs, and board reporting in one governance lifecycle."
           />
           <div className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {ecosystemLayers.map((layer) => (
@@ -319,9 +319,10 @@ export default function PlatformPage() {
                 <li className="flex items-start gap-3">
                   <span className="mt-1 h-2 w-2 rounded-full bg-blue-500 shrink-0" />
                   <span>
-                    Assessments combine stakeholder interviews with evidence
-                    review to produce validated, defensible findings rather than
-                    self-reported surveys.
+                    A trained practitioner conducts an interview- and
+                    evidence-based assessment using the platform&apos;s
+                    CCRE-aligned workflow. The workflow records findings and
+                    maturity scoring; it is not an independent certification.
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
@@ -374,7 +375,7 @@ export default function PlatformPage() {
           <SectionHeading
             label="Maturity Model"
             title="Five Levels of Governance Maturity"
-            description="Every CyberReady evaluation produces a maturity level rating that tells districts exactly where they stand. The five-level model provides a clear progression path from ad hoc practices to continuously optimized governance."
+            description="The implemented assessment workflow records maturity ratings. The five-level model provides a progression path from ad hoc practices to more mature governance practices."
           />
           <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
             {MATURITY_LEVELS.map((level) => (
@@ -421,8 +422,8 @@ export default function PlatformPage() {
         <Container>
           <SectionHeading
             label="Framework Alignment"
-            title="Built on NIST Cybersecurity and AI Governance Frameworks"
-            description="CyberReady evaluations show maturity across the six NIST CSF 2.0 functions and the four NIST AI RMF 1.0 functions, giving districts a complete view of cybersecurity and AI governance posture."
+            title="Mapped to NIST Cybersecurity and AI Governance Frameworks"
+            description="CyberReady maps cybersecurity maturity to the six NIST CSF 2.0 functions and AI-governance maturity to the four NIST AI RMF 1.0 functions. This is alignment, not NIST certification or endorsement."
           />
           <div className="mt-14">
             <p className="text-sm font-semibold uppercase tracking-widest text-blue-600 mb-6">
@@ -495,7 +496,7 @@ export default function PlatformPage() {
           <SectionHeading
             label="Reporting & Outputs"
             title="From Assessment to Actionable Intelligence"
-            description="Every CyberReady evaluation produces a comprehensive set of deliverables designed to inform leadership decisions, guide improvement efforts, and demonstrate accountability to stakeholders."
+            description="The implemented workflow supports leadership-oriented outputs that can inform decisions, guide improvement efforts, and document accountability."
           />
           <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {reportingOutputs.map((output) => (
@@ -524,7 +525,7 @@ export default function PlatformPage() {
                 label="Hall Monitor"
             title="The Interface Layer for CyberReady Evaluations"
             align="left"
-                description="Hall Monitor is the operations and reporting layer of the CyberReady evaluation system. It transforms CoSN CCRE-aligned cybersecurity assessment results and CAGR AI governance findings into clear, interactive views that make governance data accessible to district leadership."
+                description="Hall Monitor is the operations and reporting layer of the CyberReady evaluation system. It presents CCRE-aligned cybersecurity assessment results and CAGR AI-governance findings in interactive views for district leadership."
               />
               <div className="mt-8 space-y-5">
                 {[
@@ -534,7 +535,7 @@ export default function PlatformPage() {
                   },
                   {
                     title: "Leadership Visibility",
-                    text: "Provides superintendents, school boards, and technology directors with a single pane of glass for understanding their district's governance posture.",
+                    text: "Provides superintendents, school boards, and technology directors with one place to review documented governance posture.",
                   },
                   {
                     title: "Findings & Gap Reporting",
@@ -542,7 +543,7 @@ export default function PlatformPage() {
                   },
                   {
                     title: "Progress Over Time",
-                    text: "Tracks governance maturity across multiple evaluation cycles, making it easy to demonstrate improvement and justify continued investment.",
+                    text: "Stores assessment history so users can review documented maturity and improvement progress across evaluation cycles.",
                   },
                 ].map((feature) => (
                   <div key={feature.title} className="flex items-start gap-3">
