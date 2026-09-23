@@ -102,3 +102,7 @@ This memo lists decisions supported by the repository review. It does not determ
 3. Confirm the seed/demo labels and approved public media/screenshots.
 4. Approve the public/controlled data-room boundary and use the proposed asset schedule as the starting point for counsel.
 5. Have counsel convert approved decisions into definitive transaction documents; do not treat this memo as such a document.
+
+## Evidence-pass addendum — 2026-09-23
+
+The final evidence pass identified additional chronology in locally available Git objects: the AI portal/CAGR data path begins in an April 2026 Alex Lamb-attributed commit, CAIRE is present in the April 2026 product path, and CCRR/CEAM begin in the September 2026 Alex Lamb-attributed commits. It also identified 13 unreachable local commits containing a historic reference corpus and retired demo credentials. This is helpful repository evidence, not legal title evidence. The decisions above remain necessary; the new concise owner actions are in `PRE_MERGE_ACQUISITION_OWNER_CHECKLIST.md`, and the details are in `ACQUISITION_PROVENANCE_EVIDENCE_REGISTER.md`.

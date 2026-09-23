@@ -88,7 +88,7 @@ The current repository is public. This index identifies a more conservative buye
 
 ## Delivery controls
 
-1. Deliver a tagged commit hash and a file manifest rather than an uncontrolled working directory.
+1. Deliver a tagged commit hash and a file manifest from a fresh clone or commit archive, never an uncontrolled working directory or its `.git` folder. The local object database contains unreachable historic reference material that is not part of the approved branch snapshot.
 2. Exclude all `.env`, databases, uploads, logs, runtime reports, credentials, and buyer/group demo accounts from repository delivery.
 3. Identify every controlled document by version/date and record whether its status is candidate, cleared, excluded, or pending review.
 4. Do not deliver the NIST AI RMF Playbook data, legacy CCRE/Cybersecurity Rubric source material, media, or controlled Drive methodology records as seller-owned assets absent an explicit owner/counsel decision.

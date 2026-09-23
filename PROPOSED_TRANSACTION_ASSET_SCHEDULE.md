@@ -4,7 +4,9 @@
 
 This is a technical packaging proposal, not a purchase agreement, IP assignment, licence grant, or legal conclusion. The definitive transaction documents must identify the actual seller, buyer, assets, exclusions, rights, representations, conditions, accounts, and closing mechanics. An item is not confirmed transferable merely because it appears below.
 
-**Baseline reviewed:** `final-acquisition-remediation` at `8ee27598b73bb0f7db1a4f2ba83aa5aa93739053`.
+**Baseline reviewed:** `final-acquisition-remediation` at `0e494f9cefe53a993685e38d30366120872effc0`.
+
+**Evidence-pass update:** The current source snapshot contains (a) candidate CyberReady methodology/implementation content and (b) separately identified external-reference content. In particular, the active NIST AI RMF Playbook file and matching CAGR subcategory statements are not represented as seller-owned. A buyer delivery must be a fresh clone or commit archive without the seller working directory’s `.git` objects.
 
 ## 1. Proposed transferable software assets
 
@@ -24,10 +26,10 @@ The transfer is of the seller’s interest, if any, in the product-specific sour
 
 | Proposed asset | Included technical form | Boundary | Proposed treatment |
 | --- | --- | --- | --- |
-| CCRR v1.0 | `ccrrData.js`, scoring helpers, database/API implementation, controlled canonical register and technical specification | NIST CSF identifiers are external mapping metadata; seller must confirm authorship/assignment for domain text and methodology documents | **TRANSFER** |
-| CEAM v1.0 | Evidence schema, gap taxonomy, evidence gate, findings, roadmap, reassessment implementation, controlled methodology specification | Does not transfer NIST/other external standards | **TRANSFER** |
-| CAGR v1.0 | `cagrData.js`, scoring and workflow implementation, controlled technical specification | Transfer candidate is the K–12 maturity/advancement/workflow layer; external AI RMF-like subcategory language requires separation/review | **OWNER/COUNSEL DECISION** |
-| CAIRE v1.0 | AI Governance workflow, evidence/rating/roadmap handling, controlled methodology specification | Does not transfer NIST AI RMF or its playbook content | **TRANSFER** |
+| CCRR v1.0 | `ccrrData.js`, scoring helpers, database/API implementation, controlled canonical register and technical specification | NIST CSF identifiers are external mapping metadata. Repository evidence supports technical separation from legacy rubric data, but seller must confirm authorship/assignment for domain text and methodology documents. | **TRANSFER** |
+| CEAM v1.0 | Evidence schema, gap taxonomy, evidence gate, findings, roadmap, reassessment implementation, controlled methodology specification | Does not transfer NIST/other external standards. Git/Drive records support a specification-to-code path, not legal title. | **TRANSFER** |
+| CAGR v1.0 | `cagrData.js`, scoring and workflow implementation, controlled technical specification | The K–12 maturity/advancement/workflow layer is a candidate transfer asset. The same file also includes AI RMF-aligned subcategory statements that match the external Playbook dataset; it is a hybrid file requiring field-level review. | **OWNER/COUNSEL DECISION** |
+| CAIRE v1.0 | AI Governance workflow, evidence/rating/roadmap handling, controlled methodology specification | Candidate CyberReady workflow. It does not transfer NIST AI RMF or its Playbook content; confirm its authorship/assignment and the product boundary. | **TRANSFER** |
 
 Before closing, create a versioned methodology exhibit that identifies the exact included source files and controlled specification records, their hashes, a contributor/author confirmation, and the precise treatment of any externally-derived wording.
 
@@ -68,7 +70,7 @@ The product relies on packages identified in the three package manifests and loc
 | Framework/reference | Current use | Proposed treatment |
 | --- | --- | --- |
 | NIST Cybersecurity Framework (CSF) 2.0 | CCRR traceability identifiers and high-level mapping | **TRANSFER WITH LICENSE/NOTICE** only as external-reference metadata; no ownership, endorsement, or certification representation |
-| NIST AI Risk Management Framework (AI RMF) 1.0 | CAGR/CAIRE alignment identifiers and active playbook data | Mapping identifiers may accompany the implementation as external references; the embedded Playbook file is **CONTROLLED DILIGENCE ONLY** pending rights/notice decision |
+| NIST AI Risk Management Framework (AI RMF) 1.0 | CAGR/CAIRE alignment identifiers and active playbook data | Mapping identifiers may accompany the implementation as external references. `aiRmfPlaybook.js` is active external-reference source content; the current UI imports it, so omitting it requires a future source change. Keep it **CONTROLLED DILIGENCE ONLY** pending a rights/notice decision. |
 | CoSN Cybersecurity Readiness for Education (CCRE) | Qualified practitioner credential, historical context, external interest-form link | **HISTORICAL REFERENCE ONLY**; no programme asset, course, certification authority, or CoSN relationship is included |
 | Cybersecurity Rubric, CC4E, ClassLink, Cybersecurity Coalition | Historical/provenance references only | **HISTORICAL REFERENCE ONLY** unless separately cleared |
 
@@ -83,6 +85,7 @@ These items should not form part of the default buyer-delivery repository packag
 | NIST AI RMF Playbook data | `hall-monitor/client/src/data/aiRmfPlaybook.js` | **CONTROLLED DILIGENCE ONLY**; active source metadata says generated from NIST AI RMF Playbook |
 | Controlled methodology source records | Drive-held CCRR/CEAM/CAGR/CAIRE specifications and source visual records | **CONTROLLED DILIGENCE ONLY** pending owner confirmation of authorship and final delivery scope |
 | Detailed security/IP/transaction records | Security, provenance, limitations, public/private, and decision documents | **CONTROLLED DILIGENCE ONLY** or owner/counsel-only as designated in the data-room index |
+| Local unreachable historical Git objects | Seller working directory `.git` database; includes historic reference corpus and retired demo credential records | **EXCLUDE** from buyer delivery; preserve separately, and provide only a fresh clone/commit archive if source is approved |
 
 ## 8. Proposed excluded materials
 
@@ -92,6 +95,7 @@ Unless expressly added to a signed schedule after evidence review, exclude:
 - NIST, CoSN/CCRE, CC4E, Cybersecurity Rubric, ClassLink, Cybersecurity Coalition, vendor, publisher, course, badge, certificate, or framework content not specifically cleared for the transaction.
 - The NIST AI RMF Playbook data and any copied/adapted external source content unless the owner/counsel decision permits its inclusion.
 - Media, headshot, template/icon assets, domains, hosting, email, social accounts, payment/accounts, and brand registrations not expressly scheduled with evidence of rights.
+- The seller working directory, its `.git` directory, and any unreachable historical objects. A source delivery must be a fresh clone or commit archive of the approved branch.
 - Promised revenue, customers, deployments, certifications, services, support, founder time, or other commercial commitments not specified in the definitive agreement.
 
 ## 9. Assets requiring owner/counsel confirmation

@@ -137,3 +137,9 @@ This is a packaging/provenance condition, not a legal-clearance conclusion and n
 ## Recommended next step
 
 Owner and counsel should review `ACQUISITION_IP_PROVENANCE_MATRIX.md`, `PROPOSED_TRANSACTION_ASSET_SCHEDULE.md`, and `ACQUISITION_OWNER_DECISION_MEMO.md`; designate the NIST AI RMF Playbook and legacy CCRE/Cybersecurity Rubric assets as approved, controlled, archived, or excluded; then issue a versioned buyer data-room manifest from `CONTROLLED_DILIGENCE_INDEX.md` before sharing code-level diligence materials.
+
+## Evidence-pass addendum — 2026-09-23
+
+The final owner evidence pass reviewed locally available Git objects in addition to the then-current clean history. It found an earlier implementation path attributed by Git to Alex Lamb: the initial CyberReady/Hall Monitor/website commit is dated 2026-04-22; the AI portal and `cagrData.js`/`aiRmfPlaybook.js` first appear on 2026-04-27; and CAIRE appears in the available product path on 2026-04-28. This supports chronology and product-specific context only; it does not establish authorship, assignment, ownership, licence scope, or exclusivity.
+
+The same local object database contains 13 unreachable commits / 419 objects, including a 120-file historic reference corpus and retired fixed demo credentials. Those objects are outside the current branches and do not change the current tracked package, but they must not accompany a buyer delivery. Use a fresh clone or commit archive without `.git`, preserve history separately, and do not treat historic reference material as a default transfer asset. See `ACQUISITION_PROVENANCE_EVIDENCE_REGISTER.md` and `PRE_MERGE_ACQUISITION_OWNER_CHECKLIST.md`.
