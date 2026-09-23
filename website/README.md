@@ -1,6 +1,6 @@
 # CyberReady Website
 
-This is the public acquisition website for CyberReady. It presents the Hall Monitor prototype, CoSN Cybersecurity Readiness for Education (CCRE)-aligned cybersecurity-governance workflow, CyberReady-created CAIRE/CAGR methodology (subject to seller authorship confirmation), and buyer diligence materials.
+This is the public acquisition website for CyberReady. It presents the Hall Monitor prototype, CyberReady's CCRR/CEAM cybersecurity-governance workflow with NIST CSF 2.0 external reference metadata, CyberReady-created CAIRE/CAGR methodology (subject to seller authorship confirmation), and buyer diligence materials.
 
 ## Run Locally
 

@@ -67,9 +67,13 @@ The public privacy policy was narrowed in this branch to distinguish the static 
 | Website dependency installation and production build | Passed with bundled Node 24 / pnpm environment after removing build-time Google Fonts dependency; 24 static/SSG routes generated successfully |
 | Hall Monitor server dependency installation | Completed; `better-sqlite3` required a local rebuild for this Node runtime |
 | Hall Monitor client production build | Passed after fixing a missing import from `ccreAssessment.json` to the tracked `cybersecurityAssessment.json`; Vite warned that one minified JS chunk exceeds 500 kB |
-| Hall Monitor smoke suite | Passed: 22 tests across authentication, district scoping, executive summary, assessments, self-assessment, notifications, audit log, and role access using a fresh synthetic database and disposable local credentials |
+| Hall Monitor smoke suite | Superseded by the 2026-09-23 completion run: 24 tests passed across authentication, district scoping, executive summary, CAIRE/CAGR, legacy compatibility, notifications, audit log, and role access using a fresh synthetic database and disposable local credentials |
 | Package advisory check | Not completed: pnpm `audit` rejected each project because no `pnpm-lock.yaml` exists; npm was unavailable in this environment. This is not a clean advisory result. |
 | Secret-pattern / tracked-runtime-path check | No high-confidence secret pattern or tracked runtime `.env`/database/upload/private-key file found; only `hall-monitor/.env.example` is tracked |
+
+### CCRR/CEAM completion verification — 2026-09-23
+
+The final implementation pass added deterministic in-process API tests (the server now exports its configured Express app for test use but starts normally when run directly). No deployment behavior changed. Results: 8 CCRR/CEAM unit tests, 5 CCRR/CEAM API integration tests, and 24 smoke/regression tests passed against disposable SQLite databases with environment-only synthetic credentials. The API tests cover evidence gating, all seven gap types, reassessment preservation, no legacy score conversion, and cross-district record isolation. Hall Monitor's Vite production build and the website's Next.js production build also passed; the Hall Monitor build retains a non-failing bundle-size warning. See `CCRR_CEAM_IMPLEMENTATION_REPORT.md`.
 
 ## Required pre-production security work
 

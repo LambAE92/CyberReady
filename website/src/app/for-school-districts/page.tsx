@@ -7,7 +7,7 @@ import Card from "@/components/ui/Card";
 export const metadata: Metadata = {
   title: "For School Districts",
   description:
-    "CyberReady includes structured cybersecurity and AI-governance assessment workflows with leadership reporting for school district leaders. CCRE-aligned assessment, CAGR, CAIRE, and Hall Monitor.",
+    "CyberReady includes structured cybersecurity and AI-governance assessment workflows with leadership reporting for school district leaders. CCRR/CEAM assessment, CAGR, CAIRE, and Hall Monitor.",
   openGraph: {
     title: "Cybersecurity and AI Governance for School Districts | CyberReady",
     description:
@@ -79,7 +79,7 @@ const aiGovernanceCards = [
 ];
 
 const governanceEcosystem = [
-  "CoSN CCRE-aligned cybersecurity assessment",
+  "CCRR/CEAM cybersecurity assessment",
   "CAGR AI governance assessment",
   "CAIRE evidence-review workflow",
   "Hall Monitor board reporting",
@@ -166,7 +166,7 @@ const processSteps = [
     step: 1,
     title: "Initial Evaluation",
     description:
-      "The process begins with a structured CoSN CCRE-aligned cybersecurity assessment, establishing baseline maturity across all NIST CSF functions.",
+      "The process begins with a structured CCRR/CEAM cybersecurity assessment, establishing baseline maturity across all NIST CSF 2.0 Function groupings.",
   },
   {
     step: 2,
@@ -306,7 +306,7 @@ export default function ForSchoolDistrictsPage() {
               The CyberReady Governance Ecosystem
             </h3>
             <p className="mt-2 text-sm leading-relaxed text-slate-600">
-              CoSN CCRE-aligned assessment supports cybersecurity-maturity
+              CCRR/CEAM assessment supports cybersecurity-maturity
               review. CAGR structures AI-governance maturity review. CAIRE
               provides an evidence-review workflow for notes and findings.
               Hall Monitor keeps maturity, reporting, indicative

@@ -8,7 +8,6 @@ const rateLimit = require('express-rate-limit');
 const multer = require('multer');
 const mammoth = require('mammoth');
 const { initDatabase, seedDatabase } = require('./database');
-const { generateCCREReport } = require('./report-generator');
 const { CCRR_DOMAIN_FUNCTIONS, CEAM_VALIDATION_STATUSES, CEAM_GAP_TYPES, calculateScores } = require('./ccrr');
 
 // ── Anthropic client (optional — requires ANTHROPIC_API_KEY) ──
@@ -247,26 +246,24 @@ app.get('/api/admin/overview', requireAuth, requireRole('platform_admin'), (req,
   const risks = { Critical: 0, High: 0, Medium: 0, Low: 0 };
   riskRows.forEach(r => { if (risks[r.severity] !== undefined) risks[r.severity] = r.count; });
 
-  // Assessment-request counts for the CCRE-aligned workflow
+  // Assessment-request counts; historical request labels are retained in data.
   const auditRows = db.prepare('SELECT status, COUNT(*) as count FROM audit_requests GROUP BY status').all();
   const auditRequests = { pending: 0, scheduled: 0, in_progress: 0, completed: 0 };
   auditRows.forEach(a => { if (auditRequests[a.status] !== undefined) auditRequests[a.status] = a.count; });
 
-  // Assessment (formal evaluation) counts
-  const asmtRows = db.prepare('SELECT status, COUNT(*) as count FROM assessments GROUP BY status').all();
+  // Current CCRR/CEAM assessment counts. Legacy formal evaluations remain
+  // available as historic records but do not populate the active dashboard.
+  const asmtRows = db.prepare('SELECT status, COUNT(*) as count FROM ccrr_assessments GROUP BY status').all();
   const evaluations = { draft: 0, in_progress: 0, completed: 0 };
   asmtRows.forEach(a => { if (evaluations[a.status] !== undefined) evaluations[a.status] = a.count; });
 
-  // Per-district summary with maturity from self_assessments
+  // Per-district summary from the current CCRR/CEAM assessment model. The
+  // six function scores are calculated before their equal-weighted overall.
   const perDistrict = districts.map(d => {
-    const sa = db.prepare(
-      'SELECT ratings FROM self_assessments WHERE district_id = ? ORDER BY updated_at DESC LIMIT 1'
-    ).get(d.id);
-    let ratings = {};
-    try { ratings = sa ? JSON.parse(sa.ratings) : {}; } catch { ratings = {}; }
-    const vals = Object.values(ratings).filter(v => typeof v === 'number' && v > 0);
-    const avg = vals.length ? vals.reduce((s, v) => s + v, 0) / vals.length : 0;
-    const ccreMaturity = Math.round(avg * 10) / 10;
+    const ccrr = db.prepare('SELECT id, status, updated_at FROM ccrr_assessments WHERE district_id = ? ORDER BY updated_at DESC LIMIT 1').get(d.id);
+    const ccrrRows = ccrr ? db.prepare('SELECT * FROM ccrr_domain_assessments WHERE assessment_id = ?').all(ccrr.id) : [];
+    const ccrrScores = calculateScores(ccrrRows);
+    const ccrrMaturity = Math.round((ccrrScores.overall || ccrrScores.provisionalOverall || 0) * 10) / 10;
 
     const cagr = db.prepare(`
       SELECT ROUND(AVG(maturity_level), 1) as avg,
@@ -284,27 +281,22 @@ app.get('/api/admin/overview', requireAuth, requireRole('platform_admin'), (req,
     const dRisks = { Critical: 0, High: 0, Medium: 0, Low: 0 };
     dRiskRows.forEach(r => { if (dRisks[r.severity] !== undefined) dRisks[r.severity] = r.count; });
 
-    // Has an in-progress or completed evaluation?
-    const latestAsmt = db.prepare(
-      'SELECT status, updated_at FROM assessments WHERE district_id = ? ORDER BY updated_at DESC LIMIT 1'
-    ).get(d.id);
-
     return {
       id: d.id,
       name: d.name,
       state: d.state,
       school_count: d.school_count,
       student_count: d.student_count,
-      overallMaturity: ccreMaturity,
-      ccreMaturity,
+      overallMaturity: ccrrMaturity,
+      ccrrMaturity,
       cagrMaturity,
-      categoriesRated: vals.length,
+      categoriesRated: ccrrScores.functions.reduce((count, fn) => count + fn.ratedDomains, 0),
       cagrCategoriesRated,
-      totalCategories: 22,
+      totalCategories: 18,
       cagrTotalCategories: 19,
       risks: dRisks,
-      evaluationStatus: latestAsmt?.status || 'none',
-      evaluationUpdatedAt: latestAsmt?.updated_at || null,
+      evaluationStatus: ccrr?.status || 'none',
+      evaluationUpdatedAt: ccrr?.updated_at || null,
       cagrUpdatedAt: cagr?.updatedAt || null,
     };
   });
@@ -348,29 +340,23 @@ app.get('/api/admin/overview', requireAuth, requireRole('platform_admin'), (req,
     };
   });
 
-  // ── Self-Assessment & Audit status per district ──
+  // ── CCRR/CEAM assessment and audit status per district ───────
   const selfAssessmentPerDistrict = districts.map(d => {
-    const snapshots = db.prepare(
-      'SELECT id, status, created_at, updated_at, ratings FROM self_assessments WHERE district_id = ? ORDER BY updated_at DESC'
-    ).all(d.id);
+    const snapshots = db.prepare('SELECT * FROM ccrr_assessments WHERE district_id = ? ORDER BY updated_at DESC').all(d.id);
     const latest = snapshots[0] || null;
-    let categoriesRated = 0;
-    if (latest?.ratings) {
-      try {
-        const r = JSON.parse(latest.ratings);
-        categoriesRated = Object.values(r).filter(v => typeof v === 'number' && v > 0).length;
-      } catch {}
-    }
+    const latestRows = latest ? db.prepare('SELECT * FROM ccrr_domain_assessments WHERE assessment_id = ?').all(latest.id) : [];
+    const categoriesRated = latestRows.filter(row => Number.isInteger(row.current_maturity)).length;
     // Audit requests for this district
     const auditReqs = db.prepare(
       'SELECT ar.*, u.full_name as requester_name FROM audit_requests ar LEFT JOIN users u ON ar.requested_by = u.id WHERE ar.district_id = ? ORDER BY ar.created_at DESC'
     ).all(d.id);
     const activeAudit = auditReqs.find(a => ['pending', 'approved', 'in_progress'].includes(a.status));
     const completedAudits = auditReqs.filter(a => a.status === 'completed');
-    // Assessment-management view (platform administrator)
-    const assessments = db.prepare(
-      'SELECT id, name, status, overall_maturity, created_at, updated_at FROM assessments WHERE district_id = ? ORDER BY updated_at DESC'
-    ).all(d.id);
+    const assessments = snapshots.map(item => {
+      const rows = db.prepare('SELECT * FROM ccrr_domain_assessments WHERE assessment_id = ?').all(item.id);
+      const scores = calculateScores(rows);
+      return { ...item, overall_maturity: scores.overall || scores.provisionalOverall || 0 };
+    });
     return {
       districtId: d.id,
       districtName: d.name,
@@ -399,9 +385,6 @@ app.get('/api/admin/overview', requireAuth, requireRole('platform_admin'), (req,
     const districtSummary = perDistrict.find(item => item.id === d.id);
     const selfSummary = selfAssessmentPerDistrict.find(item => item.districtId === d.id);
     const requests = selfSummary?.auditRequests || [];
-    const ccreCompleted = requests.some(req =>
-      ['CCRE Audit', 'CCRE Self-Assessment', 'Both'].includes(req.assessment_type || 'CCRE Self-Assessment') && req.status === 'completed'
-    );
     const cagrValidated = requests.some(req =>
       ['CAIRE Audit', 'CAIRE Self-Assessment', 'CAGR Self-Assessment', 'Both'].includes(req.assessment_type) && req.status === 'completed'
     );
@@ -409,8 +392,8 @@ app.get('/api/admin/overview', requireAuth, requireRole('platform_admin'), (req,
       {
         districtId: d.id,
         districtName: d.name,
-        assessmentType: 'Cybersecurity Governance Self-Assessment (CCRE-aligned)',
-        status: formatActivityStatus(ccreCompleted ? 'completed' : null, selfSummary?.categoriesRated || 0, 22),
+        assessmentType: 'CCRR/CEAM Cybersecurity Assessment',
+        status: formatActivityStatus(selfSummary?.latestStatus, selfSummary?.categoriesRated || 0, 18),
         lastUpdated: selfSummary?.latestUpdatedAt || null,
       },
       {
@@ -453,13 +436,18 @@ app.get('/api/admin/overview', requireAuth, requireRole('platform_admin'), (req,
     };
   });
 
-  // All admin's evaluations (assessment entries)
+  // Current CCRR/CEAM evaluations; historic pre-CCRR evaluations are not used
+  // as score inputs and remain available in their original tables.
   const allAssessments = db.prepare(`
     SELECT a.*, d.name as district_name
-    FROM assessments a
+    FROM ccrr_assessments a
     JOIN districts d ON a.district_id = d.id
     ORDER BY a.updated_at DESC
-  `).all();
+  `).all().map(item => {
+    const rows = db.prepare('SELECT * FROM ccrr_domain_assessments WHERE assessment_id = ?').all(item.id);
+    const scores = calculateScores(rows);
+    return { ...item, overall_maturity: scores.overall || scores.provisionalOverall || 0 };
+  });
 
   res.json({
     totalDistricts: districts.length,
@@ -652,19 +640,13 @@ app.get('/api/compliance', requireAuth, (req, res) => {
   res.json(db.prepare('SELECT * FROM compliance WHERE district_id = ? ORDER BY sort_order').all(did));
 });
 
-// ── Governance status: CCRE-aligned met/partially/not-met view per function ──
+// ── Governance status: CCRR/CEAM met/partially/not-met view per function ────
 app.get('/api/governance-status', requireAuth, (req, res) => {
   const did = getDistrictId(req);
   if (!did) return res.json({ functions: [] });
 
   const activeCcrr = db.prepare(`SELECT id, rubric_key, rubric_version, evidence_methodology_key, evidence_methodology_version
     FROM ccrr_assessments WHERE district_id = ? ORDER BY updated_at DESC LIMIT 1`).get(did);
-
-  // Get latest self-assessment ratings
-  const sa = db.prepare(
-    'SELECT ratings FROM self_assessments WHERE district_id = ? ORDER BY created_at DESC LIMIT 1'
-  ).get(did);
-  const ratings = sa?.ratings ? JSON.parse(sa.ratings) : {};
 
   // Get active findings by nist_function
   const activeFindings = db.prepare(
@@ -721,37 +703,9 @@ app.get('/api/governance-status', requireAuth, (req, res) => {
     return res.json({ methodology: { rubric: `${activeCcrr.rubric_key}@${activeCcrr.rubric_version}`, evidence: `${activeCcrr.evidence_methodology_key}@${activeCcrr.evidence_methodology_version}` }, functions, overall: scores.overall, provisionalOverall: scores.provisionalOverall });
   }
 
-  const functions = NIST_FUNCTIONS.map(fn => {
-    // Gather all category ratings for this function
-    const catRatings = Object.entries(ratings)
-      .filter(([key]) => key.startsWith(fn + '::'))
-      .map(([key, score]) => ({ name: key.slice(fn.length + 2), score }));
-
-    const fnFindings = findingMap[fn] || { Critical: 0, High: 0, Medium: 0, Low: 0 };
-    const avgMaturity = catRatings.length
-      ? Math.round(catRatings.reduce((s, c) => s + c.score, 0) / catRatings.length * 10) / 10
-      : 0;
-
-    const fnStatus = computeStatus(catRatings.length ? avgMaturity : null, fnFindings);
-
-    const categories = catRatings.map(cat => ({
-      name: cat.name,
-      maturityScore: cat.score,
-      status: computeStatus(cat.score, fnFindings),
-      activeFindings: (fnFindings.Critical || 0) + (fnFindings.High || 0) + (fnFindings.Medium || 0) + (fnFindings.Low || 0),
-    }));
-
-    return {
-      name: fn,
-      status: fnStatus,
-      avgMaturity,
-      categoriesRated: catRatings.length,
-      activeFindings: fnFindings,
-      categories,
-    };
-  });
-
-  res.json({ functions });
+  // Do not substitute legacy snapshot scores. A district without CCRR work is
+  // explicitly unassessed in the active governance status response.
+  res.json({ methodology: { rubric: 'ccrr_v1@1.0', evidence: 'ceam_v1@1.0' }, functions: NIST_FUNCTIONS.map(name => ({ name, status: 'Not Assessed', avgMaturity: 0, targetMaturity: 0, categoriesRated: 0, activeFindings: findingMap[name] || { Critical: 0, High: 0, Medium: 0, Low: 0 }, categories: [] })), overall: null, provisionalOverall: null });
 });
 
 // ════════════════════════════════════════════════════════════════
@@ -847,7 +801,7 @@ app.get('/api/executive-summary', requireAuth, (req, res) => {
     .slice(0, 3)
     .forEach(f => {
       const level = Math.round(f.score);
-      nextSteps.push(`Advance ${f.name} from L${level} toward L3 (Defined), formalize and document practices.`);
+      nextSteps.push(`Advance ${f.name} from L${level} toward L3 (Established), formalize and document practices.`);
     });
   aiFunctionMaturity
     .filter(f => f.score > 0 && f.score < 3)
@@ -1054,13 +1008,15 @@ app.post('/api/audit-requests', requireAuth, requireRole('platform_admin', 'dist
     : getDistrictId(req);
   const { notes } = req.body;
   const normalizeAuditType = (type) => {
-    if (!type || type === 'CCRE Self-Assessment') return 'CCRE Audit';
+    // CCRE labels are retained only to interpret existing historical rows.
+    if (!type || type === 'CCRR Self-Assessment' || type === 'CCRR/CEAM Assessment') return 'CCRR/CEAM Assessment';
+    if (type === 'CCRE Self-Assessment' || type === 'CCRE Audit') return 'CCRR/CEAM Assessment';
     if (type === 'CAGR Self-Assessment' || type === 'CAIRE Self-Assessment') return 'CAIRE Audit';
     return type;
   };
-  const assessmentType = normalizeAuditType(req.body.assessment_type || req.body.assessmentType || 'CCRE Audit');
+  const assessmentType = normalizeAuditType(req.body.assessment_type || req.body.assessmentType || 'CCRR/CEAM Assessment');
   if (!did) return res.status(400).json({ error: 'District is required' });
-  if (!['CCRE Audit', 'CAIRE Audit', 'Both'].includes(assessmentType)) {
+  if (!['CCRR/CEAM Assessment', 'CAIRE Audit', 'Both'].includes(assessmentType)) {
     return res.status(400).json({ error: 'Invalid assessment type' });
   }
   // Check for existing pending request
@@ -1095,49 +1051,13 @@ app.put('/api/audit-requests/:id', requireAuth, requireRole('platform_admin'), (
 });
 
 // ════════════════════════════════════════════════════════════════
-//  REPORT GENERATION (CCRE-aligned cybersecurity-governance Word document)
+//  LEGACY REPORT ACCESS
 // ════════════════════════════════════════════════════════════════
 
-app.post('/api/assessments/:id/generate-report', requireAuth, requireRole('platform_admin'), async (req, res) => {
-  try {
-    const did = getDistrictId(req);
-    const assessment = db.prepare('SELECT * FROM assessments WHERE id = ? AND district_id = ?').get(req.params.id, did);
-    if (!assessment) return res.status(404).json({ error: 'Assessment not found' });
-
-    const district = db.prepare('SELECT * FROM districts WHERE id = ?').get(did);
-    const ratings = db.prepare('SELECT * FROM assessment_ratings WHERE assessment_id = ?').all(assessment.id);
-    const auditor = db.prepare('SELECT full_name FROM users WHERE id = ?').get(req.session.userId);
-
-    // Get self-assessment ratings for comparison (latest completed)
-    const selfAssess = db.prepare("SELECT ratings FROM self_assessments WHERE district_id = ? AND status = 'completed' ORDER BY updated_at DESC LIMIT 1").get(did);
-    let selfAssessmentRatings = null;
-    if (selfAssess) {
-      try { selfAssessmentRatings = JSON.parse(selfAssess.ratings); } catch (e) { /* ignore */ }
-    }
-
-    const buffer = await generateCCREReport({
-      district,
-      assessment,
-      ratings,
-      auditorName: auditor?.full_name || 'CyberReady Auditor',
-      selfAssessmentRatings,
-    });
-
-    const filename = `Cybersecurity_Governance_Report_${district.slug}_${new Date().toISOString().split('T')[0]}.docx`;
-
-    // Store in DB for district access
-    db.prepare('INSERT INTO assessment_reports (assessment_id, district_id, generated_by, filename, report_data) VALUES (?,?,?,?,?)')
-      .run(assessment.id, did, req.session.userId, filename, buffer);
-
-    auditLog(req, 'generate_report', 'assessment_report', assessment.id, filename);
-
-    res.setHeader('Content-Type', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document');
-    res.setHeader('Content-Disposition', `attachment; filename="${filename}"`);
-    res.send(buffer);
-  } catch (err) {
-    console.error('Report generation error:', err);
-    res.status(500).json({ error: 'Failed to generate report' });
-  }
+app.post('/api/assessments/:id/generate-report', requireAuth, requireRole('platform_admin'), (req, res) => {
+  return res.status(410).json({
+    error: 'Legacy CCRE/Cybersecurity Rubric report generation is retired. Historical records remain available for review; create a CCRR/CEAM assessment for current reporting.',
+  });
 });
 
 // List reports for a district
@@ -1200,7 +1120,7 @@ app.post('/api/ccrr-assessments', requireAuth, requireRole('platform_admin', 'di
     (district_id, assessor_id, name, status, prior_assessment_id, reassessment_trigger) VALUES (?,?,?,'in_progress',?,?)`)
     .run(did, req.session.userId, name.trim(), prior_assessment_id || null, reassessment_trigger || null);
   auditLog(req, 'create_ccrr_assessment', 'ccrr_assessment', result.lastInsertRowid, 'ccrr_v1 / ceam_v1');
-  res.json(getCcrrAssessment(req, result.lastInsertRowid));
+  res.status(201).json(getCcrrAssessment(req, result.lastInsertRowid));
 });
 
 app.get('/api/ccrr-assessments/:id', requireAuth, (req, res) => {
@@ -1750,6 +1670,12 @@ if (isProduction) {
   });
 }
 
-app.listen(PORT, () => {
-  console.log(`HallMonitor API running on http://localhost:${PORT}`);
-});
+if (require.main === module) {
+  app.listen(PORT, () => {
+    console.log(`HallMonitor API running on http://localhost:${PORT}`);
+  });
+}
+
+// Exporting the configured app keeps normal `node server/index.js` startup
+// unchanged while allowing isolated in-process API regression tests.
+module.exports = { app, db };

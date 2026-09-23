@@ -5,6 +5,8 @@
 **Working branch:** `main` (curated public sale-package history)  
 **Scope:** Current worktree, 13 reachable Git revisions, configuration, source, package manifests/locks, user-facing documentation, and repository asset inventory. Secret values are intentionally not reproduced.
 
+> **2026-09-23 implementation addendum:** This baseline audit predates the accepted CCRR/CEAM implementation completion. The active cybersecurity product now uses CCRR v1.0 and CEAM v1.0 across 18 domains and six equally weighted Function scores; legacy CCRE/Cybersecurity Rubric records and source are preserved but are no longer active score/report inputs. See `CCRR_CEAM_IMPLEMENTATION_REPORT.md` for the current architecture, tests, and acceptance record.
+
 ## Executive view
 
 CyberReady is a credible **transfer-ready prototype and asset package**, not a production SaaS. Its principal technical asset is **Hall Monitor**, a working K–12 cyber-governance dashboard with role-based views, assessment workflows, reporting, and a separately deployable marketing website. The strongest buyer-diligence value is the combination of working product structure, K–12-oriented workflows, reporting UX, AI-governance workflow, and a curated technical/acquisition document set.

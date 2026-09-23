@@ -4,6 +4,8 @@
 **Perspective:** CTO, security lead, product lead, legal/IP counsel, and business-development executive.  
 **Scope:** current `final-acquisition-remediation` branch, public repository package, and read-only review of the deployed public website. This is not legal advice, an investment opinion, or production certification.
 
+> **2026-09-23 CCRR/CEAM addendum:** Active cybersecurity assessment, portfolio/dashboard, governance-status, executive-summary, and website product wording now use CCRR/CEAM. Legacy CCRE/Cybersecurity Rubric data/source is preserved for historical/provenance review but is not auto-converted or active in cybersecurity scoring/reporting. Final methodology, API, authentication/district-isolation, CAIRE/CAGR, and production-build verification is recorded in `CCRR_CEAM_IMPLEMENTATION_REPORT.md`.
+
 ## Executive conclusion
 
 **No technical blocker identified during this review.** This is not legal clearance. The package is a functional prototype and acquisition-evaluation asset, not a production SaaS. The most meaningful offer/diligence risks are rights/provenance, public-versus-controlled package boundaries, current live-site deployment/configuration, and standard production hardening—not an absence of a working product.
@@ -26,11 +28,11 @@
 
 ## Remediation evidence
 
-- CCRE/CoSN positioning is now limited to a qualified CCRE-aligned workflow and the seller-provided Practitioner designation. No current source copy describes CyberReady as a programme owner, certification authority, official CoSN product, or endorsed offering.
+- CCRE/CoSN positioning is now limited to the seller-provided Practitioner designation, explicit historical/rights disclaimers, and compatibility identifiers. Active cybersecurity product copy uses CCRR/CEAM; no current source copy describes CyberReady as a programme owner, certification authority, official CoSN product, or endorsed offering.
 - Global footer/framework branding no longer links or implies a Cybersecurity Rubric relationship; it uses neutral NIST CSF 2.0 / NIST AI RMF 1.0 alignment language.
 - Hall Monitor source build was repaired by correcting its missing tracked assessment-data import; no workflow was removed.
 - Production startup now requires explicit CORS origin configuration; upload extraction is rate limited; demo reset is disabled unless explicitly enabled for a synthetic demo.
-- Website production build and Hall Monitor client build passed. The existing Hall Monitor smoke suite passed all 22 tests on a fresh synthetic database.
+- Website production build and Hall Monitor client build passed. Final verification passed 8 CCRR unit tests, 5 CCRR/CEAM API integration tests, and 24 Hall Monitor smoke/regression tests on fresh synthetic databases.
 
 ## Buyer questions to answer with evidence, not marketing
 

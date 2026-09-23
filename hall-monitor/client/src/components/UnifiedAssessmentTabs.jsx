@@ -1,7 +1,6 @@
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { Brain, CheckCircle, ChevronDown, ChevronRight, ClipboardList, FileText, ShieldCheck } from 'lucide-react';
 import { api } from '../utils/api';
-import { RUBRIC_FUNCTIONS, MATURITY_LEVELS, NIST_FUNCTION_COLORS } from '../data/rubricData';
 import { CAGR_FUNCTIONS } from '../data/cagrData';
 import { getPlaybookForCategory } from '../data/aiRmfPlaybook';
 import CCRRPanel from './CCRRPanel';
@@ -14,6 +13,10 @@ const LEVEL_COLORS = {
   5: '#16a34a',
 };
 
+const NIST_FUNCTION_COLORS = {
+  GOVERN: '#6366f1', MAP: '#0ea5e9', MEASURE: '#f59e0b', MANAGE: '#10b981',
+};
+
 const LEVEL_NAMES = {
   1: 'Initial',
   2: 'Repeatable',
@@ -22,7 +25,6 @@ const LEVEL_NAMES = {
   5: 'Optimized',
 };
 
-const CCRE_TOTAL = RUBRIC_FUNCTIONS.reduce((sum, fn) => sum + fn.categories.length, 0);
 const CAGR_TOTAL = CAGR_FUNCTIONS.reduce((sum, fn) => sum + fn.categories.length, 0);
 
 function average(values) {
@@ -324,85 +326,6 @@ function SummaryHeader({ title, description, score, stats, total, saveStatus, fu
           </div>
         </div>
       </div>
-    </div>
-  );
-}
-
-function CCREAssessmentPanel() {
-  const [ratings, setRatings] = useState({});
-  const [notes, setNotes] = useState({});
-  const [saveStatus, setSaveStatus] = useState('Loading');
-  const [expanded, setExpanded] = useState({});
-
-  useEffect(() => {
-    api.selfAssessment()
-      .then(data => {
-        setRatings(data?.ratings || {});
-        setNotes(data?.notes || {});
-        setSaveStatus('All changes saved');
-      })
-      .catch(() => setSaveStatus('Unable to load saved cybersecurity-governance assessment'));
-  }, []);
-
-  const saveAssessment = useCallback((nextRatings, nextNotes) => {
-    setSaveStatus('Saving');
-    api.saveSelfAssessment({
-      timeframe: '2025-26',
-      ratings: nextRatings,
-      notes: nextNotes,
-      status: 'in_progress',
-    })
-      .then(() => setSaveStatus('All changes saved'))
-      .catch(() => setSaveStatus('Save error'));
-  }, []);
-
-  const getKey = (fn, category) => `${fn.name}::${category.name}`;
-  const getLevel = (fn, category) => ratings[getKey(fn, category)] || 0;
-  const getNote = (fn, category) => notes[getKey(fn, category)] || '';
-
-  const stats = useMemo(() => buildStats(RUBRIC_FUNCTIONS, getLevel), [ratings]);
-
-  const handleLevelChange = (fn, category, level) => {
-    const key = getKey(fn, category);
-    const nextRatings = { ...ratings, [key]: level };
-    setRatings(nextRatings);
-    saveAssessment(nextRatings, notes);
-  };
-
-  const handleNoteChange = (fn, category, value) => {
-    const key = getKey(fn, category);
-    setNotes(prev => ({ ...prev, [key]: value }));
-    setSaveStatus('Unsaved changes');
-  };
-
-  const handleNoteBlur = (fn, category) => {
-    const key = getKey(fn, category);
-    saveAssessment(ratings, { ...notes, [key]: notes[key] || '' });
-  };
-
-  return (
-    <div className="space-y-6">
-      <SummaryHeader
-        title="Cybersecurity Governance Self-Assessment"
-        description="Use CyberReady's CCRE-aligned workflow to document cybersecurity maturity across GOVERN, IDENTIFY, PROTECT, DETECT, RESPOND, and RECOVER."
-        score={stats.overall}
-        stats={stats}
-        total={CCRE_TOTAL}
-        saveStatus={saveStatus}
-        functions={RUBRIC_FUNCTIONS}
-      />
-      <RubricSections
-        functions={RUBRIC_FUNCTIONS}
-        stats={stats}
-        expanded={expanded}
-        setExpanded={setExpanded}
-        getLevel={getLevel}
-        getNote={getNote}
-        canEdit
-        onLevelChange={handleLevelChange}
-        onNoteChange={handleNoteChange}
-        onNoteBlur={handleNoteBlur}
-      />
     </div>
   );
 }

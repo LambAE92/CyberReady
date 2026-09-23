@@ -9,20 +9,20 @@ import { NIST_FUNCTIONS, AI_RMF_FUNCTIONS, MATURITY_LEVELS } from "@/lib/constan
 export const metadata: Metadata = {
   title: "Platform",
   description:
-    "CyberReady is a transfer-ready platform package with CCRE-aligned cybersecurity assessment, CAGR AI-governance assessment, CAIRE evidence-review workflow, and Hall Monitor reporting for K-12 school districts.",
+    "CyberReady is a transfer-ready platform package with CCRR/CEAM cybersecurity assessment, CAGR AI-governance assessment, CAIRE evidence-review workflow, and Hall Monitor reporting for K-12 school districts.",
   openGraph: {
     title: "Platform | CyberReady",
     description:
-      "Structured cybersecurity and AI governance for K-12 school districts. CCRE-aligned assessment, CAGR, CAIRE, NIST alignment, and Hall Monitor reporting.",
+      "Structured cybersecurity and AI governance for K-12 school districts. CCRR/CEAM assessment, CAGR, CAIRE, NIST alignment, and Hall Monitor reporting.",
   },
 };
 
 const ecosystemLayers = [
   {
-    title: "CoSN CCRE-aligned assessment",
+    title: "CCRR/CEAM cybersecurity assessment",
     eyebrow: "Cybersecurity maturity",
     description:
-      "CyberReady's CoSN CCRE-aligned workflow assesses cybersecurity governance maturity across NIST CSF 2.0 functions with interview-based and evidence-based documentation.",
+      "CyberReady's CCRR/CEAM workflow assesses cybersecurity governance maturity across six NIST CSF 2.0 Function groupings with interview-based and evidence-based documentation.",
   },
   {
     title: "CAGR",
@@ -215,7 +215,7 @@ const reportingOutputs = [
 const governanceSteps = [
   {
     label: "Evaluation",
-    description: "Structured CoSN CCRE-aligned and CAIRE assessment across CSF and AI RMF functions",
+    description: "Structured CCRR/CEAM and CAIRE assessment across CSF and AI RMF functions",
   },
   {
     label: "Analysis",
@@ -252,7 +252,7 @@ export default function PlatformPage() {
             </h1>
             <p className="mt-6 text-lg sm:text-xl text-slate-300 leading-relaxed max-w-2xl mx-auto">
               Structured cybersecurity and AI governance built for school
-              districts. From CCRE-aligned and CAGR assessment through CAIRE
+              districts. From CCRR/CEAM and CAGR assessment through CAIRE
               evidence review, Hall Monitor reporting, and improvement planning,
               CyberReady provides a working governance platform foundation.
             </p>
@@ -294,18 +294,18 @@ export default function PlatformPage() {
         </Container>
       </section>
 
-      {/* CCRE Methodology Section */}
+      {/* CCRR / CEAM Methodology Section */}
       <section id="methodology" className="py-20 sm:py-28 bg-slate-50 scroll-mt-20">
         <Container>
           <SectionHeading
-            label="CoSN CCRE Alignment"
-            title="CoSN Cybersecurity Readiness for Education (CCRE)"
-            description="CyberReady uses a CCRE-aligned, interview-based and evidence-based workflow for assessing K-12 cybersecurity governance maturity. CyberReady does not claim ownership of the CCRE program, certification authority, or endorsement."
+            label="CyberReady Cybersecurity Methodology"
+            title="CCRR v1.0 and CEAM v1.0"
+            description="CyberReady uses an interview- and evidence-based CCRR/CEAM workflow for assessing K-12 cybersecurity governance maturity. NIST CSF 2.0 identifiers are external reference metadata; this is not a NIST certification or endorsement."
           />
           <div className="mt-12 max-w-3xl mx-auto">
             <Card className="p-8 bg-slate-50 border-blue-100">
               <h3 className="text-lg font-semibold text-navy-900 mb-4">
-                How the CoSN CCRE-aligned Assessment Works
+                How the CCRR/CEAM Assessment Works
               </h3>
               <ul className="space-y-3 text-slate-600">
                 <li className="flex items-start gap-3">
@@ -321,7 +321,7 @@ export default function PlatformPage() {
                   <span>
                     A trained practitioner conducts an interview- and
                     evidence-based assessment using the platform&apos;s
-                    CCRE-aligned workflow. The workflow records findings and
+                    CCRR/CEAM workflow. The workflow records findings and
                     maturity scoring; it is not an independent certification.
                   </span>
                 </li>
@@ -525,7 +525,7 @@ export default function PlatformPage() {
                 label="Hall Monitor"
             title="The Interface Layer for CyberReady Evaluations"
             align="left"
-                description="Hall Monitor is the operations and reporting layer of the CyberReady evaluation system. It presents CCRE-aligned cybersecurity assessment results and CAGR AI-governance findings in interactive views for district leadership."
+                description="Hall Monitor is the operations and reporting layer of the CyberReady evaluation system. It presents CCRR/CEAM cybersecurity assessment results and CAGR AI-governance findings in interactive views for district leadership."
               />
               <div className="mt-8 space-y-5">
                 {[

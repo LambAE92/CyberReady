@@ -105,6 +105,7 @@ export const api = {
   saveCcrrDomain: (id, data) => request(`/ccrr-assessments/${id}/domains`, { method: 'POST', body: JSON.stringify(data) }),
   addCeamEvidence: (id, data) => request(`/ccrr-assessments/${id}/evidence`, { method: 'POST', body: JSON.stringify(data) }),
   addCeamFinding: (id, data) => request(`/ccrr-assessments/${id}/findings`, { method: 'POST', body: JSON.stringify(data) }),
+  addCcrrRoadmapItem: (id, data) => request(`/ccrr-assessments/${id}/roadmap`, { method: 'POST', body: JSON.stringify(data) }),
 
   // AI Governance
   aiSystems: () => request('/ai-systems'),

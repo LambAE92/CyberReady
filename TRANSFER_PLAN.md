@@ -6,10 +6,10 @@ This plan is an acquisition-handoff framework, not a purchase agreement. Final a
 
 | Asset | Status | Transfer notes |
 | --- | --- | --- |
-| Hall Monitor application source, configuration templates, tests and documentation | Transferable subject to seller title confirmation | Includes Express API, React/Vite client, SQLite seed workflow, reporting logic and local run instructions |
+| Hall Monitor application source, configuration templates, tests and documentation | Transferable subject to seller title confirmation | Includes Express API, React/Vite client, SQLite seed workflow, CCRR/CEAM implementation, CAIRE/CAGR workflow, reporting logic and local run instructions |
 | CyberReady website source and static assets | Transferable subject to seller title confirmation | Includes Next.js site, original copy/components and product-preview UI; verify individual image/media provenance |
 | CyberReady and Hall Monitor names, logos, visual assets and marketing copy | Requires specific review | Confirm trademark/design ownership, source files, domains and permitted use before scheduling |
-| CAIRE concept/workflow, CAGR implementation and original scoring/reporting logic | Transferable subject to authorship/provenance confirmation | Excludes NIST/CCRE/other third-party source language or materials unless separately cleared |
+| CCRR/CEAM methodology, CAIRE concept/workflow, CAGR implementation and original scoring/reporting logic | Transferable subject to authorship/provenance confirmation | Excludes NIST/CCRE/other third-party source language or materials unless separately cleared |
 | Seller-authored buyer materials | Transferable subject to authorship confirmation | Include final version of audit, architecture, limitations, demo and handoff documentation |
 | Current public source history | Transferable subject to seller title confirmation | Curated sale-package root history only; the pre-remediation history/archive is excluded unless specifically scheduled under controlled diligence |
 | Domain and DNS | Requires specific closing documentation | Registrar, renewal, account holder, authorization code, DNS export and buyer destination must be named |

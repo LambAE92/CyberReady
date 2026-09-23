@@ -11,7 +11,7 @@ CyberReady is best understood as a transfer-ready product and methodology founda
 ## What exists today
 
 - Hall Monitor: Express API, React/Vite dashboard, SQLite seed database, role-based district and platform-admin views.
-- Cybersecurity maturity workflow mapped to the six NIST CSF 2.0 functions, with 22 governance categories, evidence/notes, interview/checklist capture, maturity scoring, and DOCX/leadership reporting.
+- Cybersecurity maturity workflow using CCRR v1.0 and CEAM v1.0: 18 CyberReady Readiness Domains grouped into all six NIST CSF 2.0 Functions, separate current/target maturity, evidence, confidence, gap/finding, sequential-roadmap, dashboard, and executive-summary capabilities. The overall score equally weights Function scores; NIST identifiers are external reference metadata.
 - AI-governance workflow: AI system inventory, evidence capture, 19-category maturity structure across the NIST AI RMF functions GOVERN, MAP, MEASURE and MANAGE, plus CAIRE-labelled guided workflow and CAGR rubric implementation.
 - Findings/remediation, compliance, training, phishing, executive-summary, audit-log and assessment-request screens.
 - An optional Claude-assisted finding-extraction capability that is disabled unless a buyer supplies its own Anthropic API key.
@@ -23,17 +23,17 @@ CyberReady is best understood as a transfer-ready product and methodology founda
 | Differentiator | Buyer relevance |
 | --- | --- |
 | K–12 specialisation | Product, workflow and language are oriented to school district leadership, governance, student-data context, vendor risk and board communication |
-| Cybersecurity maturity assessment | Six NIST CSF 2.0 function groups, 22-category scoring workflow, evidence/notes and prioritized improvement context |
-| Executive reporting | Leadership-facing maturity, risk, training, compliance and improvement views; generated report capability |
+| Cybersecurity maturity assessment | CCRR/CEAM 18-domain assessment, six NIST CSF 2.0 Function groupings, evidence, independent critical gaps, and sequential improvement context |
+| Executive reporting | Leadership-facing CCRR maturity, risk, training, compliance and improvement views; a CCRR-specific downloadable report remains a buyer opportunity |
 | Findings and remediation workflow | Structured priorities, status, recommended action and evidence/notes provide an operational bridge from assessment to action |
 | AI governance | AI inventory, lifecycle/oversight data, maturity workflow, NIST AI RMF mapping, CAIRE guidance and CAGR implementation |
 | CAIRE and CAGR | Repository presents these as original CyberReady workflow/rubric assets; buyer should obtain provenance/assignment confirmation at closing |
 | NIST alignment | Clear CSF 2.0 and AI RMF 1.0 mappings, while avoiding a claim of NIST certification or endorsement |
 | Multiple governance audiences | Platform administrator, district IT and superintendent views support a superintendent/district/platform framing |
 
-## CCRE positioning
+## Cybersecurity methodology and historical CCRE positioning
 
-CyberReady uses the current positioning **CoSN Cybersecurity Readiness for Education (CCRE)-aligned**. CyberReady does not own the CCRE programme and should not be marketed as issuing CCRE certification, sponsorship or evaluation authority. Historic CCRE/CC4E resource materials, badges, certificates, report templates and masterclass content require separate legal/rights review and are not assumed transferable.
+The active cybersecurity product is **CyberReady Cybersecurity Readiness Rubric (CCRR) v1.0** with **CyberReady Cybersecurity Evidence Assessment Methodology (CEAM) v1.0**, aligned to NIST CSF 2.0 as external reference architecture. CyberReady does not claim NIST certification or ownership of NIST content. Historic CCRE/CC4E resource materials, badges, certificates, report templates and masterclass content are not the active methodology and require separate legal/rights review; they are not assumed transferable.
 
 When referring to Alex Lamb personally, the approved positioning for this package is **CoSN Cybersecurity Readiness for Education (CCRE) Practitioner**. No claim that Alex is a current CCRE Evaluator is made in this brief.
 

@@ -40,8 +40,8 @@ export default function TermsOfUsePage() {
             <p>
               CyberReady is a transfer-ready K-12 cybersecurity and
               AI-governance platform package. The materials include structured
-              cybersecurity-governance workflows that are CoSN Cybersecurity
-              Readiness for Education (CCRE)-aligned, CyberReady&apos;s CAGR and
+              cybersecurity-governance workflows using CyberReady&apos;s CCRR and
+              CEAM methodology, CyberReady&apos;s CAGR and
               CAIRE materials, Hall Monitor prototype software, and buyer
               documentation. Transfer terms, asset scope, and rights are subject
               to a written acquisition agreement.

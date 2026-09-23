@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Hall Monitor | CyberReady",
     description:
-      "Cybersecurity and AI governance operations for K-12 school districts. CCRE-aligned and CAGR assessments, evidence tracking, and executive reporting.",
+      "Cybersecurity and AI governance operations for K-12 school districts. CCRR/CEAM and CAGR assessments, evidence tracking, and executive reporting.",
   },
 };
 
@@ -20,9 +20,9 @@ const portalUrl =
 
 const features = [
   {
-    title: "CoSN CCRE-aligned Cybersecurity Assessment",
+    title: "CCRR/CEAM Cybersecurity Assessment",
     text:
-      "Structured rubric evaluation across all six NIST CSF 2.0 functions. Evidence-based maturity scoring with board-ready reports and prioritized improvement roadmaps.",
+      "Structured evaluation across 18 CyberReady Readiness Domains and all six NIST CSF 2.0 Function groupings. Evidence-based maturity scoring, findings, and sequential improvement roadmaps.",
     icon: (
       <svg className="h-8 w-8 text-blue-600" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" d="M12 3.75 4.5 6.5v5.75c0 4.35 2.95 7.05 7.5 8 4.55-.95 7.5-3.65 7.5-8V6.5L12 3.75Z" />
@@ -81,7 +81,7 @@ const roleCards = [
     text:
       "Role-based platform access for IT directors and technology coordinators documenting district cybersecurity and AI-governance work.",
     items: [
-      "CoSN CCRE-aligned and CAGR rubric assessments",
+      "CCRR/CEAM and CAGR rubric assessments",
       "CAIRE evidence workflow",
       "Risk and findings management",
       "Compliance tracking and documentation",
@@ -113,7 +113,7 @@ const roleCards = [
     text:
       "Review the transfer-ready CyberReady asset package, including platform code, website assets, governance materials, and buyer documentation.",
     items: [
-      "CoSN CCRE-aligned cybersecurity assessment",
+      "CCRR/CEAM cybersecurity assessment",
       "CAGR AI governance assessment",
       "Hall Monitor platform access",
       "Improvement roadmap views",
@@ -168,7 +168,7 @@ export default function HallMonitorPage() {
         <Container>
           <SectionHeading
             label="What Hall Monitor Does"
-            title="One platform for CCRE-aligned assessment, CAGR, CAIRE, and board reporting."
+            title="One platform for CCRR/CEAM assessment, CAGR, CAIRE, and board reporting."
             align="center"
           />
           <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

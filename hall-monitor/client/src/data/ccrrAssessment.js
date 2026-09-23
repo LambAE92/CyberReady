@@ -1,4 +1,4 @@
-import { CCRR_DOMAINS, CCRR_FUNCTIONS } from './ccrrData';
+import { CCRR_DOMAINS, CCRR_FUNCTIONS } from './ccrrData.js';
 
 export const CEAM = Object.freeze({
   key: 'ceam_v1',

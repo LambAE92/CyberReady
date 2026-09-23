@@ -32,7 +32,7 @@ const howItWorksSteps = [
     step: "01",
     title: "Self-Assessment",
     description:
-      "Before any external evaluation, the district completes a guided self-assessment inside Hall Monitor. Working through all six NIST functions, staff rate their current practices across 22 governance categories. Hall Monitor walks through each category with structured guidance so nothing is overlooked.",
+      "The district creates a CCRR/CEAM assessment inside Hall Monitor. Working through all six NIST CSF 2.0 Function groupings, staff rate current and target maturity across 18 CyberReady Readiness Domains with structured guidance and evidence.",
   },
   {
     step: "02",
@@ -63,7 +63,7 @@ const differentiators = [
   {
     title: "Rubric-Based",
     description:
-      "Structured cybersecurity-governance maturity evaluation using a CCRE-aligned workflow, rather than a checkbox compliance or pass/fail audit.",
+      "Structured cybersecurity-governance maturity evaluation using CyberReady's CCRR/CEAM workflow, rather than a checkbox compliance or pass/fail audit.",
   },
   {
     title: "Leadership-Ready",
@@ -89,7 +89,7 @@ const differentiators = [
 
 const coreOfferings = [
   {
-    title: "CoSN CCRE-aligned Cybersecurity Assessment",
+    title: "CCRR/CEAM Cybersecurity Assessment",
     description:
       "Evidence-based cybersecurity maturity evaluation across the six NIST CSF 2.0 functions, built for boards, superintendents, and district technology leaders.",
   },
@@ -112,7 +112,7 @@ const acquisitionAssets = [
   },
   {
     title: "Assessment and scoring workflows",
-    description: "CCRE-aligned cybersecurity assessment plus CAGR AI-governance assessment implementation.",
+    description: "CCRR/CEAM cybersecurity assessment plus CAGR AI-governance assessment implementation.",
   },
   {
     title: "CAIRE and CAGR methodology",
@@ -174,8 +174,8 @@ export default function Home() {
               Acquire a purpose-built K–12 Cybersecurity &amp; AI Governance Platform.
             </h1>
             <p className="mt-6 text-lg sm:text-xl text-slate-300 leading-relaxed max-w-2xl">
-              CyberReady combines a working Hall Monitor application, a CoSN
-              CCRE-aligned cybersecurity workflow, CyberReady&apos;s CAGR and CAIRE
+              CyberReady combines a working Hall Monitor application, a CCRR/CEAM
+              cybersecurity workflow, CyberReady&apos;s CAGR and CAIRE
               AI-governance methodology, executive reporting, and buyer-ready
               technical documentation into one transfer-ready asset package.
             </p>
@@ -298,7 +298,7 @@ export default function Home() {
           <SectionHeading
             label="The Solution"
             title="A Governance-First Ecosystem for Cybersecurity and AI"
-            description="CyberReady combines CoSN CCRE-aligned cybersecurity assessment, CAGR AI governance assessments, CAIRE workflow, and Hall Monitor reporting so districts can document risk, evidence, recommendations, and improvement over time."
+            description="CyberReady combines CCRR/CEAM cybersecurity assessment, CAGR AI governance assessments, CAIRE workflow, and Hall Monitor reporting so districts can document risk, evidence, recommendations, and improvement over time."
           />
           <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-6">
             {coreOfferings.map((offering) => (
@@ -375,7 +375,7 @@ export default function Home() {
           <SectionHeading
             label="Hall Monitor"
             title="See Cybersecurity and AI Governance Posture at a Glance"
-            description="Hall Monitor is the operations layer of CyberReady. It translates CoSN CCRE-aligned cybersecurity assessment results and CAGR AI-governance findings into leadership-ready dashboards that display maturity, evidence, findings, and prioritized improvements."
+            description="Hall Monitor is the operations layer of CyberReady. It translates CCRR/CEAM cybersecurity assessment results and CAGR AI-governance findings into leadership-ready dashboards that display maturity, evidence, findings, and prioritized improvements."
           />
           <div className="mt-14 max-w-5xl mx-auto">
             <DashboardPreview />

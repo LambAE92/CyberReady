@@ -2,7 +2,8 @@ import { useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { api } from '../utils/api';
 import { useAuth } from '../context/useAuth';
-import assessmentDomains from '../data/cybersecurityAssessment.json';
+import { CCRR_DOMAINS } from '../data/ccrrData';
+import { advancementPath, calculateCcrrScores } from '../data/ccrrAssessment';
 import AdminDashboard from './AdminDashboard';
 import {
   ShieldCheck, AlertTriangle, ClipboardList, ArrowRight, ChevronRight,
@@ -58,13 +59,23 @@ const AI_FUNCTIONS = [
   },
 ];
 
-const MATURITY_LABELS = [
+const CCRR_MATURITY_LABELS = [
   null,
-  { key: 'INITIAL',    short: 'Initial',    tone: 'text-red-600 dark:text-red-400' },
+  { key: 'AD_HOC',      short: 'Ad Hoc',      tone: 'text-red-600 dark:text-red-400' },
+  { key: 'DEVELOPING',  short: 'Developing',  tone: 'text-orange-600 dark:text-orange-400' },
+  { key: 'ESTABLISHED', short: 'Established', tone: 'text-amber-600 dark:text-amber-400' },
+  { key: 'MEASURED',    short: 'Measured',    tone: 'text-blue-600 dark:text-blue-400' },
+  { key: 'RESILIENT',   short: 'Resilient',   tone: 'text-green-600 dark:text-green-400' },
+];
+
+// CAIRE/CAGR retains its established, independent maturity vocabulary.
+const AI_MATURITY_LABELS = [
+  null,
+  { key: 'INITIAL', short: 'Initial', tone: 'text-red-600 dark:text-red-400' },
   { key: 'REPEATABLE', short: 'Repeatable', tone: 'text-orange-600 dark:text-orange-400' },
-  { key: 'DEFINED',    short: 'Defined',    tone: 'text-amber-600 dark:text-amber-400' },
-  { key: 'MANAGED',    short: 'Managed',    tone: 'text-blue-600 dark:text-blue-400' },
-  { key: 'OPTIMIZED',  short: 'Optimized',  tone: 'text-green-600 dark:text-green-400' },
+  { key: 'DEFINED', short: 'Defined', tone: 'text-amber-600 dark:text-amber-400' },
+  { key: 'MANAGED', short: 'Managed', tone: 'text-blue-600 dark:text-blue-400' },
+  { key: 'OPTIMIZED', short: 'Optimized', tone: 'text-green-600 dark:text-green-400' },
 ];
 
 // Plain-English explanation of what a maturity score means
@@ -77,32 +88,16 @@ function explainScore(avg) {
   return 'Practices are optimized, embedded in culture, and continuously improved. Maintain by sharing lessons learned and benchmarking across the sector.';
 }
 
-function categoryKey(fn, cat) {
-  return `${fn}::${cat}`;
-}
-
-// Build priority-ranked roadmap from low-scoring categories
-function buildRoadmap(ratings) {
+// Build roadmap from canonical sequential CCRR advancement actions.
+function buildRoadmap(domainAssessments) {
   const items = [];
-  assessmentDomains.forEach(domain => {
-    domain.categories.forEach(cat => {
-      const rating = ratings[categoryKey(domain.title, cat.name)];
-      if (!rating || rating < 3) {
-        const level = rating || 1;
-        const nextLevelText = cat.levels.find(l => l.level === level + 1);
-        items.push({
-          function: domain.title,
-          category: cat.name,
-          currentLevel: level,
-          rated: !!rating,
-          nextAction: nextLevelText
-            ? nextLevelText.description.replace(/^Meets [A-Z]+ Maturity Level\s*AND\s*/i, '').split('.')[0] + '.'
-            : 'Advance to the next maturity level.',
-          priority: (rating || 1) === 1 ? 'Critical'
-                   : (rating || 1) === 2 ? 'High' : 'Medium',
-        });
-      }
-    });
+  (domainAssessments || []).forEach(record => {
+    const domain = CCRR_DOMAINS.find(item => item.id === record.domain_id);
+    if (!domain || !record.current_maturity || !record.target_maturity) return;
+    advancementPath(domain.id, record.current_maturity, record.target_maturity).forEach(step => items.push({
+      function: domain.functionName, category: domain.title, currentLevel: step.from, rated: true,
+      nextAction: step.action, priority: record.critical_gap ? 'Critical' : step.from === 1 ? 'Critical' : step.from === 2 ? 'High' : 'Medium',
+    }));
   });
   // Sort by priority (lower current level first)
   items.sort((a, b) => a.currentLevel - b.currentLevel);
@@ -149,39 +144,22 @@ export default function Dashboard() {
     api.aiGovernanceSummary()
       .then(setAiGov)
       .catch(() => {});
-    api.selfAssessment()
-      .then(sa => setAssessment(sa || { ratings: {}, notes: {}, status: 'draft' }))
-      .catch(() => setAssessment({ ratings: {}, notes: {}, status: 'draft' }))
+    api.ccrrAssessments().then(items => items[0] ? api.ccrrAssessment(items[0].id) : null)
+      .then(setAssessment)
+      .catch(() => setAssessment(null))
       .finally(() => setLoading(false));
   }, [inAdminOverview]);
 
   // Platform admin in overview mode → show aggregate cross-district dashboard
   const { overallScore, functionScores, totalRated, totalCategories } = useMemo(() => {
-    if (!assessment) return { overallScore: 0, functionScores: [], totalRated: 0, totalCategories: 0 };
-    const ratings = assessment.ratings || {};
-    const fnScores = assessmentDomains.map(domain => {
-      const values = domain.categories
-        .map(c => ratings[categoryKey(domain.title, c.name)])
-        .filter(v => v);
-      const avg = values.length ? values.reduce((a, b) => a + b, 0) / values.length : 0;
-      return {
-        name: domain.title,
-        score: avg,
-        rated: values.length,
-        total: domain.categories.length,
-        overview: domain.overview || [],
-      };
-    });
-    const allRated = fnScores.reduce((s, f) => s + f.rated, 0);
-    const allTotal = fnScores.reduce((s, f) => s + f.total, 0);
-    const ratedFunctions = fnScores.filter(f => f.rated > 0);
-    const overall = allRated
-      ? ratedFunctions.reduce((s, f) => s + f.score, 0) / ratedFunctions.length
-      : 0;
-    return { overallScore: overall, functionScores: fnScores, totalRated: allRated, totalCategories: allTotal };
+    if (!assessment) return { overallScore: 0, functionScores: [], totalRated: 0, totalCategories: 18 };
+    const scores = calculateCcrrScores(assessment.domain_assessments || []);
+    return { overallScore: scores.overall || scores.provisionalOverall || 0, functionScores: scores.functions.map(fn => ({
+      name: fn.name, score: fn.current || 0, rated: fn.ratedDomains, total: fn.totalDomains, overview: [],
+    })), totalRated: scores.ratedDomains, totalCategories: scores.totalDomains };
   }, [assessment]);
 
-  const roadmap = useMemo(() => buildRoadmap(assessment?.ratings || {}), [assessment]);
+  const roadmap = useMemo(() => buildRoadmap(assessment?.domain_assessments), [assessment]);
 
   // Platform admin in overview mode shows the aggregate cross-district dashboard.
   if (inAdminOverview) {
@@ -193,10 +171,10 @@ export default function Dashboard() {
   }
 
   const hasAnyRating = totalRated > 0;
-  const overallLabel = MATURITY_LABELS[Math.round(overallScore)] || MATURITY_LABELS[1];
+  const overallLabel = CCRR_MATURITY_LABELS[Math.round(overallScore)] || CCRR_MATURITY_LABELS[1];
   const aiOverallScore = aiGov?.overallAvgMaturity ?? 0;
   const hasAiMaturity = aiGov?.overallAvgMaturity != null;
-  const aiOverallLabel = MATURITY_LABELS[Math.round(aiOverallScore)] || MATURITY_LABELS[1];
+  const aiOverallLabel = AI_MATURITY_LABELS[Math.round(aiOverallScore)] || AI_MATURITY_LABELS[1];
 
   return (
     <div className="space-y-6">
@@ -289,7 +267,7 @@ export default function Dashboard() {
           </p>
           <div className="mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 grid grid-cols-5 gap-2">
             {[1, 2, 3, 4, 5].map(lvl => {
-              const m = MATURITY_LABELS[lvl];
+              const m = CCRR_MATURITY_LABELS[lvl];
               const isCurrent = hasAnyRating && Math.round(overallScore) === lvl;
               return (
                 <div key={lvl}
@@ -316,7 +294,7 @@ export default function Dashboard() {
           {functionScores.map(fn => {
             const c = FUNCTION_COLORS[fn.name] || FUNCTION_COLORS.Govern;
             const rounded = Math.round(fn.score);
-            const label = MATURITY_LABELS[rounded] || MATURITY_LABELS[1];
+            const label = CCRR_MATURITY_LABELS[rounded] || CCRR_MATURITY_LABELS[1];
             const pct = (fn.score / 5) * 100;
             return (
               <div key={fn.name} className={`bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-5 ring-1 ${c.ring}`}>
@@ -363,7 +341,7 @@ export default function Dashboard() {
             {AI_FUNCTIONS.map(fn => {
               const score = aiGov.functionScores?.[fn.key] ?? 0;
               const rounded = score > 0 ? Math.min(5, Math.max(1, Math.round(score))) : 0;
-              const label = rounded > 0 ? MATURITY_LABELS[rounded] : null;
+              const label = rounded > 0 ? AI_MATURITY_LABELS[rounded] : null;
               const pct = (score / 5) * 100;
               return (
                 <div key={fn.key} className={`bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-5 ring-1 ${fn.ring}`}>

@@ -227,7 +227,7 @@ export default function ContactPage() {
                   {[
                     "Hall Monitor prototype platform",
                     "CyberReady website and branding assets",
-                    "CoSN CCRE-aligned and CAIRE/CAGR governance materials",
+                    "CCRR/CEAM and CAIRE/CAGR governance materials",
                     "Documentation and buyer handoff packet",
                     "Domain transfer, subject to agreement",
                   ].map((item) => (

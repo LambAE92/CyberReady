@@ -5,8 +5,12 @@
  */
 import { describe, it, before, after } from 'node:test';
 import assert from 'node:assert/strict';
+import { createRequire } from 'node:module';
 
 const BASE = 'http://localhost:3001/api';
+const require = createRequire(import.meta.url);
+const { app } = require('../server/index.js');
+let server;
 let cookie = '';
 const adminUsername = process.env.DEMO_ADMIN_USER;
 const adminPassword = process.env.DEMO_ADMIN_PASS;
@@ -18,6 +22,16 @@ const superintendentPassword = process.env.DEMO_SUPERINTENDENT_PASS;
 if (!adminUsername || !adminPassword || !districtItUsername || !districtItPassword || !superintendentUsername || !superintendentPassword) {
   throw new Error('Set all DEMO_*_USER and DEMO_*_PASS values before running the smoke test.');
 }
+
+before(async () => {
+  server = await new Promise(resolve => {
+    const listener = app.listen(3001, () => resolve(listener));
+  });
+});
+
+after(async () => {
+  await new Promise(resolve => server.close(resolve));
+});
 
 async function req(path, opts = {}) {
   const res = await fetch(`${BASE}${path}`, {
@@ -110,6 +124,35 @@ describe('Executive summary', () => {
     assert.ok(Array.isArray(body.nextSteps));
     assert.ok(body.nextSteps.length > 0, 'Expected at least one next step');
     assert.ok(body.generatedAt);
+  });
+});
+
+describe('CAIRE / CAGR regression', () => {
+  let aiSystemId;
+
+  it('creates an AI system in the active district', async () => {
+    const { status, body } = await req('/ai-systems', {
+      method: 'POST',
+      body: JSON.stringify({ name: 'CAIRE Regression System', use_case: 'Synthetic validation only', human_oversight_model: 'human_on_loop' }),
+    });
+    assert.equal(status, 201);
+    assert.ok(body.id);
+    aiSystemId = body.id;
+  });
+
+  it('persists a CAGR maturity rating without changing the cybersecurity workflow', async () => {
+    const { status } = await req(`/ai-systems/${aiSystemId}/ratings`, {
+      method: 'POST',
+      body: JSON.stringify({ cagr_function: 'GOVERN', category_id: 'GV.1', maturity_level: 3, notes: 'Synthetic regression rating' }),
+    });
+    assert.equal(status, 200);
+    const ratings = await req(`/ai-systems/${aiSystemId}/ratings`);
+    assert.equal(ratings.status, 200);
+    assert.equal(ratings.body.ratings.GOVERN['GV.1'].maturity_level, 3);
+    const summary = await req('/ai-governance/summary');
+    assert.equal(summary.status, 200);
+    assert.ok(summary.body.systemCount >= 1);
+    assert.equal(typeof summary.body.functionScores.GOVERN, 'number');
   });
 });
 

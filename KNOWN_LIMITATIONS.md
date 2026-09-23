@@ -7,7 +7,7 @@ CyberReady is a functional prototype and transfer-ready asset package. The items
 | Area | Current state | Buyer opportunity |
 | --- | --- | --- |
 | Runtime database | Local SQLite with lightweight startup migrations | Migrate to managed Postgres and a versioned migration process for a multi-tenant or high-availability product |
-| File/report storage | Extracted document text and generated DOCX reports reside in SQLite; uploads are memory-handled | Use encrypted object storage, virus scanning, lifecycle controls, and durable metadata |
+| File/report storage | Extracted document text and historic DOCX report records reside in SQLite; uploads are memory-handled | Use encrypted object storage, virus scanning, lifecycle controls, durable metadata, and a buyer-designed CCRR report export |
 | Sessions | In-process Express session store | Use a managed shared session/identity architecture for horizontally scaled deployments |
 | Identity | Local username/password roles only | Add SSO, MFA, SCIM, invitations, password reset, account lifecycle and enterprise access review |
 | Multi-tenancy | District scoping and roles exist in one database | Add tenant provisioning, isolation testing, administration controls, and commercial tenancy policy |
@@ -28,8 +28,8 @@ CyberReady is a functional prototype and transfer-ready asset package. The items
 
 ## Assessment and reporting scope
 
-- Hall Monitor implements guided scoring, evidence capture, calculations and reporting. It does not independently validate cybersecurity controls, replace professional judgment, guarantee regulatory compliance, or constitute a certified external audit.
-- CCRE/CC4E-related names, materials, reports, badges, certificates, and masterclass content are subject to third-party framework/brand rights review. CyberReady should use **CoSN Cybersecurity Readiness for Education (CCRE)-aligned** wording and must not claim programme ownership.
+- Hall Monitor implements CCRR/CEAM guided scoring, structured evidence capture, calculations, dashboard/executive-summary reporting, and a sequential roadmap. It does not independently validate cybersecurity controls, replace professional judgment, guarantee regulatory compliance, or constitute a certified external audit. A CCRR-specific downloadable report remains buyer next-stage work.
+- CCRE/CC4E-related names, materials, reports, badges, certificates, and masterclass content are retained historical/reference material subject to third-party framework/brand rights review. They are not the active Hall Monitor cybersecurity methodology and must not be represented as CyberReady-owned.
 - CAIRE and CAGR are implemented workflow/rubric assets presented as seller-created. The buyer should obtain authorship, provenance, and source-material confirmation before treating them as exclusive proprietary IP.
 - Website dashboard previews and most seeded metrics are static/synthetic demonstration content, not connected to a live security telemetry ecosystem.
 

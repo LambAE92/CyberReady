@@ -4,16 +4,16 @@
 
 Hall Monitor is CyberReady's prototype K–12 cybersecurity and AI-governance operating platform. It records governance assessments, evidence, findings, maturity scoring, remediation planning, and executive-reporting views over time. It does not ingest real-time security telemetry from district SIEM, EDR, network, or identity systems.
 
-It includes a CoSN Cybersecurity Readiness for Education (CCRE)-aligned cybersecurity-governance workflow mapped to NIST CSF 2.0 and a CAIRE AI-governance evidence-review workflow using the CAGR rubric mapped to NIST AI RMF 1.0. CyberReady does not claim ownership, certification authority, endorsement, or affiliation for CCRE.
+Its active cybersecurity workflow implements CyberReady's **CCRR v1.0** and **CEAM v1.0**, with NIST CSF 2.0 identifiers retained solely as external reference metadata. Its separate CAIRE AI-governance evidence-review workflow uses the CAGR rubric mapped to NIST AI RMF 1.0. Historical CCRE/Cybersecurity Rubric records and source remain preserved for compatibility and provenance; they are not converted into CCRR scores or used by current cybersecurity dashboards.
 
 ## Features
 
-- **Dashboard**: Governance-health score with weighted category breakdown, prototype metrics, and editable category scores. Metric values are application data, not direct security telemetry.
+- **Dashboard**: CCRR cybersecurity maturity across six equally weighted NIST CSF 2.0 Function scores, separate CAIRE/CAGR AI maturity, findings, compliance, and roadmap views. Metric values are application data, not direct security telemetry.
 - **Risks & Vulnerabilities**: Track and manage cybersecurity findings with severity/status filtering, status changes, recommended actions, and notes.
 - **Training & Phishing Metrics**: Record/view staff training completion and phishing-simulation trends by department; buyers must validate or configure any live data source separately. The former in-app Masterclass workflow is intentionally omitted; the sidebar links to CoSN's external interest form.
-- **Compliance & Reporting**: Governance-readiness tracking against NIST CSF-aligned and policy-readiness frameworks with printable executive reports. Outputs are not independent validation, legal advice, or a certification.
-- **Self-Assessment**: Evaluate cybersecurity maturity across all 6 NIST functions and 22 categories using the implemented CCRE-aligned assessment workflow. Includes an interview guide with checklist tracking, interview questions by maturity level, and embedded assessment guidance.
-- **Executive Summary**: Board-ready overview with posture score, top priority risks, progress since last review, recommended next steps, and exportable HTML reports.
+- **Compliance & Reporting**: Governance-readiness tracking, CCRR/CEAM executive-summary views, and historical-report access. Outputs are not independent validation, legal advice, or a certification. The legacy CCRE/Cybersecurity Rubric DOCX generator is intentionally retired for new assessments.
+- **CCRR/CEAM Assessment**: Evaluate cybersecurity maturity across 18 CyberReady Readiness Domains and all six NIST CSF 2.0 Function groupings. The workflow records independent current and target maturity, non-mathematical confidence, structured evidence, seven gap types, critical gaps, and sequential advancement actions.
+- **Executive Summary**: Governance overview with CCRR Function maturity, top priority risks, progress tracking, and recommended next steps. It is not an independently validated board report.
 - **Dark Mode**: Full light/dark theme support across all pages.
 
 ## Tech Stack
@@ -74,8 +74,8 @@ hall-monitor/
 │   └── src/
 │       ├── components/      # Sidebar, ScoreGauge, StatusCard
 │       ├── context/         # AuthContext, ThemeContext
-│       ├── data/            # Rubric data (NIST functions, interview questions, training guide)
-│       ├── pages/           # Dashboard, Risks, Compliance, Assessment, Executive, and retained legacy prototype pages
+│       ├── data/            # CCRR/CEAM and CAIRE/CAGR methodology data
+│       ├── pages/           # Dashboard, Risks, Compliance, CCRR/CEAM, AI governance, Executive, and retained legacy compatibility pages
 │       └── utils/           # API client
 ├── server/
 │   ├── index.js             # Express API routes
@@ -100,7 +100,7 @@ hall-monitor/
 
 ## Demo Data
 
-The database auto-seeds on first run with a synthetic portfolio. Walkerville School District is the primary demo used for CCRE-aligned and CAIRE workflows. It includes prototype data such as:
+The database auto-seeds on first run with a synthetic portfolio. Walkerville School District is the primary demo used for CCRR/CEAM and CAIRE/CAGR workflows. It includes prototype data such as:
 
 - 6 NIST-aligned health score categories
 - 15 cybersecurity risk findings across all severity levels

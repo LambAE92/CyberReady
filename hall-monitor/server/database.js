@@ -2,7 +2,9 @@ const Database = require('better-sqlite3');
 const path = require('path');
 const bcrypt = require('bcryptjs');
 
-const DB_PATH = path.join(__dirname, '..', 'hallmonitor.db');
+// Test and local evaluation can use a disposable synthetic database without
+// touching the default application database.
+const DB_PATH = process.env.HALLMONITOR_DB_PATH || path.join(__dirname, '..', 'hallmonitor.db');
 
 function initDatabase() {
   const db = new Database(DB_PATH);
@@ -369,7 +371,7 @@ function initDatabase() {
     CREATE TABLE IF NOT EXISTS audit_requests (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
       district_id INTEGER NOT NULL REFERENCES districts(id),
-      assessment_type TEXT DEFAULT 'CCRE Self-Assessment',
+      assessment_type TEXT DEFAULT 'CCRR/CEAM Assessment',
       requested_by INTEGER NOT NULL REFERENCES users(id),
       status TEXT NOT NULL DEFAULT 'pending' CHECK(status IN ('pending','approved','in_progress','completed','declined')),
       notes TEXT,
@@ -381,7 +383,7 @@ function initDatabase() {
   `);
 
   // ── Generated reports ────────────────────────────────────────
-  try { db.exec("ALTER TABLE audit_requests ADD COLUMN assessment_type TEXT DEFAULT 'CCRE Self-Assessment'"); } catch { /* already exists */ }
+  try { db.exec("ALTER TABLE audit_requests ADD COLUMN assessment_type TEXT DEFAULT 'CCRR/CEAM Assessment'"); } catch { /* already exists */ }
 
   db.exec(`
     CREATE TABLE IF NOT EXISTS assessment_reports (
@@ -619,10 +621,10 @@ function insertWalkervilleDemoData(db) {
 
   // ── Compliance ──────────────────────────────────────────────
   const compTemplate = [
-    ['Cybersecurity Governance (CCRE-aligned)','Governance','Cybersecurity policy approved by board'],
-    ['Cybersecurity Governance (CCRE-aligned)','Governance','Named cybersecurity program lead'],
-    ['Cybersecurity Governance (CCRE-aligned)','Governance','Annual risk assessment conducted'],
-    ['Cybersecurity Governance (CCRE-aligned)','Governance','AI governance policy adopted'],
+    ['Cybersecurity Governance (CCRR/CEAM)','Governance','Cybersecurity policy approved by board'],
+    ['Cybersecurity Governance (CCRR/CEAM)','Governance','Named cybersecurity program lead'],
+    ['Cybersecurity Governance (CCRR/CEAM)','Governance','Annual risk assessment conducted'],
+    ['Cybersecurity Governance (CCRR/CEAM)','Governance','AI governance policy adopted'],
     ['NIST CSF','Identify','Asset inventory maintained'],
     ['NIST CSF','Identify','Risk assessment process documented'],
     ['NIST CSF','Protect','Access control policies enforced'],
