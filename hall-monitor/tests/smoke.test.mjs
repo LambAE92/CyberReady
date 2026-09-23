@@ -7,7 +7,7 @@ import { describe, it, before, after } from 'node:test';
 import assert from 'node:assert/strict';
 import { createRequire } from 'node:module';
 
-const BASE = 'http://localhost:3001/api';
+let baseUrl;
 const require = createRequire(import.meta.url);
 const { app } = require('../server/index.js');
 let server;
@@ -24,9 +24,11 @@ if (!adminUsername || !adminPassword || !districtItUsername || !districtItPasswo
 }
 
 before(async () => {
-  server = await new Promise(resolve => {
-    const listener = app.listen(3001, () => resolve(listener));
+  server = await new Promise((resolve, reject) => {
+    const listener = app.listen(0, '127.0.0.1', () => resolve(listener));
+    listener.on('error', reject);
   });
+  baseUrl = `http://127.0.0.1:${server.address().port}/api`;
 });
 
 after(async () => {
@@ -34,7 +36,7 @@ after(async () => {
 });
 
 async function req(path, opts = {}) {
-  const res = await fetch(`${BASE}${path}`, {
+  const res = await fetch(`${baseUrl}${path}`, {
     headers: { 'Content-Type': 'application/json', ...(cookie ? { Cookie: cookie } : {}) },
     ...opts,
   });
@@ -82,8 +84,8 @@ describe('District scoping', () => {
 
   it('switches to a district and returns current district info', async () => {
     const { body: districts } = await req('/districts');
-    const maplewood = districts.find(d => d.slug === 'maplewood') ?? districts[0];
-    await req('/switch-district', { method: 'POST', body: JSON.stringify({ districtId: maplewood.id }) });
+    const pineRidge = districts.find(d => d.slug === 'pine-ridge-unified') ?? districts[0];
+    await req('/switch-district', { method: 'POST', body: JSON.stringify({ districtId: pineRidge.id }) });
     const { status, body } = await req('/district');
     assert.equal(status, 200);
     assert.ok(body.name);
@@ -92,7 +94,7 @@ describe('District scoping', () => {
 
   it('switches district for platform_admin', async () => {
     const { body: districts } = await req('/districts');
-    const target = districts.find(d => d.slug === 'walkerville') ?? districts[0];
+    const target = districts.find(d => d.slug === 'pine-ridge-unified') ?? districts[0];
     const { status, body } = await req('/switch-district', { method: 'POST', body: JSON.stringify({ districtId: target.id }) });
     assert.equal(status, 200);
     assert.equal(body.id, target.id);
@@ -109,7 +111,7 @@ describe('District scoping', () => {
 describe('Executive summary', () => {
   it('returns fully dynamic summary', async () => {
     const { body: districts } = await req('/districts');
-    const target = districts.find(d => d.slug === 'walkerville') ?? districts[0];
+    const target = districts.find(d => d.slug === 'pine-ridge-unified') ?? districts[0];
     await req('/switch-district', { method: 'POST', body: JSON.stringify({ districtId: target.id }) });
     const { status, body } = await req('/executive-summary');
     assert.equal(status, 200);

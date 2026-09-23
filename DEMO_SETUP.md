@@ -71,7 +71,7 @@ Set `NEXT_PUBLIC_HALL_MONITOR_URL` in `website/.env.local` to the local Hall Mon
 
 ## 4. Verify synthetic data
 
-The seed workflow uses the Walkerville demo district, risk/training/compliance data, example AI systems and sample user names. Before sharing a demo, confirm that all retained data is synthetic or cleared for use. Do not upload customer documents or student/staff PII. Leaving `ANTHROPIC_API_KEY` blank prevents document content from being sent to the optional external AI service.
+The seed workflow uses the fictional Pine Ridge Unified School District, risk/training/compliance data, example AI systems, and sample user names. The current seeded data is created solely for CyberReady demonstration/testing and is not intended to represent a real district, customer, student, or employee. Before sharing a demo, confirm that all retained data remains appropriate for the use. Do not upload customer documents or student/staff PII. Leaving `ANTHROPIC_API_KEY` blank prevents document content from being sent to the optional external AI service. See `DEMO_DATA_PROVENANCE.md` for the active-demo and historical-material boundary.
 
 ## 5. Controlled buyer demonstration
 

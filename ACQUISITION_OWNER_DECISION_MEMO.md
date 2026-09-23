@@ -106,3 +106,14 @@ This memo lists decisions supported by the repository review. It does not determ
 ## Evidence-pass addendum — 2026-09-23
 
 The final evidence pass identified additional chronology in locally available Git objects: the AI portal/CAGR data path begins in an April 2026 Alex Lamb-attributed commit, CAIRE is present in the April 2026 product path, and CCRR/CEAM begin in the September 2026 Alex Lamb-attributed commits. It also identified 13 unreachable local commits containing a historic reference corpus and retired demo credentials. This is helpful repository evidence, not legal title evidence. The decisions above remain necessary; the new concise owner actions are in `PRE_MERGE_ACQUISITION_OWNER_CHECKLIST.md`, and the details are in `ACQUISITION_PROVENANCE_EVIDENCE_REGISTER.md`.
+
+## Owner-confirmation update — 2026-09-23
+
+The owner has now provided the following factual confirmations:
+
+- Alex Lamb created CCRR, CEAM, CAGR, and CAIRE with ChatGPT assistance; there were no other human contributors.
+- CyberReady branded media was assembled/created by Alex Lamb using tools/services including AI generation, Canva, Adobe Express, and Google Notebook/NotebookLM. This does not establish that every underlying media element is exclusively owned by Alex or transferable without tool/licence review.
+- `cyberreadyschools.com` is intended for the proposed sale. CyberReady email accounts are excluded, and no CyberReady social accounts exist to transfer. Registrar, DNS, and hosting control/closing mechanics remain outside-repository owner/counsel items.
+- The prior Walkerville demo was created for CyberReady but inspired by *The Magic School Bus*. It is retired from the active buyer/demo snapshot. The replacement Pine Ridge Unified School District environment is owner-confirmed fictional demonstration/testing content.
+
+These confirmations resolve the factual contributor and active-demo questions in Decisions 1 and 6. They do not resolve the legal title, external-reference, licence, media, account-control, or transaction-representation questions identified elsewhere in this memo.

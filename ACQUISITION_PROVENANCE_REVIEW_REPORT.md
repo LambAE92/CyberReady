@@ -95,7 +95,7 @@ Accordingly, acquisition documents should not state broadly that every NIST refe
 
 - No tracked runtime database, `.env`, private key, cloud credential, or high-confidence API token was found. Runtime paths are ignored.
 - The seed workflow requires operators to supply unique credentials at initialization; no current default demo password is tracked.
-- `DEMO_SETUP.md` describes the seed environment as synthetic. The code uses “Walkerville School District,” “Alex Lamb,” and “Valorie Frizzle” labels. The first is not explicitly identified as fictional in source and the second is a real-person name. Treat seed data as **documented synthetic but pending owner confirmation** before external demonstrations, screenshots, or transfer representations.
+- The active seed environment now uses the explicitly fictional Pine Ridge Unified School District and original fictional role labels. `DEMO_DATA_PROVENANCE.md` records the owner confirmation that active example data is created solely for CyberReady demonstration/testing. The retired Walkerville concept remains historical remediation context only; pre-remediation screenshots/media still require visual review before external use.
 - The application can store district-specific evidence, uploads, names, email addresses, IP/log data, and AI-related records at runtime. Such data is excluded from the default asset package.
 
 ## Proposed asset-package summary
@@ -143,3 +143,11 @@ Owner and counsel should review `ACQUISITION_IP_PROVENANCE_MATRIX.md`, `PROPOSED
 The final owner evidence pass reviewed locally available Git objects in addition to the then-current clean history. It found an earlier implementation path attributed by Git to Alex Lamb: the initial CyberReady/Hall Monitor/website commit is dated 2026-04-22; the AI portal and `cagrData.js`/`aiRmfPlaybook.js` first appear on 2026-04-27; and CAIRE appears in the available product path on 2026-04-28. This supports chronology and product-specific context only; it does not establish authorship, assignment, ownership, licence scope, or exclusivity.
 
 The same local object database contains 13 unreachable commits / 419 objects, including a 120-file historic reference corpus and retired fixed demo credentials. Those objects are outside the current branches and do not change the current tracked package, but they must not accompany a buyer delivery. Use a fresh clone or commit archive without `.git`, preserve history separately, and do not treat historic reference material as a default transfer asset. See `ACQUISITION_PROVENANCE_EVIDENCE_REGISTER.md` and `PRE_MERGE_ACQUISITION_OWNER_CHECKLIST.md`.
+
+## Active-demo and owner-confirmation remediation — 2026-09-23
+
+The current active seed/demo identity is now the fictional **Pine Ridge Unified School District**. The owner confirms that its example identities and records are created solely for CyberReady demonstration/testing. No repository evidence of real customer, student, or employee data was identified in the current active demo. This is not an absolute privacy or provenance guarantee for untracked environments or historical media.
+
+The owner also confirms that the retired Walkerville concept was created for CyberReady but inspired by *The Magic School Bus*. It is retained only as historical remediation context and is not part of the approved buyer-delivery source snapshot. `DEMO_DATA_PROVENANCE.md` records the resulting boundary.
+
+The owner further confirms that Alex Lamb created CCRR, CEAM, CAGR, and CAIRE with ChatGPT assistance and no other human contributors; that branded media was assembled/created using AI generation, Canva, Adobe Express, and Google Notebook/NotebookLM; and that `cyberreadyschools.com` is intended for the proposed sale while CyberReady email accounts and social accounts are excluded. These factual confirmations do not change the report's external-reference, brand/media, account-control, or counsel-review boundaries.

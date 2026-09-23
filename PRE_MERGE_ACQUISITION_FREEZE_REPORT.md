@@ -81,3 +81,12 @@ The active cybersecurity workflow is CCRR/CEAM. The active AI workflow is CAGR/C
 **D. Are there remaining LEGAL/TRANSACTION questions appropriate for counsel?** **YES.** External AI RMF/legacy source treatment, representations, asset exclusions, and account/brand/media mechanics require counsel input.
 
 **E. Based solely on technical/repository evidence, is the repository ready for an owner-authorized acquisition freeze and merge?** **CONDITIONAL.** It is technically ready to freeze and merge the branch. Before a definitive buyer asset package is represented as clean seller-owned IP, use the owner checklist and counsel decisions to set the documented boundaries. This is not a legal-clearance conclusion.
+
+## Final demo-provenance remediation update — 2026-09-23
+
+- The active Hall Monitor seed, reset path, tests, UI wording, and website previews now use the owner-confirmed fictional **Pine Ridge Unified School District**. The change does not alter CCRR, CEAM, CAGR, CAIRE, scoring, legacy migration behavior, or architecture.
+- The owner confirms that the retired Walkerville demo was created for CyberReady but inspired by *The Magic School Bus*. It is preserved only as historical remediation context and is not part of the active approved buyer-delivery snapshot.
+- The owner confirms that Alex Lamb created CCRR, CEAM, CAGR, and CAIRE with ChatGPT assistance and no other human contributors; that branded media was assembled/created using AI generation, Canva, Adobe Express, and Google Notebook/NotebookLM; and that `cyberreadyschools.com` is intended for sale while CyberReady email accounts/social accounts are excluded.
+- `DEMO_DATA_PROVENANCE.md` documents the new active-demo boundary. The active homepage video and any pre-remediation screenshots still require visual/source review before public buyer use.
+
+The technical answers above remain unchanged: **no product-engineering blocker to merge** and **no technical blocker to controlled buyer diligence**. The acquisition-freeze status remains **CONDITIONAL** only on the already documented owner/counsel transaction boundaries, not on a product defect.

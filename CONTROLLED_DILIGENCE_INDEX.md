@@ -59,8 +59,8 @@ The current repository is public. This index identifies a more conservative buye
 | Access | Material |
 | --- | --- |
 | **PUBLIC / NON-CONFIDENTIAL** | Approved static screenshots/video that the owner has confirmed are synthetic and cleared |
-| **NDA / CONTROLLED DILIGENCE** | `DEMO_SETUP.md`, synthetic seed workflow, `sale-package/DEMO_SCRIPT.md`, a separately created buyer/group-specific demo account if approved |
-| **OWNER/COUNSEL ONLY** | Runtime demo credentials, reset instructions tied to a hosted instance, access logs, uploaded files, any data provenance record for seed labels/screen captures |
+| **NDA / CONTROLLED DILIGENCE** | `DEMO_SETUP.md`, `DEMO_DATA_PROVENANCE.md`, the fictional Pine Ridge seed workflow, `sale-package/DEMO_SCRIPT.md`, a separately created buyer/group-specific demo account if approved |
+| **OWNER/COUNSEL ONLY** | Runtime demo credentials, reset instructions tied to a hosted instance, access logs, uploaded files, pre-remediation screenshots/media, and any historical/demo provenance record beyond the approved Pine Ridge source snapshot |
 
 ## 08_Transaction_Assets
 

@@ -480,7 +480,7 @@ function requireDemoSetting(name) {
   return value;
 }
 
-function insertWalkervilleDemoData(db) {
+function insertPineRidgeDemoData(db) {
   const rand = createSeededRandom();
 
   // Each seeded role requires a unique, operator-provided credential.
@@ -497,20 +497,21 @@ function insertWalkervilleDemoData(db) {
 
   // ── Districts ────────────────────────────────────────────────
   const districtDefs = [
-    { name: 'Walkerville School District', slug: 'walkerville', state: 'Kentucky', students: 4800, staff: 385, schools: 8, fy: '2025-2026' },
+    // Original fictional CyberReady demonstration district; not based on a real organization.
+    { name: 'Pine Ridge Unified School District', slug: 'pine-ridge-unified', state: 'Northland', students: 4600, staff: 360, schools: 7, fy: '2025-2026' },
   ];
   const distStmt = db.prepare('INSERT INTO districts (name, slug, state, student_count, staff_count, school_count, fiscal_year) VALUES (?,?,?,?,?,?,?)');
   const distIds = districtDefs.map(d => distStmt.run(d.name, d.slug, d.state, d.students, d.staff, d.schools, d.fy).lastInsertRowid);
 
   // ── Users ────────────────────────────────────────────────────
   const userStmt = db.prepare('INSERT INTO users (username, password_hash, full_name, role, district_id) VALUES (?,?,?,?,?)');
-  userStmt.run(demoAdminUser, adminHash, 'Alex Lamb', 'platform_admin', distIds[0]);
-  userStmt.run(demoDistrictItUser, districtItHash, 'Valorie Frizzle', 'district_it', distIds[0]);
-  userStmt.run(demoSuperintendentUser, superintendentHash, 'Valorie Frizzle', 'superintendent', distIds[0]);
+  userStmt.run(demoAdminUser, adminHash, 'Jordan Vale', 'platform_admin', distIds[0]);
+  userStmt.run(demoDistrictItUser, districtItHash, 'Avery Rowan', 'district_it', distIds[0]);
+  userStmt.run(demoSuperintendentUser, superintendentHash, 'Morgan Field', 'superintendent', distIds[0]);
 
   // ── Health-score profiles ────────────────────────────────────
   const healthProfiles = [
-    [72, 68, 61, 78, 55, 64],   // Walkerville - moderate
+    [72, 68, 61, 78, 55, 64],   // Pine Ridge - moderate
   ];
   const catDefs = [
     ['Governance',             0.15, 'Policy framework, leadership commitment, risk management strategy'],
@@ -644,7 +645,7 @@ function insertWalkervilleDemoData(db) {
   ];
   // Status distributions per maturity (Met, Partially Met, Not Met probabilities)
   const compProfiles = [
-    [0.40, 0.35, 0.25],  // Walkerville
+    [0.40, 0.35, 0.25],  // Pine Ridge
   ];
   const compStmt = db.prepare('INSERT INTO compliance (district_id, framework, category, requirement, status, evidence, sort_order) VALUES (?,?,?,?,?,?,?)');
   distIds.forEach((did, di) => {
@@ -791,67 +792,67 @@ function insertWalkervilleDemoData(db) {
   console.log(`Database seeded with ${districtDefs.length} demo districts`);
 }
 
-function resetWalkervilleDemo(db) {
-  const wd = db.prepare(
-    "SELECT id FROM districts WHERE slug='walkerville'"
+function resetPineRidgeDemo(db) {
+  const demoDistrict = db.prepare(
+    "SELECT id FROM districts WHERE slug='pine-ridge-unified'"
   ).get();
 
-  if (wd) {
-    const wdId = wd.id;
-    db.prepare('DELETE FROM cagr_ratings WHERE district_id = ?').run(wdId);
-    db.prepare('DELETE FROM ai_systems WHERE district_id = ?').run(wdId);
-    db.prepare('DELETE FROM self_assessments WHERE district_id = ?').run(wdId);
+  if (demoDistrict) {
+    const districtId = demoDistrict.id;
+    db.prepare('DELETE FROM cagr_ratings WHERE district_id = ?').run(districtId);
+    db.prepare('DELETE FROM ai_systems WHERE district_id = ?').run(districtId);
+    db.prepare('DELETE FROM self_assessments WHERE district_id = ?').run(districtId);
     db.prepare(`
       DELETE FROM assessment_ratings WHERE
         assessment_id IN (
           SELECT id FROM assessments WHERE district_id=?
         )
-    `).run(wdId);
+    `).run(districtId);
     db.prepare(`
       DELETE FROM assessment_checklist WHERE
         assessment_id IN (
           SELECT id FROM assessments WHERE district_id=?
         )
-    `).run(wdId);
+    `).run(districtId);
     db.prepare(`
       DELETE FROM interview_responses WHERE
         assessment_id IN (
           SELECT id FROM assessments WHERE district_id=?
         )
-    `).run(wdId);
+    `).run(districtId);
     db.prepare(`
       DELETE FROM finding_documents WHERE
         assessment_id IN (
           SELECT id FROM assessments WHERE district_id=?
         )
-    `).run(wdId);
-    db.prepare('DELETE FROM finding_documents WHERE district_id = ?').run(wdId);
-    db.prepare('DELETE FROM audit_requests WHERE district_id = ?').run(wdId);
-    db.prepare('DELETE FROM assessment_reports WHERE district_id = ?').run(wdId);
-    db.prepare('DELETE FROM assessments WHERE district_id = ?').run(wdId);
+    `).run(districtId);
+    db.prepare('DELETE FROM finding_documents WHERE district_id = ?').run(districtId);
+    db.prepare('DELETE FROM audit_requests WHERE district_id = ?').run(districtId);
+    db.prepare('DELETE FROM assessment_reports WHERE district_id = ?').run(districtId);
+    db.prepare('DELETE FROM assessments WHERE district_id = ?').run(districtId);
   }
 
-  if (wd) {
-    const wdId = wd.id;
-    db.prepare('DELETE FROM masterclass_completions WHERE district_id = ?').run(wdId);
-    db.prepare('DELETE FROM masterclass_requests WHERE district_id = ?').run(wdId);
-    db.prepare('DELETE FROM compliance WHERE district_id = ?').run(wdId);
-    db.prepare('DELETE FROM phishing_sims WHERE district_id = ?').run(wdId);
-    db.prepare('DELETE FROM training WHERE district_id = ?').run(wdId);
-    db.prepare('DELETE FROM dashboard_metrics WHERE district_id = ?').run(wdId);
-    db.prepare('DELETE FROM health_categories WHERE district_id = ?').run(wdId);
-    db.prepare('DELETE FROM risks WHERE district_id = ?').run(wdId);
-    db.prepare('DELETE FROM users WHERE district_id = ?').run(wdId);
-    db.prepare('DELETE FROM districts WHERE id = ?').run(wdId);
+  if (demoDistrict) {
+    const districtId = demoDistrict.id;
+    db.prepare('DELETE FROM masterclass_completions WHERE district_id = ?').run(districtId);
+    db.prepare('DELETE FROM masterclass_requests WHERE district_id = ?').run(districtId);
+    db.prepare('DELETE FROM compliance WHERE district_id = ?').run(districtId);
+    db.prepare('DELETE FROM phishing_sims WHERE district_id = ?').run(districtId);
+    db.prepare('DELETE FROM training WHERE district_id = ?').run(districtId);
+    db.prepare('DELETE FROM dashboard_metrics WHERE district_id = ?').run(districtId);
+    db.prepare('DELETE FROM health_categories WHERE district_id = ?').run(districtId);
+    db.prepare('DELETE FROM risks WHERE district_id = ?').run(districtId);
+    db.prepare('DELETE FROM users WHERE district_id = ?').run(districtId);
+    db.prepare('DELETE FROM districts WHERE id = ?').run(districtId);
   }
 
-  insertWalkervilleDemoData(db);
+  insertPineRidgeDemoData(db);
 }
 
 function seedDatabase(db) {
   const count = db.prepare('SELECT COUNT(*) as c FROM districts').get();
   if (count.c > 0) return;
-  resetWalkervilleDemo(db);
+  resetPineRidgeDemo(db);
 }
 
-module.exports = { initDatabase, seedDatabase, resetWalkervilleDemo };
+module.exports = { initDatabase, seedDatabase, resetPineRidgeDemo };

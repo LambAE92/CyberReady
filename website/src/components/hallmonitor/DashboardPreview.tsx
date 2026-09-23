@@ -2,7 +2,7 @@
 
 // Mock data, mirrors what Hall Monitor shows for a school district.
 
-const DISTRICT_NAME = "Walkerville School District";
+const DISTRICT_NAME = "Pine Ridge Unified School District";
 const OVERALL_SCORE = 1.7;
 const OVERALL_LEVEL = 2;
 const AI_SCORE = 1.6;
@@ -131,7 +131,7 @@ export default function DashboardPreview() {
                 What This Score Means
               </p>
               <p className="text-sm text-slate-700 leading-relaxed">
-                Walkerville shows emerging cybersecurity and AI governance foundations.
+                Pine Ridge Unified School District shows emerging cybersecurity and AI governance foundations.
                 The next priority is documenting ownership, evidence, and repeatable processes.
               </p>
             </div>

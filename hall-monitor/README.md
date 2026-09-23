@@ -100,7 +100,7 @@ hall-monitor/
 
 ## Demo Data
 
-The database auto-seeds on first run with a synthetic portfolio. Walkerville School District is the primary demo used for CCRR/CEAM and CAIRE/CAGR workflows. It includes prototype data such as:
+The database auto-seeds on first run with a fictional portfolio. Pine Ridge Unified School District is the primary demo used for CCRR/CEAM and CAIRE/CAGR workflows. Its district identity, people, records, and example data are created solely for CyberReady demonstration/testing; see the repository-level `DEMO_DATA_PROVENANCE.md`. It includes prototype data such as:
 
 - 6 NIST-aligned health score categories
 - 15 cybersecurity risk findings across all severity levels

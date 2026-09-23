@@ -40,7 +40,7 @@ describe('CCRR / CEAM API', () => {
     assert.equal((await post('/login', { username: adminUsername, password: adminPassword })).status, 200);
     const districts = await req('/districts');
     assert.equal(districts.status, 200);
-    const selected = districts.body.find(district => district.slug === 'walkerville') || districts.body[0];
+    const selected = districts.body.find(district => district.slug === 'pine-ridge-unified') || districts.body[0];
     assert.ok(selected?.id);
     // The normal synthetic demo uses one district. Add a second, synthetic
     // tenant only inside the disposable validation database to test isolation.

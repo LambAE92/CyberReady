@@ -1637,8 +1637,8 @@ app.post('/api/demo/reset',
       if (!req.session.username) {
         return res.status(401).json({ success: false, error: 'Session username is unavailable.' });
       }
-      const { resetWalkervilleDemo } = require('./database');
-      resetWalkervilleDemo(db);
+      const { resetPineRidgeDemo } = require('./database');
+      resetPineRidgeDemo(db);
       const refreshedUser = db.prepare('SELECT * FROM users WHERE username = ?')
         .get(req.session.username);
       if (refreshedUser) {

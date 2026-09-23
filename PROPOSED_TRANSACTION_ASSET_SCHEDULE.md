@@ -33,6 +33,8 @@ The transfer is of the seller’s interest, if any, in the product-specific sour
 
 Before closing, create a versioned methodology exhibit that identifies the exact included source files and controlled specification records, their hashes, a contributor/author confirmation, and the precise treatment of any externally-derived wording.
 
+**Owner-confirmation update (2026-09-23):** The owner confirms that Alex Lamb created CCRR, CEAM, CAGR, and CAIRE with ChatGPT assistance and that there were no other human contributors. This satisfies the requested factual contributor confirmation for the current package; it does not replace the title, external-reference, notice, or definitive-agreement review described above.
+
 ## 3. Proposed transferable documentation
 
 Subject to the same title and third-party-content qualifications, the seller-authored technical/documentation package may include:
@@ -55,6 +57,8 @@ The buyer should not treat IP/provenance/security documents as representations o
 | Homepage video and podcast audio | Tracked media with no credits/releases/source rights record | **CONTROLLED DILIGENCE ONLY** pending decision |
 
 No brand, mark, domain, personality right, or external account should be represented as included until a closing schedule identifies it and the seller supplies evidence of control and permitted transfer.
+
+**Owner-confirmation update (2026-09-23):** `cyberreadyschools.com` is intended for the proposed sale. CyberReady email accounts are excluded and no CyberReady social accounts exist to transfer. CyberReady branded media was assembled/created by Alex Lamb using AI generation, Canva, Adobe Express, and Google Notebook/NotebookLM. Registrar, DNS, hosting, account-control, underlying-element, and applicable tool/licence questions remain owner/counsel review items.
 
 ## 5. Third-party/open-source components used under applicable terms
 
@@ -107,6 +111,8 @@ Unless expressly added to a signed schedule after evidence review, exclude:
 5. Ownership/transfer scope for CyberReady/Hall Monitor marks, logo, banner, founder image, video, audio, and website assets.
 6. Domain/registrar/DNS/hosting/account control and closing mechanics.
 7. Synthetic status and permitted use of seed labels, named-person records, screenshots, and any controlled demo.
+
+The active seed identity is now the owner-confirmed fictional Pine Ridge Unified School District, documented in `DEMO_DATA_PROVENANCE.md`. The prior Walkerville concept was created for CyberReady but inspired by *The Magic School Bus* and is retired from the active buyer-delivery source snapshot. Pre-remediation screenshot/media use still requires review.
 
 ## 10. Post-closing / handoff dependencies
 

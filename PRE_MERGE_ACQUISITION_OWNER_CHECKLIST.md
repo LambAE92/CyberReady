@@ -4,21 +4,25 @@
 
 ## A. Owner can confirm factually
 
-- [ ] **Confirm the human authors/contributors for CCRR, CEAM, CAGR, and CAIRE.**
-  Why it matters: Git history consistently attributes the implementation path to Alex Lamb, but it is not an assignment record.
-  Conservative default if unresolved: describe all four as seller-authored candidates; treat CAGR as hybrid where its stored AI RMF subcategory text is external-reference content.
+- [x] **Methodology contributor confirmation received.**
+  Owner confirmation: Alex Lamb created CCRR, CEAM, CAGR, and CAIRE with ChatGPT assistance; there were no other human contributors.
+  Remaining boundary: this factual confirmation does not replace title, licence, external-reference, or definitive-agreement review.
 
-- [ ] **Confirm the Walkerville seed labels, named-person labels, screenshots, and demo media are synthetic or approved for demonstration.**
-  Why it matters: repository documentation calls the environment synthetic, but source alone does not independently prove every label’s origin.
-  Conservative default if unresolved: controlled local demo only; no public screenshots or buyer runtime-data delivery.
+- [x] **Active-demo identity confirmation received.**
+  Owner confirmation: Pine Ridge Unified School District and its active example data are fictional CyberReady demonstration/testing content. The prior Walkerville concept was created for CyberReady but inspired by *The Magic School Bus* and is retired from the active source snapshot.
+  Remaining boundary: visually review pre-remediation screenshots/media before use; see `DEMO_DATA_PROVENANCE.md`.
 
-- [ ] **Confirm which CyberReady/Hall Monitor brand elements Alex created or controls.**
-  Why it matters: the logo is used by the website and Hall Monitor; the video is rendered on the website.
-  Conservative default if unresolved: include source code and copy, but exclude/replace unconfirmed brand/media files from any definitive asset schedule.
+- [x] **Brand-media creation-context confirmation received.**
+  Owner confirmation: CyberReady branded media was assembled/created by Alex Lamb using AI generation, Canva, Adobe Express, and Google Notebook/NotebookLM.
+  Remaining boundary: source/licence/release evidence and underlying-element treatment remain in sections B and C.
 
-- [ ] **Confirm whether `cyberreadyschools.com` and any hosting, DNS, email, or social accounts are intended for sale.**
-  Why it matters: the repository shows intended use but no account-control evidence.
-  Conservative default if unresolved: exclude all external accounts/domains from the package.
+- [x] **Domain/account inclusion intent received.**
+  Owner confirmation: `cyberreadyschools.com` is intended for sale; CyberReady email accounts are excluded and no CyberReady social accounts exist to transfer.
+  Remaining boundary: registrar, DNS, and hosting account control/closing mechanics remain unresolved; exclude them unless scheduled and evidenced.
+
+- [ ] **Visually review any pre-remediation screenshot or active homepage video before public buyer use.**
+  Why it matters: the active source no longer uses the retired demo identity, but repository text/file metadata alone cannot establish the visual content of existing media.
+  Conservative default if unresolved: do not use or transfer pre-remediation screenshot/video assets; use a freshly generated Pine Ridge capture after approval.
 
 ## B. Documentation to locate
 

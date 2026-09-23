@@ -21,3 +21,9 @@
 - The available local object history attributes first addition of the listed media/brand files to Alex Lamb, but Git attribution is not an assignment, licence, or ownership record.
 - Duplicate logo/banner hashes across website and Hall Monitor suggest a shared brand asset, not independent ownership evidence.
 - No asset was removed in this remediation because the repository alone cannot prove source or rights. The uncertainty should be disclosed to buyers rather than guessed away.
+
+## Owner-confirmation update — 2026-09-23
+
+The owner confirms that CyberReady branded media was assembled/created by Alex Lamb using tools/services including AI generation, Canva, Adobe Express, and Google Notebook/NotebookLM. This provides factual creation context for the branded-media inventory; it does not establish ownership, exclusivity, licence scope, provenance of underlying elements, or transferability. The source/licence/release actions in the table remain applicable.
+
+The current active application/website demo identity has been changed to the owner-confirmed fictional Pine Ridge Unified School District. No tracked static screenshot was identified as a required runtime dependency for the retired demo identity. The homepage video remains an active, separately flagged media asset whose visual content and rights require owner review before buyer/public use.

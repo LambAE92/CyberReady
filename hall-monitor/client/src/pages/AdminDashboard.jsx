@@ -108,7 +108,7 @@ function OverviewTab({ data, goToDistrict }) {
       {user?.role === 'platform_admin' && (
         <div className="flex items-center justify-between gap-3 flex-wrap">
           <div className="text-sm text-slate-500 dark:text-slate-400">
-            Demo controls for seeded Walkerville data.
+            Demo controls for seeded Pine Ridge Unified School District data.
           </div>
           <button
             onClick={handleResetDemo}

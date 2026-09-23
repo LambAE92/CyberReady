@@ -45,7 +45,7 @@ The website links to Hall Monitor through `NEXT_PUBLIC_HALL_MONITOR_URL`. The we
 - WAL journaling and foreign-key pragma enabled.
 - Startup schema creation plus best-effort inline migrations.
 - Data model supports districts, users/roles, dashboard metrics, risks, training, phishing simulations, compliance entries, CCRR assessments/domain assessments/evidence/findings/roadmap items, AI systems/ratings, historic reports, uploads, requests, and audit events.
-- Seed workflow creates a synthetic Walkerville district and associated demo data when the database is empty.
+- Seed workflow creates the fictional Pine Ridge Unified School District and associated CyberReady-created demo data when the database is empty. The active seeded demonstration identity is documented in `DEMO_DATA_PROVENANCE.md`.
 
 ### Assessment and reporting engine
 

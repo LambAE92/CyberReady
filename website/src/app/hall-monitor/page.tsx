@@ -232,7 +232,7 @@ export default function HallMonitorPage() {
           <div className="mt-16 max-w-2xl mx-auto bg-slate-900 rounded-xl shadow-2xl ring-1 ring-white/10 p-6">
             <div className="flex items-center justify-between">
               <p className="text-white font-bold">HallMonitor</p>
-              <p className="text-slate-400 text-sm">Walkerville School District</p>
+              <p className="text-slate-400 text-sm">Pine Ridge Unified School District</p>
             </div>
             <div className="mt-8 flex flex-col items-center">
               <div className="relative h-[120px] w-[120px]">
@@ -278,7 +278,7 @@ export default function HallMonitorPage() {
               </div>
             </div>
             <p className="text-xs text-slate-600 text-center mt-4">
-              Walkerville School District - Demo Data
+              Pine Ridge Unified School District - Demo Data
             </p>
           </div>
         </Container>
