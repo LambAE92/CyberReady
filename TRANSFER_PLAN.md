@@ -70,3 +70,13 @@ This plan is an acquisition-handoff framework, not a purchase agreement. Final a
 - [ ] Buyer-owned secrets replace all shared-demo or seller-controlled secrets.
 - [ ] License, framework, trademark, privacy and data-processing decisions are documented.
 - [ ] Transition assistance and final acceptance are recorded.
+
+## 2026-09-23 technical asset-schedule addendum
+
+This general handoff plan is supplemented by `PROPOSED_TRANSACTION_ASSET_SCHEDULE.md`, `ACQUISITION_IP_PROVENANCE_MATRIX.md`, and `CONTROLLED_DILIGENCE_INDEX.md`. Those documents classify the current tracked package more precisely and should control the technical discussion of:
+
+- CCRR/CEAM, CAIRE, and CAGR as seller-authorship-qualified candidates rather than legally cleared proprietary assets.
+- The active NIST AI RMF Playbook data and legacy CCRE/Cybersecurity Rubric source as controlled/reference material pending owner/counsel decisions.
+- Brand/media/headshot, domain, hosting, external accounts, runtime data, and secrets as separately scheduled, excluded, or review-required assets.
+
+No item is transferred by this addendum. The definitive transaction schedule remains the controlling document.

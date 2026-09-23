@@ -43,3 +43,7 @@ The current public repository is useful as an evaluation package, but it contain
 3. Confirm rights/provenance for the CyberReady/Hall Monitor visual assets, founder likeness, and media before marketing them as transferable.
 4. Establish a controlled data-room checklist for the items listed above, including recipient, date, version/hash, rights status, and whether an NDA or other agreement applies.
 5. Keep the present clean public branch immutable once the transaction package is approved; retain a controlled closing snapshot separately.
+
+## 2026-09-23 packaging addendum
+
+The current repository remains public; no visibility action is made by this document. For a prospective buyer, use `CONTROLLED_DILIGENCE_INDEX.md` to distinguish public orientation material from source-level, security, provenance, methodology, and historical disclosures. In particular, do not provide the active NIST AI RMF Playbook data or retained legacy CCRE/Cybersecurity Rubric source as seller-owned transfer assets without the owner/counsel decision recorded in `ACQUISITION_IP_PROVENANCE_MATRIX.md`.

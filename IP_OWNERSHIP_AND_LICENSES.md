@@ -86,3 +86,13 @@ These items may not be transferrable, sublicenseable, or appropriate for redistr
 3. Confirm authorship/assignment for CAIRE, CAGR, Hall Monitor, website code/copy, designs, logos, media, and buyer materials.
 4. Have counsel replace or approve privacy, terms, credential, sponsorship, certification, domain, and transaction language.
 5. Produce an SBOM and third-party licence notice from a clean dependency installation before closing. The package-install check in this remediation is not legal licence clearance.
+
+## 2026-09-23 provenance-review addendum
+
+`ACQUISITION_IP_PROVENANCE_MATRIX.md` is the current field/file-level technical inventory and `PROPOSED_TRANSACTION_ASSET_SCHEDULE.md` is the proposed transaction boundary. This addendum does not change the cautions above; it makes one material active-source distinction explicit:
+
+- CCRR/CEAM uses NIST CSF identifiers as external mapping metadata.
+- The active AI Governance workflow also imports `hall-monitor/client/src/data/aiRmfPlaybook.js`. Its file header identifies it as generated from the NIST AI RMF Playbook (NIST AI 100-1), and it contains extensive external-reference prose/actions. It is not represented as CyberReady-owned and should remain controlled-diligence/owner-counsel-review material until its permitted treatment is decided.
+- `cagrData.js` contains CyberReady-specific K–12 maturity/advancement content alongside AI RMF-like subcategory language. Seller should confirm authorship/source boundaries before representing CAGR as exclusively seller-owned methodology.
+
+The current lockfiles contain direct dependency licence metadata and transitive licence variants. They are an initial technical inventory, not a substitute for a closing SBOM/NOTICE and legal licence review.

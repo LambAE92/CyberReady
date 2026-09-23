@@ -1,115 +1,95 @@
 # 10-Minute Buyer Demo Script
 
-## 0:00 to 1:00: Open The Website
+## 0:00–1:00 — Open the Website
 
-Open the CyberReady website and describe the market problem:
+Introduce the market problem: K–12 districts face ransomware risk, insurance scrutiny, AI-adoption pressure, and board oversight expectations. CyberReady packages assessment methodology candidates, an operational prototype, and a buyer-facing website. Do not claim customers, revenue, production deployment, NIST/CoSN endorsement, or certification.
 
-- K-12 districts face ransomware risk, cyber insurance scrutiny, AI adoption pressure, and board oversight expectations.
-- Many districts lack a structured way to document cybersecurity and AI governance maturity.
-- CyberReady packages the assessment methodology, operational dashboard, and buyer-facing website.
+## 1:00–2:00 — Explain the Product Stack
 
-## 1:00 to 2:00: Explain The CyberReady Ecosystem
+Describe four separate layers:
 
-Describe the four parts:
+- **CCRR v1.0:** CyberReady’s 18-domain K–12 cybersecurity-readiness rubric candidate, with NIST CSF 2.0 identifiers used as external reference metadata.
+- **CEAM v1.0:** evidence-assessment workflow for current/target maturity, evidence, gaps, roadmap work, and reassessment.
+- **CAGR / CAIRE:** CyberReady AI-governance rubric/methodology candidates mapped to the NIST AI RMF external architecture.
+- **Hall Monitor:** records assessment, findings, maturity, roadmap, reporting, and governance workflow. It does not ingest real-time district security telemetry.
 
-- CCRE-aligned cybersecurity-governance workflow: mapped to NIST CSF 2.0; not a CoSN certification or endorsement.
-- CAGR: CyberReady AI Governance Rubric aligned to NIST AI RMF 1.0.
-- CAIRE: CyberReady evidence-review methodology for AI governance, subject to seller authorship confirmation.
-- Hall Monitor: Operations platform for recorded assessment, findings, posture, reporting, and roadmap tracking; it does not ingest real-time district security telemetry.
+State that the active NIST AI RMF Playbook guidance is separately identified external-reference content, not a seller-owned asset representation.
 
-## 2:00 to 3:00: Open Hall Monitor
+## 2:00–3:00 — Open Hall Monitor
 
-Open Hall Monitor from the website.
+Use a separately created, isolated synthetic demo following `DEMO_SETUP.md`. Do not place credentials in this script, screenshots, email, or public material. Explain that the application supports platform-admin and district views.
 
-Before the walkthrough, create an isolated local demo using `DEMO_SETUP.md` and use the unique administrator account configured for that demo. Do not place credentials in this script, buyer emails, screenshots, or public documentation.
-
-Explain that the admin starts in portfolio overview mode.
-
-## 3:00 to 4:00: Show Portfolio Dashboard
+## 3:00–4:00 — Show the Portfolio Dashboard
 
 Highlight:
 
-- Portfolio maturity view
-- Cyber and AI maturity visibility
-- District list
-- Assessment status
-- Audit request workflow
+- Portfolio maturity visibility
+- Cyber and AI maturity indicators
+- District list and assessment status
+- Audit-request workflow
 
-Explain the buyer opportunity: this can support a consulting practice, managed service, or SaaS roadmap.
+Describe this as an evaluation/MVP foundation that could support a consulting, managed-service, or buyer product strategy.
 
-## 4:00 to 5:00: Switch To District View
+## 4:00–5:00 — Switch to the District View
 
-Switch to the isolated demo district or sign in with the unique district account configured for the walkthrough. Do not disclose credentials in buyer-facing materials.
+Show the isolated synthetic district dashboard:
 
-Highlight the district dashboard:
+- CCRR maturity and six NIST CSF 2.0 Function views
+- CAIRE/CAGR AI maturity and four NIST AI RMF Function views
+- Sample roadmap, compliance, and findings context
 
-- Maturity score
-- Six NIST CSF 2.0 functions
-- Four NIST AI RMF 1.0 functions
-- Sample prioritized roadmap
-- AI Governance posture card
+Make clear that current dashboard/seed metrics are application/demo data, not live telemetry.
 
-## 5:00 to 6:30: Show Assessment
+## 5:00–6:30 — Show the Assessment Workspaces
 
-Open the assessment area.
+Open the active cybersecurity assessment workspace and highlight:
 
-Highlight:
+- CCRR/CEAM assessment across 18 CyberReady Readiness Domains
+- Separate current and target maturity
+- Qualitative confidence that does not change maturity math
+- Structured evidence, seven gap types, critical-gap indicator, and sequential advancement work
 
-- CCRE-aligned cybersecurity-governance self-assessment
-- CAIRE self-assessment
-- 1 to 5 maturity scale
-- Notes and evidence workflow
-- Advancement guidance
-- Function-level scoring
+Then show the AI Governance workspace:
 
-Explain that the structure is designed for evidence-based interviews and board-ready reporting.
+- AI-system inventory and lifecycle/oversight fields
+- CAGR maturity categories and CAIRE evidence/notes workflow
+- External NIST AI RMF alignment and separately identified Playbook reference guidance
 
-## 6:30 to 7:30: Show Executive Summary
-
-Open the executive summary.
+## 6:30–7:30 — Show Executive Summary
 
 Highlight:
 
-- Overall posture
-- Indicative insurance-readiness input (not an insurer score or coverage decision)
-- Cyber function maturity
-- AI governance maturity
-- Recommendations and next steps
+- CCRR Function maturity
+- CAIRE/CAGR AI governance maturity
+- Findings, priorities, training/compliance context, and next steps
+- Indicative insurance-readiness input, not an insurer score, underwriting model, coverage decision, or advice
 
-Explain that this is the leadership-facing artifact for superintendents and boards.
-
-## 7:30 to 8:30: Show Findings And Compliance
-
-Open findings and governance compliance.
+## 7:30–8:30 — Show Findings and Compliance
 
 Highlight:
 
-- Risk findings
-- Priorities
-- Status tracking
-- Compliance readiness
-- Optional AI-assisted document analysis when `ANTHROPIC_API_KEY` is configured
+- Risk findings and remediation tracking
+- Governance-compliance view
+- Optional AI-assisted document extraction only if a buyer-controlled Anthropic key is configured
 
-## 8:30 to 9:30: Explain What The Buyer Receives
+Explain that real data should not be used without the buyer’s privacy, security, storage, and vendor controls.
 
-Summarize:
+## 8:30–9:30 — Explain Proposed Buyer Package
 
-- Source code
-- Website
-- Hall Monitor app
-- CCRE-aligned and CAIRE/CAGR assessment workflows
-- Seller-authorship-qualified source and documentation; excluded reference materials only on a separately reviewed schedule
-- Demo seed data
-- Setup and deployment documentation
-- Domain transfer placeholder, subject to final agreement
+Summarize the proposed, conditional package:
 
-## 9:30 to 10:00: Explain Next Steps
+- Hall Monitor and website source code
+- CCRR/CEAM and CAIRE/CAGR implementation candidates
+- Synthetic demo workflow
+- Build/setup, architecture, limitations, security, and transaction documentation
+- Separate third-party dependency notices and controlled-diligence materials
 
-Recommended buyer next steps:
+Do not present NIST/CoSN/CCRE materials, embedded AI RMF Playbook data, media, domain/accounts, or historic CCRE/Cybersecurity Rubric materials as automatically included. Refer to `PROPOSED_TRANSACTION_ASSET_SCHEDULE.md`.
 
-- Review known limitations.
-- Decide whether to use this as an assessment accelerator, MVP SaaS, managed-service asset, or product base.
-- Migrate SQLite to Postgres for production.
-- Add CI, monitoring, and managed file storage.
-- Finalize IP and domain transfer terms in a written acquisition agreement.
-- No ongoing founder involvement is required unless separately negotiated.
+## 9:30–10:00 — Explain Next Steps
+
+- Buyer reviews technical limitations and provenance matrix.
+- Owner/counsel confirms methodology, external-reference, brand/media/domain, and historical-material boundaries.
+- Buyer decides whether to use CyberReady as an assessment accelerator, MVP SaaS, managed-service asset, or product base.
+- Buyer adopts its production architecture: Postgres, managed identity/session, object storage, CI, monitoring, and backup/restore if commercialization proceeds.
+- Founder transition support, if any, is separately negotiated.
