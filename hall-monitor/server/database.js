@@ -228,6 +228,104 @@ function initDatabase() {
     )
   `);
 
+  // ── CCRR / CEAM assessments (v1.0; legacy self_assessments are retained) ──
+  db.exec(`
+    CREATE TABLE IF NOT EXISTS ccrr_assessments (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      district_id INTEGER NOT NULL REFERENCES districts(id),
+      assessor_id INTEGER REFERENCES users(id),
+      name TEXT NOT NULL,
+      status TEXT NOT NULL DEFAULT 'draft' CHECK(status IN ('draft','in_progress','completed')),
+      rubric_key TEXT NOT NULL DEFAULT 'ccrr_v1',
+      rubric_version TEXT NOT NULL DEFAULT '1.0',
+      evidence_methodology_key TEXT NOT NULL DEFAULT 'ceam_v1',
+      evidence_methodology_version TEXT NOT NULL DEFAULT '1.0',
+      prior_assessment_id INTEGER REFERENCES ccrr_assessments(id),
+      reassessment_trigger TEXT,
+      created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+      updated_at DATETIME DEFAULT CURRENT_TIMESTAMP
+    )
+  `);
+
+  db.exec(`
+    CREATE TABLE IF NOT EXISTS ccrr_domain_assessments (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      assessment_id INTEGER NOT NULL REFERENCES ccrr_assessments(id) ON DELETE CASCADE,
+      domain_id TEXT NOT NULL,
+      current_maturity INTEGER CHECK(current_maturity BETWEEN 1 AND 5),
+      target_maturity INTEGER CHECK(target_maturity BETWEEN 1 AND 5),
+      confidence TEXT CHECK(confidence IN ('High','Moderate','Low')),
+      rating_rationale TEXT,
+      critical_gap INTEGER NOT NULL DEFAULT 0,
+      risk_sensitive_critical INTEGER NOT NULL DEFAULT 0,
+      assessor_id INTEGER REFERENCES users(id),
+      assessed_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+      updated_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+      UNIQUE(assessment_id, domain_id)
+    )
+  `);
+
+  db.exec(`
+    CREATE TABLE IF NOT EXISTS ccrr_evidence (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      assessment_id INTEGER NOT NULL REFERENCES ccrr_assessments(id) ON DELETE CASCADE,
+      domain_id TEXT NOT NULL,
+      evidence_type TEXT NOT NULL,
+      title TEXT NOT NULL,
+      source_owner TEXT NOT NULL,
+      source_location TEXT NOT NULL,
+      effective_or_observed_date TEXT NOT NULL,
+      reviewed_date TEXT NOT NULL,
+      scope TEXT NOT NULL,
+      assessor_notes TEXT,
+      validation_status TEXT NOT NULL CHECK(validation_status IN ('Accepted','Partial','Rejected','Superseded','Needs Follow-up')),
+      confidentiality TEXT,
+      retention_or_review_date TEXT,
+      created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+      updated_at DATETIME DEFAULT CURRENT_TIMESTAMP
+    )
+  `);
+
+  db.exec(`
+    CREATE TABLE IF NOT EXISTS ccrr_roadmap_items (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      assessment_id INTEGER NOT NULL REFERENCES ccrr_assessments(id) ON DELETE CASCADE,
+      domain_id TEXT NOT NULL,
+      current_level INTEGER NOT NULL CHECK(current_level BETWEEN 1 AND 5),
+      target_level INTEGER NOT NULL CHECK(target_level BETWEEN 1 AND 5),
+      gap_statement TEXT,
+      advancement_transition TEXT NOT NULL,
+      advancement_action TEXT NOT NULL,
+      owner TEXT,
+      priority TEXT,
+      due_date TEXT,
+      expected_evidence TEXT,
+      dependencies TEXT,
+      status TEXT NOT NULL DEFAULT 'Planned' CHECK(status IN ('Planned','In Progress','Blocked','Complete','Accepted Risk','Deferred')),
+      reassessment_trigger TEXT,
+      created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+      completed_at DATETIME
+    )
+  `);
+
+  db.exec(`
+    CREATE TABLE IF NOT EXISTS ccrr_findings (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      assessment_id INTEGER NOT NULL REFERENCES ccrr_assessments(id) ON DELETE CASCADE,
+      domain_id TEXT NOT NULL,
+      gap_type TEXT NOT NULL CHECK(gap_type IN ('Evidence Gap','Implementation Gap','Coverage Gap','Governance Gap','Technical Gap','Validation Gap','Target-State Gap')),
+      title TEXT NOT NULL,
+      description TEXT,
+      affected_scope TEXT,
+      criticality TEXT,
+      confidence TEXT CHECK(confidence IN ('High','Moderate','Low')),
+      critical_gap INTEGER NOT NULL DEFAULT 0,
+      status TEXT NOT NULL DEFAULT 'Open' CHECK(status IN ('Open','In Progress','Resolved','Accepted Risk','Deferred')),
+      created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+      updated_at DATETIME DEFAULT CURRENT_TIMESTAMP
+    )
+  `);
+
   // ── Audit requests (districts request new audits) ─────────────
   db.exec(`
     CREATE TABLE IF NOT EXISTS ai_systems (

@@ -49,7 +49,7 @@ function GovernanceStatusSection({ fnData }) {
     <div className="space-y-4">
       <div className="flex items-center justify-between">
         <div>
-          <h3 className="text-base font-semibold text-slate-900 dark:text-white">Cybersecurity Governance Status (CCRE-aligned)</h3>
+          <h3 className="text-base font-semibold text-slate-900 dark:text-white">Cybersecurity Readiness Status (CCRR/CEAM)</h3>
           <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
             Derived from self-assessment maturity scores and active findings
           </p>
@@ -283,7 +283,7 @@ export default function Compliance() {
         </div>
       </div>
 
-      {/* Cybersecurity-governance status derived from the CCRE-aligned workflow */}
+      {/* Cybersecurity readiness status derived from the CCRR/CEAM workflow */}
       <GovernanceStatusSection fnData={govStatus.functions} />
 
       {/* Framework Filter */}

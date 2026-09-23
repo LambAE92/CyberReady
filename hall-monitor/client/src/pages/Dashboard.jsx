@@ -284,7 +284,7 @@ export default function Dashboard() {
             What These Scores Mean
           </h3>
           <p className="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
-            Cyber maturity reflects the CCRE-aligned cybersecurity-governance self-assessment. AI maturity reflects CAIRE self-assessment ratings using the CAGR rubric.
+            Cyber maturity reflects the evidence-based CCRR/CEAM assessment. AI maturity reflects CAIRE self-assessment ratings using the CAGR rubric.
             {' '}{explainScore(overallScore)}
           </p>
           <div className="mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 grid grid-cols-5 gap-2">
@@ -561,7 +561,7 @@ export default function Dashboard() {
         <div className="flex items-start gap-2 text-xs text-slate-400 pt-2 border-t border-slate-200 dark:border-slate-700">
           <AlertTriangle size={12} className="flex-shrink-0 mt-0.5" />
           <p>
-            This dashboard reflects maturity scores from CCRE-aligned cybersecurity-governance and CAIRE AI-governance self-assessments.
+            This dashboard reflects maturity scores from CCRR/CEAM cybersecurity and CAIRE AI-governance assessments.
             The roadmap is a prioritized recommendation. Treat it as a starting point and adapt to your district's
             context, budget, and readiness.
           </p>

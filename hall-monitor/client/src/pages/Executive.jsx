@@ -104,7 +104,7 @@ export default function Executive() {
   if (hasRatings && data.categoriesRated > 0) {
     progressItems.push({
       color: overall >= 3 ? 'bg-green-500' : 'bg-amber-500',
-      text: `CCRE-aligned cybersecurity-governance self-assessment: ${data.categoriesRated} of ${data.totalCategories} categories rated. Overall maturity at Level ${overallLevel} (${label?.short || ''}).`,
+      text: `CCRR/CEAM cybersecurity assessment: ${data.categoriesRated} of ${data.totalCategories} domains rated. Overall maturity at Level ${overallLevel} (${label?.short || ''}).`,
     });
   }
   if (hasAiRatings && data.aiCategoriesRated > 0) {
@@ -227,7 +227,7 @@ export default function Executive() {
           </ul>
 
           <div class="footer">
-            Prepared by HallMonitor · CyberReady K-12 Cybersecurity Platform · CCRE-aligned cybersecurity-governance workflow
+            Prepared by HallMonitor · CyberReady K-12 Cybersecurity Platform · CCRR/CEAM evidence-based workflow
           </div>
         </body>
       </html>
@@ -258,7 +258,7 @@ export default function Executive() {
         <div className="flex flex-col md:flex-row items-center gap-8">
           <ScoreRing score={overall} size={160} />
           <div className="flex-1">
-            <h3 className="text-lg font-semibold text-slate-900 dark:text-white">Cybersecurity Governance Maturity (CCRE-aligned)</h3>
+            <h3 className="text-lg font-semibold text-slate-900 dark:text-white">Cybersecurity Readiness Maturity (CCRR/CEAM)</h3>
             {hasRatings ? (
               <>
                 <p className={`text-2xl font-bold mt-1 ${label?.tone}`}>
@@ -275,7 +275,7 @@ export default function Executive() {
               </>
             ) : (
               <p className="text-slate-500 dark:text-slate-400 mt-2 text-sm">
-                No self-assessment data yet. Complete the CCRE-aligned cybersecurity-governance self-assessment to generate maturity scores.
+                No CCRR assessment data yet. Complete the CCRR/CEAM assessment to generate maturity scores.
               </p>
             )}
             <div className="flex gap-4 mt-4 text-sm flex-wrap">

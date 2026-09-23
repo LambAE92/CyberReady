@@ -89,7 +89,7 @@ export default function AuditLog() {
         <div>
           <h2 className="text-2xl font-bold text-slate-900 dark:text-white">Evaluation History</h2>
           <p className="text-sm text-slate-500 dark:text-slate-400">
-            CCRE-aligned cybersecurity-governance assessment cycles, maturity scores, and system activity log
+            CCRR/CEAM cybersecurity assessment cycles, maturity scores, and system activity log
           </p>
         </div>
         <button onClick={load} disabled={loading}

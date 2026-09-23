@@ -4,6 +4,7 @@ import { api } from '../utils/api';
 import { RUBRIC_FUNCTIONS, MATURITY_LEVELS, NIST_FUNCTION_COLORS } from '../data/rubricData';
 import { CAGR_FUNCTIONS } from '../data/cagrData';
 import { getPlaybookForCategory } from '../data/aiRmfPlaybook';
+import CCRRPanel from './CCRRPanel';
 
 const LEVEL_COLORS = {
   1: '#dc2626',
@@ -541,9 +542,9 @@ function CAGRAssessmentPanel() {
 }
 
 export default function UnifiedAssessmentTabs() {
-  const [activeTab, setActiveTab] = useState('ccre');
+  const [activeTab, setActiveTab] = useState('ccrr');
   const tabs = [
-    { id: 'ccre', label: 'Cybersecurity Governance', icon: ShieldCheck },
+    { id: 'ccrr', label: 'CCRR Cybersecurity', icon: ShieldCheck },
     { id: 'cagr', label: 'CAGR AI Governance', icon: Brain },
   ];
 
@@ -552,7 +553,7 @@ export default function UnifiedAssessmentTabs() {
       <div>
         <h2 className="text-2xl font-bold text-slate-900 dark:text-white">Assessment</h2>
         <p className="text-sm text-slate-500 dark:text-slate-400">
-          Complete CCRE-aligned cybersecurity-governance and CAGR AI-governance self-assessments with matching evidence-review workflows.
+          Complete evidence-based CCRR cybersecurity and CAIRE AI-governance assessments with distinct, versioned methodologies.
         </p>
       </div>
 
@@ -576,7 +577,7 @@ export default function UnifiedAssessmentTabs() {
         })}
       </div>
 
-      {activeTab === 'ccre' ? <CCREAssessmentPanel /> : <CAGRAssessmentPanel />}
+      {activeTab === 'ccrr' ? <CCRRPanel /> : <CAGRAssessmentPanel />}
     </div>
   );
 }

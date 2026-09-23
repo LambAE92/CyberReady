@@ -547,7 +547,7 @@ function EvaluationHistoryTab({ data }) {
       <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden">
         <div className="px-6 py-4 border-b border-slate-200 dark:border-slate-700">
           <h3 className="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">All Evaluations</h3>
-          <p className="text-xs text-slate-400 mt-0.5">CCRE-aligned cybersecurity-governance assessments you have conducted or started across all districts</p>
+          <p className="text-xs text-slate-400 mt-0.5">CCRR/CEAM cybersecurity assessments you have conducted or started across all districts</p>
         </div>
         {assessments.length === 0 ? (
           <div className="px-6 py-12 text-center text-slate-400">
