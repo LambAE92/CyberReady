@@ -98,6 +98,15 @@ export const api = {
   saveSelfAssessment: (data) => request('/self-assessment', { method: 'POST', body: JSON.stringify(data) }),
   snapshotSelfAssessment: (data) => request('/self-assessment/snapshot', { method: 'POST', body: JSON.stringify(data) }),
 
+  // CCRR / CEAM v1.0 (separate from preserved legacy self-assessment snapshots)
+  ccrrAssessments: () => request('/ccrr-assessments'),
+  createCcrrAssessment: (data) => request('/ccrr-assessments', { method: 'POST', body: JSON.stringify(data) }),
+  ccrrAssessment: (id) => request(`/ccrr-assessments/${id}`),
+  saveCcrrDomain: (id, data) => request(`/ccrr-assessments/${id}/domains`, { method: 'POST', body: JSON.stringify(data) }),
+  addCeamEvidence: (id, data) => request(`/ccrr-assessments/${id}/evidence`, { method: 'POST', body: JSON.stringify(data) }),
+  addCeamFinding: (id, data) => request(`/ccrr-assessments/${id}/findings`, { method: 'POST', body: JSON.stringify(data) }),
+  addCcrrRoadmapItem: (id, data) => request(`/ccrr-assessments/${id}/roadmap`, { method: 'POST', body: JSON.stringify(data) }),
+
   // AI Governance
   aiSystems: () => request('/ai-systems'),
   createAiSystem: (data) => request('/ai-systems', { method: 'POST', body: JSON.stringify(data) }),

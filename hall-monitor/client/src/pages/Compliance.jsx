@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { api } from '../utils/api';
 import { useAuth } from '../context/useAuth';
 import AdminDashboard from './AdminDashboard';
-import { CheckCircle, AlertCircle, XCircle, Minus, FileText, GraduationCap, ChevronDown } from 'lucide-react';
+import { CheckCircle, AlertCircle, XCircle, Minus, FileText, ChevronDown } from 'lucide-react';
 
 const NIST_COLORS = {
   Govern:   'bg-indigo-100 text-indigo-700 dark:bg-indigo-900/30 dark:text-indigo-300',
@@ -35,52 +35,6 @@ const statusColor = {
   'N/A': 'bg-slate-100 text-slate-500 dark:bg-slate-700 dark:text-slate-400',
 };
 
-function TrainingFeed({ departments }) {
-  if (!departments.length) return null;
-  const overallPct = departments.length
-    ? Math.round(departments.reduce((s, d) => s + d.completion_pct, 0) / departments.length)
-    : 0;
-  const below = departments.filter(d => d.completion_pct < 80);
-
-  return (
-    <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden">
-      <div className="px-4 py-3 border-b border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900/50 flex items-center gap-2">
-        <GraduationCap size={15} className="text-indigo-500" />
-        <h4 className="text-sm font-semibold text-slate-700 dark:text-slate-300">Masterclass Training Completion</h4>
-        <span className={`ml-auto text-xs font-bold px-2 py-0.5 rounded ${overallPct >= 80 ? 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400' : overallPct >= 60 ? 'bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400' : 'bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400'}`}>
-          {overallPct}% overall
-        </span>
-      </div>
-      <div className="divide-y divide-slate-100 dark:divide-slate-700/50">
-        {departments.map((d, i) => {
-          const pct = Math.round(d.completion_pct);
-          const barColor = pct >= 80 ? 'bg-green-500' : pct >= 60 ? 'bg-amber-500' : 'bg-red-500';
-          return (
-            <div key={i} className="px-4 py-2.5 flex items-center gap-3">
-              {pct >= 80
-                ? <CheckCircle size={14} className="flex-shrink-0 text-green-500" />
-                : <AlertCircle size={14} className={`flex-shrink-0 ${pct >= 60 ? 'text-amber-500' : 'text-red-500'}`} />
-              }
-              <span className="flex-1 text-sm text-slate-700 dark:text-slate-300">{d.department}</span>
-              <div className="w-24 h-1.5 rounded-full bg-slate-200 dark:bg-slate-700 overflow-hidden">
-                <div className={`h-full rounded-full ${barColor}`} style={{ width: `${pct}%` }} />
-              </div>
-              <span className="w-10 text-right text-xs text-slate-500 dark:text-slate-400">{pct}%</span>
-            </div>
-          );
-        })}
-      </div>
-      {below.length > 0 && (
-        <div className="px-4 py-2.5 bg-amber-50 dark:bg-amber-900/10 border-t border-amber-100 dark:border-amber-800">
-          <p className="text-xs text-amber-700 dark:text-amber-400">
-            {below.length} department{below.length !== 1 ? 's' : ''} below 80% — training completion affects overall governance readiness.
-          </p>
-        </div>
-      )}
-    </div>
-  );
-}
-
 function GovernanceStatusSection({ fnData }) {
   const [expanded, setExpanded] = useState(null);
   if (!fnData || fnData.length === 0) return null;
@@ -95,7 +49,7 @@ function GovernanceStatusSection({ fnData }) {
     <div className="space-y-4">
       <div className="flex items-center justify-between">
         <div>
-          <h3 className="text-base font-semibold text-slate-900 dark:text-white">CCRE Governance Status</h3>
+          <h3 className="text-base font-semibold text-slate-900 dark:text-white">Cybersecurity Readiness Status (CCRR/CEAM)</h3>
           <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
             Derived from self-assessment maturity scores and active findings
           </p>
@@ -195,7 +149,7 @@ function GovernanceStatusSection({ fnData }) {
               )}
               {isOpen && fn.categories.length === 0 && (
                 <div className="border-t border-slate-100 dark:border-slate-700/50 px-5 py-3 text-xs text-slate-400">
-                  No categories rated yet. Complete the CCRE self-assessment to see detailed status.
+                  No categories rated yet. Complete the cybersecurity-governance self-assessment to see detailed status.
                 </div>
               )}
             </div>
@@ -212,13 +166,11 @@ export default function Compliance() {
   if (inAdminOverview) return <AdminDashboard defaultTab="compliance" />;
 
   const [data, setData]               = useState([]);
-  const [depts, setDepts]             = useState([]);
   const [govStatus, setGovStatus]     = useState({ functions: [] });
   const [filter, setFilter]           = useState('');
 
   useEffect(() => {
     api.compliance().then(setData);
-    api.masterclassDepartments().then(setDepts).catch(() => {});
     api.governanceStatus().then(setGovStatus).catch(() => {});
   }, []);
 
@@ -301,7 +253,7 @@ export default function Compliance() {
         <div>
           <h2 className="text-2xl font-bold text-slate-900 dark:text-white">Governance Compliance</h2>
           <p className="text-sm text-slate-500 dark:text-slate-400">
-            Rubric alignment, policy readiness, and training completion across all governance domains
+            Rubric alignment, policy readiness, and documented governance status across all domains
           </p>
         </div>
         <button onClick={handleGenerateReport}
@@ -331,11 +283,8 @@ export default function Compliance() {
         </div>
       </div>
 
-      {/* CCRE Governance Status */}
+      {/* Cybersecurity readiness status derived from the CCRR/CEAM workflow */}
       <GovernanceStatusSection fnData={govStatus.functions} />
-
-      {/* Training Completion Feed */}
-      <TrainingFeed departments={depts} />
 
       {/* Framework Filter */}
       <div className="flex gap-2 flex-wrap">

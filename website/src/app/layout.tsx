@@ -1,18 +1,7 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: {
@@ -25,16 +14,17 @@ export const metadata: Metadata = {
     "K-12 cybersecurity",
     "school district governance",
     "cyber readiness",
-    "NIST framework",
-    "cybersecurity rubric",
+    "K-12 acquisition opportunity",
+    "NIST CSF 2.0",
+    "NIST AI RMF 1.0",
     "digital resilience",
-    "CCRE",
+    "Hall Monitor",
     "school board reporting",
   ],
   openGraph: {
     title: "CyberReady | K-12 Cyber Governance & Digital Resilience",
     description:
-      "Structured cyber governance evaluation and reporting for school districts. Built on the Cybersecurity Rubric framework, aligned to NIST.",
+      "Transfer-ready K-12 cybersecurity and AI governance platform package with structured assessment workflows, reporting, and NIST-aligned methodology.",
     type: "website",
     locale: "en_US",
     siteName: "CyberReady",
@@ -57,10 +47,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
+    <html lang="en" className="h-full antialiased">
       <body className="min-h-full flex flex-col">
         <Header />
         <main className="flex-1">{children}</main>

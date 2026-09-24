@@ -1,6 +1,6 @@
 # CyberReady Website
 
-This is the public marketing website for CyberReady. It presents CoSN CCRE-aligned cybersecurity assessment, the CAGR AI governance rubric, CAIRE workflow, and the Hall Monitor platform.
+This is the public acquisition website for CyberReady. It presents the Hall Monitor prototype, CyberReady's CCRR/CEAM cybersecurity-governance workflow with NIST CSF 2.0 external reference metadata, CyberReady-created CAIRE/CAGR methodology (subject to seller authorship confirmation), and buyer diligence materials.
 
 ## Run Locally
 
@@ -18,6 +18,7 @@ Copy `.env.example` to `.env.local`.
 
 ```env
 NEXT_PUBLIC_HALL_MONITOR_URL=http://localhost:5173
+NEXT_PUBLIC_ACQUISITION_EMAIL=<monitored-acquisition-inquiry-email>
 ```
 
 ## Build
@@ -31,7 +32,7 @@ npm start
 
 Recommended platforms: Netlify, Vercel, or Cloudflare Pages.
 
-Netlify is recommended for the public acquisition landing page connected to the included domain. Set the project root directory to `website` and configure `NEXT_PUBLIC_HALL_MONITOR_URL` to point at the hosted Hall Monitor demo or buyer-controlled portal.
+Netlify is recommended for the public acquisition landing page connected to the included domain. Set the project root directory to `website`, configure `NEXT_PUBLIC_HALL_MONITOR_URL` to point at the hosted Hall Monitor demo or buyer-controlled portal, and set `NEXT_PUBLIC_ACQUISITION_EMAIL` to a monitored inquiry address. The static form opens the visitor's email client; it does not send or store submissions itself.
 
 ## License
 

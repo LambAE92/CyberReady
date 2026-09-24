@@ -76,7 +76,7 @@ const differentiators = [
   {
     title: "Built on Real Evaluation Methodology",
     description:
-      "The pathway is informed by CoSN Cybersecurity Readiness for Education (CCRE) concepts and introduces students to structured cybersecurity governance assessment practices.",
+      "The pathway introduces students to structured cybersecurity governance assessment practices and transferable governance, risk, and accountability concepts.",
   },
   {
     title: "K-12 to Workforce Connection",

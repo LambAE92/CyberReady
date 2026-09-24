@@ -5,8 +5,12 @@
  */
 import { describe, it, before, after } from 'node:test';
 import assert from 'node:assert/strict';
+import { createRequire } from 'node:module';
 
-const BASE = 'http://localhost:3001/api';
+let baseUrl;
+const require = createRequire(import.meta.url);
+const { app } = require('../server/index.js');
+let server;
 let cookie = '';
 const adminUsername = process.env.DEMO_ADMIN_USER;
 const adminPassword = process.env.DEMO_ADMIN_PASS;
@@ -19,8 +23,20 @@ if (!adminUsername || !adminPassword || !districtItUsername || !districtItPasswo
   throw new Error('Set all DEMO_*_USER and DEMO_*_PASS values before running the smoke test.');
 }
 
+before(async () => {
+  server = await new Promise((resolve, reject) => {
+    const listener = app.listen(0, '127.0.0.1', () => resolve(listener));
+    listener.on('error', reject);
+  });
+  baseUrl = `http://127.0.0.1:${server.address().port}/api`;
+});
+
+after(async () => {
+  await new Promise(resolve => server.close(resolve));
+});
+
 async function req(path, opts = {}) {
-  const res = await fetch(`${BASE}${path}`, {
+  const res = await fetch(`${baseUrl}${path}`, {
     headers: { 'Content-Type': 'application/json', ...(cookie ? { Cookie: cookie } : {}) },
     ...opts,
   });
@@ -68,8 +84,8 @@ describe('District scoping', () => {
 
   it('switches to a district and returns current district info', async () => {
     const { body: districts } = await req('/districts');
-    const maplewood = districts.find(d => d.slug === 'maplewood') ?? districts[0];
-    await req('/switch-district', { method: 'POST', body: JSON.stringify({ districtId: maplewood.id }) });
+    const pineRidge = districts.find(d => d.slug === 'pine-ridge-unified') ?? districts[0];
+    await req('/switch-district', { method: 'POST', body: JSON.stringify({ districtId: pineRidge.id }) });
     const { status, body } = await req('/district');
     assert.equal(status, 200);
     assert.ok(body.name);
@@ -78,7 +94,7 @@ describe('District scoping', () => {
 
   it('switches district for platform_admin', async () => {
     const { body: districts } = await req('/districts');
-    const target = districts.find(d => d.slug === 'walkerville') ?? districts[0];
+    const target = districts.find(d => d.slug === 'pine-ridge-unified') ?? districts[0];
     const { status, body } = await req('/switch-district', { method: 'POST', body: JSON.stringify({ districtId: target.id }) });
     assert.equal(status, 200);
     assert.equal(body.id, target.id);
@@ -95,7 +111,7 @@ describe('District scoping', () => {
 describe('Executive summary', () => {
   it('returns fully dynamic summary', async () => {
     const { body: districts } = await req('/districts');
-    const target = districts.find(d => d.slug === 'walkerville') ?? districts[0];
+    const target = districts.find(d => d.slug === 'pine-ridge-unified') ?? districts[0];
     await req('/switch-district', { method: 'POST', body: JSON.stringify({ districtId: target.id }) });
     const { status, body } = await req('/executive-summary');
     assert.equal(status, 200);
@@ -110,6 +126,35 @@ describe('Executive summary', () => {
     assert.ok(Array.isArray(body.nextSteps));
     assert.ok(body.nextSteps.length > 0, 'Expected at least one next step');
     assert.ok(body.generatedAt);
+  });
+});
+
+describe('CAIRE / CAGR regression', () => {
+  let aiSystemId;
+
+  it('creates an AI system in the active district', async () => {
+    const { status, body } = await req('/ai-systems', {
+      method: 'POST',
+      body: JSON.stringify({ name: 'CAIRE Regression System', use_case: 'Synthetic validation only', human_oversight_model: 'human_on_loop' }),
+    });
+    assert.equal(status, 201);
+    assert.ok(body.id);
+    aiSystemId = body.id;
+  });
+
+  it('persists a CAGR maturity rating without changing the cybersecurity workflow', async () => {
+    const { status } = await req(`/ai-systems/${aiSystemId}/ratings`, {
+      method: 'POST',
+      body: JSON.stringify({ cagr_function: 'GOVERN', category_id: 'GV.1', maturity_level: 3, notes: 'Synthetic regression rating' }),
+    });
+    assert.equal(status, 200);
+    const ratings = await req(`/ai-systems/${aiSystemId}/ratings`);
+    assert.equal(ratings.status, 200);
+    assert.equal(ratings.body.ratings.GOVERN['GV.1'].maturity_level, 3);
+    const summary = await req('/ai-governance/summary');
+    assert.equal(summary.status, 200);
+    assert.ok(summary.body.systemCount >= 1);
+    assert.equal(typeof summary.body.functionScores.GOVERN, 'number');
   });
 });
 
@@ -155,7 +200,7 @@ describe('Assessments', () => {
   });
 });
 
-describe('Self-Assessment (CC4E)', () => {
+describe('Cybersecurity governance self-assessment', () => {
   it('saves self-assessment to server', async () => {
     const { status } = await req('/self-assessment', {
       method: 'POST',

@@ -2,7 +2,7 @@
 
 // Mock data, mirrors what Hall Monitor shows for a school district.
 
-const DISTRICT_NAME = "Walkerville School District";
+const DISTRICT_NAME = "Pine Ridge Unified School District";
 const OVERALL_SCORE = 1.7;
 const OVERALL_LEVEL = 2;
 const AI_SCORE = 1.6;
@@ -39,7 +39,7 @@ const MATURITY_SCALE = [
 
 const ROADMAP_ITEMS = [
   { fn: "Respond",  fnColor: "bg-orange-50 text-orange-700", priority: "bg-red-50 text-red-700",    label: "Critical", action: "Establish and document a formal incident response plan with assigned roles." },
-  { fn: "Detect",   fnColor: "bg-amber-50 text-amber-700",   priority: "bg-orange-50 text-orange-700", label: "High",  action: "Implement continuous monitoring and anomaly detection procedures." },
+  { fn: "Detect",   fnColor: "bg-amber-50 text-amber-700",   priority: "bg-orange-50 text-orange-700", label: "High",  action: "Document and improve monitoring and anomaly-detection procedures." },
 ];
 
 // Inline ScoreRing, exact replica of the Hall Monitor component.
@@ -93,7 +93,7 @@ export default function DashboardPreview() {
           </span>
         </div>
         <span className="text-[10px] text-slate-500 hidden sm:block">
-          CCRE {CATEGORIES_RATED} / {TOTAL_CATEGORIES}, AI {AI_CATEGORIES_RATED} / {AI_TOTAL_CATEGORIES}
+          Cyber {CATEGORIES_RATED} / {TOTAL_CATEGORIES}, AI {AI_CATEGORIES_RATED} / {AI_TOTAL_CATEGORIES}
         </span>
       </div>
 
@@ -131,7 +131,7 @@ export default function DashboardPreview() {
                 What This Score Means
               </p>
               <p className="text-sm text-slate-700 leading-relaxed">
-                Walkerville shows emerging cybersecurity and AI governance foundations.
+                Pine Ridge Unified School District shows emerging cybersecurity and AI governance foundations.
                 The next priority is documenting ownership, evidence, and repeatable processes.
               </p>
             </div>

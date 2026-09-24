@@ -1,68 +1,53 @@
 # CyberReady Handoff Checklist
 
-## Repository
+## Repository and package boundary
 
-- [ ] Buyer has access to the private GitHub repository.
-- [ ] Buyer has reviewed `README.md`, `SETUP.md`, and `DEPLOYMENT.md`.
-- [ ] Buyer has reviewed this `sale-package/` folder.
+- [ ] Buyer has reviewed the public GitHub evaluation repository and the proposed controlled-diligence boundary.
+- [ ] Buyer has reviewed `README.md`, `SETUP.md`, `DEMO_SETUP.md`, and `CYBERREADY_BUYER_TECHNICAL_FACT_SHEET.md`.
+- [ ] Buyer has reviewed `PROPOSED_TRANSACTION_ASSET_SCHEDULE.md` and `CONTROLLED_DILIGENCE_INDEX.md`.
 - [ ] Seller has confirmed no private secrets are committed.
-- [ ] Buyer has confirmed whether Git history should be retained.
+- [ ] Buyer has confirmed the source history/snapshot it will receive.
 
-## Local Evaluation
+## Local evaluation
 
-- [ ] Buyer can run Hall Monitor locally.
+- [ ] Buyer can run Hall Monitor against an isolated synthetic database.
 - [ ] Buyer can run the website locally.
-- [ ] Buyer can log in as platform admin.
-- [ ] Buyer can log in as Walkerville district IT.
-- [ ] Buyer can view CCRE and CAIRE self-assessments.
-- [ ] Buyer can view executive summary and insurance readiness scoring.
-- [ ] Buyer can build Hall Monitor client.
-- [ ] Buyer can build the website.
+- [ ] Buyer can log in using buyer-created controlled demo credentials.
+- [ ] Buyer can view platform and district dashboards.
+- [ ] Buyer can view CCRR/CEAM cybersecurity-readiness and CAIRE/CAGR AI-governance assessments.
+- [ ] Buyer can view executive-summary and indicative insurance-readiness views.
+- [ ] Buyer can build the Hall Monitor client and website.
 
-## Legal And IP
+## IP, provenance, and legal process
 
-- [ ] Written acquisition agreement is executed.
-- [ ] IP transfer language is included.
-- [ ] Repository ownership transfer terms are included.
-- [ ] Domain transfer terms are included.
-- [ ] Brand, logo, and content usage rights are included.
-- [ ] Third-party reference materials are reviewed for usage rights.
-- [ ] No ongoing founder involvement is required unless separately negotiated.
-- [ ] Buyer packet access is manually controlled and shared only with qualified parties.
+- [ ] Definitive acquisition agreement and IP/asset schedule are executed.
+- [ ] Contributor/authorship confirmation is available for included source and methodologies.
+- [ ] NIST AI RMF Playbook data and legacy CCRE/Cybersecurity Rubric material have a recorded approved, controlled, archived, or excluded disposition.
+- [ ] CCRE/CoSN credential/reference wording has been confirmed or removed from buyer-facing materials.
+- [ ] Brand, logo, media, founder-likeness, and domain/account scope are expressly scheduled or excluded.
+- [ ] Third-party dependencies and notices are reviewed through a buyer SBOM/NOTICE process.
+- [ ] Controlled security, IP, source, and history materials are shared only through the agreed process.
 
-## Domain And Hosting
+## Domain and hosting
 
-- [ ] Domain registrar identified.
-- [ ] Domain renewal date documented.
-- [ ] DNS records exported or documented.
-- [ ] Buyer destination registrar confirmed.
-- [ ] Website hosting account prepared.
-- [ ] Hall Monitor hosting account prepared.
-- [ ] Production environment variables prepared.
+- [ ] Domain registrar, renewal date, DNS records, and buyer destination are identified if a domain is included.
+- [ ] Website and Hall Monitor hosting-account treatment is agreed: transfer, recreate, or exclude.
+- [ ] Buyer has prepared its own production environment variables, accounts, and secret-management process.
 
-## Demo Environment
+## Demo environment
 
-- [ ] Hosted demo URL documented.
-- [ ] Demo access credentials documented.
-- [ ] Demo credentials rotated before public buyer access.
-- [ ] Demo environment contains no real district data.
-- [ ] Demo environment clearly labeled as "Demo Environment — Synthetic Data Only".
-- [ ] Demo banner or disclaimer confirms demo-only status.
-- [ ] Buyer understands hosted demo is separate from final transferred infrastructure unless otherwise negotiated.
+- [ ] Demo URL, if hosted, is documented separately from the source transaction.
+- [ ] Demo credentials are created/exchanged securely; no values appear in the repository or buyer packet.
+- [ ] Demo credentials and `SESSION_SECRET` are unique per buyer/group and rotated as required.
+- [ ] Demo contains no real district data and is visibly labeled as synthetic.
+- [ ] Seed labels, screenshots, video, and media used in the demo are owner-approved.
+- [ ] Anthropic remains disabled unless the buyer supplies a key and approves the data flow.
 
-## Security
+## Closing and acceptance
 
-- [ ] Demo credentials rotated or confirmed acceptable for evaluation.
-- [ ] New `SESSION_SECRET` generated for deployment.
-- [ ] Optional `ANTHROPIC_API_KEY` issued by buyer if AI analysis is needed.
-- [ ] Local SQLite demo database excluded from Git.
-- [ ] Uploaded files storage plan selected for production.
-
-## Closing
-
-- [ ] GitHub repository transferred or mirrored.
-- [ ] Domain transfer initiated.
-- [ ] Any social, email, or related brand assets transferred if included.
-- [ ] Buyer confirms successful local setup.
-- [ ] Buyer confirms deployment path.
-- [ ] Seller provides final Q&A session if included in agreement.
+- [ ] Buyer receives the agreed source snapshot and approved controlled-diligence documents.
+- [ ] Buyer confirms successful local setup/build/test in its environment.
+- [ ] Buyer confirms all transferred/excluded/licensed assets are listed in the definitive schedule.
+- [ ] Domain/account transfer, if included, is initiated under documented rollback contacts.
+- [ ] Buyer confirms deployment responsibility and production-hardening plan.
+- [ ] Any founder transition assistance is documented separately.

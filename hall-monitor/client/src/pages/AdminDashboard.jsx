@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { api } from '../utils/api';
 import { useAuth } from '../context/useAuth';
 import {
-  LayoutGrid, ShieldAlert, GraduationCap, TrendingUp, Building2,
+  LayoutGrid, ShieldAlert, TrendingUp, Building2,
   AlertTriangle, CheckCircle2, Clock, ChevronRight, Users, School,
   ClipboardCheck, RefreshCw, XCircle, AlertCircle, Minus,
   FileText, Calendar, ClipboardList, ChevronDown, Brain,
@@ -108,7 +108,7 @@ function OverviewTab({ data, goToDistrict }) {
       {user?.role === 'platform_admin' && (
         <div className="flex items-center justify-between gap-3 flex-wrap">
           <div className="text-sm text-slate-500 dark:text-slate-400">
-            Demo controls for seeded Walkerville data.
+            Demo controls for seeded Pine Ridge Unified School District data.
           </div>
           <button
             onClick={handleResetDemo}
@@ -261,7 +261,9 @@ function FindingsTab({ data, goToDistrict }) {
   );
 }
 
-function MasterclassTab({ data }) {
+// Historical prototype implementation retained in source for review, but intentionally
+// not rendered or linked in Hall Monitor. CoSN's external interest form is linked in the sidebar.
+export function LegacyMasterclassTab({ data }) {
   const mc = data.masterclass || [];
   const requests = data.masterclassRequests || [];
 
@@ -545,7 +547,7 @@ function EvaluationHistoryTab({ data }) {
       <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden">
         <div className="px-6 py-4 border-b border-slate-200 dark:border-slate-700">
           <h3 className="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">All Evaluations</h3>
-          <p className="text-xs text-slate-400 mt-0.5">CCRE evaluations you have conducted or started across all districts</p>
+          <p className="text-xs text-slate-400 mt-0.5">CCRR/CEAM cybersecurity assessments you have conducted or started across all districts</p>
         </div>
         {assessments.length === 0 ? (
           <div className="px-6 py-12 text-center text-slate-400">
@@ -701,7 +703,6 @@ function CountBadge({ count, color }) {
 const ADMIN_TABS = [
   { key: 'overview',        label: 'Dashboard',                  icon: LayoutGrid },
   { key: 'findings',        label: 'Findings & Recommendations', icon: ShieldAlert },
-  { key: 'masterclass',     label: 'Masterclass Training',       icon: GraduationCap },
   { key: 'compliance',      label: 'Governance Compliance',      icon: ClipboardCheck },
   { key: 'selfAssessment',  label: 'Self-Assessment Audit',      icon: ClipboardList },
   { key: 'evalHistory',     label: 'Evaluation History',         icon: FileText },
@@ -784,7 +785,6 @@ export default function AdminDashboard({ defaultTab = 'overview' }) {
       {/* Tab content */}
       {activeTab === 'overview'       && <OverviewTab data={data} goToDistrict={goToDistrict} />}
       {activeTab === 'findings'       && <FindingsTab data={data} goToDistrict={goToDistrict} />}
-      {activeTab === 'masterclass'    && <MasterclassTab data={data} />}
       {activeTab === 'compliance'     && <ComplianceTab data={data} />}
       {activeTab === 'selfAssessment' && <SelfAssessmentTab data={data} onRequestAudit={handleRequestAudit} />}
       {activeTab === 'evalHistory'    && <EvaluationHistoryTab data={data} />}

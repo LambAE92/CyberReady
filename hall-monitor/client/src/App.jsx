@@ -6,7 +6,6 @@ import Sidebar from './components/Sidebar';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 import Risks from './pages/Risks';
-import Training from './pages/Training';
 import Compliance from './pages/Compliance';
 import Executive from './pages/Executive';
 import SelfAssessment from './pages/SelfAssessment';
@@ -74,9 +73,6 @@ export default function App() {
             <Route index element={<Dashboard />} />
             <Route path="/risks" element={
               <RoleGuard roles={['platform_admin', 'district_it']}><Risks /></RoleGuard>
-            } />
-            <Route path="/training" element={
-              <RoleGuard roles={['platform_admin', 'district_it']}><Training /></RoleGuard>
             } />
             <Route path="/compliance" element={<Compliance />} />
             <Route path="/self-assessment" element={

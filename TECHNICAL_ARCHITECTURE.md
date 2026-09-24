@@ -14,7 +14,7 @@ CyberReady
    ├─ React/Vite dashboard client
    ├─ Express API and session authentication
    ├─ SQLite runtime database
-   ├─ DOCX report generator
+   ├─ CCRR/CEAM assessment and executive-summary views
    └─ Optional Anthropic-powered finding extraction
 ```
 
@@ -27,7 +27,7 @@ The website links to Hall Monitor through `NEXT_PUBLIC_HALL_MONITOR_URL`. The we
 - React 19 and Vite 8 SPA, using `HashRouter`.
 - Tailwind CSS 4, Recharts, and Lucide React.
 - Auth and theme contexts; authenticated fetch client uses same-origin `/api` calls and session cookies.
-- Role-aware pages for dashboards, risks, training, compliance, self-assessment, assessment, AI governance, executive summary, and audit log.
+- Role-aware pages for dashboards, risks, compliance, CCRR/CEAM assessment, AI governance, executive summary, and audit log. The former Masterclass page is retained in source but is not routed, linked, or rendered.
 - Platform-administrator overview and selectable district context; district and superintendent views.
 
 ### Hall Monitor backend
@@ -35,8 +35,8 @@ The website links to Hall Monitor through `NEXT_PUBLIC_HALL_MONITOR_URL`. The we
 - Node.js CommonJS service using Express 5.
 - JSON middleware, CORS constrained to `CORS_ORIGIN` (default local Vite origin), and `express-session` cookies.
 - Bcrypt password-hash comparison and login-specific rate limiting.
-- API routes for authentication, districts, metrics, risk status/notes, training, phishing metrics, compliance, cyber assessment, AI-system inventory/rating, reports, audit requests, audit log, masterclass workflow, findings uploads, and demo reset.
-- Server-side role checks and district predicates on most scoped routes. The masterclass completion update is explicitly district-scoped after the acquisition-readiness fix.
+- API routes for authentication, districts, metrics, risk status/notes, training, phishing metrics, compliance, CCRR/CEAM assessment, AI-system inventory/rating, historical report access, audit requests, audit log, findings uploads, and demo reset. Legacy Masterclass and CCRE/Cybersecurity Rubric API/data code remains for historical compatibility but is not exposed through the current assessment interface.
+- Server-side role checks and district predicates on most scoped routes. The retained legacy masterclass completion update remains explicitly district-scoped after the acquisition-readiness fix.
 - Production mode serves the built Vite client from the Express process.
 
 ### Database and data model
@@ -44,15 +44,15 @@ The website links to Hall Monitor through `NEXT_PUBLIC_HALL_MONITOR_URL`. The we
 - SQLite via `better-sqlite3`; `hallmonitor.db` is created locally at first start.
 - WAL journaling and foreign-key pragma enabled.
 - Startup schema creation plus best-effort inline migrations.
-- Data model supports districts, users/roles, dashboard metrics, risks, training, phishing simulations, compliance entries, cyber assessments, evidence/checklists/interviews, AI systems/ratings, reports, uploads, requests, and audit events.
-- Seed workflow creates a synthetic Walkerville district and associated demo data when the database is empty.
+- Data model supports districts, users/roles, dashboard metrics, risks, training, phishing simulations, compliance entries, CCRR assessments/domain assessments/evidence/findings/roadmap items, AI systems/ratings, historic reports, uploads, requests, and audit events.
+- Seed workflow creates the fictional Pine Ridge Unified School District and associated CyberReady-created demo data when the database is empty. The active seeded demonstration identity is documented in `DEMO_DATA_PROVENANCE.md`.
 
 ### Assessment and reporting engine
 
-- Cybersecurity workflow uses six NIST CSF 2.0 functions and 22 categories, a five-level maturity scale, notes/evidence, interview responses, checklist state, snapshots, and score aggregation.
+- Cybersecurity workflow uses CCRR v1.0: 18 CyberReady Readiness Domains grouped into all six NIST CSF 2.0 Functions, with NIST identifiers as external reference metadata. CEAM v1.0 stores separate current/target maturity, qualitative confidence, structured evidence, seven gap types, independent critical gaps, sequential advancement actions, and linked reassessments. Overall maturity is the equal-weighted average of the six Function scores, not a simple 18-domain average.
 - AI governance workflow records AI systems, lifecycle/oversight information and ratings across GOVERN, MAP, MEASURE, and MANAGE. The current data model contains 19 top-level AI governance categories with underlying prompts/guidance.
-- Executive views summarize maturity, findings, compliance, training, and selected insurance-readiness indicators.
-- `docx` report generation creates an authenticated DOCX download and stores the report BLOB in SQLite.
+- Executive and dashboard views summarize CCRR Function maturity, findings, compliance, training, and selected insurance-readiness indicators. Current reporting uses CCRR/CEAM data; it is not a certification or control-validation output.
+- The historic DOCX report generator and historic report BLOB access remain preserved for existing records, but new CCRE/Cybersecurity Rubric report generation is retired. A CCRR-specific downloadable report generator is not implemented.
 
 ### Optional AI-assisted finding extraction
 
@@ -65,7 +65,7 @@ The website links to Hall Monitor through `NEXT_PUBLIC_HALL_MONITOR_URL`. The we
 - Next.js 16 / React 19 / TypeScript / Tailwind CSS 4.
 - Static export (`output: "export"`) with unoptimized images and trailing-slash URLs.
 - Marketing pages, insight articles, policy/terms pages, product positioning, and static dashboard previews.
-- The acquisition-inquiry form is presentational only: it prevents navigation and displays a success state without transmitting the form contents.
+- The acquisition-inquiry form opens a prefilled `mailto:` draft only when public `NEXT_PUBLIC_ACQUISITION_EMAIL` is configured. It has no server-side submission, CRM, database, consent-capture, or delivery confirmation.
 
 ## Prototype characteristics
 
@@ -75,8 +75,8 @@ The website links to Hall Monitor through `NEXT_PUBLIC_HALL_MONITOR_URL`. The we
 | Sessions | Default `express-session` memory store | Sessions do not share across instances and are not durable on restart |
 | File storage | Text/extracted findings stored in SQLite; uploads handled in memory | No object-store, malware scanning, retention policy, or durable file lifecycle |
 | Data | Synthetic seed data and static site previews | Not evidence of production customers, live telemetry, or real district operation |
-| Reporting | DOCX in application database | Useful prototype output; needs template/brand/rights review and scalable file storage strategy |
-| Website contact | UI acknowledgement only | No lead delivery, CRM, email, database, or consent-capture integration |
+| Reporting | Current CCRR/CEAM dashboard and executive-summary views; historic DOCX report BLOB access | A CCRR-specific downloadable report and production file-storage strategy remain buyer opportunities |
+| Website contact | Static `mailto:` draft configured by public environment variable | No server-side lead delivery, CRM, database, consent capture, or delivery confirmation |
 | Deployment | Manual-host instructions | No CI/CD, IaC, container, health endpoint, observability, or backup automation |
 
 ## Planned or not evidenced as implemented

@@ -1,9 +1,9 @@
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { Brain, CheckCircle, ChevronDown, ChevronRight, ClipboardList, FileText, ShieldCheck } from 'lucide-react';
 import { api } from '../utils/api';
-import { RUBRIC_FUNCTIONS, MATURITY_LEVELS, NIST_FUNCTION_COLORS } from '../data/rubricData';
 import { CAGR_FUNCTIONS } from '../data/cagrData';
 import { getPlaybookForCategory } from '../data/aiRmfPlaybook';
+import CCRRPanel from './CCRRPanel';
 
 const LEVEL_COLORS = {
   1: '#dc2626',
@@ -11,6 +11,10 @@ const LEVEL_COLORS = {
   3: '#f59e0b',
   4: '#2563eb',
   5: '#16a34a',
+};
+
+const NIST_FUNCTION_COLORS = {
+  GOVERN: '#6366f1', MAP: '#0ea5e9', MEASURE: '#f59e0b', MANAGE: '#10b981',
 };
 
 const LEVEL_NAMES = {
@@ -21,7 +25,6 @@ const LEVEL_NAMES = {
   5: 'Optimized',
 };
 
-const CCRE_TOTAL = RUBRIC_FUNCTIONS.reduce((sum, fn) => sum + fn.categories.length, 0);
 const CAGR_TOTAL = CAGR_FUNCTIONS.reduce((sum, fn) => sum + fn.categories.length, 0);
 
 function average(values) {
@@ -327,85 +330,6 @@ function SummaryHeader({ title, description, score, stats, total, saveStatus, fu
   );
 }
 
-function CCREAssessmentPanel() {
-  const [ratings, setRatings] = useState({});
-  const [notes, setNotes] = useState({});
-  const [saveStatus, setSaveStatus] = useState('Loading');
-  const [expanded, setExpanded] = useState({});
-
-  useEffect(() => {
-    api.selfAssessment()
-      .then(data => {
-        setRatings(data?.ratings || {});
-        setNotes(data?.notes || {});
-        setSaveStatus('All changes saved');
-      })
-      .catch(() => setSaveStatus('Unable to load saved CCRE assessment'));
-  }, []);
-
-  const saveAssessment = useCallback((nextRatings, nextNotes) => {
-    setSaveStatus('Saving');
-    api.saveSelfAssessment({
-      timeframe: '2025-26',
-      ratings: nextRatings,
-      notes: nextNotes,
-      status: 'in_progress',
-    })
-      .then(() => setSaveStatus('All changes saved'))
-      .catch(() => setSaveStatus('Save error'));
-  }, []);
-
-  const getKey = (fn, category) => `${fn.name}::${category.name}`;
-  const getLevel = (fn, category) => ratings[getKey(fn, category)] || 0;
-  const getNote = (fn, category) => notes[getKey(fn, category)] || '';
-
-  const stats = useMemo(() => buildStats(RUBRIC_FUNCTIONS, getLevel), [ratings]);
-
-  const handleLevelChange = (fn, category, level) => {
-    const key = getKey(fn, category);
-    const nextRatings = { ...ratings, [key]: level };
-    setRatings(nextRatings);
-    saveAssessment(nextRatings, notes);
-  };
-
-  const handleNoteChange = (fn, category, value) => {
-    const key = getKey(fn, category);
-    setNotes(prev => ({ ...prev, [key]: value }));
-    setSaveStatus('Unsaved changes');
-  };
-
-  const handleNoteBlur = (fn, category) => {
-    const key = getKey(fn, category);
-    saveAssessment(ratings, { ...notes, [key]: notes[key] || '' });
-  };
-
-  return (
-    <div className="space-y-6">
-      <SummaryHeader
-        title="CCRE Self-Assessment"
-        description="Use the CyberReady CCRE Cybersecurity Rubric to evaluate cybersecurity maturity across GOVERN, IDENTIFY, PROTECT, DETECT, RESPOND, and RECOVER."
-        score={stats.overall}
-        stats={stats}
-        total={CCRE_TOTAL}
-        saveStatus={saveStatus}
-        functions={RUBRIC_FUNCTIONS}
-      />
-      <RubricSections
-        functions={RUBRIC_FUNCTIONS}
-        stats={stats}
-        expanded={expanded}
-        setExpanded={setExpanded}
-        getLevel={getLevel}
-        getNote={getNote}
-        canEdit
-        onLevelChange={handleLevelChange}
-        onNoteChange={handleNoteChange}
-        onNoteBlur={handleNoteBlur}
-      />
-    </div>
-  );
-}
-
 function CAGRAssessmentPanel() {
   const [systems, setSystems] = useState([]);
   const [selectedSystemId, setSelectedSystemId] = useState('');
@@ -519,7 +443,7 @@ function CAGRAssessmentPanel() {
       <div className="rounded-xl border border-indigo-200 dark:border-indigo-800 bg-indigo-50 dark:bg-indigo-900/20 p-5">
         <h3 className="text-sm font-semibold text-indigo-900 dark:text-indigo-200">CAGR + CAIRE</h3>
         <p className="text-sm text-indigo-900 dark:text-indigo-200 mt-2">
-          CAGR provides the rubric. CAIRE provides the evaluator process. Together they help districts document how AI tools are governed, monitored, and improved.
+          CAGR provides the rubric. CAIRE provides the evidence-review process. Together they help districts document how AI tools are governed, monitored, and improved.
         </p>
       </div>
 
@@ -541,10 +465,10 @@ function CAGRAssessmentPanel() {
 }
 
 export default function UnifiedAssessmentTabs() {
-  const [activeTab, setActiveTab] = useState('ccre');
+  const [activeTab, setActiveTab] = useState('ccrr');
   const tabs = [
-    { id: 'ccre', label: 'CCRE Self-Assessment', icon: ShieldCheck },
-    { id: 'cagr', label: 'CAIRE Self-Assessment', icon: Brain },
+    { id: 'ccrr', label: 'CCRR Cybersecurity', icon: ShieldCheck },
+    { id: 'cagr', label: 'CAGR AI Governance', icon: Brain },
   ];
 
   return (
@@ -552,7 +476,7 @@ export default function UnifiedAssessmentTabs() {
       <div>
         <h2 className="text-2xl font-bold text-slate-900 dark:text-white">Assessment</h2>
         <p className="text-sm text-slate-500 dark:text-slate-400">
-          Complete CCRE cybersecurity and CAIRE AI governance self-assessments with matching evidence-based workflows.
+          Complete evidence-based CCRR cybersecurity and CAIRE AI-governance assessments with distinct, versioned methodologies.
         </p>
       </div>
 
@@ -576,7 +500,7 @@ export default function UnifiedAssessmentTabs() {
         })}
       </div>
 
-      {activeTab === 'ccre' ? <CCREAssessmentPanel /> : <CAGRAssessmentPanel />}
+      {activeTab === 'ccrr' ? <CCRRPanel /> : <CAGRAssessmentPanel />}
     </div>
   );
 }

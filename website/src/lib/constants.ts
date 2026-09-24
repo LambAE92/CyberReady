@@ -1,6 +1,6 @@
 export const SITE_NAME = "CyberReady";
 export const SITE_DESCRIPTION =
-  "K-12 cybersecurity and AI governance platform. CoSN CCRE-aligned assessment, CAGR, CAIRE, Hall Monitor reporting, and improvement planning for school districts.";
+  "Transfer-ready K-12 cybersecurity and AI governance platform package with Hall Monitor, structured assessment workflows, reporting, and buyer diligence materials.";
 export const SITE_URL = "https://cyberreadyschools.com";
 
 export const NAV_LINKS = [
@@ -37,7 +37,7 @@ export const NIST_FUNCTIONS = [
     name: "Detect",
     color: "#06b6d4",
     description:
-      "Enable continuous monitoring, anomaly detection, and adverse event analysis.",
+      "Assess documented monitoring, anomaly-analysis, and adverse-event response practices.",
   },
   {
     name: "Respond",

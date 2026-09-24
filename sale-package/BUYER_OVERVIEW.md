@@ -2,11 +2,11 @@
 
 ## What CyberReady Is
 
-CyberReady is a K-12 cybersecurity and AI governance platform package. It combines a public marketing website, a demo-ready Hall Monitor operations app, CCRE-aligned cybersecurity maturity assessment, and CAIRE/CAGR AI governance assessment built around NIST frameworks.
+CyberReady is a K–12 cybersecurity and AI-governance asset package. It combines a public acquisition website, a Hall Monitor prototype, a CCRR/CEAM cybersecurity-readiness workflow, and a CAIRE/CAGR AI-governance workflow that maps to external NIST frameworks.
 
 ## Market Position
 
-School districts face ransomware risk, cyber insurance pressure, board oversight expectations, student data privacy obligations, and rapid AI tool adoption. CyberReady positions itself as a structured governance layer that helps districts document maturity, prioritize action, and communicate risk in board-ready language.
+School districts face ransomware risk, cyber-insurance scrutiny, board oversight expectations, student-data privacy obligations, and rapid AI-tool adoption. CyberReady provides a structured governance layer for documenting maturity, prioritizing action, and communicating risk in leadership-facing language.
 
 ## Product Components
 
@@ -14,76 +14,72 @@ School districts face ransomware risk, cyber insurance pressure, board oversight
 
 Hall Monitor is the operational dashboard. It supports:
 
-- District and admin views
-- CCRE cybersecurity self-assessment
-- CAIRE AI governance self-assessment using the CAGR rubric
-- NIST CSF 2.0 function scoring
-- NIST AI RMF function scoring
+- District and platform-admin views
+- CCRR/CEAM cybersecurity-readiness assessment
+- CAIRE AI-governance assessment using the CAGR rubric
+- Six NIST CSF 2.0 Function scoring for CCRR and four NIST AI RMF Function views for CAGR
 - Findings and recommendations
 - Compliance tracking
 - Training and phishing visibility
-- Insurance readiness scoring
+- Indicative insurance-readiness input, not an insurer score or coverage decision
 - Executive reporting
 
 ### Website
 
-The website explains CyberReady's offerings, including:
+The website explains CyberReady’s product/asset package, including:
 
-- CCRE cybersecurity maturity evaluation
-- CAGR AI governance rubric
-- CAIRE evidence-based AI governance methodology
+- CCRR/CEAM cybersecurity workflow
+- CAGR AI-governance rubric
+- CAIRE AI evidence/risk methodology
 - Hall Monitor governance platform
-- District-facing value proposition
+- District-facing applicability and buyer opportunity
 - Thought leadership and insights
 
-### Reference Library
+### Rights Boundary
 
-The repository includes business, market, CCRE, CAIRE, CAGR, NIST, and AI governance reference materials for buyer review.
+This public package includes seller-authorship-qualified product source and buyer documentation. Standalone CCRE/CC4E, NIST, vendor, publisher, research, and other reference collections are excluded pending rights review. The active NIST AI RMF Playbook data set is separately identified external-reference content; it is not represented as CyberReady-owned. See `ACQUISITION_IP_PROVENANCE_MATRIX.md`, `IP_OWNERSHIP_AND_LICENSES.md`, and `PUBLIC_REPOSITORY_REMEDIATION.md`.
 
 ## Current Status
 
-CyberReady is a functional prototype and transfer-ready asset package. It is suitable for buyer demos, product validation, diligence review, and MVP continuation. It is not yet hardened as a production SaaS.
+CyberReady is a functional prototype and transfer-ready asset package. It is suitable for controlled buyer demonstrations, product validation, diligence review, and MVP continuation. It is not represented as a production-hardened enterprise SaaS.
 
-Full technical materials, repository access, and domain transfer are subject to a written acquisition agreement.
-
-Buyer packet access should be manually controlled and shared only with qualified parties.
+The public repository is not a complete transaction schedule. Controlled technical, security, IP, historical, and source-boundary materials should be shared through the managed process in `CONTROLLED_DILIGENCE_INDEX.md`.
 
 No ongoing founder involvement is required unless separately negotiated.
 
 ## Demo Access
 
-A hosted Hall Monitor demo may be provided to qualified buyers for initial review.
+A local synthetic Hall Monitor demo can be created using `DEMO_SETUP.md`. Any hosted demo should be manually controlled and use a buyer/group-specific credential set.
 
-The hosted demo is intended to show:
+The demo can show:
 
-- Admin portfolio view
+- Platform-admin portfolio view
 - District dashboard
-- CCRE self-assessment workflow
-- CAIRE/CAGR AI governance workflow
+- CCRR/CEAM cybersecurity-readiness assessment workflow
+- CAIRE/CAGR AI-governance workflow
 - Executive summary
-- Insurance readiness and compliance views
+- Indicative insurance-readiness and compliance views
 - Findings and recommendations
 
-Demo access should be manually controlled. Full repository access, technical materials, and domain transfer remain subject to a written acquisition agreement.
+Full repository access, technical materials, domain transfer, and source-level provenance records remain subject to the approved diligence process and a written acquisition agreement.
 
 ## Acquisition Opportunity
 
 A buyer can use CyberReady as:
 
-- A productized assessment accelerator for K-12 cyber and AI governance reviews
-- A demo-ready SaaS MVP for school district governance operations
+- A productized assessment accelerator for K–12 cyber and AI-governance reviews
+- A prototype foundation for school-district governance operations
 - A lead-generation website and platform package
-- A base for a compliance, insurance readiness, or board reporting product
-- A reference-backed asset package for further development
+- A base for a compliance, governance-reporting, or insurance-questionnaire-support product
+- An implementation foundation for further development
 
 ## Suggested Buyer Evaluation Flow
 
-1. Read `README.md`, `SETUP.md`, and `DEPLOYMENT.md`.
-2. Run Hall Monitor locally.
-3. Log in as platform admin.
-4. Review the portfolio dashboard.
-5. Log in as district IT for Walkerville.
-6. Review CCRE and CAIRE self-assessments.
-7. Review the executive summary and insurance readiness score.
-8. Run the website locally and open the Hall Monitor page.
-9. Review known limitations and roadmap.
+1. Read `README.md`, `SETUP.md`, `DEMO_SETUP.md`, and `CYBERREADY_BUYER_TECHNICAL_FACT_SHEET.md`.
+2. Run Hall Monitor locally against an isolated synthetic database.
+3. Log in with buyer-created controlled demo credentials.
+4. Review the platform and district dashboards.
+5. Review CCRR/CEAM cybersecurity readiness and CAIRE/CAGR AI-governance assessments.
+6. Review the executive summary, indicative insurance-readiness input, and compliance views.
+7. Run the website locally and view its Hall Monitor page.
+8. Review technical limitations, provenance boundaries, and the proposed transaction asset schedule.

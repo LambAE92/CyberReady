@@ -2,35 +2,33 @@
 
 **K-12 Cybersecurity and AI Governance Platform**
 
-CyberReady is currently being offered as a turnkey K–12 cybersecurity and AI governance system for acquisition.
+CyberReady is currently being offered as a purpose-built K–12 cybersecurity and AI-governance asset package for strategic acquisition.
 
 This repository represents a transfer-ready asset package, including a working prototype platform, governance frameworks, documentation, and a market-facing website.
 
 CyberReady is a structured cyber governance evaluation system built for school districts. It gives superintendents, school boards, and district leaders the governance-level visibility they need to understand, measure, and improve cybersecurity and AI governance posture without requiring technical expertise.
 
-Cybersecurity maturity is mapped to the six NIST CSF 2.0 functions and is positioned as **CoSN Cybersecurity Readiness for Education (CCRE)-aligned**. AI governance maturity uses the CyberReady AI Governance Rubric and CAIRE evidence-based workflow mapped to NIST AI RMF 1.0. CyberReady does not claim ownership of the CCRE program.
+Cybersecurity maturity uses the **CyberReady Cybersecurity Readiness Rubric (CCRR) v1.0** and **CyberReady Cybersecurity Evidence Assessment Methodology (CEAM) v1.0**, aligned to NIST CSF 2.0 as an external reference architecture. AI-governance maturity uses the CyberReady AI Governance Rubric (CAGR) and CAIRE evidence-review workflow mapped to NIST AI RMF 1.0. CyberReady does not claim ownership of NIST frameworks or third-party framework materials.
 
 **Current Status: Functional Prototype / Transfer-Ready Asset Package**
 
-CyberReady is demo-ready and suitable for buyer diligence, local evaluation, MVP continuation, and operator-led go-to-market packaging. It is not yet production-hardened as a multi-tenant SaaS. Production hardening needs are listed below and in `sale-package/KNOWN_LIMITATIONS.md`.
+CyberReady is suitable for controlled buyer diligence, local evaluation, MVP continuation, and operator-led go-to-market packaging. It is not yet production-hardened as a multi-tenant SaaS. Production hardening needs are listed below and in `KNOWN_LIMITATIONS.md`.
 
 ## Acquisition Positioning
 
-CyberReady packages a market-facing brand, a working Hall Monitor platform, structured CCRE and CAIRE assessment workflows, and K-12 governance reference materials into one private repository. A buyer receives a clear starting point for consulting, SaaS, managed-service, insurance readiness, or board reporting delivery models for school districts.
+CyberReady packages a market-facing brand, a working Hall Monitor platform, structured CCRR/CEAM and CAIRE assessment workflows, and buyer documentation in this public evaluation repository. A buyer receives a starting point for consulting, SaaS, managed-service, governance assessment, and board-reporting delivery models for school districts. See `PUBLIC_REPOSITORY_REMEDIATION.md` for the recommended public-versus-controlled diligence boundary.
 
 ## What A Buyer Receives
 
 - Hall Monitor app: Express API, SQLite seed database, React/Vite dashboard, role-based district and admin views.
 - CyberReady website: Next.js marketing site with platform, district, Hall Monitor, insights, and contact pages.
-- CCRE cybersecurity assessment structure aligned to NIST CSF 2.0.
-- CAIRE AI governance self-assessment using the CAGR rubric aligned to NIST AI RMF 1.0.
-- Executive summary, insurance readiness, findings, compliance, training, and roadmap views.
+- CCRR/CEAM cybersecurity readiness assessment structure mapped to NIST CSF 2.0.
+- CAIRE AI-governance self-assessment using the CAGR rubric mapped to NIST AI RMF 1.0.
+- Executive-summary, indicative insurance-readiness, findings, compliance, and roadmap views.
 - Buyer handoff and technical documentation. Standalone third-party/reference archives are deliberately excluded from this public sale package pending rights review.
-- Domain included in transfer, subject to written acquisition agreement.
+- Candidate domain/brand assets, subject to seller title confirmation and written acquisition agreement.
 
-Full technical materials, repository access, and domain transfer are subject to a written acquisition agreement.
-
-Buyer packet access should be manually controlled and shared only with qualified parties.
+The public repository is not by itself a complete transaction schedule. Controlled technical, IP, security, historical, and transfer materials should be shared only after appropriate diligence review and a written agreement.
 
 ## Transfer Model
 
@@ -40,8 +38,8 @@ The acquiring party receives:
 - Full repository access
 - Platform code and documentation
 - Website and branding assets
-- Governance frameworks and materials
-- Domain transfer, subject to written agreement
+- Seller-authored governance methodology and materials, subject to authorship confirmation
+- Domain transfer, only if expressly included in a written agreement
 
 No ongoing founder involvement is required unless separately negotiated.
 
@@ -78,8 +76,8 @@ For technical diligence, buyers can run the system locally:
 3. Follow `DEMO_SETUP.md` to create an isolated local demo database and unique credentials.
 4. Review the admin portfolio dashboard.
 5. Sign in with the locally configured district account and review the district dashboard.
-6. Open CCRE and CAIRE self-assessments.
-7. Review executive summary, insurance readiness, findings, and compliance.
+6. Open the CCRR/CEAM cybersecurity and CAIRE AI-governance assessment workspaces.
+7. Review the executive summary, indicative insurance-readiness input, findings, and compliance.
 8. Run the website from `website/` with `npm run dev` and open http://localhost:3000.
 
 ## Known Production Hardening Needed
@@ -106,7 +104,17 @@ CyberReady/
 
 ---
 
-Buyer handoff documentation lives in `sale-package/`. Start with `sale-package/BUYER_OVERVIEW.md` and `sale-package/HANDOFF_CHECKLIST.md` during diligence.
+Start with `ACQUISITION_BRIEF.md`, `TECHNICAL_ARCHITECTURE.md`, `PUBLIC_REPOSITORY_REMEDIATION.md`, and `FINAL_DILIGENCE_REVIEW.md` during diligence. Supplemental handoff materials are in `sale-package/`.
+
+Key diligence records:
+
+- `ACQUISITION_AUDIT.md` — repository inventory and baseline review
+- `IP_OWNERSHIP_AND_LICENSES.md` — ownership/rights questions and proposed treatment
+- `CCRR_CEAM_IMPLEMENTATION_REPORT.md` — canonical methodology, migration, validation, and acceptance-criteria record
+- `CCRE_COSN_TERMINOLOGY_AUDIT.md` — CCRE/CoSN terminology classification and historical/provenance positioning
+- `SECURITY_REVIEW.md` — source-security findings, corrections, and verification results
+- `WEBSITE_ASSET_PROVENANCE.md` — static asset/media provenance questions
+- `KNOWN_LIMITATIONS.md` and `TRANSFER_PLAN.md` — buyer opportunities and proposed transfer boundary
 
 ## Hall Monitor
 
@@ -140,7 +148,7 @@ hall-monitor/
 │   │   ├── components/    # Shared UI components
 │   │   ├── context/       # Auth and Theme context providers
 │   │   ├── utils/api.js   # API client layer
-│   │   └── data/          # CCRE rubric data (JSON)
+│   │   └── data/          # CCRR/CEAM and AI-governance data layers
 │   └── public/
 └── package.json
 ```
@@ -151,18 +159,17 @@ hall-monitor/
 |---|---|---|
 | `/` | Dashboard | All |
 | `/risks` | Findings & Recommendations | Admin, IT |
-| `/training` | Masterclass Training | Admin, IT |
 | `/compliance` | Governance Compliance | All |
 | `/self-assessment` | Self-Assessment Audit | Admin, IT |
-| `/assessment` | CCRE Assessment Tool | All |
+| `/assessment` | Cybersecurity governance assessment | All |
 | `/ai-governance` | AI Governance Systems | Admin, IT, Superintendent |
 | `/executive` | Executive Summary | All (district view only) |
 | `/audit-log` | Evaluation History | Admin, IT |
 
 ### User Roles
 
-- **`platform_admin`**: Cross-district overview. Manages all districts, conducts CCRE evaluations, reviews findings and audit requests. No Executive Summary in admin overview mode (it renders the Admin Dashboard instead).
-- **`district_it`**: District-level IT staff. Completes self-assessments, manages findings, requests masterclass training, and views their district's compliance and evaluation data.
+- **`platform_admin`**: Cross-district overview. Manages all districts, manages CCRR/CEAM cybersecurity assessments, and reviews findings and assessment requests. No Executive Summary appears in admin overview mode (it renders the Admin Dashboard instead).
+- **`district_it`**: District-level IT staff. Completes self-assessments, manages findings, and views their district's compliance and evaluation data.
 - **`superintendent`**: Read-only governance view. Sees the executive summary, compliance status, and assessment results for their district.
 
 ### Admin Dashboard
@@ -173,34 +180,34 @@ When a `platform_admin` has no district selected, every sidebar link routes to t
 |---|---|
 | Dashboard | KPI cards, portfolio maturity ring, findings by priority, districts table |
 | Findings & Recommendations | Aggregate finding counts by priority, per-district findings sorted by severity |
-| Masterclass Training | Completion status per district, pending training requests |
+| Governance Learning | Sample completion status per district and pending learning requests |
 | Governance Compliance | Overall compliance rate, per-district compliance bars |
 | Self-Assessment Audit | District self-assessment status, audit request tracking, scheduling |
-| Evaluation History | All CCRE evaluations conducted across all districts |
+| Evaluation History | Cybersecurity-governance assessments recorded across all districts |
 
 Clicking any district in the table calls `switchDistrict()` and reloads the page, rendering the full district IT layout.
 
 ### Cybersecurity assessment
 
-Hall Monitor's cybersecurity assessment workflow is **CoSN Cybersecurity Readiness for Education (CCRE)-aligned** and evaluates districts across **6 NIST functions** and **22 governance categories** on a **5-level maturity scale**. It is a governance assessment workflow, not a claim of CCRE program ownership or an independently certified audit.
+Hall Monitor's active cybersecurity assessment workflow implements **CCRR v1.0** and **CEAM v1.0** across **6 NIST CSF 2.0 alignment functions** and **18 CyberReady Readiness Domains** on a **five-level maturity scale** (Ad Hoc, Developing, Established, Measured, Resilient). NIST identifiers remain external reference metadata; CCRR/CEAM are not a NIST certification or independently certified audit.
 
 | Level | Label | Color |
 |---|---|---|
-| L1 | Initial | Red |
-| L2 | Repeatable | Orange |
-| L3 | Defined | Amber |
-| L4 | Managed | Blue |
-| L5 | Optimized | Green |
+| L1 | Ad Hoc | Red |
+| L2 | Developing | Orange |
+| L3 | Established | Amber |
+| L4 | Measured | Blue |
+| L5 | Resilient | Green |
 
-Each category has structured interview questions and guidance text for each maturity level. Completed assessments generate:
-- Overall maturity score (0–5)
-- Per-function maturity scores
-- A 12-month prioritized improvement roadmap (bucketed into quarterly action items)
-- Board-ready executive summary with export-to-print
+Each CCRR domain has structured guided questions, five maturity criteria, evidence expectations, common gaps, and canonical advancement actions. The implemented workflow records and supports:
+- Separate current and target maturity (1–5), with confidence stored as a qualitative assessment rather than a score multiplier
+- Six Function scores and an overall score calculated as an equal-weighted average of the six Function scores once all are represented
+- CEAM evidence records, seven CEAM gap types, independent critical-gap indicators, and sequential roadmap transitions
+- A district/platform dashboard and executive-summary API view; a new CCRR-specific downloadable report generator is not implemented
 
 ### CAIRE And CAGR AI Governance
 
-CyberReady also includes AI governance assessment coverage. CAGR is the CyberReady AI Governance Rubric. CAIRE is the evidence-based evaluator methodology used to validate AI governance maturity through interviews, notes, evidence, and board-ready findings. Hall Monitor scores AI governance across the NIST AI RMF 1.0 functions: GOVERN, MAP, MEASURE, and MANAGE.
+CyberReady also includes AI-governance assessment coverage. CAGR is the CyberReady AI Governance Rubric. CAIRE is CyberReady's evidence-review workflow for documenting AI-governance maturity through interviews, notes, evidence, and board-ready findings. Hall Monitor scores AI governance across the NIST AI RMF 1.0 functions: GOVERN, MAP, MEASURE, and MANAGE. Seller authorship and ownership of CAIRE/CAGR should be confirmed for the transaction schedule.
 
 ### Findings & Recommendations
 
@@ -229,11 +236,13 @@ ANTHROPIC_API_KEY=<buyer-provided-key>   # Optional, enables AI findings analysi
 PORT=3001
 ```
 
+Set the required synthetic-demo role values before first run; use `DEMO_SETUP.md` rather than placing credentials in this file.
+
 ### Database
 
 SQLite via `better-sqlite3`. The database file (`hallmonitor.db`) is auto-created on first run. Schema migrations run automatically on startup, no manual migration steps needed.
 
-Key tables: `users`, `districts`, `risks`, `self_assessments`, `assessments`, `audit_requests`, `masterclass_requests`, `finding_documents`, `audit_log`
+Key active methodology tables: `ccrr_assessments`, `ccrr_domain_assessments`, `ccrr_evidence`, `ccrr_findings`, and `ccrr_roadmap_items`. Legacy `self_assessments`, `assessments`, and related CCRE/Cybersecurity Rubric tables remain preserved for historical compatibility; they are neither altered nor automatically score-converted. Legacy masterclass tables also remain for historical compatibility but are not exposed in the Hall Monitor interface.
 
 ---
 
@@ -255,7 +264,7 @@ The CyberReady marketing and public-facing website. Built with Next.js App Route
 | Route | Description |
 |---|---|
 | `/` | Home: hero, problem/solution, How It Works (4 steps), Hall Monitor preview, differentiators, platform background, insights preview, CTA |
-| `/platform` | CCRE methodology, maturity model, NIST alignment, reporting outputs, Hall Monitor features, governance cycle |
+| `/platform` | CCRR/CEAM methodology, NIST alignment, reporting outputs, Hall Monitor features, governance cycle |
 | `/for-school-districts` | District-specific value proposition |
 | `/workforce-pathway` | K-12 cybersecurity career pipeline |
 | `/insights` | Articles and analysis on K-12 cyber governance |
@@ -307,10 +316,7 @@ Recommended platform: Railway
    NODE_ENV          production
    CORS_ORIGIN       https://your-website-domain.com
 
-3. The SQLite database (hallmonitor.db) is created
-   automatically on first startup. To reset to seed data,
-   delete hallmonitor.db from the Railway volume or use
-   the Admin Dashboard Reset Demo button.
+3. The SQLite database (`hallmonitor.db`) is created automatically on first startup. The reset route is disabled unless `DEMO_RESET_ENABLED=true` and must only be used for a verified synthetic demo database. Never reset a real-data instance from the application.
 
 For an isolated local demo, use the credential process in `DEMO_SETUP.md`. Do not publish or reuse seed credentials in an internet-accessible environment.
 
@@ -322,27 +328,26 @@ Netlify is recommended for a low-cost public acquisition landing page connected 
 
 1. Import the repository into the hosting platform.
 2. Set the root directory to: website
-3. Set this environment variable:
-   NEXT_PUBLIC_HALL_MONITOR_URL
-   Value: the hosted Hall Monitor demo or buyer-controlled Hall Monitor deployment
-4. Deploy. The hosting platform should detect the Next.js website configuration.
+3. Set `NEXT_PUBLIC_HALL_MONITOR_URL` to the hosted Hall Monitor demo or buyer-controlled deployment.
+4. Set `NEXT_PUBLIC_ACQUISITION_EMAIL` to a monitored acquisition-inquiry email address.
+5. Deploy. The hosting platform should detect the Next.js website configuration.
 
 ---
 
-## CoSN CCRE positioning
+## External-framework and credential provenance
 
-CyberReady uses a cybersecurity assessment workflow aligned to **CoSN Cybersecurity Readiness for Education (CCRE)** and maps its results to the six NIST CSF 2.0 functions. CCRE-related reference materials in this repository are subject to separate rights review; CyberReady does not claim ownership, certification authority, endorsement, or program affiliation.
+CyberReady's active cybersecurity workflow is CCRR/CEAM. NIST CSF 2.0 identifiers are external reference metadata and are not a NIST certification, endorsement, or product integration. CCRE-related material retained in the repository is historical, credential, provenance, or compatibility material subject to separate rights review; CyberReady does not claim ownership, certification authority, endorsement, or programme affiliation.
 
 | Function | Focus |
 |---|---|
 | **Govern** | Organizational governance, policy, and oversight |
 | **Identify** | Asset management, risk assessment, and organizational context |
 | **Protect** | Identity management, data security, and platform protection |
-| **Detect** | Continuous monitoring and anomaly detection |
+| **Detect** | District monitoring and anomaly-analysis practices (assessed; not a Hall Monitor telemetry feed) |
 | **Respond** | Incident response planning and execution |
 | **Recover** | Recovery planning and business continuity |
 
-Each function is evaluated across multiple categories. Maturity is rated L1–L5. Hall Monitor supports structured stakeholder interviews and evidence review; qualification, certification, or external validation claims must be independently substantiated outside the application.
+Each Function includes one or more CCRR domains. Maturity is rated L1–L5. Hall Monitor supports structured evidence review; qualification, certification, or external-validation claims must be independently substantiated outside the application.
 
 ---
 

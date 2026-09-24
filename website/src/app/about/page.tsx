@@ -26,7 +26,7 @@ const systemFoundations = [
   },
   {
     title: "NIST-Aligned Structure",
-    text: "The system connects CoSN CCRE-aligned cybersecurity assessment, CAGR AI governance assessment, CAIRE evidence validation, and Hall Monitor reporting.",
+    text: "The system connects CCRR/CEAM cybersecurity assessment, CAGR AI-governance assessment, CAIRE evidence review, and Hall Monitor reporting.",
   },
   {
     title: "Transfer-Ready Package",

@@ -2,16 +2,18 @@
 
 **K-12 Cybersecurity and AI Governance Operations Dashboard by CyberReady**
 
-HallMonitor is a web-based dashboard that helps school districts monitor, assess, and improve cybersecurity and AI governance posture. It includes a CoSN Cybersecurity Readiness for Education (CCRE)-aligned cybersecurity assessment workflow mapped to NIST CSF 2.0 and a CAIRE AI-governance workflow using the CAGR rubric mapped to NIST AI RMF 1.0. CyberReady does not claim ownership of the CCRE programme.
+Hall Monitor is CyberReady's prototype K–12 cybersecurity and AI-governance operating platform. It records governance assessments, evidence, findings, maturity scoring, remediation planning, and executive-reporting views over time. It does not ingest real-time security telemetry from district SIEM, EDR, network, or identity systems.
+
+Its active cybersecurity workflow implements CyberReady's **CCRR v1.0** and **CEAM v1.0**, with NIST CSF 2.0 identifiers retained solely as external reference metadata. Its separate CAIRE AI-governance evidence-review workflow uses the CAGR rubric mapped to NIST AI RMF 1.0. Historical CCRE/Cybersecurity Rubric records and source remain preserved for compatibility and provenance; they are not converted into CCRR scores or used by current cybersecurity dashboards.
 
 ## Features
 
-- **Dashboard**: Cyber health score with weighted category breakdown, key metrics (threats blocked, phishing pass rate, training compliance, open vulnerabilities), and editable scores per category.
+- **Dashboard**: CCRR cybersecurity maturity across six equally weighted NIST CSF 2.0 Function scores, separate CAIRE/CAGR AI maturity, findings, compliance, and roadmap views. Metric values are application data, not direct security telemetry.
 - **Risks & Vulnerabilities**: Track and manage cybersecurity findings with severity/status filtering, status changes, recommended actions, and notes.
-- **Training & Phishing**: View staff training completion by department, phishing simulation trends over time, and departments needing attention.
-- **Compliance & Reporting**: Readiness tracking against NIST CSF-aligned and policy-readiness frameworks with printable board reports.
-- **Self-Assessment**: Evaluate cybersecurity maturity across all 6 NIST functions and 22 categories using the implemented CCRE-aligned assessment workflow. Includes an interview guide with checklist tracking, interview questions by maturity level, and embedded assessment guidance.
-- **Executive Summary**: Board-ready overview with posture score, top priority risks, progress since last review, recommended next steps, and exportable HTML reports.
+- **Training & Phishing Metrics**: Record/view staff training completion and phishing-simulation trends by department; buyers must validate or configure any live data source separately. The former in-app Masterclass workflow is intentionally omitted; the sidebar links to CoSN's external interest form.
+- **Compliance & Reporting**: Governance-readiness tracking, CCRR/CEAM executive-summary views, and historical-report access. Outputs are not independent validation, legal advice, or a certification. The legacy CCRE/Cybersecurity Rubric DOCX generator is intentionally retired for new assessments.
+- **CCRR/CEAM Assessment**: Evaluate cybersecurity maturity across 18 CyberReady Readiness Domains and all six NIST CSF 2.0 Function groupings. The workflow records independent current and target maturity, non-mathematical confidence, structured evidence, seven gap types, critical gaps, and sequential advancement actions.
+- **Executive Summary**: Governance overview with CCRR Function maturity, top priority risks, progress tracking, and recommended next steps. It is not an independently validated board report.
 - **Dark Mode**: Full light/dark theme support across all pages.
 
 ## Tech Stack
@@ -62,7 +64,7 @@ Builds the React client and serves everything from the Express server.
 
 ### Local demo access
 
-For an isolated local demo, follow the repository-level `DEMO_SETUP.md`. It replaces published credential values with a safe setup process. Never expose or reuse the built-in seed-account credentials in a hosted environment.
+For an isolated local demo, follow the repository-level `DEMO_SETUP.md`. It uses operator-created synthetic seed credentials rather than published values. Never expose or reuse synthetic demo credentials in a hosted environment.
 
 ## Project Structure
 
@@ -72,14 +74,13 @@ hall-monitor/
 │   └── src/
 │       ├── components/      # Sidebar, ScoreGauge, StatusCard
 │       ├── context/         # AuthContext, ThemeContext
-│       ├── data/            # Rubric data (NIST functions, interview questions, training guide)
-│       ├── pages/           # Dashboard, Risks, Training, Compliance, Assessment, Executive
+│       ├── data/            # CCRR/CEAM and CAIRE/CAGR methodology data
+│       ├── pages/           # Dashboard, Risks, Compliance, CCRR/CEAM, AI governance, Executive, and retained legacy compatibility pages
 │       └── utils/           # API client
 ├── server/
 │   ├── index.js             # Express API routes
 │   └── database.js          # SQLite schema and seed data
-├── public/                  # Static assets (logo, banner)
-└── docs/                    # CyberReady reference documents
+└── public/                  # Static assets
 ```
 
 ## Environment Variables
@@ -87,24 +88,26 @@ hall-monitor/
 | Variable           | Description                      | Default            |
 |--------------------|----------------------------------|--------------------|
 | `PORT`             | API server port                  | 3001               |
-| `SESSION_SECRET`   | Express session secret           | Development-only fallback; set a unique value |
+| `SESSION_SECRET`   | Express session secret           | Development fallback only; required unique value in production |
+| `CORS_ORIGIN` | Allowed browser origin | Required in production; do not use a wildcard |
 | `DEMO_ADMIN_USER`  | Local demo administrator username | Set explicitly for controlled demos |
 | `DEMO_ADMIN_PASS`  | Local demo administrator password | Set explicitly for controlled demos |
 | `DEMO_DISTRICT_IT_USER` | Local demo district-IT username | Set explicitly for controlled demos |
 | `DEMO_DISTRICT_IT_PASS` | Local demo district-IT password | Set explicitly for controlled demos |
 | `DEMO_SUPERINTENDENT_USER` | Local demo superintendent username | Set explicitly for controlled demos |
 | `DEMO_SUPERINTENDENT_PASS` | Local demo superintendent password | Set explicitly for controlled demos |
+| `DEMO_RESET_ENABLED` | Enables synthetic demo reset route | `false`; use only for a verified disposable demo database |
 
 ## Demo Data
 
-The database auto-seeds on first run with a portfolio of realistic demo districts. Walkerville School District is the primary district demo used for CCRE and CAIRE workflows. This includes:
+The database auto-seeds on first run with a fictional portfolio. Pine Ridge Unified School District is the primary demo used for CCRR/CEAM and CAIRE/CAGR workflows. Its district identity, people, records, and example data are created solely for CyberReady demonstration/testing; see the repository-level `DEMO_DATA_PROVENANCE.md`. It includes prototype data such as:
 
 - 6 NIST-aligned health score categories
 - 15 cybersecurity risk findings across all severity levels
 - Training completion data for 9 departments
 - 7 phishing simulation campaigns
 - 20 compliance requirements across 3 frameworks
-- 8 dashboard metrics
+- 8 dashboard metrics (not live telemetry)
 
 ## License
 
