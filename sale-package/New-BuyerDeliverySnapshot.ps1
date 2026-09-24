@@ -85,8 +85,8 @@ try {
         @"
 # SELLER REVIEW COPY — NOT YET APPROVED FOR BUYER DELIVERY
 
-Source tag: `$Tag`  
-Commit: `$tagCommit`  
+Source tag: `$Tag`
+Commit: `$tagCommit`
 
 This copy was generated from a Git archive and excludes `.git`, seller-local
 configuration, legacy cybersecurity-rubric source files, and identified

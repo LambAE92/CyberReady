@@ -1,6 +1,6 @@
 # Acquisition Freeze and Merge Report
 
-**Date:** 2026-09-24  
+**Date:** 2026-09-24
 **Status:** Local technical freeze, merge, tag, and delivery-preparation record. This report is not legal clearance or a transaction agreement.
 
 ## Source history
