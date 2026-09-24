@@ -4,12 +4,12 @@ This file is a placeholder for domain transfer details to be finalized during ac
 
 ## Domain Included
 
-- Domain: `TBD by seller`
+- Domain: `cyberreadyschools.com` (intended to transfer separately at closing)
 - Registrar: `TBD by seller`
 - Renewal date: `TBD by seller`
 - Current DNS provider: `TBD by seller`
-- Current website host: `TBD by seller`
-- Current app host: `TBD by seller`
+- Current website host: seller hosting account excluded; buyer will recreate hosting
+- Current app host: seller hosting account excluded; buyer will recreate hosting
 
 ## Transfer Process Placeholder
 
@@ -23,6 +23,8 @@ This file is a placeholder for domain transfer details to be finalized during ac
 8. Transfer or recreate DNS records.
 9. Verify website and Hall Monitor URLs after transfer.
 10. Confirm transfer completion in writing.
+
+Seller will cooperate with domain transfer and DNS cutover. CyberReady email accounts are excluded, and no CyberReady social accounts are represented as transfer assets.
 
 ## Suggested DNS Structure
 
